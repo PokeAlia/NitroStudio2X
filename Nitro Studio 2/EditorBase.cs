@@ -1,25 +1,27 @@
-﻿using System;
+﻿using GotaSequenceLib;
+using GotaSoundBank.DLS;
+using GotaSoundBank.SF2;
+using GotaSoundIO.IO;
+using Multimedia.UI;
+using NitroFileLoader;
+using ScintillaNET;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScintillaNET;
-using System.Diagnostics;
-using GotaSequenceLib;
-using GotaSoundIO.IO;
-using Multimedia.UI;
-using System.Drawing;
-using NitroFileLoader;
-using GotaSoundBank.SF2;
-using GotaSoundBank.DLS;
 
 namespace NitroStudio2 {
 
     /// <summary>
     /// An editor base for files.
     /// </summary>
+    [TypeDescriptionProvider(typeof(AbstractCommunicatorProvider))]
     public abstract class EditorBase : Form {
 
         /// <summary>
@@ -411,6 +413,7 @@ namespace NitroStudio2 {
         private TableLayoutPanel tableLayoutPanel36;
         public Button exportWavButton;
         public Button exportMidiButton;
+        public ToolStripMenuItem importFromExternalSDATToolStripMenuItem;
 
         /// <summary>
         /// Main window.
@@ -623,6 +626,7 @@ namespace NitroStudio2 {
             this.sF2ToDLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dLSToSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchExportMIDIDLSSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importFromExternalSDATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1208,17 +1212,17 @@ namespace NitroStudio2 {
             this.exportSDKProjectToolStripMenuItem,
             this.sF2ToDLSToolStripMenuItem,
             this.dLSToSF2ToolStripMenuItem,
-            this.batchExportMIDIDLSSF2ToolStripMenuItem});
+            this.batchExportMIDIDLSSF2ToolStripMenuItem,
+            this.importFromExternalSDATToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
-            this.toolsToolStripMenuItem.Visible = false;
             // 
             // sequenceEditorToolStripMenuItem
             // 
             this.sequenceEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sequenceEditorToolStripMenuItem.Image")));
             this.sequenceEditorToolStripMenuItem.Name = "sequenceEditorToolStripMenuItem";
-            this.sequenceEditorToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.sequenceEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.sequenceEditorToolStripMenuItem.Text = "Sequence Editor";
             this.sequenceEditorToolStripMenuItem.Click += new System.EventHandler(this.SequenceEditorToolStripMenuItem_Click);
             // 
@@ -1226,7 +1230,7 @@ namespace NitroStudio2 {
             // 
             this.sequenceArchiveEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sequenceArchiveEditorToolStripMenuItem.Image")));
             this.sequenceArchiveEditorToolStripMenuItem.Name = "sequenceArchiveEditorToolStripMenuItem";
-            this.sequenceArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.sequenceArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.sequenceArchiveEditorToolStripMenuItem.Text = "Sequence Archive Editor";
             this.sequenceArchiveEditorToolStripMenuItem.Click += new System.EventHandler(this.SequenceArchiveEditorToolStripMenuItem_Click);
             // 
@@ -1234,7 +1238,7 @@ namespace NitroStudio2 {
             // 
             this.bankEditorToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Bank;
             this.bankEditorToolStripMenuItem.Name = "bankEditorToolStripMenuItem";
-            this.bankEditorToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.bankEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.bankEditorToolStripMenuItem.Text = "Bank Editor";
             this.bankEditorToolStripMenuItem.Click += new System.EventHandler(this.BankEditorToolStripMenuItem_Click);
             // 
@@ -1242,7 +1246,7 @@ namespace NitroStudio2 {
             // 
             this.waveArchiveEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("waveArchiveEditorToolStripMenuItem.Image")));
             this.waveArchiveEditorToolStripMenuItem.Name = "waveArchiveEditorToolStripMenuItem";
-            this.waveArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.waveArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.waveArchiveEditorToolStripMenuItem.Text = "Wave Archive Editor";
             this.waveArchiveEditorToolStripMenuItem.Click += new System.EventHandler(this.WaveArchiveEditorToolStripMenuItem_Click);
             // 
@@ -1250,7 +1254,7 @@ namespace NitroStudio2 {
             // 
             this.bankGeneratorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bankGeneratorToolStripMenuItem.Image")));
             this.bankGeneratorToolStripMenuItem.Name = "bankGeneratorToolStripMenuItem";
-            this.bankGeneratorToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.bankGeneratorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.bankGeneratorToolStripMenuItem.Text = "Bank Generator";
             this.bankGeneratorToolStripMenuItem.Click += new System.EventHandler(this.BankGeneratorToolStripMenuItem_Click);
             // 
@@ -1258,7 +1262,7 @@ namespace NitroStudio2 {
             // 
             this.creaveWaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("creaveWaveToolStripMenuItem.Image")));
             this.creaveWaveToolStripMenuItem.Name = "creaveWaveToolStripMenuItem";
-            this.creaveWaveToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.creaveWaveToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.creaveWaveToolStripMenuItem.Text = "Creave Wave";
             this.creaveWaveToolStripMenuItem.Click += new System.EventHandler(this.CreaveWaveToolStripMenuItem_Click);
             // 
@@ -1266,7 +1270,7 @@ namespace NitroStudio2 {
             // 
             this.createStreamToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createStreamToolStripMenuItem.Image")));
             this.createStreamToolStripMenuItem.Name = "createStreamToolStripMenuItem";
-            this.createStreamToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.createStreamToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.createStreamToolStripMenuItem.Text = "Create Stream";
             this.createStreamToolStripMenuItem.Click += new System.EventHandler(this.CreateStreamToolStripMenuItem_Click);
             // 
@@ -1274,7 +1278,7 @@ namespace NitroStudio2 {
             // 
             this.exportSDKProjectToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.NSM;
             this.exportSDKProjectToolStripMenuItem.Name = "exportSDKProjectToolStripMenuItem";
-            this.exportSDKProjectToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.exportSDKProjectToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.exportSDKProjectToolStripMenuItem.Text = "Export SDK Project";
             this.exportSDKProjectToolStripMenuItem.Click += new System.EventHandler(this.ExportSDKProjectToolStripMenuItem_Click);
             // 
@@ -1282,7 +1286,7 @@ namespace NitroStudio2 {
             // 
             this.sF2ToDLSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sF2ToDLSToolStripMenuItem.Image")));
             this.sF2ToDLSToolStripMenuItem.Name = "sF2ToDLSToolStripMenuItem";
-            this.sF2ToDLSToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.sF2ToDLSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.sF2ToDLSToolStripMenuItem.Text = "SF2 To DLS";
             this.sF2ToDLSToolStripMenuItem.Click += new System.EventHandler(this.sF2ToDLSToolStripMenuItem_Click);
             // 
@@ -1290,7 +1294,7 @@ namespace NitroStudio2 {
             // 
             this.dLSToSF2ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dLSToSF2ToolStripMenuItem.Image")));
             this.dLSToSF2ToolStripMenuItem.Name = "dLSToSF2ToolStripMenuItem";
-            this.dLSToSF2ToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.dLSToSF2ToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.dLSToSF2ToolStripMenuItem.Text = "DLS To SF2";
             this.dLSToSF2ToolStripMenuItem.Click += new System.EventHandler(this.dLSToSF2ToolStripMenuItem_Click);
             // 
@@ -1298,8 +1302,16 @@ namespace NitroStudio2 {
             // 
             this.batchExportMIDIDLSSF2ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("batchExportMIDIDLSSF2ToolStripMenuItem.Image")));
             this.batchExportMIDIDLSSF2ToolStripMenuItem.Name = "batchExportMIDIDLSSF2ToolStripMenuItem";
-            this.batchExportMIDIDLSSF2ToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.batchExportMIDIDLSSF2ToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.batchExportMIDIDLSSF2ToolStripMenuItem.Text = "Batch Export MIDI/DLS/SF2";
+            // 
+            // importFromExternalSDATToolStripMenuItem
+            // 
+            this.importFromExternalSDATToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
+            this.importFromExternalSDATToolStripMenuItem.Name = "importFromExternalSDATToolStripMenuItem";
+            this.importFromExternalSDATToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
+            this.importFromExternalSDATToolStripMenuItem.Visible = false;
             // 
             // helpToolStripMenuItem
             // 
@@ -1366,7 +1378,7 @@ namespace NitroStudio2 {
             this.splitContainer1.Panel2.Controls.Add(this.bankEditorWars);
             this.splitContainer1.Panel2.Controls.Add(this.tree);
             this.splitContainer1.Panel2.Controls.Add(this.sequenceEditorPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 540);
+            this.splitContainer1.Size = new System.Drawing.Size(984, 541);
             this.splitContainer1.SplitterDistance = 327;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -1379,7 +1391,7 @@ namespace NitroStudio2 {
             this.seqBankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seqBankPanel.Location = new System.Drawing.Point(0, 334);
             this.seqBankPanel.Name = "seqBankPanel";
-            this.seqBankPanel.Size = new System.Drawing.Size(325, 204);
+            this.seqBankPanel.Size = new System.Drawing.Size(325, 205);
             this.seqBankPanel.TabIndex = 18;
             this.seqBankPanel.Visible = false;
             // 
@@ -2393,7 +2405,7 @@ namespace NitroStudio2 {
             this.bankEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bankEditorPanel.Location = new System.Drawing.Point(0, 334);
             this.bankEditorPanel.Name = "bankEditorPanel";
-            this.bankEditorPanel.Size = new System.Drawing.Size(325, 204);
+            this.bankEditorPanel.Size = new System.Drawing.Size(325, 205);
             this.bankEditorPanel.TabIndex = 21;
             this.bankEditorPanel.Visible = false;
             // 
@@ -2418,7 +2430,7 @@ namespace NitroStudio2 {
             this.pan});
             this.bankRegions.Location = new System.Drawing.Point(14, 141);
             this.bankRegions.Name = "bankRegions";
-            this.bankRegions.Size = new System.Drawing.Size(298, 54);
+            this.bankRegions.Size = new System.Drawing.Size(298, 0);
             this.bankRegions.TabIndex = 26;
             // 
             // playSampleButton
@@ -3092,7 +3104,7 @@ namespace NitroStudio2 {
             this.seqArcPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seqArcPanel.Location = new System.Drawing.Point(0, 270);
             this.seqArcPanel.Name = "seqArcPanel";
-            this.seqArcPanel.Size = new System.Drawing.Size(325, 268);
+            this.seqArcPanel.Size = new System.Drawing.Size(325, 269);
             this.seqArcPanel.TabIndex = 19;
             this.seqArcPanel.Visible = false;
             // 
@@ -3122,7 +3134,7 @@ namespace NitroStudio2 {
             this.seqPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.seqPanel.Location = new System.Drawing.Point(0, 270);
             this.seqPanel.Name = "seqPanel";
-            this.seqPanel.Size = new System.Drawing.Size(325, 268);
+            this.seqPanel.Size = new System.Drawing.Size(325, 269);
             this.seqPanel.TabIndex = 17;
             this.seqPanel.Visible = false;
             // 
@@ -3321,7 +3333,7 @@ namespace NitroStudio2 {
             this.playerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playerPanel.Location = new System.Drawing.Point(0, 270);
             this.playerPanel.Name = "playerPanel";
-            this.playerPanel.Size = new System.Drawing.Size(325, 268);
+            this.playerPanel.Size = new System.Drawing.Size(325, 269);
             this.playerPanel.TabIndex = 15;
             this.playerPanel.Visible = false;
             // 
@@ -3598,7 +3610,7 @@ namespace NitroStudio2 {
             this.stmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stmPanel.Location = new System.Drawing.Point(0, 270);
             this.stmPanel.Name = "stmPanel";
-            this.stmPanel.Size = new System.Drawing.Size(325, 268);
+            this.stmPanel.Size = new System.Drawing.Size(325, 269);
             this.stmPanel.TabIndex = 14;
             this.stmPanel.Visible = false;
             // 
@@ -3738,7 +3750,7 @@ namespace NitroStudio2 {
             this.streamPlayerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.streamPlayerPanel.Location = new System.Drawing.Point(0, 270);
             this.streamPlayerPanel.Name = "streamPlayerPanel";
-            this.streamPlayerPanel.Size = new System.Drawing.Size(325, 268);
+            this.streamPlayerPanel.Size = new System.Drawing.Size(325, 269);
             this.streamPlayerPanel.TabIndex = 13;
             this.streamPlayerPanel.Visible = false;
             // 
@@ -3841,7 +3853,7 @@ namespace NitroStudio2 {
             this.grpPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpPanel.Location = new System.Drawing.Point(0, 270);
             this.grpPanel.Name = "grpPanel";
-            this.grpPanel.Size = new System.Drawing.Size(325, 268);
+            this.grpPanel.Size = new System.Drawing.Size(325, 269);
             this.grpPanel.TabIndex = 12;
             this.grpPanel.Visible = false;
             // 
@@ -3856,7 +3868,7 @@ namespace NitroStudio2 {
             this.grpEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpEntries.Location = new System.Drawing.Point(0, 0);
             this.grpEntries.Name = "grpEntries";
-            this.grpEntries.Size = new System.Drawing.Size(325, 268);
+            this.grpEntries.Size = new System.Drawing.Size(325, 269);
             this.grpEntries.TabIndex = 0;
             // 
             // item
@@ -3887,7 +3899,7 @@ namespace NitroStudio2 {
             this.bankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bankPanel.Location = new System.Drawing.Point(0, 270);
             this.bankPanel.Name = "bankPanel";
-            this.bankPanel.Size = new System.Drawing.Size(325, 268);
+            this.bankPanel.Size = new System.Drawing.Size(325, 269);
             this.bankPanel.TabIndex = 11;
             this.bankPanel.Visible = false;
             // 
@@ -4124,7 +4136,7 @@ namespace NitroStudio2 {
             this.blankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blankPanel.Location = new System.Drawing.Point(0, 270);
             this.blankPanel.Name = "blankPanel";
-            this.blankPanel.Size = new System.Drawing.Size(325, 268);
+            this.blankPanel.Size = new System.Drawing.Size(325, 269);
             this.blankPanel.TabIndex = 10;
             this.blankPanel.Visible = false;
             // 
@@ -4135,7 +4147,7 @@ namespace NitroStudio2 {
             this.warPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.warPanel.Location = new System.Drawing.Point(0, 270);
             this.warPanel.Name = "warPanel";
-            this.warPanel.Size = new System.Drawing.Size(325, 268);
+            this.warPanel.Size = new System.Drawing.Size(325, 269);
             this.warPanel.TabIndex = 9;
             this.warPanel.Visible = false;
             // 
@@ -4260,7 +4272,7 @@ namespace NitroStudio2 {
             this.settingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsPanel.Location = new System.Drawing.Point(0, 150);
             this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(325, 388);
+            this.settingsPanel.Size = new System.Drawing.Size(325, 389);
             this.settingsPanel.TabIndex = 1;
             this.settingsPanel.Visible = false;
             // 
@@ -4347,7 +4359,7 @@ namespace NitroStudio2 {
             this.noInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noInfoPanel.Location = new System.Drawing.Point(0, 150);
             this.noInfoPanel.Name = "noInfoPanel";
-            this.noInfoPanel.Size = new System.Drawing.Size(325, 388);
+            this.noInfoPanel.Size = new System.Drawing.Size(325, 389);
             this.noInfoPanel.TabIndex = 0;
             // 
             // label1
@@ -4355,7 +4367,7 @@ namespace NitroStudio2 {
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 388);
+            this.label1.Size = new System.Drawing.Size(325, 389);
             this.label1.TabIndex = 0;
             this.label1.Text = "No Valid Info Selected!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4582,7 +4594,7 @@ namespace NitroStudio2 {
             this.pnlPianoKeys.Controls.Add(this.pkeyASharp5);
             this.pnlPianoKeys.Controls.Add(this.pkeyB5);
             this.pnlPianoKeys.Controls.Add(this.pkeyC8);
-            this.pnlPianoKeys.Location = new System.Drawing.Point(44, 478);
+            this.pnlPianoKeys.Location = new System.Drawing.Point(44, 142);
             this.pnlPianoKeys.Name = "pnlPianoKeys";
             this.pnlPianoKeys.Size = new System.Drawing.Size(565, 46);
             this.pnlPianoKeys.TabIndex = 6;
@@ -5913,7 +5925,7 @@ namespace NitroStudio2 {
             treeNode1});
             this.tree.SelectedImageIndex = 0;
             this.tree.ShowLines = false;
-            this.tree.Size = new System.Drawing.Size(651, 538);
+            this.tree.Size = new System.Drawing.Size(651, 539);
             this.tree.TabIndex = 0;
             this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
             this.tree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseDoubleClick);
@@ -5949,7 +5961,7 @@ namespace NitroStudio2 {
             this.sequenceEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceEditorPanel.Location = new System.Drawing.Point(0, 0);
             this.sequenceEditorPanel.Name = "sequenceEditorPanel";
-            this.sequenceEditorPanel.Size = new System.Drawing.Size(651, 538);
+            this.sequenceEditorPanel.Size = new System.Drawing.Size(651, 539);
             this.sequenceEditorPanel.TabIndex = 3;
             this.sequenceEditorPanel.Visible = false;
             // 
@@ -5958,7 +5970,7 @@ namespace NitroStudio2 {
             this.sequenceEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceEditor.Location = new System.Drawing.Point(0, 0);
             this.sequenceEditor.Name = "sequenceEditor";
-            this.sequenceEditor.Size = new System.Drawing.Size(651, 538);
+            this.sequenceEditor.Size = new System.Drawing.Size(651, 539);
             this.sequenceEditor.TabIndex = 0;
             // 
             // openFileDialog
@@ -5970,7 +5982,7 @@ namespace NitroStudio2 {
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.status,
             this.currentNote});
-            this.statusStrip.Location = new System.Drawing.Point(0, 564);
+            this.statusStrip.Location = new System.Drawing.Point(0, 565);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(984, 22);
             this.statusStrip.TabIndex = 2;
@@ -6172,7 +6184,7 @@ namespace NitroStudio2 {
             // 
             // EditorBase
             // 
-            this.ClientSize = new System.Drawing.Size(984, 586);
+            this.ClientSize = new System.Drawing.Size(984, 587);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.statusStrip);
@@ -8336,7 +8348,22 @@ namespace NitroStudio2 {
                 }
             }
         }
+    }
 
+    public class AbstractCommunicatorProvider : TypeDescriptionProvider
+    {
+        public AbstractCommunicatorProvider() : base(TypeDescriptor.GetProvider(typeof(UserControl)))
+        {
+        }
+        public override Type GetReflectionType(Type objectType, object instance)
+        {
+            return typeof(UserControl);
+        }
+        public override object CreateInstance(IServiceProvider provider, Type objectType, Type[] argTypes, object[] args)
+        {
+            objectType = typeof(UserControl);
+            return base.CreateInstance(provider, objectType, argTypes, args);
+        }
     }
 
 }

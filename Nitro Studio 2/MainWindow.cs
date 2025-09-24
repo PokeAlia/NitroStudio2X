@@ -62,9 +62,9 @@ namespace NitroStudio2 {
         /// <summary>
         /// Create a new main window.
         /// </summary>
-        public MainWindow() : base(typeof(SoundArchive), "Sound Archive", "dat", "Nitro Studio 2", null) {
+        public MainWindow() : base(typeof(SoundArchive), "Sound Archive", "dat", "Nitro Studio 2X", null) {
             Init();
-            Text = "Nitro Studio 2";
+            Text = "Nitro Studio 2X";
         }
 
         /// <summary>
@@ -84,7 +84,12 @@ namespace NitroStudio2 {
             Icon = Properties.Resources.Icon;
             FormClosing += new FormClosingEventHandler(SAClosing);
             toolsToolStripMenuItem.Visible = true;
-            
+
+            // Import Button
+            importFromExternalSDATToolStripMenuItem.Visible = true;
+            importFromExternalSDATToolStripMenuItem.Click += ImportFileToolStripMenuItem_Click;
+
+
             //Settings.
             writeNamesBox.CheckedChanged += new EventHandler(WriteNamesChanged);
             seqImportModeBox.SelectedIndex = 0;
@@ -102,6 +107,7 @@ namespace NitroStudio2 {
             seqPlayerPriorityBox.ValueChanged += new EventHandler(SequencePlayerPriorityChanged);
             seqBankBox.ValueChanged += new EventHandler(SequenceBankBoxChanged);
             seqBankComboBox.SelectedIndexChanged += new EventHandler(SequenceBankComboBoxChanged);
+            seqBankComboBox.MouseDoubleClick += new MouseEventHandler(SequenceBankDoubleClick);
             seqPlayerBox.ValueChanged += new EventHandler(SequencePlayerBoxChanged);
             seqPlayerComboBox.SelectedIndexChanged += new EventHandler(SequencePlayerComboBoxChanged);
 
@@ -173,6 +179,61 @@ namespace NitroStudio2 {
             Timer.Interval = 1000 / 30;
             Timer.Start();
 
+        }
+
+        private void ImportFileToolStripMenuItem_Click(object sender, EventArgs ev)
+        {
+            ImportFromSdatTool i = new ImportFromSdatTool();
+            i.Format = tree.SelectedNode.Parent.Name;
+            i.ShowDialog();
+            Debug.WriteLine(i.Result);
+            if (i.Result == true)
+            {
+                if (tree.SelectedNode.Parent != null)
+                {
+                    Debug.WriteLine(i.FileData.Length);
+                    //Sequence.
+                    if (tree.SelectedNode.Parent == tree.Nodes["sequences"])
+                    {
+                        SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File = new Sequence();
+                        SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File.Read(i.FileData);
+                        DoInfoStuff();
+                    }
+
+                    //Sequence archive.
+                    else if (tree.SelectedNode.Parent == tree.Nodes["sequenceArchives"])
+                    {
+                        SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File = new SequenceArchive();
+                        SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File.Read(i.FileData);
+                        DoInfoStuff();
+                    }
+
+                    //Bank.
+                    else if (tree.SelectedNode.Parent == tree.Nodes["banks"])
+                    {
+                        SA.Banks.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File = new Bank();
+                        SA.Banks.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File.Read(i.FileData);
+                        DoInfoStuff();
+                    }
+
+                    //Wave archive.
+                    else if (tree.SelectedNode.Parent == tree.Nodes["waveArchives"])
+                    {
+                        SA.WaveArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File = new WaveArchive();
+                        SA.WaveArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File.Read(i.FileData);
+                        DoInfoStuff();
+                    }
+
+                    //Stream.
+                    else if (tree.SelectedNode.Parent == tree.Nodes["streams"])
+                    {
+                        SA.Streams.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File = new NitroFileLoader.Stream();
+                        SA.Streams.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().File.Read(i.FileData);
+                        DoInfoStuff();
+                    }
+
+                }
+            }
         }
 
         /// <summary>
@@ -1482,6 +1543,26 @@ namespace NitroStudio2 {
                     SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().ReadingBankId = index;
                     SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().Bank = SA.Banks.Where(x => x.Index == index).FirstOrDefault();
                     WritingInfo = false;
+                }
+            }
+        }
+
+        public void SequenceBankDoubleClick(object sender, EventArgs e)
+        {
+            if (FileOpen && File != null && !WritingInfo)
+            {
+                if (seqBankComboBox.SelectedIndex != 0)
+                {
+                    /*
+                    WritingInfo = true;
+                    ushort index = ushort.Parse(((string)seqBankComboBox.SelectedItem).Split('[')[1].Split(']')[0]);
+                    seqBankBox.Value = index;
+                    SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().ReadingBankId = index;
+                    SA.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault().Bank = SA.Banks.Where(x => x.Index == index).FirstOrDefault();
+                    WritingInfo = false;
+                    */
+
+                    tree.SelectedNode = tree.Nodes["bank"].Nodes[ushort.Parse(((string)seqBankComboBox.SelectedItem).Split('[')[1].Split(']')[0])];
                 }
             }
         }
