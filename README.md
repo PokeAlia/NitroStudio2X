@@ -1,9 +1,8 @@
-# Nitro Studio 2 Deluxe
-Nitro Studio 2 Deluxe is a soon-to-be Deluxe fork of Nitro Studio 2!
-Our Goal is to fix bugs that was in the original and to add some quality of life improvements!
+# Nitro Studio 2 eXtended
+Nitro Studio 2 eXtended aims to exist as a improved version of Nitro Studio 2 Deluxe, with heavy under-the-hood fixes, more QOL features, and eventually move away from WinForms.
 
 # Dependencies
-This tool requires my SoundIO, Sound Bank and Sequence libraries.
+This tool requires Gota7's SoundIO, Sound Bank and Sequence libraries.
 
 SoundIO: https://github.com/Gota7/GotaSoundIO
 
