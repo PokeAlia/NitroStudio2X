@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29102.190
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitro Studio 2", "Nitro Studio 2\Nitro Studio 2.csproj", "{BF551FB5-A4CE-4F6D-A8F1-3893302F4581}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitro Studio 2X", "Nitro Studio 2\Nitro Studio 2X.csproj", "{BF551FB5-A4CE-4F6D-A8F1-3893302F4581}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DBF81EB2-7016-465B-8A95-3F376E439DB0} = {DBF81EB2-7016-465B-8A95-3F376E439DB0}
 	EndProjectSection
