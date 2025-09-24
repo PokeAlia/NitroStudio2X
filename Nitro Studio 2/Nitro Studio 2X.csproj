@@ -143,6 +143,7 @@
     <Compile Include="BankGenerator.Designer.cs">
       <DependentUpon>BankGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions\Configuration.cs" />
     <Compile Include="ImportFromSdatTool.cs">
       <SubType>Form</SubType>
     </Compile>

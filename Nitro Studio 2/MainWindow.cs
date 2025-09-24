@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GotaSoundBank.DLS;
 using GotaSoundBank.SF2;
+using NitroStudio2.Functions;
 
 namespace NitroStudio2 {
 
@@ -28,6 +29,8 @@ namespace NitroStudio2 {
         /// Nitro path.
         /// </summary>
         public static string NitroPath = Application.StartupPath;
+
+        private Functions.Configuration Config;
 
         /// <summary>
         /// The sound archive.
@@ -71,7 +74,7 @@ namespace NitroStudio2 {
         /// Create a new main window.
         /// </summary>
         /// <param name="fileToOpen">The file to open.</param>
-        public MainWindow(string fileToOpen) : base(typeof(SoundArchive), "Sound Archive", "dat", "Nitro Studio 2", fileToOpen, null) {
+        public MainWindow(string fileToOpen) : base(typeof(SoundArchive), "Sound Archive", "dat", "Nitro Studio 2X", fileToOpen, null) {
             Init();
         }
 
@@ -80,10 +83,17 @@ namespace NitroStudio2 {
         /// </summary>
         public void Init() {
 
+            Config = new Configuration();
+
             //Window stuff.
             Icon = Properties.Resources.Icon;
             FormClosing += new FormClosingEventHandler(SAClosing);
             toolsToolStripMenuItem.Visible = true;
+            exportInfoTB.Visible = true;
+
+            // Exporters
+            sdblExportBtn.Visible = true;
+            sdblExportBtn.Click += SdblExportBtn_Click;
 
             // Import Button
             importFromExternalSDATToolStripMenuItem.Visible = true;
@@ -181,6 +191,51 @@ namespace NitroStudio2 {
 
         }
 
+        private void SdblExportBtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "SBDL Reference File|*.sbdl";
+            DialogResult r = sfd.ShowDialog();
+            if (r == DialogResult.OK)
+            {
+                using (StreamWriter w = new StreamWriter(sfd.FileName))
+                {
+                    foreach (var s in SA.Players)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index); 
+                    }
+                    foreach (var s in SA.StreamPlayers)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.WaveArchives)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.Banks)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.Sequences)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.SequenceArchives)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.Streams)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                    foreach (var s in SA.Groups)
+                    {
+                        w.WriteLine("#define " + s.Name + "\t" + s.Index);
+                    }
+                }
+            }
+        }
+
         private void ImportFileToolStripMenuItem_Click(object sender, EventArgs ev)
         {
             ImportFromSdatTool i = new ImportFromSdatTool();
@@ -244,10 +299,12 @@ namespace NitroStudio2 {
             //Begin update.
             BeginUpdateNodes();
 
+            status.Text = "Updating Listing...";
+
             //Add waves if node doesn't exist.
-            if (tree.Nodes.Count < 9) {
+            if (tree.Nodes.Count < 8) {
                 tree.Nodes.RemoveAt(0);
-                tree.Nodes.Add("settings", "Settings", 1, 1);
+                // tree.Nodes.Add("settings", "Settings", 1, 1);
                 tree.Nodes.Add("sequences", "Sound Sequences", 2, 2);
                 tree.Nodes.Add("sequenceArchives", "Sequence Archives", 3, 3);
                 tree.Nodes.Add("banks", "Instrument Banks", 4, 4);
@@ -258,11 +315,13 @@ namespace NitroStudio2 {
                 tree.Nodes.Add("streams", "Sound Streams", 9, 9);
             }
 
+            status.Text = "Getting Entries...";
+
             //File open and not null.
             if (FileOpen && File != null) {
 
                 //Root menus.
-                for (int i = 1; i < 9; i++) {
+                for (int i = 1; i < 8; i++) {
                     tree.Nodes[i].ContextMenuStrip = rootMenu;
                 }
 

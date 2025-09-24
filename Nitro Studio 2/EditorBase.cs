@@ -414,6 +414,8 @@ namespace NitroStudio2 {
         public Button exportWavButton;
         public Button exportMidiButton;
         public ToolStripMenuItem importFromExternalSDATToolStripMenuItem;
+        public ToolStripMenuItem exportInfoTB;
+        public ToolStripMenuItem sdblExportBtn;
 
         /// <summary>
         /// Main window.
@@ -845,6 +847,57 @@ namespace NitroStudio2 {
             this.kermalisPlayButton = new System.Windows.Forms.Button();
             this.soundPlayerLabel = new System.Windows.Forms.Label();
             this.pnlPianoKeys = new System.Windows.Forms.Panel();
+            this.bankEditorWars = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.war3ComboBox = new System.Windows.Forms.ComboBox();
+            this.war3Box = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.war2ComboBox = new System.Windows.Forms.ComboBox();
+            this.war2Box = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.war1ComboBox = new System.Windows.Forms.ComboBox();
+            this.war1Box = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.war0ComboBox = new System.Windows.Forms.ComboBox();
+            this.war0Box = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tree = new System.Windows.Forms.TreeView();
+            this.treeIcons = new System.Windows.Forms.ImageList(this.components);
+            this.sequenceEditorPanel = new System.Windows.Forms.Panel();
+            this.sequenceEditor = new ScintillaNET.Scintilla();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.status = new System.Windows.Forms.ToolStripStatusLabel();
+            this.currentNote = new System.Windows.Forms.ToolStripStatusLabel();
+            this.rootMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collapseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.nodeMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addAboveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBelowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveUpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveDownToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.replaceFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sarEntryMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sarAddAbove = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarAddBelow = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarMoveUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarMoveDown = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarReplace = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarRename = new System.Windows.Forms.ToolStripMenuItem();
+            this.sarDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportInfoTB = new System.Windows.Forms.ToolStripMenuItem();
+            this.sdblExportBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.pkeyC7 = new Multimedia.UI.PianoKey();
             this.pkeyE7 = new Multimedia.UI.PianoKey();
             this.pkeyCSharp7 = new Multimedia.UI.PianoKey();
@@ -930,55 +983,6 @@ namespace NitroStudio2 {
             this.pkeyASharp5 = new Multimedia.UI.PianoKey();
             this.pkeyB5 = new Multimedia.UI.PianoKey();
             this.pkeyC8 = new Multimedia.UI.PianoKey();
-            this.bankEditorWars = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.war3ComboBox = new System.Windows.Forms.ComboBox();
-            this.war3Box = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.war2ComboBox = new System.Windows.Forms.ComboBox();
-            this.war2Box = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.war1ComboBox = new System.Windows.Forms.ComboBox();
-            this.war1Box = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.war0ComboBox = new System.Windows.Forms.ComboBox();
-            this.war0Box = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tree = new System.Windows.Forms.TreeView();
-            this.treeIcons = new System.Windows.Forms.ImageList(this.components);
-            this.sequenceEditorPanel = new System.Windows.Forms.Panel();
-            this.sequenceEditor = new ScintillaNET.Scintilla();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.currentNote = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rootMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collapseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.nodeMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addAboveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addBelowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveUpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveDownToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.replaceFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sarEntryMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sarAddAbove = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarAddBelow = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarMoveUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarMoveDown = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarReplace = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarRename = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1213,7 +1217,8 @@ namespace NitroStudio2 {
             this.sF2ToDLSToolStripMenuItem,
             this.dLSToSF2ToolStripMenuItem,
             this.batchExportMIDIDLSSF2ToolStripMenuItem,
-            this.importFromExternalSDATToolStripMenuItem});
+            this.importFromExternalSDATToolStripMenuItem,
+            this.exportInfoTB});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -2575,7 +2580,7 @@ namespace NitroStudio2 {
             "fs9 (126)",
             "gn9 (127)"});
             this.endNote.Name = "endNote";
-            this.endNote.Width = 52;
+            this.endNote.Width = 58;
             // 
             // instrumentType
             // 
@@ -4600,6 +4605,540 @@ namespace NitroStudio2 {
             this.pnlPianoKeys.TabIndex = 6;
             this.pnlPianoKeys.Visible = false;
             // 
+            // bankEditorWars
+            // 
+            this.bankEditorWars.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bankEditorWars.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bankEditorWars.Controls.Add(this.tableLayoutPanel16);
+            this.bankEditorWars.Controls.Add(this.label31);
+            this.bankEditorWars.Controls.Add(this.tableLayoutPanel17);
+            this.bankEditorWars.Controls.Add(this.label33);
+            this.bankEditorWars.Controls.Add(this.tableLayoutPanel18);
+            this.bankEditorWars.Controls.Add(this.label34);
+            this.bankEditorWars.Controls.Add(this.tableLayoutPanel19);
+            this.bankEditorWars.Controls.Add(this.label35);
+            this.bankEditorWars.Location = new System.Drawing.Point(315, 13);
+            this.bankEditorWars.Name = "bankEditorWars";
+            this.bankEditorWars.Size = new System.Drawing.Size(325, 253);
+            this.bankEditorWars.TabIndex = 13;
+            this.bankEditorWars.Visible = false;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.Controls.Add(this.war3ComboBox, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.war3Box, 1, 0);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(14, 193);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(298, 31);
+            this.tableLayoutPanel16.TabIndex = 13;
+            // 
+            // war3ComboBox
+            // 
+            this.war3ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.war3ComboBox.FormattingEnabled = true;
+            this.war3ComboBox.Location = new System.Drawing.Point(3, 3);
+            this.war3ComboBox.Name = "war3ComboBox";
+            this.war3ComboBox.Size = new System.Drawing.Size(247, 21);
+            this.war3ComboBox.TabIndex = 6;
+            this.toolTip.SetToolTip(this.war3ComboBox, "Wave archive to be used for the bank.");
+            // 
+            // war3Box
+            // 
+            this.war3Box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war3Box.Location = new System.Drawing.Point(256, 3);
+            this.war3Box.Maximum = new decimal(new int[] {
+            65534,
+            0,
+            0,
+            0});
+            this.war3Box.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.war3Box.Name = "war3Box";
+            this.war3Box.Size = new System.Drawing.Size(39, 20);
+            this.war3Box.TabIndex = 7;
+            this.toolTip.SetToolTip(this.war3Box, "Id of the wave archive to use for this bank.");
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.Location = new System.Drawing.Point(11, 171);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(301, 22);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Wave Archive 3:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel17.ColumnCount = 2;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel17.Controls.Add(this.war2ComboBox, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.war2Box, 1, 0);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(14, 137);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 1;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(298, 31);
+            this.tableLayoutPanel17.TabIndex = 11;
+            // 
+            // war2ComboBox
+            // 
+            this.war2ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.war2ComboBox.FormattingEnabled = true;
+            this.war2ComboBox.Location = new System.Drawing.Point(3, 3);
+            this.war2ComboBox.Name = "war2ComboBox";
+            this.war2ComboBox.Size = new System.Drawing.Size(247, 21);
+            this.war2ComboBox.TabIndex = 6;
+            this.toolTip.SetToolTip(this.war2ComboBox, "Wave archive to be used for the bank.");
+            // 
+            // war2Box
+            // 
+            this.war2Box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war2Box.Location = new System.Drawing.Point(256, 3);
+            this.war2Box.Maximum = new decimal(new int[] {
+            65534,
+            0,
+            0,
+            0});
+            this.war2Box.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.war2Box.Name = "war2Box";
+            this.war2Box.Size = new System.Drawing.Size(39, 20);
+            this.war2Box.TabIndex = 7;
+            this.toolTip.SetToolTip(this.war2Box, "Id of the wave archive to use for this bank.");
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.Location = new System.Drawing.Point(11, 115);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(301, 22);
+            this.label33.TabIndex = 10;
+            this.label33.Text = "Wave Archive 2:";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel18.Controls.Add(this.war1ComboBox, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.war1Box, 1, 0);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(14, 81);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 1;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(298, 31);
+            this.tableLayoutPanel18.TabIndex = 9;
+            // 
+            // war1ComboBox
+            // 
+            this.war1ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.war1ComboBox.FormattingEnabled = true;
+            this.war1ComboBox.Location = new System.Drawing.Point(3, 3);
+            this.war1ComboBox.Name = "war1ComboBox";
+            this.war1ComboBox.Size = new System.Drawing.Size(247, 21);
+            this.war1ComboBox.TabIndex = 6;
+            this.toolTip.SetToolTip(this.war1ComboBox, "Wave archive to be used for the bank.");
+            // 
+            // war1Box
+            // 
+            this.war1Box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war1Box.Location = new System.Drawing.Point(256, 3);
+            this.war1Box.Maximum = new decimal(new int[] {
+            65534,
+            0,
+            0,
+            0});
+            this.war1Box.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.war1Box.Name = "war1Box";
+            this.war1Box.Size = new System.Drawing.Size(39, 20);
+            this.war1Box.TabIndex = 7;
+            this.toolTip.SetToolTip(this.war1Box, "Id of the wave archive to use for this bank.");
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.Location = new System.Drawing.Point(11, 59);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(301, 22);
+            this.label34.TabIndex = 8;
+            this.label34.Text = "Wave Archive 1:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel19.ColumnCount = 2;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel19.Controls.Add(this.war0ComboBox, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.war0Box, 1, 0);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(14, 25);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 1;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(298, 31);
+            this.tableLayoutPanel19.TabIndex = 7;
+            // 
+            // war0ComboBox
+            // 
+            this.war0ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war0ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.war0ComboBox.FormattingEnabled = true;
+            this.war0ComboBox.Location = new System.Drawing.Point(3, 3);
+            this.war0ComboBox.Name = "war0ComboBox";
+            this.war0ComboBox.Size = new System.Drawing.Size(247, 21);
+            this.war0ComboBox.TabIndex = 6;
+            this.toolTip.SetToolTip(this.war0ComboBox, "Wave archive to be used for the bank.");
+            // 
+            // war0Box
+            // 
+            this.war0Box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.war0Box.Location = new System.Drawing.Point(256, 3);
+            this.war0Box.Maximum = new decimal(new int[] {
+            65534,
+            0,
+            0,
+            0});
+            this.war0Box.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.war0Box.Name = "war0Box";
+            this.war0Box.Size = new System.Drawing.Size(39, 20);
+            this.war0Box.TabIndex = 7;
+            this.toolTip.SetToolTip(this.war0Box, "Id of the wave archive to use for this bank.");
+            // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.Location = new System.Drawing.Point(11, 3);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(301, 22);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "Wave Archive 0:";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tree
+            // 
+            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tree.ImageIndex = 0;
+            this.tree.ImageList = this.treeIcons;
+            this.tree.Indent = 12;
+            this.tree.Location = new System.Drawing.Point(0, 0);
+            this.tree.Name = "tree";
+            treeNode1.ImageIndex = 10;
+            treeNode1.Name = "fileInfo";
+            treeNode1.SelectedImageIndex = 10;
+            treeNode1.Text = "File Information";
+            this.tree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.tree.SelectedImageIndex = 0;
+            this.tree.ShowLines = false;
+            this.tree.Size = new System.Drawing.Size(651, 539);
+            this.tree.TabIndex = 0;
+            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
+            this.tree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseDoubleClick);
+            this.tree.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tree_NodeKey);
+            // 
+            // treeIcons
+            // 
+            this.treeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeIcons.ImageStream")));
+            this.treeIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.treeIcons.Images.SetKeyName(0, "blank.png");
+            this.treeIcons.Images.SetKeyName(1, "version.png");
+            this.treeIcons.Images.SetKeyName(2, "sseq.png");
+            this.treeIcons.Images.SetKeyName(3, "seqArc.png");
+            this.treeIcons.Images.SetKeyName(4, "bank.png");
+            this.treeIcons.Images.SetKeyName(5, "waveArchive.png");
+            this.treeIcons.Images.SetKeyName(6, "player.png");
+            this.treeIcons.Images.SetKeyName(7, "group.png");
+            this.treeIcons.Images.SetKeyName(8, "streamPlayer.png");
+            this.treeIcons.Images.SetKeyName(9, "strm.png");
+            this.treeIcons.Images.SetKeyName(10, "record.png");
+            this.treeIcons.Images.SetKeyName(11, "recordArc.png");
+            this.treeIcons.Images.SetKeyName(12, "lookup.png");
+            this.treeIcons.Images.SetKeyName(13, "recordRegion.png");
+            this.treeIcons.Images.SetKeyName(14, "wave.png");
+            this.treeIcons.Images.SetKeyName(15, "ranged.png");
+            this.treeIcons.Images.SetKeyName(16, "regional.png");
+            this.treeIcons.Images.SetKeyName(17, "psg.png");
+            this.treeIcons.Images.SetKeyName(18, "whiteNoise.png");
+            // 
+            // sequenceEditorPanel
+            // 
+            this.sequenceEditorPanel.Controls.Add(this.sequenceEditor);
+            this.sequenceEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sequenceEditorPanel.Location = new System.Drawing.Point(0, 0);
+            this.sequenceEditorPanel.Name = "sequenceEditorPanel";
+            this.sequenceEditorPanel.Size = new System.Drawing.Size(651, 539);
+            this.sequenceEditorPanel.TabIndex = 3;
+            this.sequenceEditorPanel.Visible = false;
+            // 
+            // sequenceEditor
+            // 
+            this.sequenceEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sequenceEditor.Location = new System.Drawing.Point(0, 0);
+            this.sequenceEditor.Name = "sequenceEditor";
+            this.sequenceEditor.Size = new System.Drawing.Size(651, 539);
+            this.sequenceEditor.TabIndex = 0;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.RestoreDirectory = true;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.status,
+            this.currentNote});
+            this.statusStrip.Location = new System.Drawing.Point(0, 565);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // status
+            // 
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(125, 17);
+            this.status.Text = "No Valid Info Selected!";
+            // 
+            // currentNote
+            // 
+            this.currentNote.Name = "currentNote";
+            this.currentNote.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.currentNote.Size = new System.Drawing.Size(0, 17);
+            // 
+            // rootMenu
+            // 
+            this.rootMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.expandToolStripMenuItem,
+            this.collapseToolStripMenuItem});
+            this.rootMenu.Name = "rootMenu";
+            this.rootMenu.Size = new System.Drawing.Size(120, 70);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.New;
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // expandToolStripMenuItem
+            // 
+            this.expandToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
+            this.expandToolStripMenuItem.Name = "expandToolStripMenuItem";
+            this.expandToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.expandToolStripMenuItem.Text = "Expand";
+            this.expandToolStripMenuItem.Click += new System.EventHandler(this.expandToolStripMenuItem_Click);
+            // 
+            // collapseToolStripMenuItem
+            // 
+            this.collapseToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
+            this.collapseToolStripMenuItem.Name = "collapseToolStripMenuItem";
+            this.collapseToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.collapseToolStripMenuItem.Text = "Collapse";
+            this.collapseToolStripMenuItem.Click += new System.EventHandler(this.collapseToolStripMenuItem_Click);
+            // 
+            // nodeMenu
+            // 
+            this.nodeMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.nodeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addAboveToolStripMenuItem1,
+            this.addBelowToolStripMenuItem1,
+            this.moveUpToolStripMenuItem1,
+            this.moveDownToolStripMenuItem1,
+            this.replaceFileToolStripMenuItem,
+            this.exportToolStripMenuItem1,
+            this.deleteToolStripMenuItem1});
+            this.nodeMenu.Name = "contextMenuStrip1";
+            this.nodeMenu.Size = new System.Drawing.Size(139, 158);
+            // 
+            // addAboveToolStripMenuItem1
+            // 
+            this.addAboveToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.New;
+            this.addAboveToolStripMenuItem1.Name = "addAboveToolStripMenuItem1";
+            this.addAboveToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.addAboveToolStripMenuItem1.Text = "Add Above";
+            this.addAboveToolStripMenuItem1.Click += new System.EventHandler(this.addAboveToolStripMenuItem1_Click);
+            // 
+            // addBelowToolStripMenuItem1
+            // 
+            this.addBelowToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Open;
+            this.addBelowToolStripMenuItem1.Name = "addBelowToolStripMenuItem1";
+            this.addBelowToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.addBelowToolStripMenuItem1.Text = "Add Below";
+            this.addBelowToolStripMenuItem1.Click += new System.EventHandler(this.addBelowToolStripMenuItem1_Click);
+            // 
+            // moveUpToolStripMenuItem1
+            // 
+            this.moveUpToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save;
+            this.moveUpToolStripMenuItem1.Name = "moveUpToolStripMenuItem1";
+            this.moveUpToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.moveUpToolStripMenuItem1.Text = "Move Up";
+            this.moveUpToolStripMenuItem1.Click += new System.EventHandler(this.moveUpToolStripMenuItem1_Click);
+            // 
+            // moveDownToolStripMenuItem1
+            // 
+            this.moveDownToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save_As;
+            this.moveDownToolStripMenuItem1.Name = "moveDownToolStripMenuItem1";
+            this.moveDownToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.moveDownToolStripMenuItem1.Text = "Move Down";
+            this.moveDownToolStripMenuItem1.Click += new System.EventHandler(this.moveDownToolStripMenuItem1_Click);
+            // 
+            // replaceFileToolStripMenuItem
+            // 
+            this.replaceFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
+            this.replaceFileToolStripMenuItem.Name = "replaceFileToolStripMenuItem";
+            this.replaceFileToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.replaceFileToolStripMenuItem.Text = "Replace";
+            this.replaceFileToolStripMenuItem.Click += new System.EventHandler(this.replaceFileToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem1
+            // 
+            this.exportToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Export;
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.exportToolStripMenuItem1.Text = "Export";
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Close;
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            // 
+            // sarEntryMenu
+            // 
+            this.sarEntryMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.sarEntryMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sarAddAbove,
+            this.sarAddBelow,
+            this.sarMoveUp,
+            this.sarMoveDown,
+            this.sarReplace,
+            this.sarExport,
+            this.sarRename,
+            this.sarDelete});
+            this.sarEntryMenu.Name = "contextMenuStrip1";
+            this.sarEntryMenu.Size = new System.Drawing.Size(139, 180);
+            // 
+            // sarAddAbove
+            // 
+            this.sarAddAbove.Image = global::NitroStudio2.Properties.Resources.New;
+            this.sarAddAbove.Name = "sarAddAbove";
+            this.sarAddAbove.Size = new System.Drawing.Size(138, 22);
+            this.sarAddAbove.Text = "Add Above";
+            this.sarAddAbove.Click += new System.EventHandler(this.SarAddAbove_Click);
+            // 
+            // sarAddBelow
+            // 
+            this.sarAddBelow.Image = global::NitroStudio2.Properties.Resources.Open;
+            this.sarAddBelow.Name = "sarAddBelow";
+            this.sarAddBelow.Size = new System.Drawing.Size(138, 22);
+            this.sarAddBelow.Text = "Add Below";
+            this.sarAddBelow.Click += new System.EventHandler(this.SarAddBelow_Click);
+            // 
+            // sarMoveUp
+            // 
+            this.sarMoveUp.Image = global::NitroStudio2.Properties.Resources.Save;
+            this.sarMoveUp.Name = "sarMoveUp";
+            this.sarMoveUp.Size = new System.Drawing.Size(138, 22);
+            this.sarMoveUp.Text = "Move Up";
+            this.sarMoveUp.Click += new System.EventHandler(this.SarMoveUp_Click);
+            // 
+            // sarMoveDown
+            // 
+            this.sarMoveDown.Image = global::NitroStudio2.Properties.Resources.Save_As;
+            this.sarMoveDown.Name = "sarMoveDown";
+            this.sarMoveDown.Size = new System.Drawing.Size(138, 22);
+            this.sarMoveDown.Text = "Move Down";
+            this.sarMoveDown.Click += new System.EventHandler(this.SarMoveDown_Click);
+            // 
+            // sarReplace
+            // 
+            this.sarReplace.Image = global::NitroStudio2.Properties.Resources.Import;
+            this.sarReplace.Name = "sarReplace";
+            this.sarReplace.Size = new System.Drawing.Size(138, 22);
+            this.sarReplace.Text = "Replace";
+            this.sarReplace.Click += new System.EventHandler(this.SarReplace_Click);
+            // 
+            // sarExport
+            // 
+            this.sarExport.Image = global::NitroStudio2.Properties.Resources.Export;
+            this.sarExport.Name = "sarExport";
+            this.sarExport.Size = new System.Drawing.Size(138, 22);
+            this.sarExport.Text = "Export";
+            this.sarExport.Click += new System.EventHandler(this.SarExport_Click);
+            // 
+            // sarRename
+            // 
+            this.sarRename.Image = global::NitroStudio2.Properties.Resources.Rename;
+            this.sarRename.Name = "sarRename";
+            this.sarRename.Size = new System.Drawing.Size(138, 22);
+            this.sarRename.Text = "Rename";
+            this.sarRename.Click += new System.EventHandler(this.SarRename_Click);
+            // 
+            // sarDelete
+            // 
+            this.sarDelete.Image = global::NitroStudio2.Properties.Resources.Close;
+            this.sarDelete.Name = "sarDelete";
+            this.sarDelete.Size = new System.Drawing.Size(138, 22);
+            this.sarDelete.Text = "Delete";
+            this.sarDelete.Click += new System.EventHandler(this.SarDelete_Click);
+            // 
+            // exportInfoTB
+            // 
+            this.exportInfoTB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sdblExportBtn});
+            this.exportInfoTB.Name = "exportInfoTB";
+            this.exportInfoTB.Size = new System.Drawing.Size(216, 22);
+            this.exportInfoTB.Text = "Export Information...";
+            this.exportInfoTB.Visible = false;
+            // 
+            // sdblExportBtn
+            // 
+            this.sdblExportBtn.Name = "sdblExportBtn";
+            this.sdblExportBtn.Size = new System.Drawing.Size(180, 22);
+            this.sdblExportBtn.Text = "SBDL File";
+            // 
             // pkeyC7
             // 
             this.pkeyC7.KeyOffColor = System.Drawing.Color.White;
@@ -5662,525 +6201,6 @@ namespace NitroStudio2 {
             this.pkeyC8.Size = new System.Drawing.Size(12, 42);
             this.pkeyC8.TabIndex = 60;
             this.pkeyC8.StateChanged += new System.EventHandler(this.PianoChanged);
-            // 
-            // bankEditorWars
-            // 
-            this.bankEditorWars.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bankEditorWars.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel16);
-            this.bankEditorWars.Controls.Add(this.label31);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel17);
-            this.bankEditorWars.Controls.Add(this.label33);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel18);
-            this.bankEditorWars.Controls.Add(this.label34);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel19);
-            this.bankEditorWars.Controls.Add(this.label35);
-            this.bankEditorWars.Location = new System.Drawing.Point(315, 13);
-            this.bankEditorWars.Name = "bankEditorWars";
-            this.bankEditorWars.Size = new System.Drawing.Size(325, 253);
-            this.bankEditorWars.TabIndex = 13;
-            this.bankEditorWars.Visible = false;
-            // 
-            // tableLayoutPanel16
-            // 
-            this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel16.ColumnCount = 2;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel16.Controls.Add(this.war3ComboBox, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.war3Box, 1, 0);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(14, 193);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 1;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel16.TabIndex = 13;
-            // 
-            // war3ComboBox
-            // 
-            this.war3ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war3ComboBox.FormattingEnabled = true;
-            this.war3ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war3ComboBox.Name = "war3ComboBox";
-            this.war3ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war3ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war3ComboBox, "Wave archive to be used for the bank.");
-            // 
-            // war3Box
-            // 
-            this.war3Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war3Box.Location = new System.Drawing.Point(256, 3);
-            this.war3Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war3Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war3Box.Name = "war3Box";
-            this.war3Box.Size = new System.Drawing.Size(39, 20);
-            this.war3Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war3Box, "Id of the wave archive to use for this bank.");
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.Location = new System.Drawing.Point(11, 171);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(301, 22);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "Wave Archive 3:";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel17
-            // 
-            this.tableLayoutPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel17.ColumnCount = 2;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel17.Controls.Add(this.war2ComboBox, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.war2Box, 1, 0);
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(14, 137);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 1;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel17.TabIndex = 11;
-            // 
-            // war2ComboBox
-            // 
-            this.war2ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war2ComboBox.FormattingEnabled = true;
-            this.war2ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war2ComboBox.Name = "war2ComboBox";
-            this.war2ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war2ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war2ComboBox, "Wave archive to be used for the bank.");
-            // 
-            // war2Box
-            // 
-            this.war2Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war2Box.Location = new System.Drawing.Point(256, 3);
-            this.war2Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war2Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war2Box.Name = "war2Box";
-            this.war2Box.Size = new System.Drawing.Size(39, 20);
-            this.war2Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war2Box, "Id of the wave archive to use for this bank.");
-            // 
-            // label33
-            // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.Location = new System.Drawing.Point(11, 115);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(301, 22);
-            this.label33.TabIndex = 10;
-            this.label33.Text = "Wave Archive 2:";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel18
-            // 
-            this.tableLayoutPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel18.ColumnCount = 2;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel18.Controls.Add(this.war1ComboBox, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.war1Box, 1, 0);
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(14, 81);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 1;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel18.TabIndex = 9;
-            // 
-            // war1ComboBox
-            // 
-            this.war1ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war1ComboBox.FormattingEnabled = true;
-            this.war1ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war1ComboBox.Name = "war1ComboBox";
-            this.war1ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war1ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war1ComboBox, "Wave archive to be used for the bank.");
-            // 
-            // war1Box
-            // 
-            this.war1Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war1Box.Location = new System.Drawing.Point(256, 3);
-            this.war1Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war1Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war1Box.Name = "war1Box";
-            this.war1Box.Size = new System.Drawing.Size(39, 20);
-            this.war1Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war1Box, "Id of the wave archive to use for this bank.");
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.Location = new System.Drawing.Point(11, 59);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(301, 22);
-            this.label34.TabIndex = 8;
-            this.label34.Text = "Wave Archive 1:";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel19
-            // 
-            this.tableLayoutPanel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel19.ColumnCount = 2;
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel19.Controls.Add(this.war0ComboBox, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.war0Box, 1, 0);
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.RowCount = 1;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel19.TabIndex = 7;
-            // 
-            // war0ComboBox
-            // 
-            this.war0ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war0ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war0ComboBox.FormattingEnabled = true;
-            this.war0ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war0ComboBox.Name = "war0ComboBox";
-            this.war0ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war0ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war0ComboBox, "Wave archive to be used for the bank.");
-            // 
-            // war0Box
-            // 
-            this.war0Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war0Box.Location = new System.Drawing.Point(256, 3);
-            this.war0Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war0Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war0Box.Name = "war0Box";
-            this.war0Box.Size = new System.Drawing.Size(39, 20);
-            this.war0Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war0Box, "Id of the wave archive to use for this bank.");
-            // 
-            // label35
-            // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.Location = new System.Drawing.Point(11, 3);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(301, 22);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "Wave Archive 0:";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tree
-            // 
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.ImageIndex = 0;
-            this.tree.ImageList = this.treeIcons;
-            this.tree.Indent = 12;
-            this.tree.Location = new System.Drawing.Point(0, 0);
-            this.tree.Name = "tree";
-            treeNode1.ImageIndex = 10;
-            treeNode1.Name = "fileInfo";
-            treeNode1.SelectedImageIndex = 10;
-            treeNode1.Text = "File Information";
-            this.tree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.tree.SelectedImageIndex = 0;
-            this.tree.ShowLines = false;
-            this.tree.Size = new System.Drawing.Size(651, 539);
-            this.tree.TabIndex = 0;
-            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
-            this.tree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseDoubleClick);
-            this.tree.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tree_NodeKey);
-            // 
-            // treeIcons
-            // 
-            this.treeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeIcons.ImageStream")));
-            this.treeIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.treeIcons.Images.SetKeyName(0, "blank.png");
-            this.treeIcons.Images.SetKeyName(1, "version.png");
-            this.treeIcons.Images.SetKeyName(2, "sseq.png");
-            this.treeIcons.Images.SetKeyName(3, "seqArc.png");
-            this.treeIcons.Images.SetKeyName(4, "bank.png");
-            this.treeIcons.Images.SetKeyName(5, "waveArchive.png");
-            this.treeIcons.Images.SetKeyName(6, "player.png");
-            this.treeIcons.Images.SetKeyName(7, "group.png");
-            this.treeIcons.Images.SetKeyName(8, "streamPlayer.png");
-            this.treeIcons.Images.SetKeyName(9, "strm.png");
-            this.treeIcons.Images.SetKeyName(10, "record.png");
-            this.treeIcons.Images.SetKeyName(11, "recordArc.png");
-            this.treeIcons.Images.SetKeyName(12, "lookup.png");
-            this.treeIcons.Images.SetKeyName(13, "recordRegion.png");
-            this.treeIcons.Images.SetKeyName(14, "wave.png");
-            this.treeIcons.Images.SetKeyName(15, "ranged.png");
-            this.treeIcons.Images.SetKeyName(16, "regional.png");
-            this.treeIcons.Images.SetKeyName(17, "psg.png");
-            this.treeIcons.Images.SetKeyName(18, "whiteNoise.png");
-            // 
-            // sequenceEditorPanel
-            // 
-            this.sequenceEditorPanel.Controls.Add(this.sequenceEditor);
-            this.sequenceEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceEditorPanel.Location = new System.Drawing.Point(0, 0);
-            this.sequenceEditorPanel.Name = "sequenceEditorPanel";
-            this.sequenceEditorPanel.Size = new System.Drawing.Size(651, 539);
-            this.sequenceEditorPanel.TabIndex = 3;
-            this.sequenceEditorPanel.Visible = false;
-            // 
-            // sequenceEditor
-            // 
-            this.sequenceEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceEditor.Location = new System.Drawing.Point(0, 0);
-            this.sequenceEditor.Name = "sequenceEditor";
-            this.sequenceEditor.Size = new System.Drawing.Size(651, 539);
-            this.sequenceEditor.TabIndex = 0;
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.RestoreDirectory = true;
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.status,
-            this.currentNote});
-            this.statusStrip.Location = new System.Drawing.Point(0, 565);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(984, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // status
-            // 
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(125, 17);
-            this.status.Text = "No Valid Info Selected!";
-            // 
-            // currentNote
-            // 
-            this.currentNote.Name = "currentNote";
-            this.currentNote.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.currentNote.Size = new System.Drawing.Size(0, 17);
-            // 
-            // rootMenu
-            // 
-            this.rootMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.expandToolStripMenuItem,
-            this.collapseToolStripMenuItem});
-            this.rootMenu.Name = "rootMenu";
-            this.rootMenu.Size = new System.Drawing.Size(120, 70);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.New;
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-            // 
-            // expandToolStripMenuItem
-            // 
-            this.expandToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.expandToolStripMenuItem.Name = "expandToolStripMenuItem";
-            this.expandToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.expandToolStripMenuItem.Text = "Expand";
-            this.expandToolStripMenuItem.Click += new System.EventHandler(this.expandToolStripMenuItem_Click);
-            // 
-            // collapseToolStripMenuItem
-            // 
-            this.collapseToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.collapseToolStripMenuItem.Name = "collapseToolStripMenuItem";
-            this.collapseToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.collapseToolStripMenuItem.Text = "Collapse";
-            this.collapseToolStripMenuItem.Click += new System.EventHandler(this.collapseToolStripMenuItem_Click);
-            // 
-            // nodeMenu
-            // 
-            this.nodeMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.nodeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addAboveToolStripMenuItem1,
-            this.addBelowToolStripMenuItem1,
-            this.moveUpToolStripMenuItem1,
-            this.moveDownToolStripMenuItem1,
-            this.replaceFileToolStripMenuItem,
-            this.exportToolStripMenuItem1,
-            this.deleteToolStripMenuItem1});
-            this.nodeMenu.Name = "contextMenuStrip1";
-            this.nodeMenu.Size = new System.Drawing.Size(139, 158);
-            // 
-            // addAboveToolStripMenuItem1
-            // 
-            this.addAboveToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.New;
-            this.addAboveToolStripMenuItem1.Name = "addAboveToolStripMenuItem1";
-            this.addAboveToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.addAboveToolStripMenuItem1.Text = "Add Above";
-            this.addAboveToolStripMenuItem1.Click += new System.EventHandler(this.addAboveToolStripMenuItem1_Click);
-            // 
-            // addBelowToolStripMenuItem1
-            // 
-            this.addBelowToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Open;
-            this.addBelowToolStripMenuItem1.Name = "addBelowToolStripMenuItem1";
-            this.addBelowToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.addBelowToolStripMenuItem1.Text = "Add Below";
-            this.addBelowToolStripMenuItem1.Click += new System.EventHandler(this.addBelowToolStripMenuItem1_Click);
-            // 
-            // moveUpToolStripMenuItem1
-            // 
-            this.moveUpToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.moveUpToolStripMenuItem1.Name = "moveUpToolStripMenuItem1";
-            this.moveUpToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.moveUpToolStripMenuItem1.Text = "Move Up";
-            this.moveUpToolStripMenuItem1.Click += new System.EventHandler(this.moveUpToolStripMenuItem1_Click);
-            // 
-            // moveDownToolStripMenuItem1
-            // 
-            this.moveDownToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.moveDownToolStripMenuItem1.Name = "moveDownToolStripMenuItem1";
-            this.moveDownToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.moveDownToolStripMenuItem1.Text = "Move Down";
-            this.moveDownToolStripMenuItem1.Click += new System.EventHandler(this.moveDownToolStripMenuItem1_Click);
-            // 
-            // replaceFileToolStripMenuItem
-            // 
-            this.replaceFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.replaceFileToolStripMenuItem.Name = "replaceFileToolStripMenuItem";
-            this.replaceFileToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.replaceFileToolStripMenuItem.Text = "Replace";
-            this.replaceFileToolStripMenuItem.Click += new System.EventHandler(this.replaceFileToolStripMenuItem_Click);
-            // 
-            // exportToolStripMenuItem1
-            // 
-            this.exportToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Export;
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
-            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
-            // 
-            // deleteToolStripMenuItem1
-            // 
-            this.deleteToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Close;
-            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.deleteToolStripMenuItem1.Text = "Delete";
-            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
-            // 
-            // sarEntryMenu
-            // 
-            this.sarEntryMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.sarEntryMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sarAddAbove,
-            this.sarAddBelow,
-            this.sarMoveUp,
-            this.sarMoveDown,
-            this.sarReplace,
-            this.sarExport,
-            this.sarRename,
-            this.sarDelete});
-            this.sarEntryMenu.Name = "contextMenuStrip1";
-            this.sarEntryMenu.Size = new System.Drawing.Size(139, 180);
-            // 
-            // sarAddAbove
-            // 
-            this.sarAddAbove.Image = global::NitroStudio2.Properties.Resources.New;
-            this.sarAddAbove.Name = "sarAddAbove";
-            this.sarAddAbove.Size = new System.Drawing.Size(138, 22);
-            this.sarAddAbove.Text = "Add Above";
-            this.sarAddAbove.Click += new System.EventHandler(this.SarAddAbove_Click);
-            // 
-            // sarAddBelow
-            // 
-            this.sarAddBelow.Image = global::NitroStudio2.Properties.Resources.Open;
-            this.sarAddBelow.Name = "sarAddBelow";
-            this.sarAddBelow.Size = new System.Drawing.Size(138, 22);
-            this.sarAddBelow.Text = "Add Below";
-            this.sarAddBelow.Click += new System.EventHandler(this.SarAddBelow_Click);
-            // 
-            // sarMoveUp
-            // 
-            this.sarMoveUp.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.sarMoveUp.Name = "sarMoveUp";
-            this.sarMoveUp.Size = new System.Drawing.Size(138, 22);
-            this.sarMoveUp.Text = "Move Up";
-            this.sarMoveUp.Click += new System.EventHandler(this.SarMoveUp_Click);
-            // 
-            // sarMoveDown
-            // 
-            this.sarMoveDown.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.sarMoveDown.Name = "sarMoveDown";
-            this.sarMoveDown.Size = new System.Drawing.Size(138, 22);
-            this.sarMoveDown.Text = "Move Down";
-            this.sarMoveDown.Click += new System.EventHandler(this.SarMoveDown_Click);
-            // 
-            // sarReplace
-            // 
-            this.sarReplace.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.sarReplace.Name = "sarReplace";
-            this.sarReplace.Size = new System.Drawing.Size(138, 22);
-            this.sarReplace.Text = "Replace";
-            this.sarReplace.Click += new System.EventHandler(this.SarReplace_Click);
-            // 
-            // sarExport
-            // 
-            this.sarExport.Image = global::NitroStudio2.Properties.Resources.Export;
-            this.sarExport.Name = "sarExport";
-            this.sarExport.Size = new System.Drawing.Size(138, 22);
-            this.sarExport.Text = "Export";
-            this.sarExport.Click += new System.EventHandler(this.SarExport_Click);
-            // 
-            // sarRename
-            // 
-            this.sarRename.Image = global::NitroStudio2.Properties.Resources.Rename;
-            this.sarRename.Name = "sarRename";
-            this.sarRename.Size = new System.Drawing.Size(138, 22);
-            this.sarRename.Text = "Rename";
-            this.sarRename.Click += new System.EventHandler(this.SarRename_Click);
-            // 
-            // sarDelete
-            // 
-            this.sarDelete.Image = global::NitroStudio2.Properties.Resources.Close;
-            this.sarDelete.Name = "sarDelete";
-            this.sarDelete.Size = new System.Drawing.Size(138, 22);
-            this.sarDelete.Text = "Delete";
-            this.sarDelete.Click += new System.EventHandler(this.SarDelete_Click);
             // 
             // EditorBase
             // 
