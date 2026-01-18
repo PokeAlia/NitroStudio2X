@@ -144,6 +144,7 @@
       <DependentUpon>BankGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\Configuration.cs" />
+    <Compile Include="Functions\Generators.cs" />
     <Compile Include="ImportFromSdatTool.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +167,12 @@
     </Compile>
     <Compile Include="SequenceRecorder.Designer.cs">
       <DependentUpon>SequenceRecorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="WaveMapper.cs">
       <SubType>Form</SubType>
@@ -233,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SequenceRecorder.resx">
       <DependentUpon>SequenceRecorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaveMapper.resx">
       <DependentUpon>WaveMapper.cs</DependentUpon>

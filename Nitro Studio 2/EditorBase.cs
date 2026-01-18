@@ -600,6 +600,8 @@ namespace NitroStudio2 {
         private ToolStripMenuItem sarRename;
         private ToolStripMenuItem sarDelete;
 
+        private ToolStripMenuItem settingsButton;
+
         public void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorBase));
@@ -983,6 +985,9 @@ namespace NitroStudio2 {
             this.pkeyASharp5 = new Multimedia.UI.PianoKey();
             this.pkeyB5 = new Multimedia.UI.PianoKey();
             this.pkeyC8 = new Multimedia.UI.PianoKey();
+
+            this.settingsButton = new ToolStripMenuItem();
+
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1116,6 +1121,8 @@ namespace NitroStudio2 {
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
             this.closeToolStripMenuItem,
+            new ToolStripSeparator(),
+            this.settingsButton,
             this.quitToolStripMenuItem});
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(37, 20);
@@ -1152,6 +1159,15 @@ namespace NitroStudio2 {
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            //
+            // settingsButton
+            //
+            this.settingsButton.Image = global::NitroStudio2.Properties.Resources.New;
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(114, 22);
+            this.settingsButton.Text = "Settings";
+            // this.closeToolStripMenuItem.Click += CloseToolStripMenuItem_Click;
+            this.settingsButton.Click += SettingsButton_Click;
             // 
             // closeToolStripMenuItem
             // 
@@ -6329,6 +6345,11 @@ namespace NitroStudio2 {
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            DialogResult r = new Settings(Functions.Global.c).ShowDialog();
         }
 
 

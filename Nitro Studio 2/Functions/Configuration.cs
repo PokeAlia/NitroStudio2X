@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NitroStudio2.Functions
 {
+    public static class Global
+    {
+        public static Configuration c = new Configuration();
+    }
     public class Configuration
     {
         string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NitroStudio2\\config.ini";
@@ -14,20 +16,22 @@ namespace NitroStudio2.Functions
 
         public void ReadConfig(StreamReader r)
         {
-            if (r.ReadLine() == "[NitroStudio2]") {
+            if (r.ReadLine() == "[NitroStudio2]")
+            {
                 r.Close();
                 foreach (string l in File.ReadAllLines(path))
                 {
                     if (l != "[NitroStudio2]")
                     {
-                        if(!l.StartsWith("#"))
+                        if (!l.StartsWith("#"))
                         {
                             string[] setting = l.Replace(" ", "").Replace("\t", "").Split('=');
                             Settings.Add(setting.First(), setting.Last().Split('#').First());
                         }
                     }
                 }
-            } else
+            }
+            else
             {
                 r.Close();
                 GenerateConfig();
@@ -51,7 +55,7 @@ namespace NitroStudio2.Functions
             using (StreamWriter w = new StreamWriter(path))
             {
                 w.WriteLine("[NitroStudio2]");
-                foreach(var s in Settings.Keys)
+                foreach (var s in Settings.Keys)
                 {
                     w.WriteLine(s + " = " + Settings[s]);
                 }

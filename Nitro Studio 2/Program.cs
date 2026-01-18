@@ -27,6 +27,8 @@ namespace NitroStudio2 {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Functions.Global.c = new Functions.Configuration();
+
             //Argument mode.
             if (args.Length > 0) {
 

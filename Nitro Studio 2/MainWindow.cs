@@ -121,11 +121,14 @@ namespace NitroStudio2 {
             seqPlayerBox.ValueChanged += new EventHandler(SequencePlayerBoxChanged);
             seqPlayerComboBox.SelectedIndexChanged += new EventHandler(SequencePlayerComboBoxChanged);
 
+            seqBankComboBox.Click += SeqBankComboBox_Click;
+            seqPlayerComboBox.Click += SeqPlayerComboBox_Click;
+
             //Sequence archive stuff.
             seqArcOpenFileButton.Click += new EventHandler(OpenSeqArcFile);
 
             //Bank stuff.
-            bnkWar0Box.ValueChanged += new EventHandler(BnkWar0BoxChanged);
+            bnkWar0Box.ValueChanged += new EventHandler(BnkWar0BoxChanged);                     // Handlers for Changes
             bnkWar1Box.ValueChanged += new EventHandler(BnkWar1BoxChanged);
             bnkWar2Box.ValueChanged += new EventHandler(BnkWar2BoxChanged);
             bnkWar3Box.ValueChanged += new EventHandler(BnkWar3BoxChanged);
@@ -133,6 +136,11 @@ namespace NitroStudio2 {
             bnkWar1ComboBox.SelectedValueChanged += new EventHandler(BnkWar1ComboBoxChanged);
             bnkWar2ComboBox.SelectedValueChanged += new EventHandler(BnkWar2ComboBoxChanged);
             bnkWar3ComboBox.SelectedValueChanged += new EventHandler(BnkWar3ComboBoxChanged);
+            bnkWar0ComboBox.Click += BnkWar0ComboBox_MouseClick;
+            bnkWar1ComboBox.Click += BnkWar1ComboBox_MouseClick;
+            bnkWar2ComboBox.Click += BnkWar2ComboBox_MouseClick;
+            bnkWar3ComboBox.Click += BnkWar3ComboBox_MouseClick;
+
 
             //Wave archive stuff.
             loadIndividuallyBox.CheckedChanged += new EventHandler(WarLoadIndividualChanged);
@@ -173,6 +181,8 @@ namespace NitroStudio2 {
             stmPlayerComboBox.SelectedIndexChanged += new EventHandler(StreamPlayerComboBoxChanged);
             stmMonoToStereoBox.CheckedChanged += new EventHandler(StreamMonoToStereoChanged);
 
+            stmPlayerComboBox.Click += StmPlayerComboBox_Click;
+
             //Player.
             Player = new Player(Mixer);
             kermalisPlayButton.Click += new EventHandler(PlayClick);
@@ -189,6 +199,70 @@ namespace NitroStudio2 {
             Timer.Interval = 1000 / 30;
             Timer.Start();
 
+        }
+
+        private void StmPlayerComboBox_Click(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["streamPlayers"].Nodes["entry" + stmPlayerBox.Value];
+                DoInfoStuff();
+            }
+            throw new NotImplementedException();
+        }
+
+        private void SeqPlayerComboBox_Click(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["players"].Nodes["entry" + seqPlayerBox.Value];
+                DoInfoStuff();
+            }
+        }
+
+        private void SeqBankComboBox_Click(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["banks"].Nodes["entry" + seqBankBox.Value];
+                DoInfoStuff();
+            }
+        }
+
+        private void BnkWar3ComboBox_MouseClick(object sender, EventArgs e)
+        {
+            if(Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["waveArchives"].Nodes["entry" + bnkWar3Box.Value];
+                DoInfoStuff();
+            }
+        }
+
+        private void BnkWar2ComboBox_MouseClick(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["waveArchives"].Nodes["entry" + bnkWar2Box.Value];
+                DoInfoStuff();
+            }
+        }
+
+        private void BnkWar1ComboBox_MouseClick(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["waveArchives"].Nodes["entry" + bnkWar1Box.Value];
+                DoInfoStuff();
+            }
+        }
+
+        private void BnkWar0ComboBox_MouseClick(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                tree.SelectedNode = tree.Nodes["waveArchives"].Nodes["entry" + bnkWar0Box.Value];
+                DoInfoStuff();
+            }
         }
 
         private void SdblExportBtn_Click(object sender, EventArgs e)
@@ -382,7 +456,19 @@ namespace NitroStudio2 {
         /// </summary>
         public override void DoInfoStuff() {
 
-            //The base.
+            if (SA != null)
+            {
+                if (Functions.Global.c.Settings["writeNames"].ToLower() == "true")
+                {
+                    SA.SaveSymbols = true;
+                }
+                else
+                {
+                    SA.SaveSymbols = false;
+                }
+            }
+
+                //The base.
             base.DoInfoStuff();
             WritingInfo = true;
 
@@ -2121,16 +2207,16 @@ namespace NitroStudio2 {
 
                     //MIDI.
                     case ".mid":
-                        switch (seqImportModeBox.SelectedIndex) {
+                        switch (Functions.Global.c.Settings["importTool"]) {
 
                             //Nitro Studio.
-                            case 0:
+                            case "NitroStudio":
                                 SA.Sequences.Where(x => x.Index == ind).FirstOrDefault().File = new Sequence();
                                 SA.Sequences.Where(x => x.Index == ind).FirstOrDefault().File.FromMIDI(o.FileName);
                                 break;
 
                             //LoveEmu.
-                            case 1:
+                            case "Midi2Sseq":
                                 if (!System.IO.File.Exists(NitroPath + "/midi2sseq.exe")) {
                                     MessageBox.Show("Cannot find midi2sseq.exe!");
                                     return;
@@ -2148,7 +2234,7 @@ namespace NitroStudio2 {
                                 break;
 
                             //Nintendo tools.
-                            case 2:
+                            case "NintendoTools":
                                 if (!System.IO.File.Exists(NitroPath + "/smfconv.exe")) {
                                     MessageBox.Show("Cannot find smfconv.exe!");
                                     return;
@@ -2341,15 +2427,15 @@ namespace NitroStudio2 {
                     //MIDI.
                     case ".mid":
                         if (tree.SelectedNode.Parent.Parent == null) {
-                            switch (seqExportModeBox.SelectedIndex) {
+                            switch (Functions.Global.c.Settings["exportTool"]) {
 
                                 //Nitro Studio.
-                                case 0:
+                                case "NitroStudio":
                                     SA.Sequences.Where(x => x.Index == ind).FirstOrDefault().File.SaveMIDI(s.FileName);
                                     break;
 
                                 //LoveEmu.
-                                case 1:
+                                case "Sseq2Midi":
                                     if (!System.IO.File.Exists(NitroPath + "/sseq2midi.exe")) {
                                         MessageBox.Show("Cannot find sseq2midi.exe!");
                                         return;
