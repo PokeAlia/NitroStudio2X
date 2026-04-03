@@ -4,6 +4,7 @@ using GotaSoundBank.SF2;
 using GotaSoundIO.IO;
 using Multimedia.UI;
 using NitroFileLoader;
+using NitroStudio2.Functions;
 using ScintillaNET;
 using System;
 using System.Collections.Generic;
@@ -78,6 +79,8 @@ namespace NitroStudio2 {
         /// Writing info.
         /// </summary>
         public bool WritingInfo;
+
+        public Configuration c = new Configuration();
 
         /// <summary>
         /// The current note that is down.
@@ -613,6 +616,7 @@ namespace NitroStudio2 {
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blankFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -631,6 +635,8 @@ namespace NitroStudio2 {
             this.dLSToSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchExportMIDIDLSSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importFromExternalSDATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportInfoTB = new System.Windows.Forms.ToolStripMenuItem();
+            this.sdblExportBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -898,8 +904,6 @@ namespace NitroStudio2 {
             this.sarExport = new System.Windows.Forms.ToolStripMenuItem();
             this.sarRename = new System.Windows.Forms.ToolStripMenuItem();
             this.sarDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportInfoTB = new System.Windows.Forms.ToolStripMenuItem();
-            this.sdblExportBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.pkeyC7 = new Multimedia.UI.PianoKey();
             this.pkeyE7 = new Multimedia.UI.PianoKey();
             this.pkeyCSharp7 = new Multimedia.UI.PianoKey();
@@ -985,9 +989,6 @@ namespace NitroStudio2 {
             this.pkeyASharp5 = new Multimedia.UI.PianoKey();
             this.pkeyB5 = new Multimedia.UI.PianoKey();
             this.pkeyC8 = new Multimedia.UI.PianoKey();
-
-            this.settingsButton = new ToolStripMenuItem();
-
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1121,7 +1122,6 @@ namespace NitroStudio2 {
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
             this.closeToolStripMenuItem,
-            new ToolStripSeparator(),
             this.settingsButton,
             this.quitToolStripMenuItem});
             this.fileMenu.Name = "fileMenu";
@@ -1132,7 +1132,7 @@ namespace NitroStudio2 {
             // 
             this.newToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.New;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -1140,7 +1140,7 @@ namespace NitroStudio2 {
             // 
             this.openToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -1148,7 +1148,7 @@ namespace NitroStudio2 {
             // 
             this.saveToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -1156,32 +1156,31 @@ namespace NitroStudio2 {
             // 
             this.saveAsToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            //
-            // settingsButton
-            //
-            this.settingsButton.Image = global::NitroStudio2.Properties.Resources.New;
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(114, 22);
-            this.settingsButton.Text = "Settings";
-            // this.closeToolStripMenuItem.Click += CloseToolStripMenuItem_Click;
-            this.settingsButton.Click += SettingsButton_Click;
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Close;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Image = global::NitroStudio2.Properties.Resources.New;
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(180, 22);
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click_1);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Quit;
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -1333,6 +1332,21 @@ namespace NitroStudio2 {
             this.importFromExternalSDATToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
             this.importFromExternalSDATToolStripMenuItem.Visible = false;
+            // 
+            // exportInfoTB
+            // 
+            this.exportInfoTB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sdblExportBtn});
+            this.exportInfoTB.Name = "exportInfoTB";
+            this.exportInfoTB.Size = new System.Drawing.Size(216, 22);
+            this.exportInfoTB.Text = "Export Information...";
+            this.exportInfoTB.Visible = false;
+            // 
+            // sdblExportBtn
+            // 
+            this.sdblExportBtn.Name = "sdblExportBtn";
+            this.sdblExportBtn.Size = new System.Drawing.Size(122, 22);
+            this.sdblExportBtn.Text = "SBDL File";
             // 
             // helpToolStripMenuItem
             // 
@@ -5140,21 +5154,6 @@ namespace NitroStudio2 {
             this.sarDelete.Text = "Delete";
             this.sarDelete.Click += new System.EventHandler(this.SarDelete_Click);
             // 
-            // exportInfoTB
-            // 
-            this.exportInfoTB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sdblExportBtn});
-            this.exportInfoTB.Name = "exportInfoTB";
-            this.exportInfoTB.Size = new System.Drawing.Size(216, 22);
-            this.exportInfoTB.Text = "Export Information...";
-            this.exportInfoTB.Visible = false;
-            // 
-            // sdblExportBtn
-            // 
-            this.sdblExportBtn.Name = "sdblExportBtn";
-            this.sdblExportBtn.Size = new System.Drawing.Size(180, 22);
-            this.sdblExportBtn.Text = "SBDL File";
-            // 
             // pkeyC7
             // 
             this.pkeyC7.KeyOffColor = System.Drawing.Color.White;
@@ -8388,6 +8387,11 @@ namespace NitroStudio2 {
                     new SoundFont(h).Write(s.FileName);
                 }
             }
+        }
+
+        private void settingsButton_Click_1(object sender, EventArgs e)
+        {
+            new Settings(c).ShowDialog();
         }
     }
 

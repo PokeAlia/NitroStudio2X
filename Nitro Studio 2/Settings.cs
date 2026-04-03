@@ -1,12 +1,8 @@
-﻿using NitroStudio2.Functions;
+﻿using NAudio.CoreAudioApi;
+using NAudio.Midi;
+using NAudio.Wave;
+using NitroStudio2.Functions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NitroStudio2
@@ -49,6 +45,10 @@ namespace NitroStudio2
             Functions.Global.c.Settings["importTool"] = comboImport.Text.Replace(" ", "");
             Functions.Global.c.Settings["exportTool"] = comboExport.Text.Replace(" ", "");
             Functions.Global.c.Settings["writeNames"] = writeNames.Checked.ToString();
+
+            Functions.Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
+            Functions.Global.c.Settings["outputWaveDevice"] = cbWaveOutput.SelectedIndex.ToString();
+
             Functions.Global.c.WriteConfig();
             btnApply.Enabled = false;
         }
@@ -60,8 +60,20 @@ namespace NitroStudio2
 
         private void Settings_Load(object sender, EventArgs e)
         {
-           writeNames.Checked = bool.Parse(config.Settings["writeNames"]);
-            switch(config.Settings["importTool"])
+            MMDeviceEnumerator MMdevEnum = new MMDeviceEnumerator();
+            foreach (MMDevice device in MMdevEnum.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.All))
+            {
+                cbWaveOutput.Items.Add(device.FriendlyName + " (" + device.State + ")");
+            }
+
+            for (int i = 0; i < MidiIn.NumberOfDevices; i++)
+            {
+                MidiInCapabilities deviceInfo = MidiIn.DeviceInfo(i);
+                cbMidiInput.Items.Add(deviceInfo.ProductName);
+            }
+
+            writeNames.Checked = bool.Parse(config.Settings["writeNames"]);
+            switch (config.Settings["importTool"])
             {
                 case "NitroStudio":
                     comboImport.SelectedText = "Nitro Studio";
@@ -76,6 +88,9 @@ namespace NitroStudio2
                     comboImport.Text = "Nintendo Tools";
                     break;
             }
+
+            cbWaveOutput.SelectedIndex = int.Parse(config.Settings["outputWaveDevice"]);
+            cbMidiInput.SelectedIndex = int.Parse(config.Settings["inputMidiDevice"]);
 
             switch (config.Settings["exportTool"])
             {

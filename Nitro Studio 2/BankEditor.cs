@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,7 +11,9 @@ using GotaSequenceLib;
 using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
 using Kermalis.SoundFont2;
+using NAudio.Midi;
 using NitroFileLoader;
+using NitroStudio2.Functions;
 
 namespace NitroStudio2 {
 
@@ -54,6 +57,12 @@ namespace NitroStudio2 {
         public BankEditor(string fileToOpen) : base(typeof(Bank), "Bank", "bnk", "Bank Editor", fileToOpen, null) {
             Init();
         }
+
+
+        /// <summary>
+        /// InputDevice
+        /// </summary>
+        NAudio.Midi.MidiIn midiIn = new NAudio.Midi.MidiIn(0);
 
         /// <summary>
         /// Create a new bank editor.
@@ -118,7 +127,28 @@ namespace NitroStudio2 {
                     LoadWaveArchives();
                 }
             }
+            // midiIn.MessageReceived += MidiIn_MessageReceived;
+            // midiIn.Start();
+
+            Debug.WriteLine(MidiIn.DeviceInfo(1).ProductName);
+
             UpdateNodes();
+        }
+
+        int midiNote = -1;
+        int midiVel = 0;
+
+        private void MidiIn_MessageReceived(object sender, NAudio.Midi.MidiInMessageEventArgs e)
+        {
+            switch(e.MidiEvent.CommandCode)
+            {
+                case MidiCommandCode.NoteOn:
+                    NoteOnEvent noteOn = e.MidiEvent as NoteOnEvent;
+                    midiNote = noteOn.NoteNumber;
+                    midiVel = noteOn.Velocity;
+                    OnPianoPress();
+                    break;
+            }
         }
 
         /// <summary>
@@ -331,11 +361,18 @@ namespace NitroStudio2 {
         /// On the piano press.
         /// </summary>
         public override void OnPianoPress() {
+            byte Velocity = 127;
+            if(midiNote == 0)
+            {
+                NoteDown = (Notes)midiNote;
+                Velocity = (byte)midiVel;
+                midiNote = -1;
+            }
             if (tree.SelectedNode.Parent == null) { return; }
             currentNote.Text = "Playing Note " + NoteDown.ToString() + " (" + (int)(NoteDown) + ").";
             Player.Stop();
             Player.Banks[0] = BK;
-            Player.LoadSong(new List<GotaSequenceLib.SequenceCommand>() { new GotaSequenceLib.SequenceCommand() { CommandType = GotaSequenceLib.SequenceCommands.ProgramChange, Parameter = (uint)MainWindow.GetIdFromNode(tree.SelectedNode) }, new GotaSequenceLib.SequenceCommand() { CommandType = GotaSequenceLib.SequenceCommands.Note, Parameter = new GotaSequenceLib.NoteParameter() { Note = NoteDown, Length = 0xFFF, Velocity = 127 } }, new SequenceCommand() { CommandType = SequenceCommands.Fin } });
+            Player.LoadSong(new List<GotaSequenceLib.SequenceCommand>() { new GotaSequenceLib.SequenceCommand() { CommandType = GotaSequenceLib.SequenceCommands.ProgramChange, Parameter = (uint)MainWindow.GetIdFromNode(tree.SelectedNode) }, new GotaSequenceLib.SequenceCommand() { CommandType = GotaSequenceLib.SequenceCommands.Note, Parameter = new GotaSequenceLib.NoteParameter() { Note = NoteDown, Length = 0xFFF, Velocity = Velocity } }, new SequenceCommand() { CommandType = SequenceCommands.Fin } });
             Player.Play();
         }
 

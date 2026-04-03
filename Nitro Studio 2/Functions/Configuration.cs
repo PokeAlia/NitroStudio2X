@@ -43,6 +43,8 @@ namespace NitroStudio2.Functions
             Settings.Add("writeNames", "true");         // Write Names
             Settings.Add("importTool", "NitroStudio");  // Import Mode
             Settings.Add("exportTool", "NitroStudio");  // Export Mode
+            Settings.Add("inputMidiDevice", "0");       // Input Wave Device
+            Settings.Add("outputWaveDevice", "0");      // Output Wave Device
             WriteConfig();
         }
 

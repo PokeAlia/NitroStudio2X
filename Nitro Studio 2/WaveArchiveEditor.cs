@@ -1,6 +1,7 @@
 ﻿using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
 using NitroFileLoader;
+using NitroStudio2.Functions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -68,7 +69,7 @@ namespace NitroStudio2 {
         /// Initialize the editor.
         /// </summary>
         public void Init() {
-            Player = new GotaSoundIO.Sound.Playback.StreamPlayer();
+            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(int.Parse(Global.c.Settings["outputWaveDevice"]));
             Icon = Properties.Resources.War;
             tree.Nodes.RemoveAt(0);
             tree.Nodes.Add("root", "Wave Archive", 5, 5);

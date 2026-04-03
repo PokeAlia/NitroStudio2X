@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using GotaSoundBank.DLS;
 using GotaSoundBank.SF2;
 using NitroStudio2.Functions;
+using Instrument = NitroFileLoader.Instrument;
 
 namespace NitroStudio2 {
 
@@ -199,6 +200,118 @@ namespace NitroStudio2 {
             Timer.Interval = 1000 / 30;
             Timer.Start();
 
+        }
+
+        public int findBasic()
+        {
+            int i = 0;
+            foreach(BankInfo b in SA.Banks)
+            {
+                if (b.Name == "BANK_GLOBAL")
+                {
+                    return i;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return -1;
+        }
+
+        public int findWaveBasic()
+        {
+            int i = 0;
+            foreach (WaveArchiveInfo b in SA.WaveArchives)
+            {
+                if (b.Name == "WAVE_GLOBAL")
+                {
+                    return i;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return -1;
+        }
+
+        private void REPLACEINSTRUMENTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int basic = findBasic();
+            int wave_basic = findWaveBasic();
+            for(int i = 0; i < SA.Banks.Count; i++)
+            {
+                if(!SA.Banks[i].Name.StartsWith("BANK_PV"))
+                {
+                    SA.Banks[i].WaveArchives[0] = SA.WaveArchives[wave_basic];
+                    Debug.WriteLine(SA.Banks[i].Index + " | " + SA.Banks[i].Name);
+                    List<NitroFileLoader.Instrument> instruments = new List<Instrument>();
+                    int x = 0;
+                    foreach (var ins in SA.Banks[basic].File.Instruments)
+                    {
+                        if (ins.NoteInfo.First().InstrumentType != NitroFileLoader.InstrumentType.Blank)
+                        {
+                            instruments.Add(ins);
+                        }
+                        x++;
+                    }
+                    if (SA.Banks[i].Name != "BANK_GLOBAL")
+                    {
+                        Console.WriteLine("\tMax: " + SA.Banks[i].File.Instruments.Last().Index);
+                        foreach (var ins in SA.Banks[i].File.Instruments)
+                        {
+                            Console.Write(ins.Index + " | ");
+                            Console.WriteLine(ins.Index + " -> " + TmpConv.ReplacementInst[ins.Index]);
+                            ins.Index = TmpConv.ReplacementInst[ins.Index];
+                            bool canAdd = true;
+                            foreach(var inst in instruments)
+                            {
+                                if(inst.Index == ins.Index)
+                                {
+                                    canAdd = false;
+                                }
+                            }
+                            if(canAdd)
+                            {
+                                instruments.Add(ins);
+                            }
+                        }
+                    }
+                    SA.Banks[i].File.Instruments.Clear();
+                    foreach (var ins in instruments)
+                    {
+                        SA.Banks[i].File.Instruments.Add(ins);
+                    }
+                }
+            }
+
+            for(int i = 0; i < SA.Sequences.Count; i++)
+            {
+                if (!SA.Sequences[i].Name.StartsWith("SEQ_PV"))
+                {
+                    if (SA.Sequences[i].Bank.Name == "BANK_GAMEBOY")
+                    {
+                        continue;
+                    }
+                    SA.Sequences[i].File.ReadCommandData();
+                    SA.Sequences[i].File.Name = SA.Sequences[i].Name;
+                    string[] smft = SA.Sequences[i].File.ToText();
+                    Debug.WriteLine(SA.Sequences[i].Index + " | " + SA.Sequences[i].Name);
+                    for (int l = 0; l < smft.Length; l++)
+                    {
+                        if (smft[l].Replace(" ", "").Replace("\t", "").StartsWith("prg"))
+                        {
+                            string[] split = smft[l].Split(' ');
+                            Debug.WriteLine("\t" + split.Last() + " -> " + TmpConv.ReplacementInst[int.Parse(split.Last())]);
+                            smft[l] = split.First() + " " + TmpConv.ReplacementInst[int.Parse(split.Last())];
+                        }
+                    }
+                    SA.Sequences[i].File = new Sequence();
+                    SA.Sequences[i].File.FromText(smft.ToList());
+                    SA.Sequences[i].File.WriteCommandData();
+                }
+            }
         }
 
         private void StmPlayerComboBox_Click(object sender, EventArgs e)
@@ -395,7 +508,7 @@ namespace NitroStudio2 {
             if (FileOpen && File != null) {
 
                 //Root menus.
-                for (int i = 1; i < 8; i++) {
+                for (int i = 0; i < 8; i++) {
                     tree.Nodes[i].ContextMenuStrip = rootMenu;
                 }
 

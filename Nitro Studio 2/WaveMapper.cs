@@ -1,5 +1,6 @@
 ﻿using GotaSoundIO.Sound;
 using NitroFileLoader;
+using NitroStudio2.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace NitroStudio2 {
         /// <summary>
         /// Player.
         /// </summary>
-        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer();
+        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(int.Parse(Global.c.Settings["outputWaveDevice"]));
 
         /// <summary>
         /// Bank importer.
