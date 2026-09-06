@@ -1,10 +1,11 @@
+using ScintillaNET;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using ScintillaNET;
 
 namespace NitroStudio2.FindReplaceDialog
 {
@@ -49,6 +50,7 @@ namespace NitroStudio2.FindReplaceDialog
         /// selection to prevent obscuring it.
         /// </summary>
         /// <returns>true to automatically move away from the current selection; otherwise, false.</returns>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool AutoPosition
         {
             get
@@ -61,6 +63,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> MruFind
         {
             get
@@ -74,12 +77,14 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int MruMaxCount
         {
             get { return _mruMaxCount; }
             set { _mruMaxCount = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> MruReplace
         {
             get
@@ -93,6 +98,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get
@@ -105,6 +111,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FindReplace.FindReplace FindReplace { get; set; }
 
         #endregion Properties

@@ -696,6 +696,7 @@ namespace NitroStudio2
         /// <value>
         /// One of the Orientation values.
         /// </value>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PianoKeyOrientation Orientation
         {
             get
@@ -757,6 +758,7 @@ namespace NitroStudio2
         /// shape, you may need to adjust its alignment to get the exact shape
         /// you are looking for.  
         /// </remarks>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PianoKeyShape Shape
         {
             get
@@ -779,6 +781,7 @@ namespace NitroStudio2
         /// A Color that represents the color used to paint the piano key when
         /// it is in the on state. The default is Color.Blue.
         /// </value>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Color KeyOnColor
         {
             get
@@ -803,6 +806,7 @@ namespace NitroStudio2
         /// A Color that represents the color used to paint the piano key when
         /// it is in the off state. The default is Color.White.
         /// </value>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Color KeyOffColor
         {
             get

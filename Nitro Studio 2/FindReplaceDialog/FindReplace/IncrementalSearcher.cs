@@ -43,6 +43,7 @@ namespace NitroStudio2.FindReplaceDialog
         /// </summary>
         /// <returns>true to automatically move away from the current selection; otherwise, false.
         /// If ToolItem is enabled, this defaults to false.</returns>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool AutoPosition
         {
             get
@@ -59,6 +60,8 @@ namespace NitroStudio2.FindReplaceDialog
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FindReplace.FindReplace FindReplace
         {
             get
@@ -80,6 +83,7 @@ namespace NitroStudio2.FindReplaceDialog
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get
@@ -92,6 +96,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ToolItem
         {
             get { return _toolItem; }

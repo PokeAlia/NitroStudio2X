@@ -62,6 +62,7 @@ namespace NitroStudio2.FindReplaceDialog.FindReplace
 
         #region Properties
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get
@@ -138,6 +139,7 @@ namespace NitroStudio2.FindReplaceDialog.FindReplace
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Indicator Indicator
         {
             get
@@ -150,6 +152,7 @@ namespace NitroStudio2.FindReplaceDialog.FindReplace
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Marker Marker
         {
             get
@@ -177,18 +180,21 @@ namespace NitroStudio2.FindReplaceDialog.FindReplace
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool _lastReplaceHighlight
         {
             get; set;
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int _lastReplaceLastLine
         {
             get; set;
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool _lastReplaceMark
         {
             get; set;

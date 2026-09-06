@@ -2,6 +2,7 @@
 
 using ScintillaNET;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 #endregion Using Directives
@@ -13,6 +14,7 @@ namespace NitroStudio2.FindReplaceDialog.FindReplace
     {
         #region Properties
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get { return Searcher.Scintilla; }

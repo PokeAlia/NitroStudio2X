@@ -2,7 +2,7 @@
 using GotaSoundBank.DLS;
 using GotaSoundBank.SF2;
 using GotaSoundIO.IO;
-using Multimedia.UI;
+// using Multimedia.UI;
 using NitroFileLoader;
 using NitroStudio2.Functions;
 using ScintillaNET;

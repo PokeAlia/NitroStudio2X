@@ -43,6 +43,7 @@ namespace NitroStudio2.FindReplaceDialog.FindAllResults
         /// Gets or sets the Scintilla control that was searched to generate the find results.
         /// Allows the FindAllResults list to be double clicked and results indicated in the original Scintilla.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get { return _scintilla; }

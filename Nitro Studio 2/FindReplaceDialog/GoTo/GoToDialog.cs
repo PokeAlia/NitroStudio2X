@@ -2,6 +2,7 @@
 
 using ScintillaNET;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -100,6 +101,7 @@ namespace NitroStudio2.FindReplaceDialog
 
         #region Properties
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int CurrentLineNumber
         {
             get { return _currentLineNumber; }
@@ -109,6 +111,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int GotoLineNumber
         {
             get { return _gotoLineNumber; }
@@ -118,6 +121,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int MaximumLineNumber
         {
             get { return _maximumLineNumber; }
@@ -127,6 +131,7 @@ namespace NitroStudio2.FindReplaceDialog
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Scintilla Scintilla
         {
             get { return _scintilla; }
