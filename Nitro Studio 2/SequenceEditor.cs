@@ -23,7 +23,7 @@ namespace NitroStudio2 {
     public class SequenceEditor : EditorBase {
 
         public Player Player;
-        public Mixer Mixer = new Mixer();
+        public Mixer Mixer;
         private const int BACK_COLOR = 0x2F2F2F;
         private const int FORE_COLOR = 0xB7B7B7;
         public Sequence SEQ => File as Sequence;
@@ -32,6 +32,7 @@ namespace NitroStudio2 {
         private FindReplace MyFindReplace;
         public bool PositionBarFree = true;
         public Timer Timer = new Timer();
+        private Functions.Configuration Config;
 
         /// <summary>
         /// Create a new sequence editor.
@@ -39,6 +40,8 @@ namespace NitroStudio2 {
         /// <param name="mainWindow">The main window.</param>
         public SequenceEditor(MainWindow mainWindow) : base(typeof(Sequence), "Sequence", "seq", "Sequence Editor", mainWindow) {
             Init();
+            Config = new Functions.Configuration();
+            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             LoadSequenceText();
         }
 

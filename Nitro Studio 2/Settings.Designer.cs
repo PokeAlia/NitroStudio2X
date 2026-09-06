@@ -39,10 +39,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.saSettings = new System.Windows.Forms.TabPage();
             this.sdSettings = new System.Windows.Forms.TabPage();
-            this.cbMidiInput = new System.Windows.Forms.ComboBox();
-            this.lblInput = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbWaveOutput = new System.Windows.Forms.ComboBox();
+            this.lblInput = new System.Windows.Forms.Label();
+            this.cbMidiInput = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.saSettings.SuspendLayout();
             this.sdSettings.SuspendLayout();
@@ -123,6 +123,7 @@
             this.comboImport.Name = "comboImport";
             this.comboImport.Size = new System.Drawing.Size(202, 21);
             this.comboImport.TabIndex = 7;
+            this.comboImport.SelectedIndexChanged += new System.EventHandler(this.comboImport_SelectedIndexChanged);
             this.comboImport.SelectionChangeCommitted += new System.EventHandler(this.comboImport_SelectionChangeCommitted);
             // 
             // comboExport
@@ -136,6 +137,7 @@
             this.comboExport.Name = "comboExport";
             this.comboExport.Size = new System.Drawing.Size(202, 21);
             this.comboExport.TabIndex = 8;
+            this.comboExport.SelectedIndexChanged += new System.EventHandler(this.comboExport_SelectedIndexChanged);
             this.comboExport.SelectionChangeCommitted += new System.EventHandler(this.comboExport_SelectionChangeCommitted);
             // 
             // tabControl1
@@ -178,24 +180,6 @@
             this.sdSettings.Text = "Sound Device";
             this.sdSettings.UseVisualStyleBackColor = true;
             // 
-            // cbMidiInput
-            // 
-            this.cbMidiInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMidiInput.FormattingEnabled = true;
-            this.cbMidiInput.Location = new System.Drawing.Point(83, 3);
-            this.cbMidiInput.Name = "cbMidiInput";
-            this.cbMidiInput.Size = new System.Drawing.Size(285, 21);
-            this.cbMidiInput.TabIndex = 0;
-            // 
-            // lblInput
-            // 
-            this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(6, 6);
-            this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(57, 13);
-            this.lblInput.TabIndex = 1;
-            this.lblInput.Text = "MIDI Input";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -213,6 +197,26 @@
             this.cbWaveOutput.Name = "cbWaveOutput";
             this.cbWaveOutput.Size = new System.Drawing.Size(285, 21);
             this.cbWaveOutput.TabIndex = 2;
+            this.cbWaveOutput.SelectedIndexChanged += new System.EventHandler(this.cbWaveOutput_SelectedIndexChanged);
+            // 
+            // lblInput
+            // 
+            this.lblInput.AutoSize = true;
+            this.lblInput.Location = new System.Drawing.Point(6, 6);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(57, 13);
+            this.lblInput.TabIndex = 1;
+            this.lblInput.Text = "MIDI Input";
+            // 
+            // cbMidiInput
+            // 
+            this.cbMidiInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMidiInput.FormattingEnabled = true;
+            this.cbMidiInput.Location = new System.Drawing.Point(83, 3);
+            this.cbMidiInput.Name = "cbMidiInput";
+            this.cbMidiInput.Size = new System.Drawing.Size(285, 21);
+            this.cbMidiInput.TabIndex = 0;
+            this.cbMidiInput.SelectedIndexChanged += new System.EventHandler(this.cbMidiInput_SelectedIndexChanged);
             // 
             // Settings
             // 
@@ -247,12 +251,12 @@
         private System.Windows.Forms.CheckBox writeNames;
         private System.Windows.Forms.ComboBox comboImport;
         private System.Windows.Forms.ComboBox comboExport;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage saSettings;
-        private System.Windows.Forms.TabPage sdSettings;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbWaveOutput;
         private System.Windows.Forms.Label lblInput;
         private System.Windows.Forms.ComboBox cbMidiInput;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage sdSettings;
     }
 }

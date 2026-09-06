@@ -41,13 +41,16 @@ namespace NitroStudio2 {
         /// <summary>
         /// Mixer.
         /// </summary>
-        public Mixer Mixer = new Mixer();
+        public Mixer Mixer;
+        private Functions.Configuration Config;
 
         /// <summary>
         /// New bank generator.
         /// </summary>
         public BankGenerator(MainWindow m) {
             InitializeComponent();
+            Config = new Functions.Configuration();
+            Mixer = new GotaSequenceLib.Playback.Mixer(Config.Settings["outputWaveDevice"]);
             MainWindow = m;
             if (SA.Banks.Where(x => x.File.Instruments.Count > 0).Count() < 1) {
                 MessageBox.Show("There must be at least one bank that has an instrument.");

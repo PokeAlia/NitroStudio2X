@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace NitroStudio2 {
         /// <summary>
         /// Mixer.
         /// </summary>
-        public Mixer Mixer = new Mixer();
+        public Mixer Mixer;
 
         /// <summary>
         /// Player.
@@ -38,6 +39,7 @@ namespace NitroStudio2 {
         /// File path.
         /// </summary>
         private string filePath;
+        private Functions.Configuration Config;
 
         /// <summary>
         /// Create a new sequence recorder.
@@ -50,7 +52,8 @@ namespace NitroStudio2 {
 
             //Init.
             InitializeComponent();
-
+            Config = new Functions.Configuration();
+            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             //Load stuff.
             Player = new Player(Mixer);
             Player.PrepareForSong(banks, wars);
@@ -60,19 +63,40 @@ namespace NitroStudio2 {
 
         }
 
+        void SaveFile()
+        {
+            Player.Record(filePath);
+        }
+
         /// <summary>
         /// Record the sequence.
         /// </summary>
         private void exportButton_Click(object sender, EventArgs e) {
-
-            //Save.
+            exportButton.Visible = false;
+            progressBar1.Visible = true;
+            tableLayoutPanel1.Visible = false;
+            lbUpdate.Visible = true;
             Player.LoadSong(commands, seqStart);
             Player.NumLoops = (long)loopsBox.Value;
             Player.DontFadeSong = !fadeBox.Checked;
-            Player.Record(filePath);
+            progressBar1.Maximum = (int)Player.MaxTicks;
+            Thread t = new Thread(new ThreadStart(SaveFile));
+            //Save.
+            t.Start();
+            while(t.IsAlive)
+            {
+                lbUpdate.Text = TimeSpan.FromTicks(Player.GetCurrentPosition()) + "/" + TimeSpan.FromTicks(Player.MaxTicks) + " exported";
+                progressBar1.Value = (int)Player.GetCurrentPosition();
+            }
             Close();
-
         }
 
+        private void SequenceRecorder_Load(object sender, EventArgs e)
+        {
+            exportButton.Visible = true;
+            progressBar1.Visible = false;
+            tableLayoutPanel1.Visible = true;
+            lbUpdate.Visible = false;
+        }
     }
 }

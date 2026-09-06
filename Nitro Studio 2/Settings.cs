@@ -3,6 +3,7 @@ using NAudio.Midi;
 using NAudio.Wave;
 using NitroStudio2.Functions;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace NitroStudio2
@@ -10,6 +11,7 @@ namespace NitroStudio2
     public partial class Settings : Form
     {
         Configuration config;
+        List<string> devices = new List<string>();
         public Settings(Configuration c)
         {
             config = c;
@@ -47,7 +49,7 @@ namespace NitroStudio2
             Functions.Global.c.Settings["writeNames"] = writeNames.Checked.ToString();
 
             Functions.Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
-            Functions.Global.c.Settings["outputWaveDevice"] = cbWaveOutput.SelectedIndex.ToString();
+            Functions.Global.c.Settings["outputWaveDevice"] = devices[cbWaveOutput.SelectedIndex];
 
             Functions.Global.c.WriteConfig();
             btnApply.Enabled = false;
@@ -64,6 +66,7 @@ namespace NitroStudio2
             foreach (MMDevice device in MMdevEnum.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.All))
             {
                 cbWaveOutput.Items.Add(device.FriendlyName + " (" + device.State + ")");
+                devices.Add(device.ID);
             }
 
             for (int i = 0; i < MidiIn.NumberOfDevices; i++)
@@ -89,7 +92,16 @@ namespace NitroStudio2
                     break;
             }
 
-            cbWaveOutput.SelectedIndex = int.Parse(config.Settings["outputWaveDevice"]);
+            int x = 0;
+            foreach(var s in devices)
+            {
+                if(s == config.Settings["outputWaveDevice"])
+                {
+                    cbWaveOutput.SelectedIndex = x;
+                }
+                x++;
+            }
+
             cbMidiInput.SelectedIndex = int.Parse(config.Settings["inputMidiDevice"]);
 
             switch (config.Settings["exportTool"])
@@ -105,6 +117,30 @@ namespace NitroStudio2
             }
             btnApply.Enabled = false;
             btnOk.Enabled = true;
+        }
+
+        private void cbMidiInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
+        }
+
+        private void cbWaveOutput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
+        }
+
+        private void comboImport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
+        }
+
+        private void comboExport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
         }
     }
 }

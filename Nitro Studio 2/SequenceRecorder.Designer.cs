@@ -30,6 +30,8 @@
             this.loopsBox = new System.Windows.Forms.NumericUpDown();
             this.fadeBox = new System.Windows.Forms.CheckBox();
             this.exportButton = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lbUpdate = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loopsBox)).BeginInit();
             this.SuspendLayout();
@@ -45,9 +47,10 @@
             this.tableLayoutPanel1.Controls.Add(this.fadeBox, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 48);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -56,7 +59,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(213, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 19);
+            this.label2.Size = new System.Drawing.Size(85, 11);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fade Out:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -66,7 +69,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 19);
+            this.label1.Size = new System.Drawing.Size(204, 11);
             this.label1.TabIndex = 0;
             this.label1.Text = "Number Of Loops:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -74,7 +77,7 @@
             // loopsBox
             // 
             this.loopsBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loopsBox.Location = new System.Drawing.Point(3, 22);
+            this.loopsBox.Location = new System.Drawing.Point(3, 14);
             this.loopsBox.Name = "loopsBox";
             this.loopsBox.Size = new System.Drawing.Size(204, 20);
             this.loopsBox.TabIndex = 2;
@@ -90,9 +93,9 @@
             this.fadeBox.Checked = true;
             this.fadeBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fadeBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fadeBox.Location = new System.Drawing.Point(213, 22);
+            this.fadeBox.Location = new System.Drawing.Point(213, 14);
             this.fadeBox.Name = "fadeBox";
-            this.fadeBox.Size = new System.Drawing.Size(85, 23);
+            this.fadeBox.Size = new System.Drawing.Size(85, 10);
             this.fadeBox.TabIndex = 3;
             this.fadeBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.fadeBox.UseVisualStyleBackColor = true;
@@ -107,14 +110,32 @@
             this.exportButton.UseVisualStyleBackColor = true;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(8, 65);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(301, 23);
+            this.progressBar1.TabIndex = 2;
+            // 
+            // lbUpdate
+            // 
+            this.lbUpdate.AutoSize = true;
+            this.lbUpdate.Location = new System.Drawing.Point(8, 49);
+            this.lbUpdate.Name = "lbUpdate";
+            this.lbUpdate.Size = new System.Drawing.Size(35, 13);
+            this.lbUpdate.TabIndex = 4;
+            this.lbUpdate.Text = "label3";
+            // 
             // SequenceRecorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(315, 97);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lbUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -122,9 +143,11 @@
             this.Name = "SequenceRecorder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sequence Recorder";
+            this.Load += new System.EventHandler(this.SequenceRecorder_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.loopsBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +159,7 @@
         private System.Windows.Forms.NumericUpDown loopsBox;
         private System.Windows.Forms.CheckBox fadeBox;
         private System.Windows.Forms.Button exportButton;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lbUpdate;
     }
 }

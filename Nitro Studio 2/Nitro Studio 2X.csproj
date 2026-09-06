@@ -147,8 +147,9 @@
       <DependentUpon>BankGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\Configuration.cs" />
-    <Compile Include="Functions\Converters\SEQ.cs" />
     <Compile Include="Functions\Generators.cs" />
+    <Compile Include="Functions\Builders.cs" />
+    <Compile Include="Functions\NewConverters\SeqConv.cs" />
     <Compile Include="Functions\TmpConv.cs" />
     <Compile Include="ImportFromSdatTool.cs">
       <SubType>Form</SubType>

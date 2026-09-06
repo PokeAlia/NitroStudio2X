@@ -32,7 +32,8 @@ namespace NitroStudio2 {
         /// <summary>
         /// Mixer.
         /// </summary>
-        public Mixer Mixer = new Mixer();
+        public Mixer Mixer;
+        private Functions.Configuration Config;
 
         /// <summary>
         /// Bank importer.
@@ -44,6 +45,7 @@ namespace NitroStudio2 {
 
             //Init.
             InitializeComponent();
+            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             instGrid.CellContentClick += new DataGridViewCellEventHandler(PlayRegionButtonClick);
             wavs = waves;
             Player = new Player(Mixer);

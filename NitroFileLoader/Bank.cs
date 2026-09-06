@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GotaSoundBank.DLS;
 using GotaSoundBank.SF2;
+using System.Diagnostics;
 
 namespace NitroFileLoader {
 
@@ -251,6 +252,7 @@ namespace NitroFileLoader {
                     r.Layer = 1;
                     r.NoTruncation = true;
                     r.RootNote = (byte)n.BaseNote;
+                    
 
                     //Wave data.
                     int wavInd = 0;
@@ -278,6 +280,7 @@ namespace NitroFileLoader {
                                 d.Waves.Add(psg);
                             }
                             wavInd = d.Waves.IndexOf(psgMap[n.WaveId]);
+                            r.Loops = true;
                             break;
                         case InstrumentType.Noise:
                             if (!noiseMap.ContainsKey(0)) {
@@ -288,16 +291,23 @@ namespace NitroFileLoader {
                             } else {
                                 wavInd = d.Waves.IndexOf(noiseMap[0]);
                             }
+                            r.Loops = true;
                             break;
                     }
 
                     //Set wave data.
                     r.WaveId = (uint)wavInd;
                     r.Loops = d.Waves[wavInd].Loops;
+                    Debug.WriteLine("Wave: " + wavInd);
                     if (r.Loops) {
                         r.LoopStart = d.Waves[wavInd].LoopStart;
                         r.LoopLength = d.Waves[wavInd].LoopEnd - d.Waves[wavInd].LoopStart;
-                        if (r.LoopLength < 0) { r.LoopLength = 0; }
+                        if (r.LoopLength <= 0)
+                        {
+                            r.Loops = false;
+                            r.LoopLength = 0;
+                            r.LoopStart = 0;
+                        }
                     }
 
                     //Articulator.
