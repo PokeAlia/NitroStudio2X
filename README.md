@@ -6,10 +6,9 @@ Nitro Studio 2 eXtended aims to exist as a improved version of Nitro Studio 2 De
 * [Full Release List](https://github.com/PokeAlia/NitroStudio2X/releases) - Includes ***experimental versions***
 
 # Dependencies
-This tool requires Gota7's SoundIO, Sound Bank and Sequence libraries.
-
-SoundIO: https://github.com/Gota7/GotaSoundIO
-
-Sound Bank: https://github.com/Gota7/GotaSoundBank
-
-Sequence Lib: https://github.com/Gota7/GotaSequenceLib
+This tool requires PlatinumLucario's modern forks of the following libraries:
+* [GotaSequenceLib](https://github.com/PlatinumLucario/GotaSoundBank)
+* [GotaSoundBank](https://github.com/PlatinumLucario/GotaSoundBank)
+* [GotaSoundIO](https://github.com/PlatinumLucario/GotaSoundIO/)
+* [SoundFont2](https://github.com/PlatinumLucario/SoundFont2)
+* [DLS2](https://github.com/PlatinumLucario/DLS2/)
