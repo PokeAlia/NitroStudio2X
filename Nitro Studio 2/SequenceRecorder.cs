@@ -39,7 +39,7 @@ namespace NitroStudio2 {
         /// File path.
         /// </summary>
         private string filePath;
-        private Functions.Configuration Config;
+        private Functions.Configuration Config = new Functions.Configuration();
 
         /// <summary>
         /// Create a new sequence recorder.

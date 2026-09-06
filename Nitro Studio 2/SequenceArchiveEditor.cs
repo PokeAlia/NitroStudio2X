@@ -24,7 +24,7 @@ namespace NitroStudio2 {
 
         public Player Player;
         public Mixer Mixer;
-        private Functions.Configuration Config;
+        private Functions.Configuration Config = new Functions.Configuration();
         private const int BACK_COLOR = 0x2F2F2F;
         private const int FORE_COLOR = 0xB7B7B7;
         public SequenceArchive SA => File as SequenceArchive;
@@ -41,8 +41,6 @@ namespace NitroStudio2 {
         /// <param name="mainWindow">The main window.</param>
         public SequenceArchiveEditor(MainWindow mainWindow) : base(typeof(SequenceArchive), "Sequence Archive", "sar", "Sequence Archive Editor", mainWindow) {
             Init();
-            Config = new Functions.Configuration();
-            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
             LoadSequenceText();
         }
 
@@ -73,6 +71,9 @@ namespace NitroStudio2 {
         /// Init.
         /// </summary>
         public void Init() {
+            Config = new Functions.Configuration();
+            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
+            Player = new Player(Mixer);
             Icon = Properties.Resources.Seq;
             tree.SendToBack();
             tree.Hide();
@@ -1991,6 +1992,22 @@ namespace NitroStudio2 {
             }
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // SequenceArchiveEditor
+            // 
+            this.Name = "SequenceArchiveEditor";
+            this.Load += new System.EventHandler(this.SequenceArchiveEditor_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void SequenceArchiveEditor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

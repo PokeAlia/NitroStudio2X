@@ -51,6 +51,14 @@ namespace NitroStudio2
             Functions.Global.c.Settings["inputMidiDevice"] = cbMidiInput.SelectedIndex.ToString();
             Functions.Global.c.Settings["outputWaveDevice"] = devices[cbWaveOutput.SelectedIndex];
 
+            if(comboHeap.SelectedIndex == 0)
+            {
+                Functions.Global.c.Settings["viewHeap"] = "hex";
+            } else
+            {
+                Functions.Global.c.Settings["viewHeap"] = "dec";
+            }
+
             Functions.Global.c.WriteConfig();
             btnApply.Enabled = false;
         }
@@ -68,11 +76,21 @@ namespace NitroStudio2
                 cbWaveOutput.Items.Add(device.FriendlyName + " (" + device.State + ")");
                 devices.Add(device.ID);
             }
+            if(cbWaveOutput.Items.Count < 1)
+            {
+                cbWaveOutput.Text = "None Avalible";
+                cbWaveOutput.Enabled = false;
+            }
 
             for (int i = 0; i < MidiIn.NumberOfDevices; i++)
             {
                 MidiInCapabilities deviceInfo = MidiIn.DeviceInfo(i);
                 cbMidiInput.Items.Add(deviceInfo.ProductName);
+            }
+            if (cbMidiInput.Items.Count < 1)
+            {
+                cbMidiInput.Text = "None Avalible";
+                cbMidiInput.Enabled = false;
             }
 
             writeNames.Checked = bool.Parse(config.Settings["writeNames"]);
@@ -93,16 +111,31 @@ namespace NitroStudio2
             }
 
             int x = 0;
-            foreach(var s in devices)
+            if (cbWaveOutput.Items.Count >= 1)
             {
-                if(s == config.Settings["outputWaveDevice"])
+                foreach (var s in devices)
                 {
-                    cbWaveOutput.SelectedIndex = x;
+                    if (s == config.Settings["outputWaveDevice"])
+                    {
+                        cbWaveOutput.SelectedIndex = x;
+                    }
+                    x++;
                 }
-                x++;
+            }
+            
+
+            if (cbMidiInput.Items.Count >= 1)
+            {
+                cbMidiInput.SelectedIndex = int.Parse(config.Settings["inputMidiDevice"]);
             }
 
-            cbMidiInput.SelectedIndex = int.Parse(config.Settings["inputMidiDevice"]);
+            if (config.Settings["viewHeap"] == "hex")
+            {
+                comboHeap.SelectedIndex = 0;
+            } else
+            {
+                comboHeap.SelectedIndex = 1;
+            }
 
             switch (config.Settings["exportTool"])
             {
@@ -138,6 +171,12 @@ namespace NitroStudio2
         }
 
         private void comboExport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = false;
+            btnApply.Enabled = true;
+        }
+
+        private void comboHeap_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnOk.Enabled = false;
             btnApply.Enabled = true;

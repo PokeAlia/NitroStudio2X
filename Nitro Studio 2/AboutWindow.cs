@@ -28,7 +28,7 @@ namespace NitroStudio2
         }
 
         private void AboutWindow_Load(object sender, EventArgs e) {
-
+            textBox1.Text += "Version: " + Functions.Global.version;
         }
 
     }

@@ -28,7 +28,7 @@ namespace NitroStudio2
         /// </summary>
         public Bank BK => File as Bank;
 
-        private Functions.Configuration Config;
+        private Functions.Configuration Config = new Configuration();
 
         /// <summary>
         /// Mixer.
@@ -94,6 +94,10 @@ namespace NitroStudio2
             {
                 MessageBox.Show("Midi Device " + NAudio.Midi.MidiIn.DeviceInfo(int.Parse(Global.c.Settings["inputMidiDevice"])).ProductName + " not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Mixer = new GotaSequenceLib.Playback.Mixer(Config.Settings["outputWaveDevice"]);
+            Player = new GotaSequenceLib.Playback.Player(Mixer);
+
             Icon = Properties.Resources.Bnk;
             tree.Nodes.RemoveAt(0);
             tree.Nodes.Add("root", "Bank", 11, 11);
@@ -1265,6 +1269,22 @@ namespace NitroStudio2
             Player.Dispose();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // BankEditor
+            // 
+            this.Name = "BankEditor";
+            this.Load += new System.EventHandler(this.BankEditor_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void BankEditor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

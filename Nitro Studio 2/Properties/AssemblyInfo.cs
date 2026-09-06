@@ -1,3 +1,4 @@
+using System.Resources;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -5,12 +6,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Nitro Studio 2 Deluxe")]
-[assembly: AssemblyDescription("The deluxe fork of Nitro Studio 2")]
+[assembly: AssemblyTitle("Nitro Studio 2 X")]
+[assembly: AssemblyDescription("Sound Archive Editor for SDAT formatted DS games")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Lonk Inc.")]
-[assembly: AssemblyProduct("Nitro Studio 2 Deluxe")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Nitro Studio 2 X")]
+[assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("25.9.0.9398")]
 [assembly: AssemblyFileVersion("1.1.1.1")]
+[assembly: NeutralResourcesLanguage("en")]

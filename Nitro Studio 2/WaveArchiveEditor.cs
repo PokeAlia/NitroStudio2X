@@ -1,5 +1,7 @@
 ﻿using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
+using NAudio.CoreAudioApi;
+using NAudio.Wave;
 using NitroFileLoader;
 using NitroStudio2.Functions;
 using System;
@@ -28,6 +30,8 @@ namespace NitroStudio2 {
         /// Stream player.
         /// </summary>
         public GotaSoundIO.Sound.Playback.StreamPlayer Player;
+
+        private Functions.Configuration Config = new Functions.Configuration();
 
         /// <summary>
         /// Position bar free.
@@ -65,11 +69,22 @@ namespace NitroStudio2 {
             Init();
         }
 
+
         /// <summary>
         /// Initialize the editor.
         /// </summary>
         public void Init() {
-            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(int.Parse(Global.c.Settings["outputWaveDevice"]));
+            var mm = new MMDeviceEnumerator();
+            int id = 0;
+            foreach (var m in mm.EnumerateAudioEndPoints(DataFlow.Render,DeviceState.All))
+            {
+                if(m.ID == (Config.Settings["outputWaveDevice"]))
+                {
+                    break;
+                }
+                id++;
+            }
+            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(id);
             Icon = Properties.Resources.War;
             tree.Nodes.RemoveAt(0);
             tree.Nodes.Add("root", "Wave Archive", 5, 5);
@@ -423,6 +438,22 @@ namespace NitroStudio2 {
             }
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // WaveArchiveEditor
+            // 
+            this.Name = "WaveArchiveEditor";
+            this.Load += new System.EventHandler(this.WaveArchiveEditor_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void WaveArchiveEditor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

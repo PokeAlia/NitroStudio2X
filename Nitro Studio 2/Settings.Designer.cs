@@ -43,9 +43,13 @@
             this.cbWaveOutput = new System.Windows.Forms.ComboBox();
             this.lblInput = new System.Windows.Forms.Label();
             this.cbMidiInput = new System.Windows.Forms.ComboBox();
+            this.inSettings = new System.Windows.Forms.TabPage();
+            this.lHeapsizes = new System.Windows.Forms.Label();
+            this.comboHeap = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.saSettings.SuspendLayout();
             this.sdSettings.SuspendLayout();
+            this.inSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // lImportTool
@@ -144,6 +148,7 @@
             // 
             this.tabControl1.Controls.Add(this.saSettings);
             this.tabControl1.Controls.Add(this.sdSettings);
+            this.tabControl1.Controls.Add(this.inSettings);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -218,6 +223,39 @@
             this.cbMidiInput.TabIndex = 0;
             this.cbMidiInput.SelectedIndexChanged += new System.EventHandler(this.cbMidiInput_SelectedIndexChanged);
             // 
+            // inSettings
+            // 
+            this.inSettings.Controls.Add(this.comboHeap);
+            this.inSettings.Controls.Add(this.lHeapsizes);
+            this.inSettings.Location = new System.Drawing.Point(4, 22);
+            this.inSettings.Name = "inSettings";
+            this.inSettings.Size = new System.Drawing.Size(382, 294);
+            this.inSettings.TabIndex = 2;
+            this.inSettings.Text = "Interface";
+            this.inSettings.UseVisualStyleBackColor = true;
+            // 
+            // lHeapsizes
+            // 
+            this.lHeapsizes.AutoSize = true;
+            this.lHeapsizes.Location = new System.Drawing.Point(8, 8);
+            this.lHeapsizes.Name = "lHeapsizes";
+            this.lHeapsizes.Size = new System.Drawing.Size(112, 13);
+            this.lHeapsizes.TabIndex = 0;
+            this.lHeapsizes.Text = "Display Heap Sizes in:";
+            // 
+            // comboHeap
+            // 
+            this.comboHeap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboHeap.FormattingEnabled = true;
+            this.comboHeap.Items.AddRange(new object[] {
+            "Hexadecimal (0xFF)",
+            "Decimal (255)"});
+            this.comboHeap.Location = new System.Drawing.Point(126, 5);
+            this.comboHeap.Name = "comboHeap";
+            this.comboHeap.Size = new System.Drawing.Size(248, 21);
+            this.comboHeap.TabIndex = 1;
+            this.comboHeap.SelectedIndexChanged += new System.EventHandler(this.comboHeap_SelectedIndexChanged);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +276,8 @@
             this.saSettings.PerformLayout();
             this.sdSettings.ResumeLayout(false);
             this.sdSettings.PerformLayout();
+            this.inSettings.ResumeLayout(false);
+            this.inSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +298,8 @@
         private System.Windows.Forms.ComboBox cbMidiInput;
         public System.Windows.Forms.TabControl tabControl1;
         public System.Windows.Forms.TabPage sdSettings;
+        private System.Windows.Forms.TabPage inSettings;
+        private System.Windows.Forms.ComboBox comboHeap;
+        private System.Windows.Forms.Label lHeapsizes;
     }
 }

@@ -35,9 +35,34 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ColorSlider, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
@@ -147,10 +172,17 @@
       <DependentUpon>BankGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\Configuration.cs" />
+    <Compile Include="Functions\ConfigurationDefaults.cs" />
     <Compile Include="Functions\Generators.cs" />
     <Compile Include="Functions\Builders.cs" />
     <Compile Include="Functions\NewConverters\SeqConv.cs" />
     <Compile Include="Functions\TmpConv.cs" />
+    <Compile Include="HeapChecker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeapChecker.Designer.cs">
+      <DependentUpon>HeapChecker.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportFromSdatTool.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,8 +267,14 @@
     <EmbeddedResource Include="AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BankEditor.resx">
+      <DependentUpon>BankEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BankGenerator.resx">
       <DependentUpon>BankGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeapChecker.resx">
+      <DependentUpon>HeapChecker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportFromSdatTool.resx">
       <DependentUpon>ImportFromSdatTool.cs</DependentUpon>
@@ -244,11 +282,20 @@
     <EmbeddedResource Include="Instrument Selector.resx">
       <DependentUpon>Instrument Selector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SequenceArchiveEditor.resx">
+      <DependentUpon>SequenceArchiveEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequenceEditor.resx">
+      <DependentUpon>SequenceEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SequenceRecorder.resx">
       <DependentUpon>SequenceRecorder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaveArchiveEditor.resx">
+      <DependentUpon>WaveArchiveEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaveMapper.resx">
       <DependentUpon>WaveMapper.cs</DependentUpon>

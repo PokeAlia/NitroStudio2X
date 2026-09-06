@@ -32,7 +32,7 @@ namespace NitroStudio2 {
         private FindReplace MyFindReplace;
         public bool PositionBarFree = true;
         public Timer Timer = new Timer();
-        private Functions.Configuration Config;
+        private Functions.Configuration Config = new Functions.Configuration();
 
         /// <summary>
         /// Create a new sequence editor.
@@ -69,6 +69,8 @@ namespace NitroStudio2 {
         /// Init.
         /// </summary>
         public void Init() {
+            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
+
             Icon = Properties.Resources.Seq;
             tree.SendToBack();
             tree.Hide();
@@ -1858,6 +1860,22 @@ namespace NitroStudio2 {
             r.ShowDialog();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // SequenceEditor
+            // 
+            this.Name = "SequenceEditor";
+            this.Load += new System.EventHandler(this.SequenceEditor_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void SequenceEditor_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

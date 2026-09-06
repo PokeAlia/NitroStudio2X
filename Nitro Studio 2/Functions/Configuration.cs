@@ -1,12 +1,15 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace NitroStudio2.Functions
 {
     public static class Global
     {
+        public static string version = "26.09";
         public static Configuration c = new Configuration();
     }
     public class Configuration
@@ -30,21 +33,31 @@ namespace NitroStudio2.Functions
                         }
                     }
                 }
+                GenerateConfig(false);
+                if (Settings["version"] != Global.version)
+                {
+                    Settings["version"] = Global.version;
+                }
             }
             else
             {
                 r.Close();
-                GenerateConfig();
+                GenerateConfig(true);
             }
         }
 
-        public void GenerateConfig()
+        public void GenerateConfig(bool reset)
         {
-            Settings.Add("writeNames", "true");         // Write Names
-            Settings.Add("importTool", "NitroStudio");  // Import Mode
-            Settings.Add("exportTool", "NitroStudio");  // Export Mode
-            Settings.Add("inputMidiDevice", "0");       // Input Wave Device
-            Settings.Add("outputWaveDevice", "0");      // Output Wave Device
+            if(reset) {
+                Settings.Clear();
+            }
+            foreach(string key in ConfigurationDefaults.Defaults.Keys)
+            {
+                if(!Settings.ContainsKey(key))
+                {
+                    Settings.Add(key, ConfigurationDefaults.Defaults[key]);
+                }
+            }
             WriteConfig();
         }
 
@@ -72,7 +85,7 @@ namespace NitroStudio2.Functions
             }
             else
             {
-                GenerateConfig();
+                GenerateConfig(true);
             }
         }
     }

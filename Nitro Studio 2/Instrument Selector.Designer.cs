@@ -26,7 +26,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrumentSelector));
             this.instGrid = new System.Windows.Forms.DataGridView();
-            this.finishedButton = new System.Windows.Forms.Button();
             this.playColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.instrumentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instrumentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -34,6 +33,7 @@
             this.checkMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.checkAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uncheckAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finishedButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.instGrid)).BeginInit();
             this.checkMenu.SuspendLayout();
             this.SuspendLayout();
@@ -57,18 +57,6 @@
             this.instGrid.Name = "instGrid";
             this.instGrid.Size = new System.Drawing.Size(518, 292);
             this.instGrid.TabIndex = 0;
-            // 
-            // finishedButton
-            // 
-            this.finishedButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishedButton.Location = new System.Drawing.Point(12, 311);
-            this.finishedButton.Name = "finishedButton";
-            this.finishedButton.Size = new System.Drawing.Size(518, 23);
-            this.finishedButton.TabIndex = 1;
-            this.finishedButton.Text = "Finished";
-            this.finishedButton.UseVisualStyleBackColor = true;
-            this.finishedButton.Click += new System.EventHandler(this.finishedButton_Click);
             // 
             // playColumn
             // 
@@ -104,13 +92,13 @@
             this.checkAllToolStripMenuItem,
             this.uncheckAllToolStripMenuItem});
             this.checkMenu.Name = "checkMenu";
-            this.checkMenu.Size = new System.Drawing.Size(181, 70);
+            this.checkMenu.Size = new System.Drawing.Size(138, 48);
             // 
             // checkAllToolStripMenuItem
             // 
             this.checkAllToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
             this.checkAllToolStripMenuItem.Name = "checkAllToolStripMenuItem";
-            this.checkAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkAllToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.checkAllToolStripMenuItem.Text = "Check All";
             this.checkAllToolStripMenuItem.Click += new System.EventHandler(this.checkAllToolStripMenuItem_Click);
             // 
@@ -118,9 +106,21 @@
             // 
             this.uncheckAllToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
             this.uncheckAllToolStripMenuItem.Name = "uncheckAllToolStripMenuItem";
-            this.uncheckAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uncheckAllToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.uncheckAllToolStripMenuItem.Text = "Uncheck All";
             this.uncheckAllToolStripMenuItem.Click += new System.EventHandler(this.uncheckAllToolStripMenuItem_Click);
+            // 
+            // finishedButton
+            // 
+            this.finishedButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.finishedButton.Location = new System.Drawing.Point(12, 311);
+            this.finishedButton.Name = "finishedButton";
+            this.finishedButton.Size = new System.Drawing.Size(518, 23);
+            this.finishedButton.TabIndex = 1;
+            this.finishedButton.Text = "Finished";
+            this.finishedButton.UseVisualStyleBackColor = true;
+            this.finishedButton.Click += new System.EventHandler(this.finishedButton_Click);
             // 
             // InstrumentSelector
             // 
@@ -134,6 +134,7 @@
             this.Name = "InstrumentSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Instrument Selector";
+            this.Load += new System.EventHandler(this.InstrumentSelector_Load);
             ((System.ComponentModel.ISupportInitialize)(this.instGrid)).EndInit();
             this.checkMenu.ResumeLayout(false);
             this.ResumeLayout(false);

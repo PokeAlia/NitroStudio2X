@@ -33,7 +33,7 @@ namespace NitroStudio2 {
         /// Mixer.
         /// </summary>
         public Mixer Mixer;
-        private Functions.Configuration Config;
+        private Functions.Configuration Config = new Functions.Configuration();
 
         /// <summary>
         /// Bank importer.
@@ -113,5 +113,9 @@ namespace NitroStudio2 {
             Player.Dispose();
         }
 
+        private void InstrumentSelector_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

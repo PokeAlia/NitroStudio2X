@@ -217,19 +217,30 @@ namespace NitroStudio2
         private void ReloadConfig()
         {
             Config = new Configuration();
-            long pos = Player.GetCurrentPosition();
-            List<SequenceCommand> sc = Player.Events;
-            var bnk = Player.Banks;
-            var wav = Player.WaveArchives;
-            Player.Stop();
-            Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
-            HandleChecks.Start();
-            Player = new Player(Mixer);
-            Config.WriteConfig();
-            Player.PrepareForSong(bnk, wav);
-            Player.LoadSong(sc);
-            Player.Play();
-            Player.SetCurrentPosition(pos);
+            if (Player.State == PlayerState.Playing)
+            {
+                long pos = Player.GetCurrentPosition();
+                List<SequenceCommand> sc = Player.Events;
+                var bnk = Player.Banks;
+                var wav = Player.WaveArchives;
+                Player.Stop();
+                Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
+                HandleChecks.Start();
+                Player = new Player(Mixer);
+                Config.WriteConfig();
+                Player.PrepareForSong(bnk, wav);
+                Player.LoadSong(sc);
+                Player.Play();
+                Player.SetCurrentPosition(pos);
+            }
+            else
+            {
+                Mixer = new Mixer(Config.Settings["outputWaveDevice"]);
+                HandleChecks.Start();
+                Player = new Player(Mixer);
+                Config.WriteConfig();
+            }
+            DoInfoStuff();
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
@@ -273,40 +284,9 @@ namespace NitroStudio2
                         Delete(this, EventArgs.Empty);
                     }
                     break;
-            }
-        }
-
-        private void GsFormat_Click(object sender, EventArgs e)
-        {
-            // Start by Importing Cry Files
-            SoundArchive a = new SoundArchive();
-            foreach (WaveArchiveInfo i in SA.WaveArchives)
-            {
-                if (i.Name == "WAVE_ARC_PV")
-                {
-                    a.WaveArchives.Add(i);
-                }
-            }
-            foreach (BankInfo i in SA.Banks)
-            {
-                if (i.Name == "BANK_PV")
-                {
-                    a.Banks.Add(i);
-                }
-            }
-
-            // Now we need to ensure that Sequences are handled properly
-            foreach (SequenceInfo i in SA.Sequences)
-            {
-                Debug.WriteLine(i.Name);
-                i.File.ReadCommandData();
-                foreach (var c in i.File.Commands)
-                {
-                    if (c.CommandType == SequenceCommands.ProgramChange)
-                    {
-                        Debug.WriteLine(c);
-                    }
-                }
+                case Keys.Enter:
+                    NodeMouseDoubleClick();
+                    break;
             }
         }
 
@@ -355,118 +335,7 @@ namespace NitroStudio2
             }
         }
 
-        public int findBasic()
-        {
-            int i = 0;
-            foreach (BankInfo b in SA.Banks)
-            {
-                if (b.Name == "BANK_GLOBAL")
-                {
-                    return i;
-                }
-                else
-                {
-                    i++;
-                }
-            }
-            return -1;
-        }
-
-        public int findWaveBasic()
-        {
-            int i = 0;
-            foreach (WaveArchiveInfo b in SA.WaveArchives)
-            {
-                if (b.Name == "WAVE_GLOBAL")
-                {
-                    return i;
-                }
-                else
-                {
-                    i++;
-                }
-            }
-            return -1;
-        }
-
-        private void REPLACEINSTRUMENTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int basic = findBasic();
-            int wave_basic = findWaveBasic();
-            for (int i = 0; i < SA.Banks.Count; i++)
-            {
-                if (!SA.Banks[i].Name.StartsWith("BANK_PV"))
-                {
-                    SA.Banks[i].WaveArchives[0] = SA.WaveArchives[wave_basic];
-                    Debug.WriteLine(SA.Banks[i].Index + " | " + SA.Banks[i].Name);
-                    List<NitroFileLoader.Instrument> instruments = new List<Instrument>();
-                    int x = 0;
-                    foreach (var ins in SA.Banks[basic].File.Instruments)
-                    {
-                        if (ins.NoteInfo.First().InstrumentType != NitroFileLoader.InstrumentType.Blank)
-                        {
-                            instruments.Add(ins);
-                        }
-                        x++;
-                    }
-                    if (SA.Banks[i].Name != "BANK_GLOBAL")
-                    {
-                        Console.WriteLine("\tMax: " + SA.Banks[i].File.Instruments.Last().Index);
-                        foreach (var ins in SA.Banks[i].File.Instruments)
-                        {
-                            Console.Write(ins.Index + " | ");
-                            Console.WriteLine(ins.Index + " -> " + TmpConv.ReplacementInst[ins.Index]);
-                            ins.Index = TmpConv.ReplacementInst[ins.Index];
-                            bool canAdd = true;
-                            foreach (var inst in instruments)
-                            {
-                                if (inst.Index == ins.Index)
-                                {
-                                    canAdd = false;
-                                }
-                            }
-                            if (canAdd)
-                            {
-                                instruments.Add(ins);
-                            }
-                        }
-                    }
-                    SA.Banks[i].File.Instruments.Clear();
-                    foreach (var ins in instruments)
-                    {
-                        SA.Banks[i].File.Instruments.Add(ins);
-                    }
-                }
-            }
-
-            for (int i = 0; i < SA.Sequences.Count; i++)
-            {
-                if (!SA.Sequences[i].Name.StartsWith("SEQ_PV"))
-                {
-                    if (SA.Sequences[i].Bank.Name == "BANK_GAMEBOY")
-                    {
-                        continue;
-                    }
-                    SA.Sequences[i].File.ReadCommandData();
-                    SA.Sequences[i].File.Name = SA.Sequences[i].Name;
-                    string[] smft = SA.Sequences[i].File.ToText();
-                    Debug.WriteLine(SA.Sequences[i].Index + " | " + SA.Sequences[i].Name);
-                    for (int l = 0; l < smft.Length; l++)
-                    {
-                        if (smft[l].Replace(" ", "").Replace("\t", "").StartsWith("prg"))
-                        {
-                            string[] split = smft[l].Split(' ');
-                            Debug.WriteLine("\t" + split.Last() + " -> " + TmpConv.ReplacementInst[int.Parse(split.Last())]);
-                            smft[l] = split.First() + " " + TmpConv.ReplacementInst[int.Parse(split.Last())];
-                        }
-                    }
-                    SA.Sequences[i].File = new Sequence();
-                    SA.Sequences[i].File.FromText(smft.ToList());
-                    SA.Sequences[i].File.WriteCommandData();
-                }
-            }
-        }
-
+        
         private void StmPlayerComboBox_Click(object sender, EventArgs e)
         {
             if (Control.ModifierKeys == Keys.Shift)
@@ -579,168 +448,6 @@ namespace NitroStudio2
 
         private void ImportFileToolStripMenuItem_Click(object sender, EventArgs ev)
         {
-            if (Control.ModifierKeys == Keys.Control)
-            {
-                MessageBox.Show("Rendering each SE file's instrument id.");
-                bool[] used_instr = new bool[128];
-                bool[] used_perc = new bool[128];
-                bool perc_mode = false;
-                for (int x = 0; x < SA.Sequences.Count; x++)
-                {
-                    if (SA.Sequences[x].Name.StartsWith("SEQ_SE"))
-                    {
-                        if(SA.Sequences[x].Bank.Name == "BANK_BASIC")
-                        {
-                            SA.Sequences[x].File.ReadCommandData();
-                            string[] smft = SA.Sequences[x].File.ToText();
-                            foreach (var line in smft)
-                            {
-                                if(line.Contains("prg"))
-                                {
-                                    int id = int.Parse(line.Split(' ').Last());
-                                    if (id == 39)
-                                    {
-                                        perc_mode = true;
-                                    }
-                                    used_instr[id] = true;
-                                } else if (perc_mode)
-                                {
-                                    for(int n = 0; n < 128; n++)
-                                    {
-                                        Notes no = (Notes)(n);
-                                        if(line.Replace("\t","").Split(' ').First() == no.ToString().Split('.').Last())
-                                        {
-                                            used_perc[n] = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                using(StreamWriter w = new StreamWriter("basic_se_instr.txt", false))
-                {
-                    for(int x = 0; x < 128; x++)
-                    {
-                        if (used_instr[x])
-                        {
-                            w.Write(x + ", ");
-                        }
-                    }
-                    w.WriteLine("=== PERC ===");
-                    for (int x = 0; x < 128; x++)
-                    {
-                        if (used_perc[x])
-                        {
-                            w.Write(((Notes)(x)).ToString().Split('.').Last() + ",");
-                        }
-                    }
-                }
-                Process.Start(new ProcessStartInfo("notepad.exe", Application.StartupPath + "\\basic_se_instr.txt"));
-                return;
-            }
-            else if (Control.ModifierKeys == Keys.Shift)
-            {
-                MessageBox.Show("This will take a while");
-                OpenFileDialog f = new OpenFileDialog();
-                f.Filter = "SDAT|*.sdat";
-                if (f.ShowDialog() == DialogResult.OK)
-                {
-                    SoundArchive a = new SoundArchive(f.FileName);
-                    foreach (var w in a.WaveArchives)
-                    {
-                        status.Text = "Importing " + w.Index + " | " + w.Name;
-                        for (int x = 0; x < SA.WaveArchives.Count; x++)
-                        {
-                            if (SA.WaveArchives[x].Name == w.Name)
-                            {
-                                SA.WaveArchives[x].File = w.File;
-                            }
-                            else if (SA.WaveArchives[x].Name.StartsWith(w.Name))
-                            {
-                                SA.WaveArchives[x].File = w.File;
-                            }
-                        }
-                    }
-                    foreach (var b in a.Banks)
-                    {
-                        status.Text = "Importing " + b.Index + " | " + b.Name;
-                        for (int x = 0; x < SA.Banks.Count; x++)
-                        {
-                            if (SA.Banks[x].Name == b.Name)
-                            {
-                                SA.Banks[x].File = b.File;
-                            }
-                            else if (SA.Banks[x].Name.StartsWith(b.Name))
-                            {
-                                SA.Banks[x].File = b.File;
-                            }
-                        }
-                    }
-                    for (int x = 0; x < SA.Sequences.Count; x++)
-                    {
-                        if (SA.Sequences[x].Bank.Name.StartsWith("BANK_BGM_FIELD"))
-                        {
-                            foreach (var b in SA.Banks)
-                            {
-                                if (b.Index == 702)
-                                {
-                                    SA.Sequences[x].Bank = b;
-                                }
-                            }
-                        }
-                        if (SA.Sequences[x].Bank.Name.StartsWith("BANK_BGM_BATTLE"))
-                        {
-                            foreach (var b in SA.Banks)
-                            {
-                                if (b.Index == 720)
-                                {
-                                    SA.Sequences[x].Bank = b;
-                                }
-                            }
-                        }
-                        if (SA.Sequences[x].Bank.Name.StartsWith("BANK_BGM_DUNGEON"))
-                        {
-                            foreach (var b in SA.Banks)
-                            {
-                                if (b.Index == 728)
-                                {
-                                    SA.Sequences[x].Bank = b;
-                                }
-                            }
-                        }
-                        Debug.WriteLine(SA.Sequences[x].Index + " | " + SA.Sequences[x].Name);
-                        status.Text = "Replacing " + SA.Sequences[x].Index + " | " + SA.Sequences[x].Name;
-                        bool exists = false;
-                        foreach (var s in a.Sequences)
-                        {
-                            if (SA.Sequences[x].Name == s.Name)
-                            {
-                                exists = true;
-                                SA.Sequences[x].File = s.File;
-                            }
-                        }
-                        if (!exists)
-                        {
-                            SA.Sequences[x].File.ReadCommandData();
-                            SA.Sequences[x].File.Name = SA.Sequences[x].Name;
-                            string[] smft = SA.Sequences[x].File.ToText();
-                            for (int l = 0; l < smft.Length; l++)
-                            {
-                                if (smft[l].Replace(" ", "").Replace("\t", "").StartsWith("prg"))
-                                {
-                                    string[] split = smft[l].Split(' ');
-                                    smft[l] = split.First() + " " + TmpConv.ReplacementInst[int.Parse(split.Last())];
-                                }
-                            }
-                            SA.Sequences[x].File = new Sequence();
-                            SA.Sequences[x].File.FromText(smft.ToList());
-                            SA.Sequences[x].File.WriteCommandData();
-                        }
-                    }
-                }
-                return;
-            }
             ImportFromSdatTool i = new ImportFromSdatTool();
             i.Format = tree.SelectedNode.Parent.Name;
             i.ShowDialog();
@@ -901,8 +608,19 @@ namespace NitroStudio2
         /// </summary>
         public override void DoInfoStuff()
         {
+            if (Config != null)
+            {
+                if (Config.Settings["viewHeap"] == "hex")
+                {
+                    playerHeapSizeBox.Hexadecimal = true;
+                }
+                else
+                {
+                    playerHeapSizeBox.Hexadecimal = false;
+                }
+            }
 
-            if (SA != null)
+                if (SA != null)
             {
                 if (Functions.Global.c.Settings["writeNames"].ToLower() == "true")
                 {
