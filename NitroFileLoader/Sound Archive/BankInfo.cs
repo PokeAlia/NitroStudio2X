@@ -1,6 +1,7 @@
 ﻿using GotaSequenceLib;
 using GotaSoundIO.IO;
 using GotaSoundIO.Sound;
+using NitroFileLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;

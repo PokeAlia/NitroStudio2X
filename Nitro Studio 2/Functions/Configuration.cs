@@ -51,13 +51,13 @@ namespace NitroStudio2.Functions
             if(reset) {
                 Settings.Clear();
             }
-            foreach(string key in ConfigurationDefaults.Defaults.Keys)
+            /* foreach(string key in ConfigurationDefaults.Defaults.Keys)
             {
                 if(!Settings.ContainsKey(key))
                 {
                     Settings.Add(key, ConfigurationDefaults.Defaults[key]);
                 }
-            }
+            } */
             WriteConfig();
         }
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using GotaSequenceLib;
 using GotaSoundIO.IO;
 
-namespace NitroFileLoader {
+namespace NitroFileLoader
+{
 
     /// <summary>
     /// A drum set instrument.
