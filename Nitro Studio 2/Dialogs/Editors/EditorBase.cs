@@ -864,6 +864,8 @@ namespace NitroStudio2.Dialogs.Editors
             kermalisLoopBox = new CheckBox();
             kermalisPlayButton = new Button();
             soundPlayerLabel = new Label();
+            tree = new TreeView();
+            treeIcons = new ImageList(components);
             pnlPianoKeys = new Panel();
             pkeyC7 = new PianoKey();
             pkeyE7 = new PianoKey();
@@ -967,8 +969,6 @@ namespace NitroStudio2.Dialogs.Editors
             war0ComboBox = new ComboBox();
             war0Box = new NumericUpDown();
             label35 = new Label();
-            tree = new TreeView();
-            treeIcons = new ImageList(components);
             sequenceEditorPanel = new Panel();
             sequenceEditor = new Scintilla();
             openFileDialog = new OpenFileDialog();
@@ -3981,6 +3981,52 @@ namespace NitroStudio2.Dialogs.Editors
             soundPlayerLabel.Text = "Kermalis Sound Player:";
             soundPlayerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // tree
+            // 
+            tree.Dock = DockStyle.Fill;
+            tree.ImageIndex = 0;
+            tree.ImageList = treeIcons;
+            tree.Indent = 12;
+            tree.Location = new Point(0, 0);
+            tree.Name = "tree";
+            treeNode1.ImageIndex = 10;
+            treeNode1.Name = "fileInfo";
+            treeNode1.SelectedImageIndex = 10;
+            treeNode1.Text = "File Information";
+            tree.Nodes.AddRange(new TreeNode[] { treeNode1 });
+            tree.SelectedImageIndex = 0;
+            tree.ShowLines = false;
+            tree.Size = new Size(648, 528);
+            tree.TabIndex = 0;
+            tree.NodeMouseClick += tree_NodeMouseClick;
+            tree.NodeMouseDoubleClick += tree_NodeMouseDoubleClick;
+            tree.KeyUp += tree_NodeKey;
+            // 
+            // treeIcons
+            // 
+            treeIcons.ColorDepth = ColorDepth.Depth8Bit;
+            treeIcons.ImageStream = (ImageListStreamer)resources.GetObject("treeIcons.ImageStream");
+            treeIcons.TransparentColor = Color.Transparent;
+            treeIcons.Images.SetKeyName(0, "blank.png");
+            treeIcons.Images.SetKeyName(1, "version.png");
+            treeIcons.Images.SetKeyName(2, "sseq.png");
+            treeIcons.Images.SetKeyName(3, "seqArc.png");
+            treeIcons.Images.SetKeyName(4, "bank.png");
+            treeIcons.Images.SetKeyName(5, "waveArchive.png");
+            treeIcons.Images.SetKeyName(6, "player.png");
+            treeIcons.Images.SetKeyName(7, "group.png");
+            treeIcons.Images.SetKeyName(8, "streamPlayer.png");
+            treeIcons.Images.SetKeyName(9, "strm.png");
+            treeIcons.Images.SetKeyName(10, "record.png");
+            treeIcons.Images.SetKeyName(11, "recordArc.png");
+            treeIcons.Images.SetKeyName(12, "lookup.png");
+            treeIcons.Images.SetKeyName(13, "recordRegion.png");
+            treeIcons.Images.SetKeyName(14, "wave.png");
+            treeIcons.Images.SetKeyName(15, "ranged.png");
+            treeIcons.Images.SetKeyName(16, "regional.png");
+            treeIcons.Images.SetKeyName(17, "psg.png");
+            treeIcons.Images.SetKeyName(18, "whiteNoise.png");
+            // 
             // pnlPianoKeys
             // 
             pnlPianoKeys.BackColor = SystemColors.ControlLightLight;
@@ -4070,15 +4116,15 @@ namespace NitroStudio2.Dialogs.Editors
             pnlPianoKeys.Controls.Add(pkeyB5);
             pnlPianoKeys.Controls.Add(pkeyC8);
             pnlPianoKeys.Dock = DockStyle.Bottom;
-            pnlPianoKeys.Location = new Point(0, 537);
+            pnlPianoKeys.Location = new Point(0, 528);
             pnlPianoKeys.Name = "pnlPianoKeys";
-            pnlPianoKeys.Size = new Size(648, 46);
+            pnlPianoKeys.Size = new Size(648, 55);
             pnlPianoKeys.TabIndex = 6;
             pnlPianoKeys.Visible = false;
             // 
             // pkeyC7
             // 
-            pkeyC7.Location = new Point(466, 2);
+            pkeyC7.Location = new Point(471, 2);
             pkeyC7.Name = "pkeyC7";
             pkeyC7.Size = new Size(12, 42);
             pkeyC7.TabIndex = 83;
@@ -4086,7 +4132,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE7
             // 
-            pkeyE7.Location = new Point(488, 2);
+            pkeyE7.Location = new Point(493, 2);
             pkeyE7.Name = "pkeyE7";
             pkeyE7.Size = new Size(12, 42);
             pkeyE7.TabIndex = 84;
@@ -4095,7 +4141,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp7
             // 
             pkeyCSharp7.BackColor = Color.Black;
-            pkeyCSharp7.Location = new Point(474, 2);
+            pkeyCSharp7.Location = new Point(479, 2);
             pkeyCSharp7.Name = "pkeyCSharp7";
             pkeyCSharp7.Size = new Size(8, 28);
             pkeyCSharp7.TabIndex = 74;
@@ -4103,7 +4149,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD7
             // 
-            pkeyD7.Location = new Point(477, 2);
+            pkeyD7.Location = new Point(482, 2);
             pkeyD7.Name = "pkeyD7";
             pkeyD7.Size = new Size(12, 42);
             pkeyD7.TabIndex = 73;
@@ -4112,7 +4158,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp7
             // 
             pkeyDSharp7.BackColor = Color.Black;
-            pkeyDSharp7.Location = new Point(485, 2);
+            pkeyDSharp7.Location = new Point(490, 2);
             pkeyDSharp7.Name = "pkeyDSharp7";
             pkeyDSharp7.Size = new Size(8, 29);
             pkeyDSharp7.TabIndex = 75;
@@ -4120,7 +4166,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF7
             // 
-            pkeyF7.Location = new Point(499, 2);
+            pkeyF7.Location = new Point(504, 2);
             pkeyF7.Name = "pkeyF7";
             pkeyF7.Size = new Size(12, 42);
             pkeyF7.TabIndex = 76;
@@ -4129,7 +4175,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp7
             // 
             pkeyFSharp7.BackColor = Color.Black;
-            pkeyFSharp7.Location = new Point(507, 2);
+            pkeyFSharp7.Location = new Point(512, 2);
             pkeyFSharp7.Name = "pkeyFSharp7";
             pkeyFSharp7.Size = new Size(8, 28);
             pkeyFSharp7.TabIndex = 78;
@@ -4137,7 +4183,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG7
             // 
-            pkeyG7.Location = new Point(510, 2);
+            pkeyG7.Location = new Point(515, 2);
             pkeyG7.Name = "pkeyG7";
             pkeyG7.Size = new Size(12, 42);
             pkeyG7.TabIndex = 77;
@@ -4146,7 +4192,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp7
             // 
             pkeyGSharp7.BackColor = Color.Black;
-            pkeyGSharp7.Location = new Point(518, 2);
+            pkeyGSharp7.Location = new Point(523, 2);
             pkeyGSharp7.Name = "pkeyGSharp7";
             pkeyGSharp7.Size = new Size(8, 29);
             pkeyGSharp7.TabIndex = 79;
@@ -4154,7 +4200,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA7
             // 
-            pkeyA7.Location = new Point(521, 2);
+            pkeyA7.Location = new Point(526, 2);
             pkeyA7.Name = "pkeyA7";
             pkeyA7.Size = new Size(12, 42);
             pkeyA7.TabIndex = 80;
@@ -4163,7 +4209,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp7
             // 
             pkeyASharp7.BackColor = Color.Black;
-            pkeyASharp7.Location = new Point(529, 2);
+            pkeyASharp7.Location = new Point(534, 2);
             pkeyASharp7.Name = "pkeyASharp7";
             pkeyASharp7.Size = new Size(8, 29);
             pkeyASharp7.TabIndex = 81;
@@ -4172,7 +4218,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB7
             // 
-            pkeyB7.Location = new Point(532, 2);
+            pkeyB7.Location = new Point(537, 2);
             pkeyB7.Name = "pkeyB7";
             pkeyB7.Size = new Size(12, 42);
             pkeyB7.TabIndex = 82;
@@ -4180,7 +4226,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC6
             // 
-            pkeyC6.Location = new Point(389, 2);
+            pkeyC6.Location = new Point(394, 2);
             pkeyC6.Name = "pkeyC6";
             pkeyC6.Size = new Size(12, 42);
             pkeyC6.TabIndex = 71;
@@ -4188,7 +4234,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE6
             // 
-            pkeyE6.Location = new Point(411, 2);
+            pkeyE6.Location = new Point(416, 2);
             pkeyE6.Name = "pkeyE6";
             pkeyE6.Size = new Size(12, 42);
             pkeyE6.TabIndex = 72;
@@ -4197,7 +4243,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp6
             // 
             pkeyCSharp6.BackColor = Color.Black;
-            pkeyCSharp6.Location = new Point(397, 2);
+            pkeyCSharp6.Location = new Point(402, 2);
             pkeyCSharp6.Name = "pkeyCSharp6";
             pkeyCSharp6.Size = new Size(8, 28);
             pkeyCSharp6.TabIndex = 62;
@@ -4205,7 +4251,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD6
             // 
-            pkeyD6.Location = new Point(400, 2);
+            pkeyD6.Location = new Point(405, 2);
             pkeyD6.Name = "pkeyD6";
             pkeyD6.Size = new Size(12, 42);
             pkeyD6.TabIndex = 61;
@@ -4214,7 +4260,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp6
             // 
             pkeyDSharp6.BackColor = Color.Black;
-            pkeyDSharp6.Location = new Point(408, 2);
+            pkeyDSharp6.Location = new Point(413, 2);
             pkeyDSharp6.Name = "pkeyDSharp6";
             pkeyDSharp6.Size = new Size(8, 29);
             pkeyDSharp6.TabIndex = 63;
@@ -4222,7 +4268,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF6
             // 
-            pkeyF6.Location = new Point(422, 2);
+            pkeyF6.Location = new Point(427, 2);
             pkeyF6.Name = "pkeyF6";
             pkeyF6.Size = new Size(12, 42);
             pkeyF6.TabIndex = 64;
@@ -4231,7 +4277,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp6
             // 
             pkeyFSharp6.BackColor = Color.Black;
-            pkeyFSharp6.Location = new Point(430, 2);
+            pkeyFSharp6.Location = new Point(435, 2);
             pkeyFSharp6.Name = "pkeyFSharp6";
             pkeyFSharp6.Size = new Size(8, 28);
             pkeyFSharp6.TabIndex = 66;
@@ -4239,7 +4285,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG6
             // 
-            pkeyG6.Location = new Point(433, 2);
+            pkeyG6.Location = new Point(438, 2);
             pkeyG6.Name = "pkeyG6";
             pkeyG6.Size = new Size(12, 42);
             pkeyG6.TabIndex = 65;
@@ -4248,7 +4294,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp6
             // 
             pkeyGSharp6.BackColor = Color.Black;
-            pkeyGSharp6.Location = new Point(441, 2);
+            pkeyGSharp6.Location = new Point(446, 2);
             pkeyGSharp6.Name = "pkeyGSharp6";
             pkeyGSharp6.Size = new Size(8, 29);
             pkeyGSharp6.TabIndex = 67;
@@ -4256,7 +4302,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA6
             // 
-            pkeyA6.Location = new Point(444, 2);
+            pkeyA6.Location = new Point(449, 2);
             pkeyA6.Name = "pkeyA6";
             pkeyA6.Size = new Size(12, 42);
             pkeyA6.TabIndex = 68;
@@ -4265,7 +4311,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp6
             // 
             pkeyASharp6.BackColor = Color.Black;
-            pkeyASharp6.Location = new Point(452, 2);
+            pkeyASharp6.Location = new Point(457, 2);
             pkeyASharp6.Name = "pkeyASharp6";
             pkeyASharp6.Size = new Size(8, 29);
             pkeyASharp6.TabIndex = 69;
@@ -4274,7 +4320,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB6
             // 
-            pkeyB6.Location = new Point(455, 2);
+            pkeyB6.Location = new Point(460, 2);
             pkeyB6.Name = "pkeyB6";
             pkeyB6.Size = new Size(12, 42);
             pkeyB6.TabIndex = 70;
@@ -4282,7 +4328,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC1
             // 
-            pkeyC1.Location = new Point(4, 2);
+            pkeyC1.Location = new Point(9, 2);
             pkeyC1.Name = "pkeyC1";
             pkeyC1.Size = new Size(12, 42);
             pkeyC1.TabIndex = 0;
@@ -4291,7 +4337,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp1
             // 
             pkeyCSharp1.BackColor = Color.Black;
-            pkeyCSharp1.Location = new Point(12, 2);
+            pkeyCSharp1.Location = new Point(17, 2);
             pkeyCSharp1.Name = "pkeyCSharp1";
             pkeyCSharp1.Size = new Size(8, 28);
             pkeyCSharp1.TabIndex = 3;
@@ -4299,7 +4345,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD1
             // 
-            pkeyD1.Location = new Point(15, 2);
+            pkeyD1.Location = new Point(20, 2);
             pkeyD1.Name = "pkeyD1";
             pkeyD1.Size = new Size(12, 42);
             pkeyD1.TabIndex = 1;
@@ -4308,7 +4354,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp1
             // 
             pkeyDSharp1.BackColor = Color.Black;
-            pkeyDSharp1.Location = new Point(23, 2);
+            pkeyDSharp1.Location = new Point(28, 2);
             pkeyDSharp1.Name = "pkeyDSharp1";
             pkeyDSharp1.Size = new Size(8, 29);
             pkeyDSharp1.TabIndex = 4;
@@ -4316,7 +4362,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE1
             // 
-            pkeyE1.Location = new Point(26, 2);
+            pkeyE1.Location = new Point(31, 2);
             pkeyE1.Name = "pkeyE1";
             pkeyE1.Size = new Size(12, 42);
             pkeyE1.TabIndex = 2;
@@ -4324,7 +4370,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF1
             // 
-            pkeyF1.Location = new Point(37, 2);
+            pkeyF1.Location = new Point(42, 2);
             pkeyF1.Name = "pkeyF1";
             pkeyF1.Size = new Size(12, 42);
             pkeyF1.TabIndex = 5;
@@ -4333,7 +4379,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp1
             // 
             pkeyFSharp1.BackColor = Color.Black;
-            pkeyFSharp1.Location = new Point(45, 2);
+            pkeyFSharp1.Location = new Point(50, 2);
             pkeyFSharp1.Name = "pkeyFSharp1";
             pkeyFSharp1.Size = new Size(8, 28);
             pkeyFSharp1.TabIndex = 7;
@@ -4341,7 +4387,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG1
             // 
-            pkeyG1.Location = new Point(48, 2);
+            pkeyG1.Location = new Point(53, 2);
             pkeyG1.Name = "pkeyG1";
             pkeyG1.Size = new Size(12, 42);
             pkeyG1.TabIndex = 6;
@@ -4350,7 +4396,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp1
             // 
             pkeyGSharp1.BackColor = Color.Black;
-            pkeyGSharp1.Location = new Point(56, 2);
+            pkeyGSharp1.Location = new Point(61, 2);
             pkeyGSharp1.Name = "pkeyGSharp1";
             pkeyGSharp1.Size = new Size(8, 29);
             pkeyGSharp1.TabIndex = 8;
@@ -4358,7 +4404,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA1
             // 
-            pkeyA1.Location = new Point(59, 2);
+            pkeyA1.Location = new Point(64, 2);
             pkeyA1.Name = "pkeyA1";
             pkeyA1.Size = new Size(12, 42);
             pkeyA1.TabIndex = 9;
@@ -4367,7 +4413,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp1
             // 
             pkeyASharp1.BackColor = Color.Black;
-            pkeyASharp1.Location = new Point(67, 2);
+            pkeyASharp1.Location = new Point(72, 2);
             pkeyASharp1.Name = "pkeyASharp1";
             pkeyASharp1.Size = new Size(8, 29);
             pkeyASharp1.TabIndex = 10;
@@ -4376,7 +4422,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB1
             // 
-            pkeyB1.Location = new Point(70, 2);
+            pkeyB1.Location = new Point(75, 2);
             pkeyB1.Name = "pkeyB1";
             pkeyB1.Size = new Size(12, 42);
             pkeyB1.TabIndex = 11;
@@ -4384,7 +4430,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC2
             // 
-            pkeyC2.Location = new Point(81, 2);
+            pkeyC2.Location = new Point(86, 2);
             pkeyC2.Name = "pkeyC2";
             pkeyC2.Size = new Size(12, 42);
             pkeyC2.TabIndex = 12;
@@ -4393,7 +4439,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp2
             // 
             pkeyCSharp2.BackColor = Color.Black;
-            pkeyCSharp2.Location = new Point(89, 2);
+            pkeyCSharp2.Location = new Point(94, 2);
             pkeyCSharp2.Name = "pkeyCSharp2";
             pkeyCSharp2.Size = new Size(8, 28);
             pkeyCSharp2.TabIndex = 15;
@@ -4401,7 +4447,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD2
             // 
-            pkeyD2.Location = new Point(92, 2);
+            pkeyD2.Location = new Point(97, 2);
             pkeyD2.Name = "pkeyD2";
             pkeyD2.Size = new Size(12, 42);
             pkeyD2.TabIndex = 13;
@@ -4410,7 +4456,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp2
             // 
             pkeyDSharp2.BackColor = Color.Black;
-            pkeyDSharp2.Location = new Point(100, 2);
+            pkeyDSharp2.Location = new Point(105, 2);
             pkeyDSharp2.Name = "pkeyDSharp2";
             pkeyDSharp2.Size = new Size(8, 29);
             pkeyDSharp2.TabIndex = 16;
@@ -4418,7 +4464,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE2
             // 
-            pkeyE2.Location = new Point(103, 2);
+            pkeyE2.Location = new Point(108, 2);
             pkeyE2.Name = "pkeyE2";
             pkeyE2.Size = new Size(12, 42);
             pkeyE2.TabIndex = 14;
@@ -4426,7 +4472,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF2
             // 
-            pkeyF2.Location = new Point(114, 2);
+            pkeyF2.Location = new Point(119, 2);
             pkeyF2.Name = "pkeyF2";
             pkeyF2.Size = new Size(12, 42);
             pkeyF2.TabIndex = 17;
@@ -4435,7 +4481,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp2
             // 
             pkeyFSharp2.BackColor = Color.Black;
-            pkeyFSharp2.Location = new Point(122, 2);
+            pkeyFSharp2.Location = new Point(127, 2);
             pkeyFSharp2.Name = "pkeyFSharp2";
             pkeyFSharp2.Size = new Size(8, 28);
             pkeyFSharp2.TabIndex = 19;
@@ -4443,7 +4489,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG2
             // 
-            pkeyG2.Location = new Point(125, 2);
+            pkeyG2.Location = new Point(130, 2);
             pkeyG2.Name = "pkeyG2";
             pkeyG2.Size = new Size(12, 42);
             pkeyG2.TabIndex = 18;
@@ -4452,7 +4498,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp2
             // 
             pkeyGSharp2.BackColor = Color.Black;
-            pkeyGSharp2.Location = new Point(133, 2);
+            pkeyGSharp2.Location = new Point(138, 2);
             pkeyGSharp2.Name = "pkeyGSharp2";
             pkeyGSharp2.Size = new Size(8, 29);
             pkeyGSharp2.TabIndex = 20;
@@ -4460,7 +4506,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA2
             // 
-            pkeyA2.Location = new Point(136, 2);
+            pkeyA2.Location = new Point(141, 2);
             pkeyA2.Name = "pkeyA2";
             pkeyA2.Size = new Size(12, 42);
             pkeyA2.TabIndex = 21;
@@ -4469,7 +4515,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp2
             // 
             pkeyASharp2.BackColor = Color.Black;
-            pkeyASharp2.Location = new Point(144, 2);
+            pkeyASharp2.Location = new Point(149, 2);
             pkeyASharp2.Name = "pkeyASharp2";
             pkeyASharp2.Size = new Size(8, 29);
             pkeyASharp2.TabIndex = 22;
@@ -4478,7 +4524,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB2
             // 
-            pkeyB2.Location = new Point(147, 2);
+            pkeyB2.Location = new Point(152, 2);
             pkeyB2.Name = "pkeyB2";
             pkeyB2.Size = new Size(12, 42);
             pkeyB2.TabIndex = 23;
@@ -4486,7 +4532,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC3
             // 
-            pkeyC3.Location = new Point(158, 2);
+            pkeyC3.Location = new Point(163, 2);
             pkeyC3.Name = "pkeyC3";
             pkeyC3.Size = new Size(12, 42);
             pkeyC3.TabIndex = 24;
@@ -4495,7 +4541,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp3
             // 
             pkeyCSharp3.BackColor = Color.Black;
-            pkeyCSharp3.Location = new Point(166, 2);
+            pkeyCSharp3.Location = new Point(171, 2);
             pkeyCSharp3.Name = "pkeyCSharp3";
             pkeyCSharp3.Size = new Size(8, 28);
             pkeyCSharp3.TabIndex = 27;
@@ -4503,7 +4549,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD3
             // 
-            pkeyD3.Location = new Point(169, 2);
+            pkeyD3.Location = new Point(174, 2);
             pkeyD3.Name = "pkeyD3";
             pkeyD3.Size = new Size(12, 42);
             pkeyD3.TabIndex = 25;
@@ -4512,7 +4558,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp3
             // 
             pkeyDSharp3.BackColor = Color.Black;
-            pkeyDSharp3.Location = new Point(177, 2);
+            pkeyDSharp3.Location = new Point(182, 2);
             pkeyDSharp3.Name = "pkeyDSharp3";
             pkeyDSharp3.Size = new Size(8, 29);
             pkeyDSharp3.TabIndex = 28;
@@ -4520,7 +4566,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE3
             // 
-            pkeyE3.Location = new Point(180, 2);
+            pkeyE3.Location = new Point(185, 2);
             pkeyE3.Name = "pkeyE3";
             pkeyE3.Size = new Size(12, 42);
             pkeyE3.TabIndex = 26;
@@ -4528,7 +4574,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF3
             // 
-            pkeyF3.Location = new Point(191, 2);
+            pkeyF3.Location = new Point(196, 2);
             pkeyF3.Name = "pkeyF3";
             pkeyF3.Size = new Size(12, 42);
             pkeyF3.TabIndex = 29;
@@ -4537,7 +4583,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp3
             // 
             pkeyFSharp3.BackColor = Color.Black;
-            pkeyFSharp3.Location = new Point(199, 2);
+            pkeyFSharp3.Location = new Point(204, 2);
             pkeyFSharp3.Name = "pkeyFSharp3";
             pkeyFSharp3.Size = new Size(8, 28);
             pkeyFSharp3.TabIndex = 31;
@@ -4545,7 +4591,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG3
             // 
-            pkeyG3.Location = new Point(202, 2);
+            pkeyG3.Location = new Point(207, 2);
             pkeyG3.Name = "pkeyG3";
             pkeyG3.Size = new Size(12, 42);
             pkeyG3.TabIndex = 30;
@@ -4554,7 +4600,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp3
             // 
             pkeyGSharp3.BackColor = Color.Black;
-            pkeyGSharp3.Location = new Point(210, 2);
+            pkeyGSharp3.Location = new Point(215, 2);
             pkeyGSharp3.Name = "pkeyGSharp3";
             pkeyGSharp3.Size = new Size(8, 29);
             pkeyGSharp3.TabIndex = 32;
@@ -4562,7 +4608,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA3
             // 
-            pkeyA3.Location = new Point(213, 2);
+            pkeyA3.Location = new Point(218, 2);
             pkeyA3.Name = "pkeyA3";
             pkeyA3.Size = new Size(12, 42);
             pkeyA3.TabIndex = 33;
@@ -4571,7 +4617,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp3
             // 
             pkeyASharp3.BackColor = Color.Black;
-            pkeyASharp3.Location = new Point(221, 2);
+            pkeyASharp3.Location = new Point(226, 2);
             pkeyASharp3.Name = "pkeyASharp3";
             pkeyASharp3.Size = new Size(8, 29);
             pkeyASharp3.TabIndex = 34;
@@ -4580,7 +4626,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB3
             // 
-            pkeyB3.Location = new Point(224, 2);
+            pkeyB3.Location = new Point(229, 2);
             pkeyB3.Name = "pkeyB3";
             pkeyB3.Size = new Size(12, 42);
             pkeyB3.TabIndex = 35;
@@ -4588,7 +4634,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC4
             // 
-            pkeyC4.Location = new Point(235, 2);
+            pkeyC4.Location = new Point(240, 2);
             pkeyC4.Name = "pkeyC4";
             pkeyC4.Size = new Size(12, 42);
             pkeyC4.TabIndex = 36;
@@ -4597,7 +4643,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp4
             // 
             pkeyCSharp4.BackColor = Color.Black;
-            pkeyCSharp4.Location = new Point(243, 2);
+            pkeyCSharp4.Location = new Point(248, 2);
             pkeyCSharp4.Name = "pkeyCSharp4";
             pkeyCSharp4.Size = new Size(8, 28);
             pkeyCSharp4.TabIndex = 39;
@@ -4605,7 +4651,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyD4
             // 
-            pkeyD4.Location = new Point(246, 2);
+            pkeyD4.Location = new Point(251, 2);
             pkeyD4.Name = "pkeyD4";
             pkeyD4.Size = new Size(12, 42);
             pkeyD4.TabIndex = 37;
@@ -4614,7 +4660,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp4
             // 
             pkeyDSharp4.BackColor = Color.Black;
-            pkeyDSharp4.Location = new Point(254, 2);
+            pkeyDSharp4.Location = new Point(259, 2);
             pkeyDSharp4.Name = "pkeyDSharp4";
             pkeyDSharp4.Size = new Size(8, 29);
             pkeyDSharp4.TabIndex = 40;
@@ -4622,7 +4668,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE4
             // 
-            pkeyE4.Location = new Point(257, 2);
+            pkeyE4.Location = new Point(262, 2);
             pkeyE4.Name = "pkeyE4";
             pkeyE4.Size = new Size(12, 42);
             pkeyE4.TabIndex = 38;
@@ -4630,7 +4676,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF4
             // 
-            pkeyF4.Location = new Point(268, 2);
+            pkeyF4.Location = new Point(273, 2);
             pkeyF4.Name = "pkeyF4";
             pkeyF4.Size = new Size(12, 42);
             pkeyF4.TabIndex = 41;
@@ -4639,7 +4685,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp4
             // 
             pkeyFSharp4.BackColor = Color.Black;
-            pkeyFSharp4.Location = new Point(276, 2);
+            pkeyFSharp4.Location = new Point(281, 2);
             pkeyFSharp4.Name = "pkeyFSharp4";
             pkeyFSharp4.Size = new Size(8, 28);
             pkeyFSharp4.TabIndex = 43;
@@ -4647,7 +4693,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG4
             // 
-            pkeyG4.Location = new Point(279, 2);
+            pkeyG4.Location = new Point(284, 2);
             pkeyG4.Name = "pkeyG4";
             pkeyG4.Size = new Size(12, 42);
             pkeyG4.TabIndex = 42;
@@ -4656,7 +4702,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp4
             // 
             pkeyGSharp4.BackColor = Color.Black;
-            pkeyGSharp4.Location = new Point(287, 2);
+            pkeyGSharp4.Location = new Point(292, 2);
             pkeyGSharp4.Name = "pkeyGSharp4";
             pkeyGSharp4.Size = new Size(8, 29);
             pkeyGSharp4.TabIndex = 44;
@@ -4664,7 +4710,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA4
             // 
-            pkeyA4.Location = new Point(290, 2);
+            pkeyA4.Location = new Point(295, 2);
             pkeyA4.Name = "pkeyA4";
             pkeyA4.Size = new Size(12, 42);
             pkeyA4.TabIndex = 45;
@@ -4673,7 +4719,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp4
             // 
             pkeyASharp4.BackColor = Color.Black;
-            pkeyASharp4.Location = new Point(298, 2);
+            pkeyASharp4.Location = new Point(303, 2);
             pkeyASharp4.Name = "pkeyASharp4";
             pkeyASharp4.Size = new Size(8, 29);
             pkeyASharp4.TabIndex = 46;
@@ -4682,7 +4728,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB4
             // 
-            pkeyB4.Location = new Point(301, 2);
+            pkeyB4.Location = new Point(306, 2);
             pkeyB4.Name = "pkeyB4";
             pkeyB4.Size = new Size(12, 42);
             pkeyB4.TabIndex = 47;
@@ -4690,7 +4736,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC5
             // 
-            pkeyC5.Location = new Point(312, 2);
+            pkeyC5.Location = new Point(317, 2);
             pkeyC5.Name = "pkeyC5";
             pkeyC5.Size = new Size(12, 42);
             pkeyC5.TabIndex = 48;
@@ -4699,7 +4745,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyCSharp5
             // 
             pkeyCSharp5.BackColor = Color.Black;
-            pkeyCSharp5.Location = new Point(320, 2);
+            pkeyCSharp5.Location = new Point(325, 2);
             pkeyCSharp5.Name = "pkeyCSharp5";
             pkeyCSharp5.Size = new Size(8, 28);
             pkeyCSharp5.TabIndex = 51;
@@ -4708,7 +4754,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyD5
             // 
             pkeyD5.BackColor = SystemColors.ControlLightLight;
-            pkeyD5.Location = new Point(323, 2);
+            pkeyD5.Location = new Point(328, 2);
             pkeyD5.Name = "pkeyD5";
             pkeyD5.Size = new Size(12, 42);
             pkeyD5.TabIndex = 49;
@@ -4717,7 +4763,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyDSharp5
             // 
             pkeyDSharp5.BackColor = Color.Black;
-            pkeyDSharp5.Location = new Point(331, 2);
+            pkeyDSharp5.Location = new Point(336, 2);
             pkeyDSharp5.Name = "pkeyDSharp5";
             pkeyDSharp5.Size = new Size(8, 29);
             pkeyDSharp5.TabIndex = 52;
@@ -4725,7 +4771,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyE5
             // 
-            pkeyE5.Location = new Point(334, 2);
+            pkeyE5.Location = new Point(339, 2);
             pkeyE5.Name = "pkeyE5";
             pkeyE5.Size = new Size(12, 42);
             pkeyE5.TabIndex = 50;
@@ -4733,7 +4779,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyF5
             // 
-            pkeyF5.Location = new Point(345, 2);
+            pkeyF5.Location = new Point(350, 2);
             pkeyF5.Name = "pkeyF5";
             pkeyF5.Size = new Size(12, 42);
             pkeyF5.TabIndex = 53;
@@ -4742,7 +4788,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyFSharp5
             // 
             pkeyFSharp5.BackColor = Color.Black;
-            pkeyFSharp5.Location = new Point(353, 2);
+            pkeyFSharp5.Location = new Point(358, 2);
             pkeyFSharp5.Name = "pkeyFSharp5";
             pkeyFSharp5.Size = new Size(8, 28);
             pkeyFSharp5.TabIndex = 55;
@@ -4750,7 +4796,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyG5
             // 
-            pkeyG5.Location = new Point(356, 2);
+            pkeyG5.Location = new Point(361, 2);
             pkeyG5.Name = "pkeyG5";
             pkeyG5.Size = new Size(12, 42);
             pkeyG5.TabIndex = 54;
@@ -4759,7 +4805,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyGSharp5
             // 
             pkeyGSharp5.BackColor = Color.Black;
-            pkeyGSharp5.Location = new Point(364, 2);
+            pkeyGSharp5.Location = new Point(369, 2);
             pkeyGSharp5.Name = "pkeyGSharp5";
             pkeyGSharp5.Size = new Size(8, 29);
             pkeyGSharp5.TabIndex = 56;
@@ -4767,7 +4813,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyA5
             // 
-            pkeyA5.Location = new Point(367, 2);
+            pkeyA5.Location = new Point(372, 2);
             pkeyA5.Name = "pkeyA5";
             pkeyA5.Size = new Size(12, 42);
             pkeyA5.TabIndex = 57;
@@ -4776,7 +4822,7 @@ namespace NitroStudio2.Dialogs.Editors
             // pkeyASharp5
             // 
             pkeyASharp5.BackColor = Color.Black;
-            pkeyASharp5.Location = new Point(375, 2);
+            pkeyASharp5.Location = new Point(380, 2);
             pkeyASharp5.Name = "pkeyASharp5";
             pkeyASharp5.Size = new Size(8, 29);
             pkeyASharp5.TabIndex = 58;
@@ -4785,7 +4831,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyB5
             // 
-            pkeyB5.Location = new Point(378, 2);
+            pkeyB5.Location = new Point(383, 2);
             pkeyB5.Name = "pkeyB5";
             pkeyB5.Size = new Size(12, 42);
             pkeyB5.TabIndex = 59;
@@ -4793,7 +4839,7 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pkeyC8
             // 
-            pkeyC8.Location = new Point(543, 2);
+            pkeyC8.Location = new Point(548, 2);
             pkeyC8.Name = "pkeyC8";
             pkeyC8.Size = new Size(12, 42);
             pkeyC8.TabIndex = 60;
@@ -5004,52 +5050,6 @@ namespace NitroStudio2.Dialogs.Editors
             label35.TabIndex = 2;
             label35.Text = "Wave Archive 0:";
             label35.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // tree
-            // 
-            tree.Dock = DockStyle.Fill;
-            tree.ImageIndex = 0;
-            tree.ImageList = treeIcons;
-            tree.Indent = 12;
-            tree.Location = new Point(0, 0);
-            tree.Name = "tree";
-            treeNode1.ImageIndex = 10;
-            treeNode1.Name = "fileInfo";
-            treeNode1.SelectedImageIndex = 10;
-            treeNode1.Text = "File Information";
-            tree.Nodes.AddRange(new TreeNode[] { treeNode1 });
-            tree.SelectedImageIndex = 0;
-            tree.ShowLines = false;
-            tree.Size = new Size(648, 537);
-            tree.TabIndex = 0;
-            tree.NodeMouseClick += tree_NodeMouseClick;
-            tree.NodeMouseDoubleClick += tree_NodeMouseDoubleClick;
-            tree.KeyUp += tree_NodeKey;
-            // 
-            // treeIcons
-            // 
-            treeIcons.ColorDepth = ColorDepth.Depth8Bit;
-            treeIcons.ImageStream = (ImageListStreamer)resources.GetObject("treeIcons.ImageStream");
-            treeIcons.TransparentColor = Color.Transparent;
-            treeIcons.Images.SetKeyName(0, "blank.png");
-            treeIcons.Images.SetKeyName(1, "version.png");
-            treeIcons.Images.SetKeyName(2, "sseq.png");
-            treeIcons.Images.SetKeyName(3, "seqArc.png");
-            treeIcons.Images.SetKeyName(4, "bank.png");
-            treeIcons.Images.SetKeyName(5, "waveArchive.png");
-            treeIcons.Images.SetKeyName(6, "player.png");
-            treeIcons.Images.SetKeyName(7, "group.png");
-            treeIcons.Images.SetKeyName(8, "streamPlayer.png");
-            treeIcons.Images.SetKeyName(9, "strm.png");
-            treeIcons.Images.SetKeyName(10, "record.png");
-            treeIcons.Images.SetKeyName(11, "recordArc.png");
-            treeIcons.Images.SetKeyName(12, "lookup.png");
-            treeIcons.Images.SetKeyName(13, "recordRegion.png");
-            treeIcons.Images.SetKeyName(14, "wave.png");
-            treeIcons.Images.SetKeyName(15, "ranged.png");
-            treeIcons.Images.SetKeyName(16, "regional.png");
-            treeIcons.Images.SetKeyName(17, "psg.png");
-            treeIcons.Images.SetKeyName(18, "whiteNoise.png");
             // 
             // sequenceEditorPanel
             // 
