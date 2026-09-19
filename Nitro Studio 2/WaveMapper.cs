@@ -19,6 +19,8 @@ namespace NitroStudio2 {
         /// </summary>
         public List<ushort> WarMap = null;
 
+        static Configuration Config = new Configuration();
+
         /// <summary>
         /// Waves.
         /// </summary>
@@ -27,7 +29,7 @@ namespace NitroStudio2 {
         /// <summary>
         /// Player.
         /// </summary>
-        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(int.Parse(Global.c.Settings["outputWaveDevice"]));
+        public GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Config.Settings["outputWaveDevice"]);
 
         /// <summary>
         /// Bank importer.

@@ -429,6 +429,9 @@ namespace NitroStudio2
         public ToolStripMenuItem exportInfoTB;
         public ToolStripMenuItem sdblExportBtn;
         public ToolStripMenuItem sExportButton;
+        private Label label20;
+        public Panel fileSizePanel;
+        public Label fileSizeLabel;
 
         /// <summary>
         /// Main window.
@@ -614,5753 +617,4785 @@ namespace NitroStudio2
         private ToolStripMenuItem sarDelete;
         public ToolStripMenuItem settingsButton;
 
-        public void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorBase));
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("File Information", 10, 10);
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blankFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sequenceEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sequenceArchiveEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bankEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.waveArchiveEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bankGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaveWaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createStreamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportSDKProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sF2ToDLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dLSToSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.batchExportMIDIDLSSF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importFromExternalSDATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportInfoTB = new System.Windows.Forms.ToolStripMenuItem();
-            this.sdblExportBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.sExportButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.getHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutNitroStudio2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.seqBankPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel36 = new System.Windows.Forms.TableLayoutPanel();
-            this.exportWavButton = new System.Windows.Forms.Button();
-            this.exportMidiButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel35 = new System.Windows.Forms.TableLayoutPanel();
-            this.track15Box = new System.Windows.Forms.CheckBox();
-            this.track15Picture = new System.Windows.Forms.PictureBox();
-            this.track15Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
-            this.track13Box = new System.Windows.Forms.CheckBox();
-            this.track13Picture = new System.Windows.Forms.PictureBox();
-            this.track13Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel33 = new System.Windows.Forms.TableLayoutPanel();
-            this.track11Box = new System.Windows.Forms.CheckBox();
-            this.track11Picture = new System.Windows.Forms.PictureBox();
-            this.track11Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel32 = new System.Windows.Forms.TableLayoutPanel();
-            this.track9Box = new System.Windows.Forms.CheckBox();
-            this.track9Picture = new System.Windows.Forms.PictureBox();
-            this.track9Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel31 = new System.Windows.Forms.TableLayoutPanel();
-            this.track7Box = new System.Windows.Forms.CheckBox();
-            this.track7Picture = new System.Windows.Forms.PictureBox();
-            this.track7Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
-            this.track5Box = new System.Windows.Forms.CheckBox();
-            this.track5Picture = new System.Windows.Forms.PictureBox();
-            this.track5Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
-            this.track3Box = new System.Windows.Forms.CheckBox();
-            this.track3Picture = new System.Windows.Forms.PictureBox();
-            this.track3Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
-            this.track14Box = new System.Windows.Forms.CheckBox();
-            this.track14Picture = new System.Windows.Forms.PictureBox();
-            this.track14Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
-            this.track12Box = new System.Windows.Forms.CheckBox();
-            this.track12Picture = new System.Windows.Forms.PictureBox();
-            this.track12Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
-            this.track10Box = new System.Windows.Forms.CheckBox();
-            this.track10Picture = new System.Windows.Forms.PictureBox();
-            this.track10Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.track8Box = new System.Windows.Forms.CheckBox();
-            this.track8Picture = new System.Windows.Forms.PictureBox();
-            this.track8Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.track6Box = new System.Windows.Forms.CheckBox();
-            this.track6Picture = new System.Windows.Forms.PictureBox();
-            this.track6Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.track4Box = new System.Windows.Forms.CheckBox();
-            this.track4Picture = new System.Windows.Forms.PictureBox();
-            this.track4Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.track2Box = new System.Windows.Forms.CheckBox();
-            this.track2Picture = new System.Windows.Forms.PictureBox();
-            this.track2Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.track1Box = new System.Windows.Forms.CheckBox();
-            this.track1Picture = new System.Windows.Forms.PictureBox();
-            this.track1Solo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.track0Box = new System.Windows.Forms.CheckBox();
-            this.track0Picture = new System.Windows.Forms.PictureBox();
-            this.track0Solo = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.seqEditorBankComboBox = new System.Windows.Forms.ComboBox();
-            this.seqEditorBankBox = new System.Windows.Forms.NumericUpDown();
-            this.bankEditorPanel = new System.Windows.Forms.Panel();
-            this.bankRegions = new System.Windows.Forms.DataGridView();
-            this.playSampleButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.endNote = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.instrumentType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.waveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.waveArchiveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseNote = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.attack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.decay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sustain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.release = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label32 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.drumSetStartRangeComboBox = new System.Windows.Forms.ComboBox();
-            this.drumSetStartRangeBox = new System.Windows.Forms.NumericUpDown();
-            this.drumSetRangeStartLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.keySplitBox = new System.Windows.Forms.RadioButton();
-            this.drumSetBox = new System.Windows.Forms.RadioButton();
-            this.directBox = new System.Windows.Forms.RadioButton();
-            this.label30 = new System.Windows.Forms.Label();
-            this.seqArcSeqPanel = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.seqArcSeqComboBox = new System.Windows.Forms.ComboBox();
-            this.seqArcSeqBox = new System.Windows.Forms.NumericUpDown();
-            this.seqArcPanel = new System.Windows.Forms.Panel();
-            this.seqArcOpenFileButton = new System.Windows.Forms.Button();
-            this.seqPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.seqPlayerComboBox = new System.Windows.Forms.ComboBox();
-            this.seqPlayerBox = new System.Windows.Forms.NumericUpDown();
-            this.label27 = new System.Windows.Forms.Label();
-            this.seqPlayerPriorityBox = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.seqChannelPriorityBox = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
-            this.seqVolumeBox = new System.Windows.Forms.NumericUpDown();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.seqBankComboBox = new System.Windows.Forms.ComboBox();
-            this.seqBankBox = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
-            this.playerPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.playerFlag15Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag14Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag13Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag12Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag11Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag10Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag9Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag8Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag7Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag6Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag5Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag4Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag3Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag2Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag1Box = new System.Windows.Forms.CheckBox();
-            this.playerFlag0Box = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.playerHeapSizeBox = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.playerMaxSequencesBox = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.stmPanel = new System.Windows.Forms.Panel();
-            this.stmMonoToStereoBox = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.stmPlayerComboBox = new System.Windows.Forms.ComboBox();
-            this.stmPlayerBox = new System.Windows.Forms.NumericUpDown();
-            this.stmPriorityBox = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.stmVolumeBox = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.streamPlayerPanel = new System.Windows.Forms.Panel();
-            this.stmPlayerChannelType = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.stmPlayerLeftChannelBox = new System.Windows.Forms.NumericUpDown();
-            this.stmPlayerRightChannelBox = new System.Windows.Forms.NumericUpDown();
-            this.rightChannelLabel = new System.Windows.Forms.Label();
-            this.leftChannelLabel = new System.Windows.Forms.Label();
-            this.grpPanel = new System.Windows.Forms.Panel();
-            this.grpEntries = new System.Windows.Forms.DataGridView();
-            this.item = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.loadFlags = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bankPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.bnkWar3ComboBox = new System.Windows.Forms.ComboBox();
-            this.bnkWar3Box = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.bnkWar2ComboBox = new System.Windows.Forms.ComboBox();
-            this.bnkWar2Box = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.bnkWar1ComboBox = new System.Windows.Forms.ComboBox();
-            this.bnkWar1Box = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bnkWar0ComboBox = new System.Windows.Forms.ComboBox();
-            this.bnkWar0Box = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.blankPanel = new System.Windows.Forms.Panel();
-            this.warPanel = new System.Windows.Forms.Panel();
-            this.loadIndividuallyBox = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.forceUniqueFilePanel = new System.Windows.Forms.Panel();
-            this.forceUniqueFileBox = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.indexPanel = new System.Windows.Forms.Panel();
-            this.swapAtIndexButton = new System.Windows.Forms.Button();
-            this.itemIndexBox = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.settingsPanel = new System.Windows.Forms.Panel();
-            this.seqExportModeBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.seqImportModeBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.writeNamesBox = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.noInfoPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.kermalisSoundPlayerPanel = new System.Windows.Forms.Panel();
-            this.kermalisPosition = new System.Windows.Forms.TrackBar();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.kermalisStopButton = new System.Windows.Forms.Button();
-            this.kermalisPauseButton = new System.Windows.Forms.Button();
-            this.kermalisVolumeSlider = new System.Windows.Forms.TrackBar();
-            this.kermalisLoopBox = new System.Windows.Forms.CheckBox();
-            this.kermalisPlayButton = new System.Windows.Forms.Button();
-            this.soundPlayerLabel = new System.Windows.Forms.Label();
-            this.pnlPianoKeys = new System.Windows.Forms.Panel();
-            this.pkeyC7 = new NitroStudio2.PianoKey();
-            this.pkeyE7 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp7 = new NitroStudio2.PianoKey();
-            this.pkeyD7 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp7 = new NitroStudio2.PianoKey();
-            this.pkeyF7 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp7 = new NitroStudio2.PianoKey();
-            this.pkeyG7 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp7 = new NitroStudio2.PianoKey();
-            this.pkeyA7 = new NitroStudio2.PianoKey();
-            this.pkeyASharp7 = new NitroStudio2.PianoKey();
-            this.pkeyB7 = new NitroStudio2.PianoKey();
-            this.pkeyC6 = new NitroStudio2.PianoKey();
-            this.pkeyE6 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp6 = new NitroStudio2.PianoKey();
-            this.pkeyD6 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp6 = new NitroStudio2.PianoKey();
-            this.pkeyF6 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp6 = new NitroStudio2.PianoKey();
-            this.pkeyG6 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp6 = new NitroStudio2.PianoKey();
-            this.pkeyA6 = new NitroStudio2.PianoKey();
-            this.pkeyASharp6 = new NitroStudio2.PianoKey();
-            this.pkeyB6 = new NitroStudio2.PianoKey();
-            this.pkeyC1 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp1 = new NitroStudio2.PianoKey();
-            this.pkeyD1 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp1 = new NitroStudio2.PianoKey();
-            this.pkeyE1 = new NitroStudio2.PianoKey();
-            this.pkeyF1 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp1 = new NitroStudio2.PianoKey();
-            this.pkeyG1 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp1 = new NitroStudio2.PianoKey();
-            this.pkeyA1 = new NitroStudio2.PianoKey();
-            this.pkeyASharp1 = new NitroStudio2.PianoKey();
-            this.pkeyB1 = new NitroStudio2.PianoKey();
-            this.pkeyC2 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp2 = new NitroStudio2.PianoKey();
-            this.pkeyD2 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp2 = new NitroStudio2.PianoKey();
-            this.pkeyE2 = new NitroStudio2.PianoKey();
-            this.pkeyF2 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp2 = new NitroStudio2.PianoKey();
-            this.pkeyG2 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp2 = new NitroStudio2.PianoKey();
-            this.pkeyA2 = new NitroStudio2.PianoKey();
-            this.pkeyASharp2 = new NitroStudio2.PianoKey();
-            this.pkeyB2 = new NitroStudio2.PianoKey();
-            this.pkeyC3 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp3 = new NitroStudio2.PianoKey();
-            this.pkeyD3 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp3 = new NitroStudio2.PianoKey();
-            this.pkeyE3 = new NitroStudio2.PianoKey();
-            this.pkeyF3 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp3 = new NitroStudio2.PianoKey();
-            this.pkeyG3 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp3 = new NitroStudio2.PianoKey();
-            this.pkeyA3 = new NitroStudio2.PianoKey();
-            this.pkeyASharp3 = new NitroStudio2.PianoKey();
-            this.pkeyB3 = new NitroStudio2.PianoKey();
-            this.pkeyC4 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp4 = new NitroStudio2.PianoKey();
-            this.pkeyD4 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp4 = new NitroStudio2.PianoKey();
-            this.pkeyE4 = new NitroStudio2.PianoKey();
-            this.pkeyF4 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp4 = new NitroStudio2.PianoKey();
-            this.pkeyG4 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp4 = new NitroStudio2.PianoKey();
-            this.pkeyA4 = new NitroStudio2.PianoKey();
-            this.pkeyASharp4 = new NitroStudio2.PianoKey();
-            this.pkeyB4 = new NitroStudio2.PianoKey();
-            this.pkeyC5 = new NitroStudio2.PianoKey();
-            this.pkeyCSharp5 = new NitroStudio2.PianoKey();
-            this.pkeyD5 = new NitroStudio2.PianoKey();
-            this.pkeyDSharp5 = new NitroStudio2.PianoKey();
-            this.pkeyE5 = new NitroStudio2.PianoKey();
-            this.pkeyF5 = new NitroStudio2.PianoKey();
-            this.pkeyFSharp5 = new NitroStudio2.PianoKey();
-            this.pkeyG5 = new NitroStudio2.PianoKey();
-            this.pkeyGSharp5 = new NitroStudio2.PianoKey();
-            this.pkeyA5 = new NitroStudio2.PianoKey();
-            this.pkeyASharp5 = new NitroStudio2.PianoKey();
-            this.pkeyB5 = new NitroStudio2.PianoKey();
-            this.pkeyC8 = new NitroStudio2.PianoKey();
-            this.bankEditorWars = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.war3ComboBox = new System.Windows.Forms.ComboBox();
-            this.war3Box = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.war2ComboBox = new System.Windows.Forms.ComboBox();
-            this.war2Box = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.war1ComboBox = new System.Windows.Forms.ComboBox();
-            this.war1Box = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.war0ComboBox = new System.Windows.Forms.ComboBox();
-            this.war0Box = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tree = new System.Windows.Forms.TreeView();
-            this.treeIcons = new System.Windows.Forms.ImageList(this.components);
-            this.sequenceEditorPanel = new System.Windows.Forms.Panel();
-            this.sequenceEditor = new ScintillaNET.Scintilla();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.currentNote = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rootMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collapseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.nodeMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addAboveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addBelowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveUpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveDownToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.replaceFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sarEntryMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sarAddAbove = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarAddBelow = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarMoveUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarMoveDown = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarReplace = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarRename = new System.Windows.Forms.ToolStripMenuItem();
-            this.sarDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.seqBankPanel.SuspendLayout();
-            this.tableLayoutPanel36.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.tableLayoutPanel35.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track15Picture)).BeginInit();
-            this.tableLayoutPanel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track13Picture)).BeginInit();
-            this.tableLayoutPanel33.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track11Picture)).BeginInit();
-            this.tableLayoutPanel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track9Picture)).BeginInit();
-            this.tableLayoutPanel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track7Picture)).BeginInit();
-            this.tableLayoutPanel30.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track5Picture)).BeginInit();
-            this.tableLayoutPanel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track3Picture)).BeginInit();
-            this.tableLayoutPanel28.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track14Picture)).BeginInit();
-            this.tableLayoutPanel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track12Picture)).BeginInit();
-            this.tableLayoutPanel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track10Picture)).BeginInit();
-            this.tableLayoutPanel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track8Picture)).BeginInit();
-            this.tableLayoutPanel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track6Picture)).BeginInit();
-            this.tableLayoutPanel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track4Picture)).BeginInit();
-            this.tableLayoutPanel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track2Picture)).BeginInit();
-            this.tableLayoutPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track1Picture)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.track0Picture)).BeginInit();
-            this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seqEditorBankBox)).BeginInit();
-            this.bankEditorPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bankRegions)).BeginInit();
-            this.tableLayoutPanel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drumSetStartRangeBox)).BeginInit();
-            this.tableLayoutPanel14.SuspendLayout();
-            this.seqArcSeqPanel.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seqArcSeqBox)).BeginInit();
-            this.seqArcPanel.SuspendLayout();
-            this.seqPanel.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seqPlayerBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqPlayerPriorityBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqChannelPriorityBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqVolumeBox)).BeginInit();
-            this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.seqBankBox)).BeginInit();
-            this.playerPanel.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playerHeapSizeBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerMaxSequencesBox)).BeginInit();
-            this.stmPanel.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPriorityBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmVolumeBox)).BeginInit();
-            this.streamPlayerPanel.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerLeftChannelBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerRightChannelBox)).BeginInit();
-            this.grpPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpEntries)).BeginInit();
-            this.bankPanel.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar3Box)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar2Box)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar1Box)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar0Box)).BeginInit();
-            this.warPanel.SuspendLayout();
-            this.forceUniqueFilePanel.SuspendLayout();
-            this.indexPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemIndexBox)).BeginInit();
-            this.settingsPanel.SuspendLayout();
-            this.noInfoPanel.SuspendLayout();
-            this.kermalisSoundPlayerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kermalisPosition)).BeginInit();
-            this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kermalisVolumeSlider)).BeginInit();
-            this.pnlPianoKeys.SuspendLayout();
-            this.bankEditorWars.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.war3Box)).BeginInit();
-            this.tableLayoutPanel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.war2Box)).BeginInit();
-            this.tableLayoutPanel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.war1Box)).BeginInit();
-            this.tableLayoutPanel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.war0Box)).BeginInit();
-            this.sequenceEditorPanel.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.rootMenu.SuspendLayout();
-            this.nodeMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.sarEntryMenu.SuspendLayout();
-            this.SuspendLayout();
+        public void InitializeComponent()
+        {
+            components = new Container();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(EditorBase));
+            TreeNode treeNode1 = new TreeNode("File Information", 10, 10);
+            menuStrip = new MenuStrip();
+            fileMenu = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            saveAsToolStripMenuItem = new ToolStripMenuItem();
+            closeToolStripMenuItem = new ToolStripMenuItem();
+            settingsButton = new ToolStripMenuItem();
+            quitToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            blankFileToolStripMenuItem = new ToolStripMenuItem();
+            importFileToolStripMenuItem = new ToolStripMenuItem();
+            exportFileToolStripMenuItem = new ToolStripMenuItem();
+            toolsToolStripMenuItem = new ToolStripMenuItem();
+            sequenceEditorToolStripMenuItem = new ToolStripMenuItem();
+            sequenceArchiveEditorToolStripMenuItem = new ToolStripMenuItem();
+            bankEditorToolStripMenuItem = new ToolStripMenuItem();
+            waveArchiveEditorToolStripMenuItem = new ToolStripMenuItem();
+            bankGeneratorToolStripMenuItem = new ToolStripMenuItem();
+            creaveWaveToolStripMenuItem = new ToolStripMenuItem();
+            createStreamToolStripMenuItem = new ToolStripMenuItem();
+            exportSDKProjectToolStripMenuItem = new ToolStripMenuItem();
+            sF2ToDLSToolStripMenuItem = new ToolStripMenuItem();
+            dLSToSF2ToolStripMenuItem = new ToolStripMenuItem();
+            batchExportMIDIDLSSF2ToolStripMenuItem = new ToolStripMenuItem();
+            importFromExternalSDATToolStripMenuItem = new ToolStripMenuItem();
+            exportInfoTB = new ToolStripMenuItem();
+            sdblExportBtn = new ToolStripMenuItem();
+            sExportButton = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            getHelpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            aboutNitroStudio2ToolStripMenuItem = new ToolStripMenuItem();
+            splitContainer1 = new SplitContainer();
+            fileSizePanel = new Panel();
+            fileSizeLabel = new Label();
+            seqPanel = new Panel();
+            label20 = new Label();
+            tableLayoutPanel11 = new TableLayoutPanel();
+            seqPlayerComboBox = new ComboBox();
+            seqPlayerBox = new NumericUpDown();
+            label27 = new Label();
+            seqPlayerPriorityBox = new NumericUpDown();
+            label26 = new Label();
+            seqChannelPriorityBox = new NumericUpDown();
+            label25 = new Label();
+            seqVolumeBox = new NumericUpDown();
+            label24 = new Label();
+            tableLayoutPanel10 = new TableLayoutPanel();
+            seqBankComboBox = new ComboBox();
+            seqBankBox = new NumericUpDown();
+            label23 = new Label();
+            playerPanel = new Panel();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            playerFlag15Box = new CheckBox();
+            playerFlag14Box = new CheckBox();
+            playerFlag13Box = new CheckBox();
+            playerFlag12Box = new CheckBox();
+            playerFlag11Box = new CheckBox();
+            playerFlag10Box = new CheckBox();
+            playerFlag9Box = new CheckBox();
+            playerFlag8Box = new CheckBox();
+            playerFlag7Box = new CheckBox();
+            playerFlag6Box = new CheckBox();
+            playerFlag5Box = new CheckBox();
+            playerFlag4Box = new CheckBox();
+            playerFlag3Box = new CheckBox();
+            playerFlag2Box = new CheckBox();
+            playerFlag1Box = new CheckBox();
+            playerFlag0Box = new CheckBox();
+            label19 = new Label();
+            playerHeapSizeBox = new NumericUpDown();
+            label18 = new Label();
+            playerMaxSequencesBox = new NumericUpDown();
+            label17 = new Label();
+            seqBankPanel = new Panel();
+            tableLayoutPanel36 = new TableLayoutPanel();
+            exportWavButton = new Button();
+            exportMidiButton = new Button();
+            tableLayoutPanel20 = new TableLayoutPanel();
+            tableLayoutPanel35 = new TableLayoutPanel();
+            track15Box = new CheckBox();
+            track15Picture = new PictureBox();
+            track15Solo = new Button();
+            tableLayoutPanel34 = new TableLayoutPanel();
+            track13Box = new CheckBox();
+            track13Picture = new PictureBox();
+            track13Solo = new Button();
+            tableLayoutPanel33 = new TableLayoutPanel();
+            track11Box = new CheckBox();
+            track11Picture = new PictureBox();
+            track11Solo = new Button();
+            tableLayoutPanel32 = new TableLayoutPanel();
+            track9Box = new CheckBox();
+            track9Picture = new PictureBox();
+            track9Solo = new Button();
+            tableLayoutPanel31 = new TableLayoutPanel();
+            track7Box = new CheckBox();
+            track7Picture = new PictureBox();
+            track7Solo = new Button();
+            tableLayoutPanel30 = new TableLayoutPanel();
+            track5Box = new CheckBox();
+            track5Picture = new PictureBox();
+            track5Solo = new Button();
+            tableLayoutPanel29 = new TableLayoutPanel();
+            track3Box = new CheckBox();
+            track3Picture = new PictureBox();
+            track3Solo = new Button();
+            tableLayoutPanel28 = new TableLayoutPanel();
+            track14Box = new CheckBox();
+            track14Picture = new PictureBox();
+            track14Solo = new Button();
+            tableLayoutPanel27 = new TableLayoutPanel();
+            track12Box = new CheckBox();
+            track12Picture = new PictureBox();
+            track12Solo = new Button();
+            tableLayoutPanel26 = new TableLayoutPanel();
+            track10Box = new CheckBox();
+            track10Picture = new PictureBox();
+            track10Solo = new Button();
+            tableLayoutPanel25 = new TableLayoutPanel();
+            track8Box = new CheckBox();
+            track8Picture = new PictureBox();
+            track8Solo = new Button();
+            tableLayoutPanel24 = new TableLayoutPanel();
+            track6Box = new CheckBox();
+            track6Picture = new PictureBox();
+            track6Solo = new Button();
+            tableLayoutPanel23 = new TableLayoutPanel();
+            track4Box = new CheckBox();
+            track4Picture = new PictureBox();
+            track4Solo = new Button();
+            tableLayoutPanel22 = new TableLayoutPanel();
+            track2Box = new CheckBox();
+            track2Picture = new PictureBox();
+            track2Solo = new Button();
+            tableLayoutPanel21 = new TableLayoutPanel();
+            track1Box = new CheckBox();
+            track1Picture = new PictureBox();
+            track1Solo = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            track0Box = new CheckBox();
+            track0Picture = new PictureBox();
+            track0Solo = new Button();
+            label28 = new Label();
+            tableLayoutPanel12 = new TableLayoutPanel();
+            seqEditorBankComboBox = new ComboBox();
+            seqEditorBankBox = new NumericUpDown();
+            bankEditorPanel = new Panel();
+            bankRegions = new DataGridView();
+            playSampleButton = new DataGridViewButtonColumn();
+            endNote = new DataGridViewComboBoxColumn();
+            instrumentType = new DataGridViewComboBoxColumn();
+            waveId = new DataGridViewTextBoxColumn();
+            waveArchiveId = new DataGridViewTextBoxColumn();
+            baseNote = new DataGridViewComboBoxColumn();
+            attack = new DataGridViewTextBoxColumn();
+            decay = new DataGridViewTextBoxColumn();
+            sustain = new DataGridViewTextBoxColumn();
+            release = new DataGridViewTextBoxColumn();
+            pan = new DataGridViewTextBoxColumn();
+            label32 = new Label();
+            tableLayoutPanel15 = new TableLayoutPanel();
+            drumSetStartRangeComboBox = new ComboBox();
+            drumSetStartRangeBox = new NumericUpDown();
+            drumSetRangeStartLabel = new Label();
+            tableLayoutPanel14 = new TableLayoutPanel();
+            keySplitBox = new RadioButton();
+            drumSetBox = new RadioButton();
+            directBox = new RadioButton();
+            label30 = new Label();
+            seqArcSeqPanel = new Panel();
+            label29 = new Label();
+            tableLayoutPanel13 = new TableLayoutPanel();
+            seqArcSeqComboBox = new ComboBox();
+            seqArcSeqBox = new NumericUpDown();
+            seqArcPanel = new Panel();
+            seqArcOpenFileButton = new Button();
+            stmPanel = new Panel();
+            stmMonoToStereoBox = new CheckBox();
+            label16 = new Label();
+            label15 = new Label();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            stmPlayerComboBox = new ComboBox();
+            stmPlayerBox = new NumericUpDown();
+            stmPriorityBox = new NumericUpDown();
+            label14 = new Label();
+            stmVolumeBox = new NumericUpDown();
+            label13 = new Label();
+            streamPlayerPanel = new Panel();
+            stmPlayerChannelType = new ComboBox();
+            label12 = new Label();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            stmPlayerLeftChannelBox = new NumericUpDown();
+            stmPlayerRightChannelBox = new NumericUpDown();
+            rightChannelLabel = new Label();
+            leftChannelLabel = new Label();
+            grpPanel = new Panel();
+            grpEntries = new DataGridView();
+            item = new DataGridViewComboBoxColumn();
+            loadFlags = new DataGridViewComboBoxColumn();
+            bankPanel = new Panel();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            bnkWar3ComboBox = new ComboBox();
+            bnkWar3Box = new NumericUpDown();
+            label11 = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            bnkWar2ComboBox = new ComboBox();
+            bnkWar2Box = new NumericUpDown();
+            label10 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            bnkWar1ComboBox = new ComboBox();
+            bnkWar1Box = new NumericUpDown();
+            label7 = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            bnkWar0ComboBox = new ComboBox();
+            bnkWar0Box = new NumericUpDown();
+            label6 = new Label();
+            blankPanel = new Panel();
+            warPanel = new Panel();
+            loadIndividuallyBox = new CheckBox();
+            label9 = new Label();
+            forceUniqueFilePanel = new Panel();
+            forceUniqueFileBox = new CheckBox();
+            label8 = new Label();
+            indexPanel = new Panel();
+            swapAtIndexButton = new Button();
+            itemIndexBox = new NumericUpDown();
+            label5 = new Label();
+            settingsPanel = new Panel();
+            seqExportModeBox = new ComboBox();
+            label4 = new Label();
+            seqImportModeBox = new ComboBox();
+            label3 = new Label();
+            writeNamesBox = new CheckBox();
+            label2 = new Label();
+            noInfoPanel = new Panel();
+            label1 = new Label();
+            kermalisSoundPlayerPanel = new Panel();
+            kermalisPosition = new TrackBar();
+            tableLayoutPanel9 = new TableLayoutPanel();
+            label22 = new Label();
+            label21 = new Label();
+            kermalisStopButton = new Button();
+            kermalisPauseButton = new Button();
+            kermalisVolumeSlider = new TrackBar();
+            kermalisLoopBox = new CheckBox();
+            kermalisPlayButton = new Button();
+            soundPlayerLabel = new Label();
+            pnlPianoKeys = new Panel();
+            pkeyC7 = new PianoKey();
+            pkeyE7 = new PianoKey();
+            pkeyCSharp7 = new PianoKey();
+            pkeyD7 = new PianoKey();
+            pkeyDSharp7 = new PianoKey();
+            pkeyF7 = new PianoKey();
+            pkeyFSharp7 = new PianoKey();
+            pkeyG7 = new PianoKey();
+            pkeyGSharp7 = new PianoKey();
+            pkeyA7 = new PianoKey();
+            pkeyASharp7 = new PianoKey();
+            pkeyB7 = new PianoKey();
+            pkeyC6 = new PianoKey();
+            pkeyE6 = new PianoKey();
+            pkeyCSharp6 = new PianoKey();
+            pkeyD6 = new PianoKey();
+            pkeyDSharp6 = new PianoKey();
+            pkeyF6 = new PianoKey();
+            pkeyFSharp6 = new PianoKey();
+            pkeyG6 = new PianoKey();
+            pkeyGSharp6 = new PianoKey();
+            pkeyA6 = new PianoKey();
+            pkeyASharp6 = new PianoKey();
+            pkeyB6 = new PianoKey();
+            pkeyC1 = new PianoKey();
+            pkeyCSharp1 = new PianoKey();
+            pkeyD1 = new PianoKey();
+            pkeyDSharp1 = new PianoKey();
+            pkeyE1 = new PianoKey();
+            pkeyF1 = new PianoKey();
+            pkeyFSharp1 = new PianoKey();
+            pkeyG1 = new PianoKey();
+            pkeyGSharp1 = new PianoKey();
+            pkeyA1 = new PianoKey();
+            pkeyASharp1 = new PianoKey();
+            pkeyB1 = new PianoKey();
+            pkeyC2 = new PianoKey();
+            pkeyCSharp2 = new PianoKey();
+            pkeyD2 = new PianoKey();
+            pkeyDSharp2 = new PianoKey();
+            pkeyE2 = new PianoKey();
+            pkeyF2 = new PianoKey();
+            pkeyFSharp2 = new PianoKey();
+            pkeyG2 = new PianoKey();
+            pkeyGSharp2 = new PianoKey();
+            pkeyA2 = new PianoKey();
+            pkeyASharp2 = new PianoKey();
+            pkeyB2 = new PianoKey();
+            pkeyC3 = new PianoKey();
+            pkeyCSharp3 = new PianoKey();
+            pkeyD3 = new PianoKey();
+            pkeyDSharp3 = new PianoKey();
+            pkeyE3 = new PianoKey();
+            pkeyF3 = new PianoKey();
+            pkeyFSharp3 = new PianoKey();
+            pkeyG3 = new PianoKey();
+            pkeyGSharp3 = new PianoKey();
+            pkeyA3 = new PianoKey();
+            pkeyASharp3 = new PianoKey();
+            pkeyB3 = new PianoKey();
+            pkeyC4 = new PianoKey();
+            pkeyCSharp4 = new PianoKey();
+            pkeyD4 = new PianoKey();
+            pkeyDSharp4 = new PianoKey();
+            pkeyE4 = new PianoKey();
+            pkeyF4 = new PianoKey();
+            pkeyFSharp4 = new PianoKey();
+            pkeyG4 = new PianoKey();
+            pkeyGSharp4 = new PianoKey();
+            pkeyA4 = new PianoKey();
+            pkeyASharp4 = new PianoKey();
+            pkeyB4 = new PianoKey();
+            pkeyC5 = new PianoKey();
+            pkeyCSharp5 = new PianoKey();
+            pkeyD5 = new PianoKey();
+            pkeyDSharp5 = new PianoKey();
+            pkeyE5 = new PianoKey();
+            pkeyF5 = new PianoKey();
+            pkeyFSharp5 = new PianoKey();
+            pkeyG5 = new PianoKey();
+            pkeyGSharp5 = new PianoKey();
+            pkeyA5 = new PianoKey();
+            pkeyASharp5 = new PianoKey();
+            pkeyB5 = new PianoKey();
+            pkeyC8 = new PianoKey();
+            bankEditorWars = new Panel();
+            tableLayoutPanel16 = new TableLayoutPanel();
+            war3ComboBox = new ComboBox();
+            war3Box = new NumericUpDown();
+            label31 = new Label();
+            tableLayoutPanel17 = new TableLayoutPanel();
+            war2ComboBox = new ComboBox();
+            war2Box = new NumericUpDown();
+            label33 = new Label();
+            tableLayoutPanel18 = new TableLayoutPanel();
+            war1ComboBox = new ComboBox();
+            war1Box = new NumericUpDown();
+            label34 = new Label();
+            tableLayoutPanel19 = new TableLayoutPanel();
+            war0ComboBox = new ComboBox();
+            war0Box = new NumericUpDown();
+            label35 = new Label();
+            tree = new TreeView();
+            treeIcons = new ImageList(components);
+            sequenceEditorPanel = new Panel();
+            sequenceEditor = new Scintilla();
+            openFileDialog = new OpenFileDialog();
+            saveFileDialog = new SaveFileDialog();
+            statusStrip = new StatusStrip();
+            status = new ToolStripStatusLabel();
+            currentNote = new ToolStripStatusLabel();
+            rootMenu = new ContextMenuStrip(components);
+            addToolStripMenuItem = new ToolStripMenuItem();
+            expandToolStripMenuItem = new ToolStripMenuItem();
+            collapseToolStripMenuItem = new ToolStripMenuItem();
+            toolTip = new ToolTip(components);
+            nodeMenu = new ContextMenuStrip(components);
+            addAboveToolStripMenuItem1 = new ToolStripMenuItem();
+            addBelowToolStripMenuItem1 = new ToolStripMenuItem();
+            moveUpToolStripMenuItem1 = new ToolStripMenuItem();
+            moveDownToolStripMenuItem1 = new ToolStripMenuItem();
+            replaceFileToolStripMenuItem = new ToolStripMenuItem();
+            exportToolStripMenuItem1 = new ToolStripMenuItem();
+            deleteToolStripMenuItem1 = new ToolStripMenuItem();
+            bindingSource1 = new BindingSource(components);
+            sarEntryMenu = new ContextMenuStrip(components);
+            sarAddAbove = new ToolStripMenuItem();
+            sarAddBelow = new ToolStripMenuItem();
+            sarMoveUp = new ToolStripMenuItem();
+            sarMoveDown = new ToolStripMenuItem();
+            sarReplace = new ToolStripMenuItem();
+            sarExport = new ToolStripMenuItem();
+            sarRename = new ToolStripMenuItem();
+            sarDelete = new ToolStripMenuItem();
+            menuStrip.SuspendLayout();
+            ((ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            fileSizePanel.SuspendLayout();
+            seqPanel.SuspendLayout();
+            tableLayoutPanel11.SuspendLayout();
+            ((ISupportInitialize)seqPlayerBox).BeginInit();
+            ((ISupportInitialize)seqPlayerPriorityBox).BeginInit();
+            ((ISupportInitialize)seqChannelPriorityBox).BeginInit();
+            ((ISupportInitialize)seqVolumeBox).BeginInit();
+            tableLayoutPanel10.SuspendLayout();
+            ((ISupportInitialize)seqBankBox).BeginInit();
+            playerPanel.SuspendLayout();
+            tableLayoutPanel8.SuspendLayout();
+            ((ISupportInitialize)playerHeapSizeBox).BeginInit();
+            ((ISupportInitialize)playerMaxSequencesBox).BeginInit();
+            seqBankPanel.SuspendLayout();
+            tableLayoutPanel36.SuspendLayout();
+            tableLayoutPanel20.SuspendLayout();
+            tableLayoutPanel35.SuspendLayout();
+            ((ISupportInitialize)track15Picture).BeginInit();
+            tableLayoutPanel34.SuspendLayout();
+            ((ISupportInitialize)track13Picture).BeginInit();
+            tableLayoutPanel33.SuspendLayout();
+            ((ISupportInitialize)track11Picture).BeginInit();
+            tableLayoutPanel32.SuspendLayout();
+            ((ISupportInitialize)track9Picture).BeginInit();
+            tableLayoutPanel31.SuspendLayout();
+            ((ISupportInitialize)track7Picture).BeginInit();
+            tableLayoutPanel30.SuspendLayout();
+            ((ISupportInitialize)track5Picture).BeginInit();
+            tableLayoutPanel29.SuspendLayout();
+            ((ISupportInitialize)track3Picture).BeginInit();
+            tableLayoutPanel28.SuspendLayout();
+            ((ISupportInitialize)track14Picture).BeginInit();
+            tableLayoutPanel27.SuspendLayout();
+            ((ISupportInitialize)track12Picture).BeginInit();
+            tableLayoutPanel26.SuspendLayout();
+            ((ISupportInitialize)track10Picture).BeginInit();
+            tableLayoutPanel25.SuspendLayout();
+            ((ISupportInitialize)track8Picture).BeginInit();
+            tableLayoutPanel24.SuspendLayout();
+            ((ISupportInitialize)track6Picture).BeginInit();
+            tableLayoutPanel23.SuspendLayout();
+            ((ISupportInitialize)track4Picture).BeginInit();
+            tableLayoutPanel22.SuspendLayout();
+            ((ISupportInitialize)track2Picture).BeginInit();
+            tableLayoutPanel21.SuspendLayout();
+            ((ISupportInitialize)track1Picture).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            ((ISupportInitialize)track0Picture).BeginInit();
+            tableLayoutPanel12.SuspendLayout();
+            ((ISupportInitialize)seqEditorBankBox).BeginInit();
+            bankEditorPanel.SuspendLayout();
+            ((ISupportInitialize)bankRegions).BeginInit();
+            tableLayoutPanel15.SuspendLayout();
+            ((ISupportInitialize)drumSetStartRangeBox).BeginInit();
+            tableLayoutPanel14.SuspendLayout();
+            seqArcSeqPanel.SuspendLayout();
+            tableLayoutPanel13.SuspendLayout();
+            ((ISupportInitialize)seqArcSeqBox).BeginInit();
+            seqArcPanel.SuspendLayout();
+            stmPanel.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            ((ISupportInitialize)stmPlayerBox).BeginInit();
+            ((ISupportInitialize)stmPriorityBox).BeginInit();
+            ((ISupportInitialize)stmVolumeBox).BeginInit();
+            streamPlayerPanel.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            ((ISupportInitialize)stmPlayerLeftChannelBox).BeginInit();
+            ((ISupportInitialize)stmPlayerRightChannelBox).BeginInit();
+            grpPanel.SuspendLayout();
+            ((ISupportInitialize)grpEntries).BeginInit();
+            bankPanel.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            ((ISupportInitialize)bnkWar3Box).BeginInit();
+            tableLayoutPanel4.SuspendLayout();
+            ((ISupportInitialize)bnkWar2Box).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
+            ((ISupportInitialize)bnkWar1Box).BeginInit();
+            tableLayoutPanel2.SuspendLayout();
+            ((ISupportInitialize)bnkWar0Box).BeginInit();
+            warPanel.SuspendLayout();
+            forceUniqueFilePanel.SuspendLayout();
+            indexPanel.SuspendLayout();
+            ((ISupportInitialize)itemIndexBox).BeginInit();
+            settingsPanel.SuspendLayout();
+            noInfoPanel.SuspendLayout();
+            kermalisSoundPlayerPanel.SuspendLayout();
+            ((ISupportInitialize)kermalisPosition).BeginInit();
+            tableLayoutPanel9.SuspendLayout();
+            ((ISupportInitialize)kermalisVolumeSlider).BeginInit();
+            pnlPianoKeys.SuspendLayout();
+            bankEditorWars.SuspendLayout();
+            tableLayoutPanel16.SuspendLayout();
+            ((ISupportInitialize)war3Box).BeginInit();
+            tableLayoutPanel17.SuspendLayout();
+            ((ISupportInitialize)war2Box).BeginInit();
+            tableLayoutPanel18.SuspendLayout();
+            ((ISupportInitialize)war1Box).BeginInit();
+            tableLayoutPanel19.SuspendLayout();
+            ((ISupportInitialize)war0Box).BeginInit();
+            sequenceEditorPanel.SuspendLayout();
+            statusStrip.SuspendLayout();
+            rootMenu.SuspendLayout();
+            nodeMenu.SuspendLayout();
+            ((ISupportInitialize)bindingSource1).BeginInit();
+            sarEntryMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu,
-            this.editToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(984, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "menuStrip1";
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(984, 24);
+            menuStrip.TabIndex = 0;
+            menuStrip.Text = "menuStrip1";
             // 
             // fileMenu
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.closeToolStripMenuItem,
-            this.settingsButton,
-            this.quitToolStripMenuItem});
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(37, 20);
-            this.fileMenu.Text = "File";
+            fileMenu.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, saveToolStripMenuItem, saveAsToolStripMenuItem, closeToolStripMenuItem, settingsButton, quitToolStripMenuItem });
+            fileMenu.Name = "fileMenu";
+            fileMenu.Size = new Size(37, 20);
+            fileMenu.Text = "File";
             // 
             // newToolStripMenuItem
             // 
-            this.newToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.New;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            newToolStripMenuItem.Image = Properties.Resources.New;
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.Size = new Size(116, 22);
+            newToolStripMenuItem.Text = "New";
+            newToolStripMenuItem.Click += newToolStripMenuItem_Click;
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Open;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            openToolStripMenuItem.Image = Properties.Resources.Open;
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(116, 22);
+            openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            saveToolStripMenuItem.Image = Properties.Resources.Save;
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(116, 22);
+            saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // saveAsToolStripMenuItem
             // 
-            this.saveAsToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            saveAsToolStripMenuItem.Image = Properties.Resources.Save_As;
+            saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            saveAsToolStripMenuItem.Size = new Size(116, 22);
+            saveAsToolStripMenuItem.Text = "Save As";
+            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // closeToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Close;
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            closeToolStripMenuItem.Image = Properties.Resources.Close;
+            closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            closeToolStripMenuItem.Size = new Size(116, 22);
+            closeToolStripMenuItem.Text = "Close";
+            closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
             // 
             // settingsButton
             // 
-            this.settingsButton.Image = global::NitroStudio2.Properties.Resources.New;
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(180, 22);
-            this.settingsButton.Text = "Settings";
+            settingsButton.Image = Properties.Resources.New;
+            settingsButton.Name = "settingsButton";
+            settingsButton.Size = new Size(116, 22);
+            settingsButton.Text = "Settings";
             // 
             // quitToolStripMenuItem
             // 
-            this.quitToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Quit;
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quitToolStripMenuItem.Text = "Quit";
-            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            quitToolStripMenuItem.Image = Properties.Resources.Quit;
+            quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            quitToolStripMenuItem.Size = new Size(116, 22);
+            quitToolStripMenuItem.Text = "Quit";
+            quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blankFileToolStripMenuItem,
-            this.importFileToolStripMenuItem,
-            this.exportFileToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { blankFileToolStripMenuItem, importFileToolStripMenuItem, exportFileToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(39, 20);
+            editToolStripMenuItem.Text = "Edit";
             // 
             // blankFileToolStripMenuItem
             // 
-            this.blankFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Rename;
-            this.blankFileToolStripMenuItem.Name = "blankFileToolStripMenuItem";
-            this.blankFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.blankFileToolStripMenuItem.Text = "Blank File";
-            this.blankFileToolStripMenuItem.Click += new System.EventHandler(this.blankFileToolStripMenuItem_Click);
+            blankFileToolStripMenuItem.Image = Properties.Resources.Rename;
+            blankFileToolStripMenuItem.Name = "blankFileToolStripMenuItem";
+            blankFileToolStripMenuItem.Size = new Size(131, 22);
+            blankFileToolStripMenuItem.Text = "Blank File";
+            blankFileToolStripMenuItem.Click += blankFileToolStripMenuItem_Click;
             // 
             // importFileToolStripMenuItem
             // 
-            this.importFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.importFileToolStripMenuItem.Name = "importFileToolStripMenuItem";
-            this.importFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.importFileToolStripMenuItem.Text = "Import File";
-            this.importFileToolStripMenuItem.Click += new System.EventHandler(this.importFileToolStripMenuItem_Click);
+            importFileToolStripMenuItem.Image = Properties.Resources.Import;
+            importFileToolStripMenuItem.Name = "importFileToolStripMenuItem";
+            importFileToolStripMenuItem.Size = new Size(131, 22);
+            importFileToolStripMenuItem.Text = "Import File";
+            importFileToolStripMenuItem.Click += importFileToolStripMenuItem_Click;
             // 
             // exportFileToolStripMenuItem
             // 
-            this.exportFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Export;
-            this.exportFileToolStripMenuItem.Name = "exportFileToolStripMenuItem";
-            this.exportFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.exportFileToolStripMenuItem.Text = "Export File";
-            this.exportFileToolStripMenuItem.Click += new System.EventHandler(this.exportFileToolStripMenuItem_Click);
+            exportFileToolStripMenuItem.Image = Properties.Resources.Export;
+            exportFileToolStripMenuItem.Name = "exportFileToolStripMenuItem";
+            exportFileToolStripMenuItem.Size = new Size(131, 22);
+            exportFileToolStripMenuItem.Text = "Export File";
+            exportFileToolStripMenuItem.Click += exportFileToolStripMenuItem_Click;
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sequenceEditorToolStripMenuItem,
-            this.sequenceArchiveEditorToolStripMenuItem,
-            this.bankEditorToolStripMenuItem,
-            this.waveArchiveEditorToolStripMenuItem,
-            this.bankGeneratorToolStripMenuItem,
-            this.creaveWaveToolStripMenuItem,
-            this.createStreamToolStripMenuItem,
-            this.exportSDKProjectToolStripMenuItem,
-            this.sF2ToDLSToolStripMenuItem,
-            this.dLSToSF2ToolStripMenuItem,
-            this.batchExportMIDIDLSSF2ToolStripMenuItem,
-            this.importFromExternalSDATToolStripMenuItem,
-            this.exportInfoTB});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sequenceEditorToolStripMenuItem, sequenceArchiveEditorToolStripMenuItem, bankEditorToolStripMenuItem, waveArchiveEditorToolStripMenuItem, bankGeneratorToolStripMenuItem, creaveWaveToolStripMenuItem, createStreamToolStripMenuItem, exportSDKProjectToolStripMenuItem, sF2ToDLSToolStripMenuItem, dLSToSF2ToolStripMenuItem, batchExportMIDIDLSSF2ToolStripMenuItem, importFromExternalSDATToolStripMenuItem, exportInfoTB });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            toolsToolStripMenuItem.Size = new Size(47, 20);
+            toolsToolStripMenuItem.Text = "Tools";
             // 
             // sequenceEditorToolStripMenuItem
             // 
-            this.sequenceEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sequenceEditorToolStripMenuItem.Image")));
-            this.sequenceEditorToolStripMenuItem.Name = "sequenceEditorToolStripMenuItem";
-            this.sequenceEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.sequenceEditorToolStripMenuItem.Text = "Sequence Editor";
-            this.sequenceEditorToolStripMenuItem.Click += new System.EventHandler(this.SequenceEditorToolStripMenuItem_Click);
+            sequenceEditorToolStripMenuItem.Image = (Image)resources.GetObject("sequenceEditorToolStripMenuItem.Image");
+            sequenceEditorToolStripMenuItem.Name = "sequenceEditorToolStripMenuItem";
+            sequenceEditorToolStripMenuItem.Size = new Size(216, 22);
+            sequenceEditorToolStripMenuItem.Text = "Sequence Editor";
+            sequenceEditorToolStripMenuItem.Click += SequenceEditorToolStripMenuItem_Click;
             // 
             // sequenceArchiveEditorToolStripMenuItem
             // 
-            this.sequenceArchiveEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sequenceArchiveEditorToolStripMenuItem.Image")));
-            this.sequenceArchiveEditorToolStripMenuItem.Name = "sequenceArchiveEditorToolStripMenuItem";
-            this.sequenceArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.sequenceArchiveEditorToolStripMenuItem.Text = "Sequence Archive Editor";
-            this.sequenceArchiveEditorToolStripMenuItem.Click += new System.EventHandler(this.SequenceArchiveEditorToolStripMenuItem_Click);
+            sequenceArchiveEditorToolStripMenuItem.Image = (Image)resources.GetObject("sequenceArchiveEditorToolStripMenuItem.Image");
+            sequenceArchiveEditorToolStripMenuItem.Name = "sequenceArchiveEditorToolStripMenuItem";
+            sequenceArchiveEditorToolStripMenuItem.Size = new Size(216, 22);
+            sequenceArchiveEditorToolStripMenuItem.Text = "Sequence Archive Editor";
+            sequenceArchiveEditorToolStripMenuItem.Click += SequenceArchiveEditorToolStripMenuItem_Click;
             // 
             // bankEditorToolStripMenuItem
             // 
-            this.bankEditorToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Bank;
-            this.bankEditorToolStripMenuItem.Name = "bankEditorToolStripMenuItem";
-            this.bankEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.bankEditorToolStripMenuItem.Text = "Bank Editor";
-            this.bankEditorToolStripMenuItem.Click += new System.EventHandler(this.BankEditorToolStripMenuItem_Click);
+            bankEditorToolStripMenuItem.Image = Properties.Resources.Bank;
+            bankEditorToolStripMenuItem.Name = "bankEditorToolStripMenuItem";
+            bankEditorToolStripMenuItem.Size = new Size(216, 22);
+            bankEditorToolStripMenuItem.Text = "Bank Editor";
+            bankEditorToolStripMenuItem.Click += BankEditorToolStripMenuItem_Click;
             // 
             // waveArchiveEditorToolStripMenuItem
             // 
-            this.waveArchiveEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("waveArchiveEditorToolStripMenuItem.Image")));
-            this.waveArchiveEditorToolStripMenuItem.Name = "waveArchiveEditorToolStripMenuItem";
-            this.waveArchiveEditorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.waveArchiveEditorToolStripMenuItem.Text = "Wave Archive Editor";
-            this.waveArchiveEditorToolStripMenuItem.Click += new System.EventHandler(this.WaveArchiveEditorToolStripMenuItem_Click);
+            waveArchiveEditorToolStripMenuItem.Image = (Image)resources.GetObject("waveArchiveEditorToolStripMenuItem.Image");
+            waveArchiveEditorToolStripMenuItem.Name = "waveArchiveEditorToolStripMenuItem";
+            waveArchiveEditorToolStripMenuItem.Size = new Size(216, 22);
+            waveArchiveEditorToolStripMenuItem.Text = "Wave Archive Editor";
+            waveArchiveEditorToolStripMenuItem.Click += WaveArchiveEditorToolStripMenuItem_Click;
             // 
             // bankGeneratorToolStripMenuItem
             // 
-            this.bankGeneratorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bankGeneratorToolStripMenuItem.Image")));
-            this.bankGeneratorToolStripMenuItem.Name = "bankGeneratorToolStripMenuItem";
-            this.bankGeneratorToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.bankGeneratorToolStripMenuItem.Text = "Bank Generator";
-            this.bankGeneratorToolStripMenuItem.Click += new System.EventHandler(this.BankGeneratorToolStripMenuItem_Click);
+            bankGeneratorToolStripMenuItem.Image = (Image)resources.GetObject("bankGeneratorToolStripMenuItem.Image");
+            bankGeneratorToolStripMenuItem.Name = "bankGeneratorToolStripMenuItem";
+            bankGeneratorToolStripMenuItem.Size = new Size(216, 22);
+            bankGeneratorToolStripMenuItem.Text = "Bank Generator";
+            bankGeneratorToolStripMenuItem.Click += BankGeneratorToolStripMenuItem_Click;
             // 
             // creaveWaveToolStripMenuItem
             // 
-            this.creaveWaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("creaveWaveToolStripMenuItem.Image")));
-            this.creaveWaveToolStripMenuItem.Name = "creaveWaveToolStripMenuItem";
-            this.creaveWaveToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.creaveWaveToolStripMenuItem.Text = "Creave Wave";
-            this.creaveWaveToolStripMenuItem.Click += new System.EventHandler(this.CreaveWaveToolStripMenuItem_Click);
+            creaveWaveToolStripMenuItem.Image = (Image)resources.GetObject("creaveWaveToolStripMenuItem.Image");
+            creaveWaveToolStripMenuItem.Name = "creaveWaveToolStripMenuItem";
+            creaveWaveToolStripMenuItem.Size = new Size(216, 22);
+            creaveWaveToolStripMenuItem.Text = "Creave Wave";
+            creaveWaveToolStripMenuItem.Click += CreaveWaveToolStripMenuItem_Click;
             // 
             // createStreamToolStripMenuItem
             // 
-            this.createStreamToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createStreamToolStripMenuItem.Image")));
-            this.createStreamToolStripMenuItem.Name = "createStreamToolStripMenuItem";
-            this.createStreamToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.createStreamToolStripMenuItem.Text = "Create Stream";
-            this.createStreamToolStripMenuItem.Click += new System.EventHandler(this.CreateStreamToolStripMenuItem_Click);
+            createStreamToolStripMenuItem.Image = (Image)resources.GetObject("createStreamToolStripMenuItem.Image");
+            createStreamToolStripMenuItem.Name = "createStreamToolStripMenuItem";
+            createStreamToolStripMenuItem.Size = new Size(216, 22);
+            createStreamToolStripMenuItem.Text = "Create Stream";
+            createStreamToolStripMenuItem.Click += CreateStreamToolStripMenuItem_Click;
             // 
             // exportSDKProjectToolStripMenuItem
             // 
-            this.exportSDKProjectToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.NSM;
-            this.exportSDKProjectToolStripMenuItem.Name = "exportSDKProjectToolStripMenuItem";
-            this.exportSDKProjectToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.exportSDKProjectToolStripMenuItem.Text = "Export SDK Project";
-            this.exportSDKProjectToolStripMenuItem.Click += new System.EventHandler(this.ExportSDKProjectToolStripMenuItem_Click);
+            exportSDKProjectToolStripMenuItem.Image = Properties.Resources.NSM;
+            exportSDKProjectToolStripMenuItem.Name = "exportSDKProjectToolStripMenuItem";
+            exportSDKProjectToolStripMenuItem.Size = new Size(216, 22);
+            exportSDKProjectToolStripMenuItem.Text = "Export SDK Project";
+            exportSDKProjectToolStripMenuItem.Click += ExportSDKProjectToolStripMenuItem_Click;
             // 
             // sF2ToDLSToolStripMenuItem
             // 
-            this.sF2ToDLSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sF2ToDLSToolStripMenuItem.Image")));
-            this.sF2ToDLSToolStripMenuItem.Name = "sF2ToDLSToolStripMenuItem";
-            this.sF2ToDLSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.sF2ToDLSToolStripMenuItem.Text = "SF2 To DLS";
-            this.sF2ToDLSToolStripMenuItem.Click += new System.EventHandler(this.sF2ToDLSToolStripMenuItem_Click);
+            sF2ToDLSToolStripMenuItem.Image = (Image)resources.GetObject("sF2ToDLSToolStripMenuItem.Image");
+            sF2ToDLSToolStripMenuItem.Name = "sF2ToDLSToolStripMenuItem";
+            sF2ToDLSToolStripMenuItem.Size = new Size(216, 22);
+            sF2ToDLSToolStripMenuItem.Text = "SF2 To DLS";
+            sF2ToDLSToolStripMenuItem.Click += sF2ToDLSToolStripMenuItem_Click;
             // 
             // dLSToSF2ToolStripMenuItem
             // 
-            this.dLSToSF2ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dLSToSF2ToolStripMenuItem.Image")));
-            this.dLSToSF2ToolStripMenuItem.Name = "dLSToSF2ToolStripMenuItem";
-            this.dLSToSF2ToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.dLSToSF2ToolStripMenuItem.Text = "DLS To SF2";
-            this.dLSToSF2ToolStripMenuItem.Click += new System.EventHandler(this.dLSToSF2ToolStripMenuItem_Click);
+            dLSToSF2ToolStripMenuItem.Image = (Image)resources.GetObject("dLSToSF2ToolStripMenuItem.Image");
+            dLSToSF2ToolStripMenuItem.Name = "dLSToSF2ToolStripMenuItem";
+            dLSToSF2ToolStripMenuItem.Size = new Size(216, 22);
+            dLSToSF2ToolStripMenuItem.Text = "DLS To SF2";
+            dLSToSF2ToolStripMenuItem.Click += dLSToSF2ToolStripMenuItem_Click;
             // 
             // batchExportMIDIDLSSF2ToolStripMenuItem
             // 
-            this.batchExportMIDIDLSSF2ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("batchExportMIDIDLSSF2ToolStripMenuItem.Image")));
-            this.batchExportMIDIDLSSF2ToolStripMenuItem.Name = "batchExportMIDIDLSSF2ToolStripMenuItem";
-            this.batchExportMIDIDLSSF2ToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.batchExportMIDIDLSSF2ToolStripMenuItem.Text = "Batch Export MIDI/DLS/SF2";
+            batchExportMIDIDLSSF2ToolStripMenuItem.Image = (Image)resources.GetObject("batchExportMIDIDLSSF2ToolStripMenuItem.Image");
+            batchExportMIDIDLSSF2ToolStripMenuItem.Name = "batchExportMIDIDLSSF2ToolStripMenuItem";
+            batchExportMIDIDLSSF2ToolStripMenuItem.Size = new Size(216, 22);
+            batchExportMIDIDLSSF2ToolStripMenuItem.Text = "Batch Export MIDI/DLS/SF2";
             // 
             // importFromExternalSDATToolStripMenuItem
             // 
-            this.importFromExternalSDATToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.importFromExternalSDATToolStripMenuItem.Name = "importFromExternalSDATToolStripMenuItem";
-            this.importFromExternalSDATToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
-            this.importFromExternalSDATToolStripMenuItem.Visible = false;
+            importFromExternalSDATToolStripMenuItem.Image = Properties.Resources.Import;
+            importFromExternalSDATToolStripMenuItem.Name = "importFromExternalSDATToolStripMenuItem";
+            importFromExternalSDATToolStripMenuItem.Size = new Size(216, 22);
+            importFromExternalSDATToolStripMenuItem.Text = "Import from External SDAT";
+            importFromExternalSDATToolStripMenuItem.Visible = false;
             // 
             // exportInfoTB
             // 
-            this.exportInfoTB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sdblExportBtn,
-            this.sExportButton});
-            this.exportInfoTB.Name = "exportInfoTB";
-            this.exportInfoTB.Size = new System.Drawing.Size(216, 22);
-            this.exportInfoTB.Text = "Export Information...";
-            this.exportInfoTB.Visible = false;
+            exportInfoTB.DropDownItems.AddRange(new ToolStripItem[] { sdblExportBtn, sExportButton });
+            exportInfoTB.Name = "exportInfoTB";
+            exportInfoTB.Size = new Size(216, 22);
+            exportInfoTB.Text = "Export Information...";
+            exportInfoTB.Visible = false;
             // 
             // sdblExportBtn
             // 
-            this.sdblExportBtn.Name = "sdblExportBtn";
-            this.sdblExportBtn.Size = new System.Drawing.Size(122, 22);
-            this.sdblExportBtn.Text = "SBDL File";
+            sdblExportBtn.Name = "sdblExportBtn";
+            sdblExportBtn.Size = new Size(122, 22);
+            sdblExportBtn.Text = "SBDL File";
             // 
             // sExportButton
             // 
-            this.sExportButton.Name = "sExportButton";
-            this.sExportButton.Size = new System.Drawing.Size(122, 22);
-            this.sExportButton.Text = ".s File";
+            sExportButton.Name = "sExportButton";
+            sExportButton.Size = new Size(122, 22);
+            sExportButton.Text = ".s File";
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getHelpToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { getHelpToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Text = "Help";
             // 
             // getHelpToolStripMenuItem
             // 
-            this.getHelpToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Help;
-            this.getHelpToolStripMenuItem.Name = "getHelpToolStripMenuItem";
-            this.getHelpToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.getHelpToolStripMenuItem.Text = "Get Help";
-            this.getHelpToolStripMenuItem.Click += new System.EventHandler(this.GetHelpToolStripMenuItem_Click);
+            getHelpToolStripMenuItem.Image = Properties.Resources.Help;
+            getHelpToolStripMenuItem.Name = "getHelpToolStripMenuItem";
+            getHelpToolStripMenuItem.Size = new Size(120, 22);
+            getHelpToolStripMenuItem.Text = "Get Help";
+            getHelpToolStripMenuItem.Click += GetHelpToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutNitroStudio2ToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutNitroStudio2ToolStripMenuItem });
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(52, 20);
+            aboutToolStripMenuItem.Text = "About";
             // 
             // aboutNitroStudio2ToolStripMenuItem
             // 
-            this.aboutNitroStudio2ToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Ico;
-            this.aboutNitroStudio2ToolStripMenuItem.Name = "aboutNitroStudio2ToolStripMenuItem";
-            this.aboutNitroStudio2ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.aboutNitroStudio2ToolStripMenuItem.Text = "About Nitro Studio 2";
-            this.aboutNitroStudio2ToolStripMenuItem.Click += new System.EventHandler(this.AboutNitroStudio2ToolStripMenuItem_Click);
+            aboutNitroStudio2ToolStripMenuItem.Image = Properties.Resources.Ico;
+            aboutNitroStudio2ToolStripMenuItem.Name = "aboutNitroStudio2ToolStripMenuItem";
+            aboutNitroStudio2ToolStripMenuItem.Size = new Size(183, 22);
+            aboutNitroStudio2ToolStripMenuItem.Text = "About Nitro Studio 2";
+            aboutNitroStudio2ToolStripMenuItem.Click += AboutNitroStudio2ToolStripMenuItem_Click;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 24);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.seqBankPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.bankEditorPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.seqArcSeqPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.seqArcPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.seqPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.playerPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.stmPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.streamPlayerPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.grpPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.bankPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.blankPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.warPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.forceUniqueFilePanel);
-            this.splitContainer1.Panel1.Controls.Add(this.indexPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.settingsPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.noInfoPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.kermalisSoundPlayerPanel);
+            splitContainer1.Panel1.Controls.Add(fileSizePanel);
+            splitContainer1.Panel1.Controls.Add(seqPanel);
+            splitContainer1.Panel1.Controls.Add(playerPanel);
+            splitContainer1.Panel1.Controls.Add(seqBankPanel);
+            splitContainer1.Panel1.Controls.Add(bankEditorPanel);
+            splitContainer1.Panel1.Controls.Add(seqArcSeqPanel);
+            splitContainer1.Panel1.Controls.Add(seqArcPanel);
+            splitContainer1.Panel1.Controls.Add(stmPanel);
+            splitContainer1.Panel1.Controls.Add(streamPlayerPanel);
+            splitContainer1.Panel1.Controls.Add(grpPanel);
+            splitContainer1.Panel1.Controls.Add(bankPanel);
+            splitContainer1.Panel1.Controls.Add(blankPanel);
+            splitContainer1.Panel1.Controls.Add(warPanel);
+            splitContainer1.Panel1.Controls.Add(forceUniqueFilePanel);
+            splitContainer1.Panel1.Controls.Add(indexPanel);
+            splitContainer1.Panel1.Controls.Add(settingsPanel);
+            splitContainer1.Panel1.Controls.Add(noInfoPanel);
+            splitContainer1.Panel1.Controls.Add(kermalisSoundPlayerPanel);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pnlPianoKeys);
-            this.splitContainer1.Panel2.Controls.Add(this.bankEditorWars);
-            this.splitContainer1.Panel2.Controls.Add(this.tree);
-            this.splitContainer1.Panel2.Controls.Add(this.sequenceEditorPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 541);
-            this.splitContainer1.SplitterDistance = 327;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // seqBankPanel
-            // 
-            this.seqBankPanel.Controls.Add(this.tableLayoutPanel36);
-            this.seqBankPanel.Controls.Add(this.tableLayoutPanel20);
-            this.seqBankPanel.Controls.Add(this.label28);
-            this.seqBankPanel.Controls.Add(this.tableLayoutPanel12);
-            this.seqBankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqBankPanel.Location = new System.Drawing.Point(0, 334);
-            this.seqBankPanel.Name = "seqBankPanel";
-            this.seqBankPanel.Size = new System.Drawing.Size(325, 205);
-            this.seqBankPanel.TabIndex = 18;
-            this.seqBankPanel.Visible = false;
-            // 
-            // tableLayoutPanel36
-            // 
-            this.tableLayoutPanel36.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel36.ColumnCount = 2;
-            this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel36.Controls.Add(this.exportWavButton, 0, 0);
-            this.tableLayoutPanel36.Controls.Add(this.exportMidiButton, 0, 0);
-            this.tableLayoutPanel36.Location = new System.Drawing.Point(14, 244);
-            this.tableLayoutPanel36.Name = "tableLayoutPanel36";
-            this.tableLayoutPanel36.RowCount = 1;
-            this.tableLayoutPanel36.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel36.Size = new System.Drawing.Size(298, 25);
-            this.tableLayoutPanel36.TabIndex = 30;
-            // 
-            // exportWavButton
-            // 
-            this.exportWavButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exportWavButton.Location = new System.Drawing.Point(149, 0);
-            this.exportWavButton.Margin = new System.Windows.Forms.Padding(0);
-            this.exportWavButton.Name = "exportWavButton";
-            this.exportWavButton.Size = new System.Drawing.Size(149, 25);
-            this.exportWavButton.TabIndex = 5;
-            this.exportWavButton.Text = "Export WAV";
-            this.exportWavButton.UseVisualStyleBackColor = true;
-            // 
-            // exportMidiButton
-            // 
-            this.exportMidiButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exportMidiButton.Location = new System.Drawing.Point(0, 0);
-            this.exportMidiButton.Margin = new System.Windows.Forms.Padding(0);
-            this.exportMidiButton.Name = "exportMidiButton";
-            this.exportMidiButton.Size = new System.Drawing.Size(149, 25);
-            this.exportMidiButton.TabIndex = 4;
-            this.exportMidiButton.Text = "Export MIDI";
-            this.exportMidiButton.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel20.ColumnCount = 2;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel35, 1, 7);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel34, 1, 6);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel33, 1, 5);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel32, 1, 4);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel31, 1, 3);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel30, 1, 2);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel29, 1, 1);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel28, 0, 7);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel27, 0, 6);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel26, 0, 5);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel25, 0, 4);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel24, 0, 3);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel23, 0, 2);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel22, 0, 1);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 1, 0);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(14, 62);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 8;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(298, 176);
-            this.tableLayoutPanel20.TabIndex = 28;
-            // 
-            // tableLayoutPanel35
-            // 
-            this.tableLayoutPanel35.ColumnCount = 3;
-            this.tableLayoutPanel35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel35.Controls.Add(this.track15Box, 0, 0);
-            this.tableLayoutPanel35.Controls.Add(this.track15Picture, 2, 0);
-            this.tableLayoutPanel35.Controls.Add(this.track15Solo, 1, 0);
-            this.tableLayoutPanel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel35.Location = new System.Drawing.Point(149, 154);
-            this.tableLayoutPanel35.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel35.Name = "tableLayoutPanel35";
-            this.tableLayoutPanel35.RowCount = 1;
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel35.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel35.TabIndex = 41;
-            // 
-            // track15Box
-            // 
-            this.track15Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track15Box.Checked = true;
-            this.track15Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track15Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track15Box.Location = new System.Drawing.Point(3, 3);
-            this.track15Box.Name = "track15Box";
-            this.track15Box.Size = new System.Drawing.Size(68, 16);
-            this.track15Box.TabIndex = 2;
-            this.track15Box.Text = "Track 15:";
-            this.track15Box.UseVisualStyleBackColor = true;
-            // 
-            // track15Picture
-            // 
-            this.track15Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track15Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track15Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track15Picture.Location = new System.Drawing.Point(111, 0);
-            this.track15Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track15Picture.Name = "track15Picture";
-            this.track15Picture.Size = new System.Drawing.Size(38, 22);
-            this.track15Picture.TabIndex = 0;
-            this.track15Picture.TabStop = false;
-            // 
-            // track15Solo
-            // 
-            this.track15Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track15Solo.Location = new System.Drawing.Point(74, 0);
-            this.track15Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track15Solo.Name = "track15Solo";
-            this.track15Solo.Size = new System.Drawing.Size(37, 22);
-            this.track15Solo.TabIndex = 3;
-            this.track15Solo.Text = "Solo";
-            this.track15Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel34
-            // 
-            this.tableLayoutPanel34.ColumnCount = 3;
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel34.Controls.Add(this.track13Box, 0, 0);
-            this.tableLayoutPanel34.Controls.Add(this.track13Picture, 2, 0);
-            this.tableLayoutPanel34.Controls.Add(this.track13Solo, 1, 0);
-            this.tableLayoutPanel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel34.Location = new System.Drawing.Point(149, 132);
-            this.tableLayoutPanel34.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel34.Name = "tableLayoutPanel34";
-            this.tableLayoutPanel34.RowCount = 1;
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel34.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel34.TabIndex = 40;
-            // 
-            // track13Box
-            // 
-            this.track13Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track13Box.Checked = true;
-            this.track13Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track13Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track13Box.Location = new System.Drawing.Point(3, 3);
-            this.track13Box.Name = "track13Box";
-            this.track13Box.Size = new System.Drawing.Size(68, 16);
-            this.track13Box.TabIndex = 2;
-            this.track13Box.Text = "Track 13:";
-            this.track13Box.UseVisualStyleBackColor = true;
-            // 
-            // track13Picture
-            // 
-            this.track13Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track13Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track13Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track13Picture.Location = new System.Drawing.Point(111, 0);
-            this.track13Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track13Picture.Name = "track13Picture";
-            this.track13Picture.Size = new System.Drawing.Size(38, 22);
-            this.track13Picture.TabIndex = 0;
-            this.track13Picture.TabStop = false;
-            // 
-            // track13Solo
-            // 
-            this.track13Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track13Solo.Location = new System.Drawing.Point(74, 0);
-            this.track13Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track13Solo.Name = "track13Solo";
-            this.track13Solo.Size = new System.Drawing.Size(37, 22);
-            this.track13Solo.TabIndex = 3;
-            this.track13Solo.Text = "Solo";
-            this.track13Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel33
-            // 
-            this.tableLayoutPanel33.ColumnCount = 3;
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel33.Controls.Add(this.track11Box, 0, 0);
-            this.tableLayoutPanel33.Controls.Add(this.track11Picture, 2, 0);
-            this.tableLayoutPanel33.Controls.Add(this.track11Solo, 1, 0);
-            this.tableLayoutPanel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel33.Location = new System.Drawing.Point(149, 110);
-            this.tableLayoutPanel33.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel33.Name = "tableLayoutPanel33";
-            this.tableLayoutPanel33.RowCount = 1;
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel33.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel33.TabIndex = 39;
-            // 
-            // track11Box
-            // 
-            this.track11Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track11Box.Checked = true;
-            this.track11Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track11Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track11Box.Location = new System.Drawing.Point(3, 3);
-            this.track11Box.Name = "track11Box";
-            this.track11Box.Size = new System.Drawing.Size(68, 16);
-            this.track11Box.TabIndex = 2;
-            this.track11Box.Text = "Track 11:";
-            this.track11Box.UseVisualStyleBackColor = true;
-            // 
-            // track11Picture
-            // 
-            this.track11Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track11Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track11Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track11Picture.Location = new System.Drawing.Point(111, 0);
-            this.track11Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track11Picture.Name = "track11Picture";
-            this.track11Picture.Size = new System.Drawing.Size(38, 22);
-            this.track11Picture.TabIndex = 0;
-            this.track11Picture.TabStop = false;
-            // 
-            // track11Solo
-            // 
-            this.track11Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track11Solo.Location = new System.Drawing.Point(74, 0);
-            this.track11Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track11Solo.Name = "track11Solo";
-            this.track11Solo.Size = new System.Drawing.Size(37, 22);
-            this.track11Solo.TabIndex = 3;
-            this.track11Solo.Text = "Solo";
-            this.track11Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel32
-            // 
-            this.tableLayoutPanel32.ColumnCount = 3;
-            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel32.Controls.Add(this.track9Box, 0, 0);
-            this.tableLayoutPanel32.Controls.Add(this.track9Picture, 2, 0);
-            this.tableLayoutPanel32.Controls.Add(this.track9Solo, 1, 0);
-            this.tableLayoutPanel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel32.Location = new System.Drawing.Point(149, 88);
-            this.tableLayoutPanel32.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel32.Name = "tableLayoutPanel32";
-            this.tableLayoutPanel32.RowCount = 1;
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel32.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel32.TabIndex = 38;
-            // 
-            // track9Box
-            // 
-            this.track9Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track9Box.Checked = true;
-            this.track9Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track9Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track9Box.Location = new System.Drawing.Point(3, 3);
-            this.track9Box.Name = "track9Box";
-            this.track9Box.Size = new System.Drawing.Size(68, 16);
-            this.track9Box.TabIndex = 2;
-            this.track9Box.Text = "Track 9:";
-            this.track9Box.UseVisualStyleBackColor = true;
-            // 
-            // track9Picture
-            // 
-            this.track9Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track9Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track9Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track9Picture.Location = new System.Drawing.Point(111, 0);
-            this.track9Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track9Picture.Name = "track9Picture";
-            this.track9Picture.Size = new System.Drawing.Size(38, 22);
-            this.track9Picture.TabIndex = 0;
-            this.track9Picture.TabStop = false;
-            // 
-            // track9Solo
-            // 
-            this.track9Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track9Solo.Location = new System.Drawing.Point(74, 0);
-            this.track9Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track9Solo.Name = "track9Solo";
-            this.track9Solo.Size = new System.Drawing.Size(37, 22);
-            this.track9Solo.TabIndex = 3;
-            this.track9Solo.Text = "Solo";
-            this.track9Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel31
-            // 
-            this.tableLayoutPanel31.ColumnCount = 3;
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel31.Controls.Add(this.track7Box, 0, 0);
-            this.tableLayoutPanel31.Controls.Add(this.track7Picture, 2, 0);
-            this.tableLayoutPanel31.Controls.Add(this.track7Solo, 1, 0);
-            this.tableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel31.Location = new System.Drawing.Point(149, 66);
-            this.tableLayoutPanel31.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel31.Name = "tableLayoutPanel31";
-            this.tableLayoutPanel31.RowCount = 1;
-            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel31.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel31.TabIndex = 37;
-            // 
-            // track7Box
-            // 
-            this.track7Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track7Box.Checked = true;
-            this.track7Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track7Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track7Box.Location = new System.Drawing.Point(3, 3);
-            this.track7Box.Name = "track7Box";
-            this.track7Box.Size = new System.Drawing.Size(68, 16);
-            this.track7Box.TabIndex = 2;
-            this.track7Box.Text = "Track 7:";
-            this.track7Box.UseVisualStyleBackColor = true;
-            // 
-            // track7Picture
-            // 
-            this.track7Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track7Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track7Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track7Picture.Location = new System.Drawing.Point(111, 0);
-            this.track7Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track7Picture.Name = "track7Picture";
-            this.track7Picture.Size = new System.Drawing.Size(38, 22);
-            this.track7Picture.TabIndex = 0;
-            this.track7Picture.TabStop = false;
-            // 
-            // track7Solo
-            // 
-            this.track7Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track7Solo.Location = new System.Drawing.Point(74, 0);
-            this.track7Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track7Solo.Name = "track7Solo";
-            this.track7Solo.Size = new System.Drawing.Size(37, 22);
-            this.track7Solo.TabIndex = 3;
-            this.track7Solo.Text = "Solo";
-            this.track7Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel30
-            // 
-            this.tableLayoutPanel30.ColumnCount = 3;
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel30.Controls.Add(this.track5Box, 0, 0);
-            this.tableLayoutPanel30.Controls.Add(this.track5Picture, 2, 0);
-            this.tableLayoutPanel30.Controls.Add(this.track5Solo, 1, 0);
-            this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel30.Location = new System.Drawing.Point(149, 44);
-            this.tableLayoutPanel30.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
-            this.tableLayoutPanel30.RowCount = 1;
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel30.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel30.TabIndex = 36;
-            // 
-            // track5Box
-            // 
-            this.track5Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track5Box.Checked = true;
-            this.track5Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track5Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track5Box.Location = new System.Drawing.Point(3, 3);
-            this.track5Box.Name = "track5Box";
-            this.track5Box.Size = new System.Drawing.Size(68, 16);
-            this.track5Box.TabIndex = 2;
-            this.track5Box.Text = "Track 5:";
-            this.track5Box.UseVisualStyleBackColor = true;
-            // 
-            // track5Picture
-            // 
-            this.track5Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track5Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track5Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track5Picture.Location = new System.Drawing.Point(111, 0);
-            this.track5Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track5Picture.Name = "track5Picture";
-            this.track5Picture.Size = new System.Drawing.Size(38, 22);
-            this.track5Picture.TabIndex = 0;
-            this.track5Picture.TabStop = false;
-            // 
-            // track5Solo
-            // 
-            this.track5Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track5Solo.Location = new System.Drawing.Point(74, 0);
-            this.track5Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track5Solo.Name = "track5Solo";
-            this.track5Solo.Size = new System.Drawing.Size(37, 22);
-            this.track5Solo.TabIndex = 3;
-            this.track5Solo.Text = "Solo";
-            this.track5Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel29
-            // 
-            this.tableLayoutPanel29.ColumnCount = 3;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel29.Controls.Add(this.track3Box, 0, 0);
-            this.tableLayoutPanel29.Controls.Add(this.track3Picture, 2, 0);
-            this.tableLayoutPanel29.Controls.Add(this.track3Solo, 1, 0);
-            this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(149, 22);
-            this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
-            this.tableLayoutPanel29.RowCount = 1;
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel29.TabIndex = 35;
-            // 
-            // track3Box
-            // 
-            this.track3Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track3Box.Checked = true;
-            this.track3Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track3Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track3Box.Location = new System.Drawing.Point(3, 3);
-            this.track3Box.Name = "track3Box";
-            this.track3Box.Size = new System.Drawing.Size(68, 16);
-            this.track3Box.TabIndex = 2;
-            this.track3Box.Text = "Track 3:";
-            this.track3Box.UseVisualStyleBackColor = true;
-            // 
-            // track3Picture
-            // 
-            this.track3Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track3Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track3Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track3Picture.Location = new System.Drawing.Point(111, 0);
-            this.track3Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track3Picture.Name = "track3Picture";
-            this.track3Picture.Size = new System.Drawing.Size(38, 22);
-            this.track3Picture.TabIndex = 0;
-            this.track3Picture.TabStop = false;
-            // 
-            // track3Solo
-            // 
-            this.track3Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track3Solo.Location = new System.Drawing.Point(74, 0);
-            this.track3Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track3Solo.Name = "track3Solo";
-            this.track3Solo.Size = new System.Drawing.Size(37, 22);
-            this.track3Solo.TabIndex = 3;
-            this.track3Solo.Text = "Solo";
-            this.track3Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel28
-            // 
-            this.tableLayoutPanel28.ColumnCount = 3;
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel28.Controls.Add(this.track14Box, 0, 0);
-            this.tableLayoutPanel28.Controls.Add(this.track14Picture, 2, 0);
-            this.tableLayoutPanel28.Controls.Add(this.track14Solo, 1, 0);
-            this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Location = new System.Drawing.Point(0, 154);
-            this.tableLayoutPanel28.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
-            this.tableLayoutPanel28.RowCount = 1;
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel28.TabIndex = 34;
-            // 
-            // track14Box
-            // 
-            this.track14Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track14Box.Checked = true;
-            this.track14Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track14Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track14Box.Location = new System.Drawing.Point(3, 3);
-            this.track14Box.Name = "track14Box";
-            this.track14Box.Size = new System.Drawing.Size(68, 16);
-            this.track14Box.TabIndex = 2;
-            this.track14Box.Text = "Track 14:";
-            this.track14Box.UseVisualStyleBackColor = true;
-            // 
-            // track14Picture
-            // 
-            this.track14Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track14Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track14Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track14Picture.Location = new System.Drawing.Point(111, 0);
-            this.track14Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track14Picture.Name = "track14Picture";
-            this.track14Picture.Size = new System.Drawing.Size(38, 22);
-            this.track14Picture.TabIndex = 0;
-            this.track14Picture.TabStop = false;
-            // 
-            // track14Solo
-            // 
-            this.track14Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track14Solo.Location = new System.Drawing.Point(74, 0);
-            this.track14Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track14Solo.Name = "track14Solo";
-            this.track14Solo.Size = new System.Drawing.Size(37, 22);
-            this.track14Solo.TabIndex = 3;
-            this.track14Solo.Text = "Solo";
-            this.track14Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel27
-            // 
-            this.tableLayoutPanel27.ColumnCount = 3;
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel27.Controls.Add(this.track12Box, 0, 0);
-            this.tableLayoutPanel27.Controls.Add(this.track12Picture, 2, 0);
-            this.tableLayoutPanel27.Controls.Add(this.track12Solo, 1, 0);
-            this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Location = new System.Drawing.Point(0, 132);
-            this.tableLayoutPanel27.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
-            this.tableLayoutPanel27.RowCount = 1;
-            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel27.TabIndex = 33;
-            // 
-            // track12Box
-            // 
-            this.track12Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track12Box.Checked = true;
-            this.track12Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track12Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track12Box.Location = new System.Drawing.Point(3, 3);
-            this.track12Box.Name = "track12Box";
-            this.track12Box.Size = new System.Drawing.Size(68, 16);
-            this.track12Box.TabIndex = 2;
-            this.track12Box.Text = "Track 12:";
-            this.track12Box.UseVisualStyleBackColor = true;
-            // 
-            // track12Picture
-            // 
-            this.track12Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track12Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track12Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track12Picture.Location = new System.Drawing.Point(111, 0);
-            this.track12Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track12Picture.Name = "track12Picture";
-            this.track12Picture.Size = new System.Drawing.Size(38, 22);
-            this.track12Picture.TabIndex = 0;
-            this.track12Picture.TabStop = false;
-            // 
-            // track12Solo
-            // 
-            this.track12Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track12Solo.Location = new System.Drawing.Point(74, 0);
-            this.track12Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track12Solo.Name = "track12Solo";
-            this.track12Solo.Size = new System.Drawing.Size(37, 22);
-            this.track12Solo.TabIndex = 3;
-            this.track12Solo.Text = "Solo";
-            this.track12Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel26
-            // 
-            this.tableLayoutPanel26.ColumnCount = 3;
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel26.Controls.Add(this.track10Box, 0, 0);
-            this.tableLayoutPanel26.Controls.Add(this.track10Picture, 2, 0);
-            this.tableLayoutPanel26.Controls.Add(this.track10Solo, 1, 0);
-            this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(0, 110);
-            this.tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
-            this.tableLayoutPanel26.RowCount = 1;
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel26.TabIndex = 32;
-            // 
-            // track10Box
-            // 
-            this.track10Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track10Box.Checked = true;
-            this.track10Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track10Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track10Box.Location = new System.Drawing.Point(3, 3);
-            this.track10Box.Name = "track10Box";
-            this.track10Box.Size = new System.Drawing.Size(68, 16);
-            this.track10Box.TabIndex = 2;
-            this.track10Box.Text = "Track 10:";
-            this.track10Box.UseVisualStyleBackColor = true;
-            // 
-            // track10Picture
-            // 
-            this.track10Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track10Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track10Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track10Picture.Location = new System.Drawing.Point(111, 0);
-            this.track10Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track10Picture.Name = "track10Picture";
-            this.track10Picture.Size = new System.Drawing.Size(38, 22);
-            this.track10Picture.TabIndex = 0;
-            this.track10Picture.TabStop = false;
-            // 
-            // track10Solo
-            // 
-            this.track10Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track10Solo.Location = new System.Drawing.Point(74, 0);
-            this.track10Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track10Solo.Name = "track10Solo";
-            this.track10Solo.Size = new System.Drawing.Size(37, 22);
-            this.track10Solo.TabIndex = 3;
-            this.track10Solo.Text = "Solo";
-            this.track10Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel25
-            // 
-            this.tableLayoutPanel25.ColumnCount = 3;
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel25.Controls.Add(this.track8Box, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.track8Picture, 2, 0);
-            this.tableLayoutPanel25.Controls.Add(this.track8Solo, 1, 0);
-            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 88);
-            this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
-            this.tableLayoutPanel25.RowCount = 1;
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel25.TabIndex = 31;
-            // 
-            // track8Box
-            // 
-            this.track8Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track8Box.Checked = true;
-            this.track8Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track8Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track8Box.Location = new System.Drawing.Point(3, 3);
-            this.track8Box.Name = "track8Box";
-            this.track8Box.Size = new System.Drawing.Size(68, 16);
-            this.track8Box.TabIndex = 2;
-            this.track8Box.Text = "Track 8:";
-            this.track8Box.UseVisualStyleBackColor = true;
-            // 
-            // track8Picture
-            // 
-            this.track8Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track8Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track8Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track8Picture.Location = new System.Drawing.Point(111, 0);
-            this.track8Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track8Picture.Name = "track8Picture";
-            this.track8Picture.Size = new System.Drawing.Size(38, 22);
-            this.track8Picture.TabIndex = 0;
-            this.track8Picture.TabStop = false;
-            // 
-            // track8Solo
-            // 
-            this.track8Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track8Solo.Location = new System.Drawing.Point(74, 0);
-            this.track8Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track8Solo.Name = "track8Solo";
-            this.track8Solo.Size = new System.Drawing.Size(37, 22);
-            this.track8Solo.TabIndex = 3;
-            this.track8Solo.Text = "Solo";
-            this.track8Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel24
-            // 
-            this.tableLayoutPanel24.ColumnCount = 3;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.Controls.Add(this.track6Box, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.track6Picture, 2, 0);
-            this.tableLayoutPanel24.Controls.Add(this.track6Solo, 1, 0);
-            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 66);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 1;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel24.TabIndex = 30;
-            // 
-            // track6Box
-            // 
-            this.track6Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track6Box.Checked = true;
-            this.track6Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track6Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track6Box.Location = new System.Drawing.Point(3, 3);
-            this.track6Box.Name = "track6Box";
-            this.track6Box.Size = new System.Drawing.Size(68, 16);
-            this.track6Box.TabIndex = 2;
-            this.track6Box.Text = "Track 6:";
-            this.track6Box.UseVisualStyleBackColor = true;
-            // 
-            // track6Picture
-            // 
-            this.track6Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track6Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track6Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track6Picture.Location = new System.Drawing.Point(111, 0);
-            this.track6Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track6Picture.Name = "track6Picture";
-            this.track6Picture.Size = new System.Drawing.Size(38, 22);
-            this.track6Picture.TabIndex = 0;
-            this.track6Picture.TabStop = false;
-            // 
-            // track6Solo
-            // 
-            this.track6Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track6Solo.Location = new System.Drawing.Point(74, 0);
-            this.track6Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track6Solo.Name = "track6Solo";
-            this.track6Solo.Size = new System.Drawing.Size(37, 22);
-            this.track6Solo.TabIndex = 3;
-            this.track6Solo.Text = "Solo";
-            this.track6Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel23
-            // 
-            this.tableLayoutPanel23.ColumnCount = 3;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.Controls.Add(this.track4Box, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.track4Picture, 2, 0);
-            this.tableLayoutPanel23.Controls.Add(this.track4Solo, 1, 0);
-            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(0, 44);
-            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 1;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel23.TabIndex = 29;
-            // 
-            // track4Box
-            // 
-            this.track4Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track4Box.Checked = true;
-            this.track4Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track4Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track4Box.Location = new System.Drawing.Point(3, 3);
-            this.track4Box.Name = "track4Box";
-            this.track4Box.Size = new System.Drawing.Size(68, 16);
-            this.track4Box.TabIndex = 2;
-            this.track4Box.Text = "Track 4:";
-            this.track4Box.UseVisualStyleBackColor = true;
-            // 
-            // track4Picture
-            // 
-            this.track4Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track4Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track4Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track4Picture.Location = new System.Drawing.Point(111, 0);
-            this.track4Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track4Picture.Name = "track4Picture";
-            this.track4Picture.Size = new System.Drawing.Size(38, 22);
-            this.track4Picture.TabIndex = 0;
-            this.track4Picture.TabStop = false;
-            // 
-            // track4Solo
-            // 
-            this.track4Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track4Solo.Location = new System.Drawing.Point(74, 0);
-            this.track4Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track4Solo.Name = "track4Solo";
-            this.track4Solo.Size = new System.Drawing.Size(37, 22);
-            this.track4Solo.TabIndex = 3;
-            this.track4Solo.Text = "Solo";
-            this.track4Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel22
-            // 
-            this.tableLayoutPanel22.ColumnCount = 3;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel22.Controls.Add(this.track2Box, 0, 0);
-            this.tableLayoutPanel22.Controls.Add(this.track2Picture, 2, 0);
-            this.tableLayoutPanel22.Controls.Add(this.track2Solo, 1, 0);
-            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(0, 22);
-            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 1;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel22.TabIndex = 28;
-            // 
-            // track2Box
-            // 
-            this.track2Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track2Box.Checked = true;
-            this.track2Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track2Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track2Box.Location = new System.Drawing.Point(3, 3);
-            this.track2Box.Name = "track2Box";
-            this.track2Box.Size = new System.Drawing.Size(68, 16);
-            this.track2Box.TabIndex = 2;
-            this.track2Box.Text = "Track 2:";
-            this.track2Box.UseVisualStyleBackColor = true;
-            // 
-            // track2Picture
-            // 
-            this.track2Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track2Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track2Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track2Picture.Location = new System.Drawing.Point(111, 0);
-            this.track2Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track2Picture.Name = "track2Picture";
-            this.track2Picture.Size = new System.Drawing.Size(38, 22);
-            this.track2Picture.TabIndex = 0;
-            this.track2Picture.TabStop = false;
-            // 
-            // track2Solo
-            // 
-            this.track2Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track2Solo.Location = new System.Drawing.Point(74, 0);
-            this.track2Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track2Solo.Name = "track2Solo";
-            this.track2Solo.Size = new System.Drawing.Size(37, 22);
-            this.track2Solo.TabIndex = 3;
-            this.track2Solo.Text = "Solo";
-            this.track2Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.ColumnCount = 3;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel21.Controls.Add(this.track1Box, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.track1Picture, 2, 0);
-            this.tableLayoutPanel21.Controls.Add(this.track1Solo, 1, 0);
-            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(149, 0);
-            this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 1;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel21.TabIndex = 27;
-            // 
-            // track1Box
-            // 
-            this.track1Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track1Box.Checked = true;
-            this.track1Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track1Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track1Box.Location = new System.Drawing.Point(3, 3);
-            this.track1Box.Name = "track1Box";
-            this.track1Box.Size = new System.Drawing.Size(68, 16);
-            this.track1Box.TabIndex = 2;
-            this.track1Box.Text = "Track 1:";
-            this.track1Box.UseVisualStyleBackColor = true;
-            // 
-            // track1Picture
-            // 
-            this.track1Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track1Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track1Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track1Picture.Location = new System.Drawing.Point(111, 0);
-            this.track1Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track1Picture.Name = "track1Picture";
-            this.track1Picture.Size = new System.Drawing.Size(38, 22);
-            this.track1Picture.TabIndex = 0;
-            this.track1Picture.TabStop = false;
-            // 
-            // track1Solo
-            // 
-            this.track1Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track1Solo.Location = new System.Drawing.Point(74, 0);
-            this.track1Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track1Solo.Name = "track1Solo";
-            this.track1Solo.Size = new System.Drawing.Size(37, 22);
-            this.track1Solo.TabIndex = 3;
-            this.track1Solo.Text = "Solo";
-            this.track1Solo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.track0Box, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.track0Picture, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.track0Solo, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(149, 22);
-            this.tableLayoutPanel1.TabIndex = 26;
-            // 
-            // track0Box
-            // 
-            this.track0Box.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.track0Box.Checked = true;
-            this.track0Box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.track0Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track0Box.Location = new System.Drawing.Point(3, 3);
-            this.track0Box.Name = "track0Box";
-            this.track0Box.Size = new System.Drawing.Size(68, 16);
-            this.track0Box.TabIndex = 2;
-            this.track0Box.Text = "Track 0:";
-            this.track0Box.UseVisualStyleBackColor = true;
-            // 
-            // track0Picture
-            // 
-            this.track0Picture.BackgroundImage = global::NitroStudio2.Properties.Resources.Idle;
-            this.track0Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.track0Picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track0Picture.Location = new System.Drawing.Point(111, 0);
-            this.track0Picture.Margin = new System.Windows.Forms.Padding(0);
-            this.track0Picture.Name = "track0Picture";
-            this.track0Picture.Size = new System.Drawing.Size(38, 22);
-            this.track0Picture.TabIndex = 0;
-            this.track0Picture.TabStop = false;
-            // 
-            // track0Solo
-            // 
-            this.track0Solo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.track0Solo.Location = new System.Drawing.Point(74, 0);
-            this.track0Solo.Margin = new System.Windows.Forms.Padding(0);
-            this.track0Solo.Name = "track0Solo";
-            this.track0Solo.Size = new System.Drawing.Size(37, 22);
-            this.track0Solo.TabIndex = 3;
-            this.track0Solo.Text = "Solo";
-            this.track0Solo.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.Location = new System.Drawing.Point(11, 3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(301, 20);
-            this.label28.TabIndex = 25;
-            this.label28.Text = "Preview Bank:";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel12.Controls.Add(this.seqEditorBankComboBox, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.seqEditorBankBox, 1, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel12.TabIndex = 24;
-            // 
-            // seqEditorBankComboBox
-            // 
-            this.seqEditorBankComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqEditorBankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqEditorBankComboBox.FormattingEnabled = true;
-            this.seqEditorBankComboBox.Location = new System.Drawing.Point(3, 3);
-            this.seqEditorBankComboBox.Name = "seqEditorBankComboBox";
-            this.seqEditorBankComboBox.Size = new System.Drawing.Size(247, 21);
-            this.seqEditorBankComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.seqEditorBankComboBox, "Bank to use with the sequence.");
-            // 
-            // seqEditorBankBox
-            // 
-            this.seqEditorBankBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqEditorBankBox.Location = new System.Drawing.Point(256, 3);
-            this.seqEditorBankBox.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.seqEditorBankBox.Name = "seqEditorBankBox";
-            this.seqEditorBankBox.Size = new System.Drawing.Size(39, 20);
-            this.seqEditorBankBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.seqEditorBankBox, "Id of the bank to use with the sequence.");
-            // 
-            // bankEditorPanel
-            // 
-            this.bankEditorPanel.Controls.Add(this.bankRegions);
-            this.bankEditorPanel.Controls.Add(this.label32);
-            this.bankEditorPanel.Controls.Add(this.tableLayoutPanel15);
-            this.bankEditorPanel.Controls.Add(this.drumSetRangeStartLabel);
-            this.bankEditorPanel.Controls.Add(this.tableLayoutPanel14);
-            this.bankEditorPanel.Controls.Add(this.label30);
-            this.bankEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bankEditorPanel.Location = new System.Drawing.Point(0, 334);
-            this.bankEditorPanel.Name = "bankEditorPanel";
-            this.bankEditorPanel.Size = new System.Drawing.Size(325, 205);
-            this.bankEditorPanel.TabIndex = 21;
-            this.bankEditorPanel.Visible = false;
-            // 
-            // bankRegions
-            // 
-            this.bankRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bankRegions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.bankRegions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bankRegions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.playSampleButton,
-            this.endNote,
-            this.instrumentType,
-            this.waveId,
-            this.waveArchiveId,
-            this.baseNote,
-            this.attack,
-            this.decay,
-            this.sustain,
-            this.release,
-            this.pan});
-            this.bankRegions.Location = new System.Drawing.Point(14, 141);
-            this.bankRegions.Name = "bankRegions";
-            this.bankRegions.Size = new System.Drawing.Size(298, 0);
-            this.bankRegions.TabIndex = 26;
-            // 
-            // playSampleButton
-            // 
-            this.playSampleButton.HeaderText = "Play";
-            this.playSampleButton.Name = "playSampleButton";
-            this.playSampleButton.Text = "Play";
-            this.playSampleButton.UseColumnTextForButtonValue = true;
-            this.playSampleButton.Width = 33;
-            // 
-            // endNote
-            // 
-            this.endNote.FillWeight = 50F;
-            this.endNote.HeaderText = "End Note";
-            this.endNote.Items.AddRange(new object[] {
-            "cnm1 (0)",
-            "csm1 (1)",
-            "dnm1 (2)",
-            "dsm1 (3)",
-            "enm1 (4)",
-            "fnm1 (5)",
-            "fsm1 (6)",
-            "gnm1 (7)",
-            "gsm1 (8)",
-            "anm1 (9)",
-            "asm1 (10)",
-            "bnm1 (11)",
-            "cn0 (12)",
-            "cs0 (13)",
-            "dn0 (14)",
-            "ds0 (15)",
-            "en0 (16)",
-            "fn0 (17)",
-            "fs0 (18)",
-            "gn0 (19)",
-            "gs0 (20)",
-            "an0 (21)",
-            "as0 (22)",
-            "bn0 (23)",
-            "cn1 (24)",
-            "cs1 (25)",
-            "dn1 (26)",
-            "ds1 (27)",
-            "en1 (28)",
-            "fn1 (29)",
-            "fs1 (30)",
-            "gn1 (31)",
-            "gs1 (32)",
-            "an1 (33)",
-            "as1 (34)",
-            "bn1 (35)",
-            "cn2 (36)",
-            "cs2 (37)",
-            "dn2 (38)",
-            "ds2 (39)",
-            "en2 (40)",
-            "fn2 (41)",
-            "fs2 (42)",
-            "gn2 (43)",
-            "gs2 (44)",
-            "an2 (45)",
-            "as2 (46)",
-            "bn2 (47)",
-            "cn3 (48)",
-            "cs3 (49)",
-            "dn3 (50)",
-            "ds3 (51)",
-            "en3 (52)",
-            "fn3 (53)",
-            "fs3 (54)",
-            "gn3 (55)",
-            "gs3 (56)",
-            "an3 (57)",
-            "as3 (58)",
-            "bn3 (59)",
-            "cn4 (60)",
-            "cs4 (61)",
-            "dn4 (62)",
-            "ds4 (63)",
-            "en4 (64)",
-            "fn4 (65)",
-            "fs4 (66)",
-            "gn4 (67)",
-            "gs4 (68)",
-            "an4 (69)",
-            "as4 (70)",
-            "bn4 (71)",
-            "cn5 (72)",
-            "cs5 (73)",
-            "dn5 (74)",
-            "ds5 (75)",
-            "en5 (76)",
-            "fn5 (77)",
-            "fs5 (78)",
-            "gn5 (79)",
-            "gs5 (80)",
-            "an5 (81)",
-            "as5 (82)",
-            "bn5 (83)",
-            "cn6 (84)",
-            "cs6 (85)",
-            "dn6 (86)",
-            "ds6 (87)",
-            "en6 (88)",
-            "fn6 (89)",
-            "fs6 (90)",
-            "gn6 (91)",
-            "gs6 (92)",
-            "an6 (93)",
-            "as6 (94)",
-            "bn6 (95)",
-            "cn7 (96)",
-            "cs7 (97)",
-            "dn7 (98)",
-            "ds7 (99)",
-            "en7 (100)",
-            "fn7 (101)",
-            "fs7 (102)",
-            "gn7 (103)",
-            "gs7 (104)",
-            "an7 (105)",
-            "as7 (106)",
-            "bn7 (107)",
-            "cn8 (108)",
-            "cs8 (109)",
-            "dn8 (110)",
-            "ds8 (111)",
-            "en8 (112)",
-            "fn8 (113)",
-            "fs8 (114)",
-            "gn8 (115)",
-            "gs8 (116)",
-            "an8 (117)",
-            "as8 (118)",
-            "bn8 (119)",
-            "cn9 (120)",
-            "cs9 (121)",
-            "dn9 (122)",
-            "ds9 (123)",
-            "en9 (124)",
-            "fn9 (125)",
-            "fs9 (126)",
-            "gn9 (127)"});
-            this.endNote.Name = "endNote";
-            this.endNote.Width = 52;
-            // 
-            // instrumentType
-            // 
-            this.instrumentType.HeaderText = "Instrument Type";
-            this.instrumentType.Items.AddRange(new object[] {
-            "PCM",
-            "PSG",
-            "Noise",
-            "Direct PCM",
-            "Null"});
-            this.instrumentType.Name = "instrumentType";
-            this.instrumentType.Width = 80;
-            // 
-            // waveId
-            // 
-            this.waveId.HeaderText = "Wave Id/PSG Cycle";
-            this.waveId.MaxInputLength = 5;
-            this.waveId.Name = "waveId";
-            this.waveId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.waveId.Width = 99;
-            // 
-            // waveArchiveId
-            // 
-            this.waveArchiveId.HeaderText = "Wave Archive Id";
-            this.waveArchiveId.MaxInputLength = 5;
-            this.waveArchiveId.Name = "waveArchiveId";
-            this.waveArchiveId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.waveArchiveId.Width = 76;
-            // 
-            // baseNote
-            // 
-            this.baseNote.HeaderText = "Base Note";
-            this.baseNote.Items.AddRange(new object[] {
-            "cnm1 (0)",
-            "csm1 (1)",
-            "dnm1 (2)",
-            "dsm1 (3)",
-            "enm1 (4)",
-            "fnm1 (5)",
-            "fsm1 (6)",
-            "gnm1 (7)",
-            "gsm1 (8)",
-            "anm1 (9)",
-            "asm1 (10)",
-            "bnm1 (11)",
-            "cn0 (12)",
-            "cs0 (13)",
-            "dn0 (14)",
-            "ds0 (15)",
-            "en0 (16)",
-            "fn0 (17)",
-            "fs0 (18)",
-            "gn0 (19)",
-            "gs0 (20)",
-            "an0 (21)",
-            "as0 (22)",
-            "bn0 (23)",
-            "cn1 (24)",
-            "cs1 (25)",
-            "dn1 (26)",
-            "ds1 (27)",
-            "en1 (28)",
-            "fn1 (29)",
-            "fs1 (30)",
-            "gn1 (31)",
-            "gs1 (32)",
-            "an1 (33)",
-            "as1 (34)",
-            "bn1 (35)",
-            "cn2 (36)",
-            "cs2 (37)",
-            "dn2 (38)",
-            "ds2 (39)",
-            "en2 (40)",
-            "fn2 (41)",
-            "fs2 (42)",
-            "gn2 (43)",
-            "gs2 (44)",
-            "an2 (45)",
-            "as2 (46)",
-            "bn2 (47)",
-            "cn3 (48)",
-            "cs3 (49)",
-            "dn3 (50)",
-            "ds3 (51)",
-            "en3 (52)",
-            "fn3 (53)",
-            "fs3 (54)",
-            "gn3 (55)",
-            "gs3 (56)",
-            "an3 (57)",
-            "as3 (58)",
-            "bn3 (59)",
-            "cn4 (60)",
-            "cs4 (61)",
-            "dn4 (62)",
-            "ds4 (63)",
-            "en4 (64)",
-            "fn4 (65)",
-            "fs4 (66)",
-            "gn4 (67)",
-            "gs4 (68)",
-            "an4 (69)",
-            "as4 (70)",
-            "bn4 (71)",
-            "cn5 (72)",
-            "cs5 (73)",
-            "dn5 (74)",
-            "ds5 (75)",
-            "en5 (76)",
-            "fn5 (77)",
-            "fs5 (78)",
-            "gn5 (79)",
-            "gs5 (80)",
-            "an5 (81)",
-            "as5 (82)",
-            "bn5 (83)",
-            "cn6 (84)",
-            "cs6 (85)",
-            "dn6 (86)",
-            "ds6 (87)",
-            "en6 (88)",
-            "fn6 (89)",
-            "fs6 (90)",
-            "gn6 (91)",
-            "gs6 (92)",
-            "an6 (93)",
-            "as6 (94)",
-            "bn6 (95)",
-            "cn7 (96)",
-            "cs7 (97)",
-            "dn7 (98)",
-            "ds7 (99)",
-            "en7 (100)",
-            "fn7 (101)",
-            "fs7 (102)",
-            "gn7 (103)",
-            "gs7 (104)",
-            "an7 (105)",
-            "as7 (106)",
-            "bn7 (107)",
-            "cn8 (108)",
-            "cs8 (109)",
-            "dn8 (110)",
-            "ds8 (111)",
-            "en8 (112)",
-            "fn8 (113)",
-            "fs8 (114)",
-            "gn8 (115)",
-            "gs8 (116)",
-            "an8 (117)",
-            "as8 (118)",
-            "bn8 (119)",
-            "cn9 (120)",
-            "cs9 (121)",
-            "dn9 (122)",
-            "ds9 (123)",
-            "en9 (124)",
-            "fn9 (125)",
-            "fs9 (126)",
-            "gn9 (127)"});
-            this.baseNote.Name = "baseNote";
-            this.baseNote.Width = 57;
-            // 
-            // attack
-            // 
-            this.attack.HeaderText = "Attack";
-            this.attack.MaxInputLength = 3;
-            this.attack.Name = "attack";
-            this.attack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.attack.Width = 44;
-            // 
-            // decay
-            // 
-            this.decay.HeaderText = "Decay";
-            this.decay.MaxInputLength = 3;
-            this.decay.Name = "decay";
-            this.decay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.decay.Width = 44;
-            // 
-            // sustain
-            // 
-            this.sustain.HeaderText = "Sustain";
-            this.sustain.MaxInputLength = 3;
-            this.sustain.Name = "sustain";
-            this.sustain.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sustain.Width = 48;
-            // 
-            // release
-            // 
-            this.release.HeaderText = "Release";
-            this.release.MaxInputLength = 3;
-            this.release.Name = "release";
-            this.release.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.release.Width = 52;
-            // 
-            // pan
-            // 
-            this.pan.HeaderText = "Pan";
-            this.pan.MaxInputLength = 3;
-            this.pan.Name = "pan";
-            this.pan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.pan.Width = 32;
-            // 
-            // label32
-            // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label32.Location = new System.Drawing.Point(11, 118);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(301, 20);
-            this.label32.TabIndex = 25;
-            this.label32.Text = "Regions:";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel15.Controls.Add(this.drumSetStartRangeComboBox, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.drumSetStartRangeBox, 1, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(14, 84);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 1;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel15.TabIndex = 24;
-            // 
-            // drumSetStartRangeComboBox
-            // 
-            this.drumSetStartRangeComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drumSetStartRangeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drumSetStartRangeComboBox.FormattingEnabled = true;
-            this.drumSetStartRangeComboBox.Items.AddRange(new object[] {
-            "cnm1",
-            "csm1",
-            "dnm1",
-            "dsm1",
-            "enm1",
-            "fnm1",
-            "fsm1",
-            "gnm1",
-            "gsm1",
-            "anm1",
-            "asm1",
-            "bnm1",
-            "cn0",
-            "cs0",
-            "dn0",
-            "ds0",
-            "en0",
-            "fn0",
-            "fs0",
-            "gn0",
-            "gs0",
-            "an0",
-            "as0",
-            "bn0",
-            "cn1",
-            "cs1",
-            "dn1",
-            "ds1",
-            "en1",
-            "fn1",
-            "fs1",
-            "gn1",
-            "gs1",
-            "an1",
-            "as1",
-            "bn1",
-            "cn2",
-            "cs2",
-            "dn2",
-            "ds2",
-            "en2",
-            "fn2",
-            "fs2",
-            "gn2",
-            "gs2",
-            "an2",
-            "as2",
-            "bn2",
-            "cn3",
-            "cs3",
-            "dn3",
-            "ds3",
-            "en3",
-            "fn3",
-            "fs3",
-            "gn3",
-            "gs3",
-            "an3",
-            "as3",
-            "bn3",
-            "cn4",
-            "cs4",
-            "dn4",
-            "ds4",
-            "en4",
-            "fn4",
-            "fs4",
-            "gn4",
-            "gs4",
-            "an4",
-            "as4",
-            "bn4",
-            "cn5",
-            "cs5",
-            "dn5",
-            "ds5",
-            "en5",
-            "fn5",
-            "fs5",
-            "gn5",
-            "gs5",
-            "an5",
-            "as5",
-            "bn5",
-            "cn6",
-            "cs6",
-            "dn6",
-            "ds6",
-            "en6",
-            "fn6",
-            "fs6",
-            "gn6",
-            "gs6",
-            "an6",
-            "as6",
-            "bn6",
-            "cn7",
-            "cs7",
-            "dn7",
-            "ds7",
-            "en7",
-            "fn7",
-            "fs7",
-            "gn7",
-            "gs7",
-            "an7",
-            "as7",
-            "bn7",
-            "cn8",
-            "cs8",
-            "dn8",
-            "ds8",
-            "en8",
-            "fn8",
-            "fs8",
-            "gn8",
-            "gs8",
-            "an8",
-            "as8",
-            "bn8",
-            "cn9",
-            "cs9",
-            "dn9",
-            "ds9",
-            "en9",
-            "fn9",
-            "fs9",
-            "gn9"});
-            this.drumSetStartRangeComboBox.Location = new System.Drawing.Point(3, 3);
-            this.drumSetStartRangeComboBox.Name = "drumSetStartRangeComboBox";
-            this.drumSetStartRangeComboBox.Size = new System.Drawing.Size(247, 21);
-            this.drumSetStartRangeComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.drumSetStartRangeComboBox, "What note to start the drum set range at.");
-            // 
-            // drumSetStartRangeBox
-            // 
-            this.drumSetStartRangeBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drumSetStartRangeBox.Location = new System.Drawing.Point(256, 3);
-            this.drumSetStartRangeBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.drumSetStartRangeBox.Name = "drumSetStartRangeBox";
-            this.drumSetStartRangeBox.Size = new System.Drawing.Size(39, 20);
-            this.drumSetStartRangeBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.drumSetStartRangeBox, "What note to start the drum set range at.");
-            // 
-            // drumSetRangeStartLabel
-            // 
-            this.drumSetRangeStartLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.drumSetRangeStartLabel.Location = new System.Drawing.Point(8, 61);
-            this.drumSetRangeStartLabel.Name = "drumSetRangeStartLabel";
-            this.drumSetRangeStartLabel.Size = new System.Drawing.Size(301, 20);
-            this.drumSetRangeStartLabel.TabIndex = 3;
-            this.drumSetRangeStartLabel.Text = "Drum Set Range Start:";
-            this.drumSetRangeStartLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel14.ColumnCount = 3;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel14.Controls.Add(this.keySplitBox, 2, 0);
-            this.tableLayoutPanel14.Controls.Add(this.drumSetBox, 1, 0);
-            this.tableLayoutPanel14.Controls.Add(this.directBox, 0, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(14, 28);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 1;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(298, 28);
-            this.tableLayoutPanel14.TabIndex = 2;
-            this.toolTip.SetToolTip(this.tableLayoutPanel14, "Type of instrument.");
-            // 
-            // keySplitBox
-            // 
-            this.keySplitBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keySplitBox.Location = new System.Drawing.Point(201, 3);
-            this.keySplitBox.Name = "keySplitBox";
-            this.keySplitBox.Size = new System.Drawing.Size(94, 22);
-            this.keySplitBox.TabIndex = 2;
-            this.keySplitBox.TabStop = true;
-            this.keySplitBox.Text = "Key Split";
-            this.keySplitBox.UseVisualStyleBackColor = true;
-            // 
-            // drumSetBox
-            // 
-            this.drumSetBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drumSetBox.Location = new System.Drawing.Point(102, 3);
-            this.drumSetBox.Name = "drumSetBox";
-            this.drumSetBox.Size = new System.Drawing.Size(93, 22);
-            this.drumSetBox.TabIndex = 1;
-            this.drumSetBox.TabStop = true;
-            this.drumSetBox.Text = "Drum Set";
-            this.drumSetBox.UseVisualStyleBackColor = true;
-            // 
-            // directBox
-            // 
-            this.directBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.directBox.Location = new System.Drawing.Point(3, 3);
-            this.directBox.Name = "directBox";
-            this.directBox.Size = new System.Drawing.Size(93, 22);
-            this.directBox.TabIndex = 0;
-            this.directBox.TabStop = true;
-            this.directBox.Text = "Direct";
-            this.directBox.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.Location = new System.Drawing.Point(11, 3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(301, 20);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Instrument Type:";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // seqArcSeqPanel
-            // 
-            this.seqArcSeqPanel.Controls.Add(this.label29);
-            this.seqArcSeqPanel.Controls.Add(this.tableLayoutPanel13);
-            this.seqArcSeqPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.seqArcSeqPanel.Location = new System.Drawing.Point(0, 270);
-            this.seqArcSeqPanel.Name = "seqArcSeqPanel";
-            this.seqArcSeqPanel.Size = new System.Drawing.Size(325, 64);
-            this.seqArcSeqPanel.TabIndex = 20;
-            this.seqArcSeqPanel.Visible = false;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.Location = new System.Drawing.Point(11, 3);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(301, 20);
-            this.label29.TabIndex = 25;
-            this.label29.Text = "Preview Sequence:";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel13.Controls.Add(this.seqArcSeqComboBox, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.seqArcSeqBox, 1, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel13.TabIndex = 24;
-            // 
-            // seqArcSeqComboBox
-            // 
-            this.seqArcSeqComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqArcSeqComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqArcSeqComboBox.FormattingEnabled = true;
-            this.seqArcSeqComboBox.Location = new System.Drawing.Point(3, 3);
-            this.seqArcSeqComboBox.Name = "seqArcSeqComboBox";
-            this.seqArcSeqComboBox.Size = new System.Drawing.Size(247, 21);
-            this.seqArcSeqComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.seqArcSeqComboBox, "Sequence to play.");
-            // 
-            // seqArcSeqBox
-            // 
-            this.seqArcSeqBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqArcSeqBox.Location = new System.Drawing.Point(256, 3);
-            this.seqArcSeqBox.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.seqArcSeqBox.Name = "seqArcSeqBox";
-            this.seqArcSeqBox.Size = new System.Drawing.Size(39, 20);
-            this.seqArcSeqBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.seqArcSeqBox, "Id of the sequence to play.");
-            // 
-            // seqArcPanel
-            // 
-            this.seqArcPanel.Controls.Add(this.seqArcOpenFileButton);
-            this.seqArcPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqArcPanel.Location = new System.Drawing.Point(0, 270);
-            this.seqArcPanel.Name = "seqArcPanel";
-            this.seqArcPanel.Size = new System.Drawing.Size(325, 269);
-            this.seqArcPanel.TabIndex = 19;
-            this.seqArcPanel.Visible = false;
-            // 
-            // seqArcOpenFileButton
-            // 
-            this.seqArcOpenFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqArcOpenFileButton.Location = new System.Drawing.Point(14, 6);
-            this.seqArcOpenFileButton.Name = "seqArcOpenFileButton";
-            this.seqArcOpenFileButton.Size = new System.Drawing.Size(298, 25);
-            this.seqArcOpenFileButton.TabIndex = 1;
-            this.seqArcOpenFileButton.Text = "Open File";
-            this.seqArcOpenFileButton.UseVisualStyleBackColor = true;
+            splitContainer1.Panel2.Controls.Add(pnlPianoKeys);
+            splitContainer1.Panel2.Controls.Add(bankEditorWars);
+            splitContainer1.Panel2.Controls.Add(tree);
+            splitContainer1.Panel2.Controls.Add(sequenceEditorPanel);
+            splitContainer1.Size = new Size(984, 585);
+            splitContainer1.SplitterDistance = 330;
+            splitContainer1.TabIndex = 1;
+            // 
+            // fileSizePanel
+            // 
+            fileSizePanel.Controls.Add(fileSizeLabel);
+            fileSizePanel.Dock = DockStyle.Bottom;
+            fileSizePanel.Location = new Point(0, 550);
+            fileSizePanel.Name = "fileSizePanel";
+            fileSizePanel.Size = new Size(328, 33);
+            fileSizePanel.TabIndex = 26;
+            fileSizePanel.Visible = false;
+            // 
+            // fileSizeLabel
+            // 
+            fileSizeLabel.Dock = DockStyle.Bottom;
+            fileSizeLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            fileSizeLabel.Location = new Point(0, 11);
+            fileSizeLabel.Name = "fileSizeLabel";
+            fileSizeLabel.Size = new Size(328, 22);
+            fileSizeLabel.TabIndex = 27;
+            fileSizeLabel.Text = "File is ";
+            fileSizeLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // seqPanel
             // 
-            this.seqPanel.Controls.Add(this.tableLayoutPanel11);
-            this.seqPanel.Controls.Add(this.label27);
-            this.seqPanel.Controls.Add(this.seqPlayerPriorityBox);
-            this.seqPanel.Controls.Add(this.label26);
-            this.seqPanel.Controls.Add(this.seqChannelPriorityBox);
-            this.seqPanel.Controls.Add(this.label25);
-            this.seqPanel.Controls.Add(this.seqVolumeBox);
-            this.seqPanel.Controls.Add(this.label24);
-            this.seqPanel.Controls.Add(this.tableLayoutPanel10);
-            this.seqPanel.Controls.Add(this.label23);
-            this.seqPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqPanel.Location = new System.Drawing.Point(0, 270);
-            this.seqPanel.Name = "seqPanel";
-            this.seqPanel.Size = new System.Drawing.Size(325, 269);
-            this.seqPanel.TabIndex = 17;
-            this.seqPanel.Visible = false;
+            seqPanel.Controls.Add(label20);
+            seqPanel.Controls.Add(tableLayoutPanel11);
+            seqPanel.Controls.Add(label27);
+            seqPanel.Controls.Add(seqPlayerPriorityBox);
+            seqPanel.Controls.Add(label26);
+            seqPanel.Controls.Add(seqChannelPriorityBox);
+            seqPanel.Controls.Add(label25);
+            seqPanel.Controls.Add(seqVolumeBox);
+            seqPanel.Controls.Add(label24);
+            seqPanel.Controls.Add(tableLayoutPanel10);
+            seqPanel.Controls.Add(label23);
+            seqPanel.Dock = DockStyle.Fill;
+            seqPanel.Location = new Point(0, 334);
+            seqPanel.Name = "seqPanel";
+            seqPanel.Size = new Size(328, 249);
+            seqPanel.TabIndex = 17;
+            seqPanel.Visible = false;
+            // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label20.Font = new Font("Segoe UI", 9F);
+            label20.Location = new Point(14, 115);
+            label20.Name = "label20";
+            label20.Size = new Size(304, 22);
+            label20.TabIndex = 24;
+            label20.Text = "Advanced Configuration:";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel11
             // 
-            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel11.Controls.Add(this.seqPlayerComboBox, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.seqPlayerBox, 1, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(14, 220);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 1;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel11.TabIndex = 23;
+            tableLayoutPanel11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel11.ColumnCount = 2;
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel11.Controls.Add(seqPlayerComboBox, 0, 0);
+            tableLayoutPanel11.Controls.Add(seqPlayerBox, 1, 0);
+            tableLayoutPanel11.Location = new Point(14, 78);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 1;
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel11.Size = new Size(301, 31);
+            tableLayoutPanel11.TabIndex = 23;
             // 
             // seqPlayerComboBox
             // 
-            this.seqPlayerComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqPlayerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqPlayerComboBox.FormattingEnabled = true;
-            this.seqPlayerComboBox.Location = new System.Drawing.Point(3, 3);
-            this.seqPlayerComboBox.Name = "seqPlayerComboBox";
-            this.seqPlayerComboBox.Size = new System.Drawing.Size(247, 21);
-            this.seqPlayerComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.seqPlayerComboBox, "Player to play the sequence.");
+            seqPlayerComboBox.Dock = DockStyle.Fill;
+            seqPlayerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqPlayerComboBox.FormattingEnabled = true;
+            seqPlayerComboBox.Location = new Point(3, 3);
+            seqPlayerComboBox.Name = "seqPlayerComboBox";
+            seqPlayerComboBox.Size = new Size(249, 23);
+            seqPlayerComboBox.TabIndex = 6;
+            toolTip.SetToolTip(seqPlayerComboBox, "Player to play the sequence.");
             // 
             // seqPlayerBox
             // 
-            this.seqPlayerBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqPlayerBox.Location = new System.Drawing.Point(256, 3);
-            this.seqPlayerBox.Maximum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.seqPlayerBox.Name = "seqPlayerBox";
-            this.seqPlayerBox.Size = new System.Drawing.Size(39, 20);
-            this.seqPlayerBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.seqPlayerBox, "Id of the player to play the sequence.");
+            seqPlayerBox.Dock = DockStyle.Fill;
+            seqPlayerBox.Location = new Point(258, 3);
+            seqPlayerBox.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
+            seqPlayerBox.Name = "seqPlayerBox";
+            seqPlayerBox.Size = new Size(40, 23);
+            seqPlayerBox.TabIndex = 7;
+            toolTip.SetToolTip(seqPlayerBox, "Id of the player to play the sequence.");
             // 
             // label27
             // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.Location = new System.Drawing.Point(11, 198);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(301, 22);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "Player:";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label27.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label27.Location = new Point(11, 56);
+            label27.Name = "label27";
+            label27.Size = new Size(304, 22);
+            label27.TabIndex = 22;
+            label27.Text = "Player:";
+            label27.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // seqPlayerPriorityBox
             // 
-            this.seqPlayerPriorityBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqPlayerPriorityBox.Location = new System.Drawing.Point(14, 175);
-            this.seqPlayerPriorityBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.seqPlayerPriorityBox.Name = "seqPlayerPriorityBox";
-            this.seqPlayerPriorityBox.Size = new System.Drawing.Size(298, 20);
-            this.seqPlayerPriorityBox.TabIndex = 21;
-            this.toolTip.SetToolTip(this.seqPlayerPriorityBox, "If the sounds can not all be played at once, the one with the highest priority wi" +
-        "ll play.");
+            seqPlayerPriorityBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqPlayerPriorityBox.Location = new Point(116, 186);
+            seqPlayerPriorityBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            seqPlayerPriorityBox.Name = "seqPlayerPriorityBox";
+            seqPlayerPriorityBox.Size = new Size(199, 23);
+            seqPlayerPriorityBox.TabIndex = 21;
+            toolTip.SetToolTip(seqPlayerPriorityBox, "If the sounds can not all be played at once, the one with the highest priority will play.");
             // 
             // label26
             // 
-            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label26.Location = new System.Drawing.Point(11, 152);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(301, 22);
-            this.label26.TabIndex = 20;
-            this.label26.Text = "Player Priority:";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label26.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label26.Location = new Point(11, 184);
+            label26.Name = "label26";
+            label26.Size = new Size(102, 22);
+            label26.TabIndex = 20;
+            label26.Text = "Player Priority:";
+            label26.TextAlign = ContentAlignment.MiddleRight;
             // 
             // seqChannelPriorityBox
             // 
-            this.seqChannelPriorityBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqChannelPriorityBox.Location = new System.Drawing.Point(14, 129);
-            this.seqChannelPriorityBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.seqChannelPriorityBox.Name = "seqChannelPriorityBox";
-            this.seqChannelPriorityBox.Size = new System.Drawing.Size(298, 20);
-            this.seqChannelPriorityBox.TabIndex = 19;
-            this.toolTip.SetToolTip(this.seqChannelPriorityBox, "If the sounds can not all be played at once, the one with the highest priority wi" +
-        "ll play.");
+            seqChannelPriorityBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqChannelPriorityBox.Location = new Point(116, 161);
+            seqChannelPriorityBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            seqChannelPriorityBox.Name = "seqChannelPriorityBox";
+            seqChannelPriorityBox.Size = new Size(199, 23);
+            seqChannelPriorityBox.TabIndex = 19;
+            toolTip.SetToolTip(seqChannelPriorityBox, "If the sounds can not all be played at once, the one with the highest priority will play.");
             // 
             // label25
             // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.Location = new System.Drawing.Point(11, 106);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(301, 22);
-            this.label25.TabIndex = 18;
-            this.label25.Text = "Channel Priority:";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label25.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label25.Location = new Point(11, 161);
+            label25.Name = "label25";
+            label25.Size = new Size(102, 22);
+            label25.TabIndex = 18;
+            label25.Text = "Channel Priority:";
+            label25.TextAlign = ContentAlignment.MiddleRight;
             // 
             // seqVolumeBox
             // 
-            this.seqVolumeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqVolumeBox.Location = new System.Drawing.Point(14, 82);
-            this.seqVolumeBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.seqVolumeBox.Name = "seqVolumeBox";
-            this.seqVolumeBox.Size = new System.Drawing.Size(298, 20);
-            this.seqVolumeBox.TabIndex = 17;
-            this.toolTip.SetToolTip(this.seqVolumeBox, "The volume of the sequence.");
+            seqVolumeBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqVolumeBox.Location = new Point(116, 137);
+            seqVolumeBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            seqVolumeBox.Name = "seqVolumeBox";
+            seqVolumeBox.Size = new Size(199, 23);
+            seqVolumeBox.TabIndex = 17;
+            toolTip.SetToolTip(seqVolumeBox, "The volume of the sequence.");
             // 
             // label24
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.Location = new System.Drawing.Point(11, 59);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(301, 22);
-            this.label24.TabIndex = 16;
-            this.label24.Text = "Volume:";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label24.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label24.Location = new Point(11, 138);
+            label24.Name = "label24";
+            label24.Size = new Size(102, 22);
+            label24.TabIndex = 16;
+            label24.Text = "Volume:";
+            label24.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel10.Controls.Add(this.seqBankComboBox, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.seqBankBox, 1, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel10.TabIndex = 15;
+            tableLayoutPanel10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel10.ColumnCount = 2;
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel10.Controls.Add(seqBankComboBox, 0, 0);
+            tableLayoutPanel10.Controls.Add(seqBankBox, 1, 0);
+            tableLayoutPanel10.Location = new Point(14, 25);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 1;
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel10.Size = new Size(301, 31);
+            tableLayoutPanel10.TabIndex = 15;
             // 
             // seqBankComboBox
             // 
-            this.seqBankComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqBankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqBankComboBox.FormattingEnabled = true;
-            this.seqBankComboBox.Location = new System.Drawing.Point(3, 3);
-            this.seqBankComboBox.Name = "seqBankComboBox";
-            this.seqBankComboBox.Size = new System.Drawing.Size(247, 21);
-            this.seqBankComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.seqBankComboBox, "Bank to use with the sequence.");
+            seqBankComboBox.Dock = DockStyle.Fill;
+            seqBankComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqBankComboBox.FormattingEnabled = true;
+            seqBankComboBox.Location = new Point(3, 3);
+            seqBankComboBox.Name = "seqBankComboBox";
+            seqBankComboBox.Size = new Size(249, 23);
+            seqBankComboBox.TabIndex = 6;
+            toolTip.SetToolTip(seqBankComboBox, "Bank to use with the sequence.");
             // 
             // seqBankBox
             // 
-            this.seqBankBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.seqBankBox.Location = new System.Drawing.Point(256, 3);
-            this.seqBankBox.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.seqBankBox.Name = "seqBankBox";
-            this.seqBankBox.Size = new System.Drawing.Size(39, 20);
-            this.seqBankBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.seqBankBox, "Id of the bank to use with the sequence.");
+            seqBankBox.Dock = DockStyle.Fill;
+            seqBankBox.Location = new Point(258, 3);
+            seqBankBox.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            seqBankBox.Name = "seqBankBox";
+            seqBankBox.Size = new Size(40, 23);
+            seqBankBox.TabIndex = 7;
+            toolTip.SetToolTip(seqBankBox, "Id of the bank to use with the sequence.");
             // 
             // label23
             // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.Location = new System.Drawing.Point(11, 3);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(301, 22);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Bank:";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label23.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label23.Location = new Point(11, 3);
+            label23.Name = "label23";
+            label23.Size = new Size(304, 22);
+            label23.TabIndex = 2;
+            label23.Text = "Bank:";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerPanel
             // 
-            this.playerPanel.Controls.Add(this.tableLayoutPanel8);
-            this.playerPanel.Controls.Add(this.label19);
-            this.playerPanel.Controls.Add(this.playerHeapSizeBox);
-            this.playerPanel.Controls.Add(this.label18);
-            this.playerPanel.Controls.Add(this.playerMaxSequencesBox);
-            this.playerPanel.Controls.Add(this.label17);
-            this.playerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.playerPanel.Location = new System.Drawing.Point(0, 270);
-            this.playerPanel.Name = "playerPanel";
-            this.playerPanel.Size = new System.Drawing.Size(325, 269);
-            this.playerPanel.TabIndex = 15;
-            this.playerPanel.Visible = false;
+            playerPanel.Controls.Add(tableLayoutPanel8);
+            playerPanel.Controls.Add(label19);
+            playerPanel.Controls.Add(playerHeapSizeBox);
+            playerPanel.Controls.Add(label18);
+            playerPanel.Controls.Add(playerMaxSequencesBox);
+            playerPanel.Controls.Add(label17);
+            playerPanel.Dock = DockStyle.Fill;
+            playerPanel.Location = new Point(0, 334);
+            playerPanel.Name = "playerPanel";
+            playerPanel.Size = new Size(328, 249);
+            playerPanel.TabIndex = 15;
+            playerPanel.Visible = false;
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 4;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag15Box, 3, 3);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag14Box, 2, 3);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag13Box, 1, 3);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag12Box, 0, 3);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag11Box, 3, 2);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag10Box, 2, 2);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag9Box, 1, 2);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag8Box, 0, 2);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag7Box, 3, 1);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag6Box, 2, 1);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag5Box, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag4Box, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag3Box, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag2Box, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag1Box, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.playerFlag0Box, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(14, 118);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 4;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(298, 100);
-            this.tableLayoutPanel8.TabIndex = 10;
-            this.toolTip.SetToolTip(this.tableLayoutPanel8, "Which channels the player is allowed to use.");
+            tableLayoutPanel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel8.ColumnCount = 4;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.Controls.Add(playerFlag15Box, 3, 3);
+            tableLayoutPanel8.Controls.Add(playerFlag14Box, 2, 3);
+            tableLayoutPanel8.Controls.Add(playerFlag13Box, 1, 3);
+            tableLayoutPanel8.Controls.Add(playerFlag12Box, 0, 3);
+            tableLayoutPanel8.Controls.Add(playerFlag11Box, 3, 2);
+            tableLayoutPanel8.Controls.Add(playerFlag10Box, 2, 2);
+            tableLayoutPanel8.Controls.Add(playerFlag9Box, 1, 2);
+            tableLayoutPanel8.Controls.Add(playerFlag8Box, 0, 2);
+            tableLayoutPanel8.Controls.Add(playerFlag7Box, 3, 1);
+            tableLayoutPanel8.Controls.Add(playerFlag6Box, 2, 1);
+            tableLayoutPanel8.Controls.Add(playerFlag5Box, 1, 1);
+            tableLayoutPanel8.Controls.Add(playerFlag4Box, 0, 1);
+            tableLayoutPanel8.Controls.Add(playerFlag3Box, 3, 0);
+            tableLayoutPanel8.Controls.Add(playerFlag2Box, 2, 0);
+            tableLayoutPanel8.Controls.Add(playerFlag1Box, 1, 0);
+            tableLayoutPanel8.Controls.Add(playerFlag0Box, 0, 0);
+            tableLayoutPanel8.Location = new Point(14, 118);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 4;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.Size = new Size(301, 100);
+            tableLayoutPanel8.TabIndex = 10;
+            toolTip.SetToolTip(tableLayoutPanel8, "Which channels the player is allowed to use.");
             // 
             // playerFlag15Box
             // 
-            this.playerFlag15Box.AutoSize = true;
-            this.playerFlag15Box.Location = new System.Drawing.Point(225, 78);
-            this.playerFlag15Box.Name = "playerFlag15Box";
-            this.playerFlag15Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag15Box.TabIndex = 15;
-            this.playerFlag15Box.Text = "15";
-            this.playerFlag15Box.UseVisualStyleBackColor = true;
+            playerFlag15Box.AutoSize = true;
+            playerFlag15Box.Location = new Point(228, 78);
+            playerFlag15Box.Name = "playerFlag15Box";
+            playerFlag15Box.Size = new Size(38, 19);
+            playerFlag15Box.TabIndex = 15;
+            playerFlag15Box.Text = "15";
+            playerFlag15Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag14Box
             // 
-            this.playerFlag14Box.AutoSize = true;
-            this.playerFlag14Box.Location = new System.Drawing.Point(151, 78);
-            this.playerFlag14Box.Name = "playerFlag14Box";
-            this.playerFlag14Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag14Box.TabIndex = 14;
-            this.playerFlag14Box.Text = "14";
-            this.playerFlag14Box.UseVisualStyleBackColor = true;
+            playerFlag14Box.AutoSize = true;
+            playerFlag14Box.Location = new Point(153, 78);
+            playerFlag14Box.Name = "playerFlag14Box";
+            playerFlag14Box.Size = new Size(38, 19);
+            playerFlag14Box.TabIndex = 14;
+            playerFlag14Box.Text = "14";
+            playerFlag14Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag13Box
             // 
-            this.playerFlag13Box.AutoSize = true;
-            this.playerFlag13Box.Location = new System.Drawing.Point(77, 78);
-            this.playerFlag13Box.Name = "playerFlag13Box";
-            this.playerFlag13Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag13Box.TabIndex = 13;
-            this.playerFlag13Box.Text = "13";
-            this.playerFlag13Box.UseVisualStyleBackColor = true;
+            playerFlag13Box.AutoSize = true;
+            playerFlag13Box.Location = new Point(78, 78);
+            playerFlag13Box.Name = "playerFlag13Box";
+            playerFlag13Box.Size = new Size(38, 19);
+            playerFlag13Box.TabIndex = 13;
+            playerFlag13Box.Text = "13";
+            playerFlag13Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag12Box
             // 
-            this.playerFlag12Box.AutoSize = true;
-            this.playerFlag12Box.Location = new System.Drawing.Point(3, 78);
-            this.playerFlag12Box.Name = "playerFlag12Box";
-            this.playerFlag12Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag12Box.TabIndex = 12;
-            this.playerFlag12Box.Text = "12";
-            this.playerFlag12Box.UseVisualStyleBackColor = true;
+            playerFlag12Box.AutoSize = true;
+            playerFlag12Box.Location = new Point(3, 78);
+            playerFlag12Box.Name = "playerFlag12Box";
+            playerFlag12Box.Size = new Size(38, 19);
+            playerFlag12Box.TabIndex = 12;
+            playerFlag12Box.Text = "12";
+            playerFlag12Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag11Box
             // 
-            this.playerFlag11Box.AutoSize = true;
-            this.playerFlag11Box.Location = new System.Drawing.Point(225, 53);
-            this.playerFlag11Box.Name = "playerFlag11Box";
-            this.playerFlag11Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag11Box.TabIndex = 11;
-            this.playerFlag11Box.Text = "11";
-            this.playerFlag11Box.UseVisualStyleBackColor = true;
+            playerFlag11Box.AutoSize = true;
+            playerFlag11Box.Location = new Point(228, 53);
+            playerFlag11Box.Name = "playerFlag11Box";
+            playerFlag11Box.Size = new Size(38, 19);
+            playerFlag11Box.TabIndex = 11;
+            playerFlag11Box.Text = "11";
+            playerFlag11Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag10Box
             // 
-            this.playerFlag10Box.AutoSize = true;
-            this.playerFlag10Box.Location = new System.Drawing.Point(151, 53);
-            this.playerFlag10Box.Name = "playerFlag10Box";
-            this.playerFlag10Box.Size = new System.Drawing.Size(38, 17);
-            this.playerFlag10Box.TabIndex = 10;
-            this.playerFlag10Box.Text = "10";
-            this.playerFlag10Box.UseVisualStyleBackColor = true;
+            playerFlag10Box.AutoSize = true;
+            playerFlag10Box.Location = new Point(153, 53);
+            playerFlag10Box.Name = "playerFlag10Box";
+            playerFlag10Box.Size = new Size(38, 19);
+            playerFlag10Box.TabIndex = 10;
+            playerFlag10Box.Text = "10";
+            playerFlag10Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag9Box
             // 
-            this.playerFlag9Box.AutoSize = true;
-            this.playerFlag9Box.Location = new System.Drawing.Point(77, 53);
-            this.playerFlag9Box.Name = "playerFlag9Box";
-            this.playerFlag9Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag9Box.TabIndex = 9;
-            this.playerFlag9Box.Text = "9";
-            this.playerFlag9Box.UseVisualStyleBackColor = true;
+            playerFlag9Box.AutoSize = true;
+            playerFlag9Box.Location = new Point(78, 53);
+            playerFlag9Box.Name = "playerFlag9Box";
+            playerFlag9Box.Size = new Size(32, 19);
+            playerFlag9Box.TabIndex = 9;
+            playerFlag9Box.Text = "9";
+            playerFlag9Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag8Box
             // 
-            this.playerFlag8Box.AutoSize = true;
-            this.playerFlag8Box.Location = new System.Drawing.Point(3, 53);
-            this.playerFlag8Box.Name = "playerFlag8Box";
-            this.playerFlag8Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag8Box.TabIndex = 8;
-            this.playerFlag8Box.Text = "8";
-            this.playerFlag8Box.UseVisualStyleBackColor = true;
+            playerFlag8Box.AutoSize = true;
+            playerFlag8Box.Location = new Point(3, 53);
+            playerFlag8Box.Name = "playerFlag8Box";
+            playerFlag8Box.Size = new Size(32, 19);
+            playerFlag8Box.TabIndex = 8;
+            playerFlag8Box.Text = "8";
+            playerFlag8Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag7Box
             // 
-            this.playerFlag7Box.AutoSize = true;
-            this.playerFlag7Box.Location = new System.Drawing.Point(225, 28);
-            this.playerFlag7Box.Name = "playerFlag7Box";
-            this.playerFlag7Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag7Box.TabIndex = 7;
-            this.playerFlag7Box.Text = "7";
-            this.playerFlag7Box.UseVisualStyleBackColor = true;
+            playerFlag7Box.AutoSize = true;
+            playerFlag7Box.Location = new Point(228, 28);
+            playerFlag7Box.Name = "playerFlag7Box";
+            playerFlag7Box.Size = new Size(32, 19);
+            playerFlag7Box.TabIndex = 7;
+            playerFlag7Box.Text = "7";
+            playerFlag7Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag6Box
             // 
-            this.playerFlag6Box.AutoSize = true;
-            this.playerFlag6Box.Location = new System.Drawing.Point(151, 28);
-            this.playerFlag6Box.Name = "playerFlag6Box";
-            this.playerFlag6Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag6Box.TabIndex = 6;
-            this.playerFlag6Box.Text = "6";
-            this.playerFlag6Box.UseVisualStyleBackColor = true;
+            playerFlag6Box.AutoSize = true;
+            playerFlag6Box.Location = new Point(153, 28);
+            playerFlag6Box.Name = "playerFlag6Box";
+            playerFlag6Box.Size = new Size(32, 19);
+            playerFlag6Box.TabIndex = 6;
+            playerFlag6Box.Text = "6";
+            playerFlag6Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag5Box
             // 
-            this.playerFlag5Box.AutoSize = true;
-            this.playerFlag5Box.Location = new System.Drawing.Point(77, 28);
-            this.playerFlag5Box.Name = "playerFlag5Box";
-            this.playerFlag5Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag5Box.TabIndex = 5;
-            this.playerFlag5Box.Text = "5";
-            this.playerFlag5Box.UseVisualStyleBackColor = true;
+            playerFlag5Box.AutoSize = true;
+            playerFlag5Box.Location = new Point(78, 28);
+            playerFlag5Box.Name = "playerFlag5Box";
+            playerFlag5Box.Size = new Size(32, 19);
+            playerFlag5Box.TabIndex = 5;
+            playerFlag5Box.Text = "5";
+            playerFlag5Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag4Box
             // 
-            this.playerFlag4Box.AutoSize = true;
-            this.playerFlag4Box.Location = new System.Drawing.Point(3, 28);
-            this.playerFlag4Box.Name = "playerFlag4Box";
-            this.playerFlag4Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag4Box.TabIndex = 4;
-            this.playerFlag4Box.Text = "4";
-            this.playerFlag4Box.UseVisualStyleBackColor = true;
+            playerFlag4Box.AutoSize = true;
+            playerFlag4Box.Location = new Point(3, 28);
+            playerFlag4Box.Name = "playerFlag4Box";
+            playerFlag4Box.Size = new Size(32, 19);
+            playerFlag4Box.TabIndex = 4;
+            playerFlag4Box.Text = "4";
+            playerFlag4Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag3Box
             // 
-            this.playerFlag3Box.AutoSize = true;
-            this.playerFlag3Box.Location = new System.Drawing.Point(225, 3);
-            this.playerFlag3Box.Name = "playerFlag3Box";
-            this.playerFlag3Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag3Box.TabIndex = 3;
-            this.playerFlag3Box.Text = "3";
-            this.playerFlag3Box.UseVisualStyleBackColor = true;
+            playerFlag3Box.AutoSize = true;
+            playerFlag3Box.Location = new Point(228, 3);
+            playerFlag3Box.Name = "playerFlag3Box";
+            playerFlag3Box.Size = new Size(32, 19);
+            playerFlag3Box.TabIndex = 3;
+            playerFlag3Box.Text = "3";
+            playerFlag3Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag2Box
             // 
-            this.playerFlag2Box.AutoSize = true;
-            this.playerFlag2Box.Location = new System.Drawing.Point(151, 3);
-            this.playerFlag2Box.Name = "playerFlag2Box";
-            this.playerFlag2Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag2Box.TabIndex = 2;
-            this.playerFlag2Box.Text = "2";
-            this.playerFlag2Box.UseVisualStyleBackColor = true;
+            playerFlag2Box.AutoSize = true;
+            playerFlag2Box.Location = new Point(153, 3);
+            playerFlag2Box.Name = "playerFlag2Box";
+            playerFlag2Box.Size = new Size(32, 19);
+            playerFlag2Box.TabIndex = 2;
+            playerFlag2Box.Text = "2";
+            playerFlag2Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag1Box
             // 
-            this.playerFlag1Box.AutoSize = true;
-            this.playerFlag1Box.Location = new System.Drawing.Point(77, 3);
-            this.playerFlag1Box.Name = "playerFlag1Box";
-            this.playerFlag1Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag1Box.TabIndex = 1;
-            this.playerFlag1Box.Text = "1";
-            this.playerFlag1Box.UseVisualStyleBackColor = true;
+            playerFlag1Box.AutoSize = true;
+            playerFlag1Box.Location = new Point(78, 3);
+            playerFlag1Box.Name = "playerFlag1Box";
+            playerFlag1Box.Size = new Size(32, 19);
+            playerFlag1Box.TabIndex = 1;
+            playerFlag1Box.Text = "1";
+            playerFlag1Box.UseVisualStyleBackColor = true;
             // 
             // playerFlag0Box
             // 
-            this.playerFlag0Box.AutoSize = true;
-            this.playerFlag0Box.Location = new System.Drawing.Point(3, 3);
-            this.playerFlag0Box.Name = "playerFlag0Box";
-            this.playerFlag0Box.Size = new System.Drawing.Size(32, 17);
-            this.playerFlag0Box.TabIndex = 0;
-            this.playerFlag0Box.Text = "0";
-            this.playerFlag0Box.UseVisualStyleBackColor = true;
+            playerFlag0Box.AutoSize = true;
+            playerFlag0Box.Location = new Point(3, 3);
+            playerFlag0Box.Name = "playerFlag0Box";
+            playerFlag0Box.Size = new Size(32, 19);
+            playerFlag0Box.TabIndex = 0;
+            playerFlag0Box.Text = "0";
+            playerFlag0Box.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.Location = new System.Drawing.Point(11, 93);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(301, 22);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "Channel Flags:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label19.Location = new Point(11, 93);
+            label19.Name = "label19";
+            label19.Size = new Size(304, 22);
+            label19.TabIndex = 9;
+            label19.Text = "Channel Flags:";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerHeapSizeBox
             // 
-            this.playerHeapSizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerHeapSizeBox.Hexadecimal = true;
-            this.playerHeapSizeBox.Location = new System.Drawing.Point(14, 70);
-            this.playerHeapSizeBox.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.playerHeapSizeBox.Name = "playerHeapSizeBox";
-            this.playerHeapSizeBox.Size = new System.Drawing.Size(298, 20);
-            this.playerHeapSizeBox.TabIndex = 8;
-            this.toolTip.SetToolTip(this.playerHeapSizeBox, "How much memory to reserve in the sound heap for the player.");
+            playerHeapSizeBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            playerHeapSizeBox.Hexadecimal = true;
+            playerHeapSizeBox.Location = new Point(14, 70);
+            playerHeapSizeBox.Maximum = new decimal(new int[] { -1, 0, 0, 0 });
+            playerHeapSizeBox.Name = "playerHeapSizeBox";
+            playerHeapSizeBox.Size = new Size(301, 23);
+            playerHeapSizeBox.TabIndex = 8;
+            toolTip.SetToolTip(playerHeapSizeBox, "How much memory to reserve in the sound heap for the player.");
             // 
             // label18
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.Location = new System.Drawing.Point(11, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(301, 22);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "Heap Size:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label18.Location = new Point(11, 48);
+            label18.Name = "label18";
+            label18.Size = new Size(304, 22);
+            label18.TabIndex = 7;
+            label18.Text = "Heap Size:";
+            label18.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // playerMaxSequencesBox
             // 
-            this.playerMaxSequencesBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.playerMaxSequencesBox.Location = new System.Drawing.Point(14, 25);
-            this.playerMaxSequencesBox.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.playerMaxSequencesBox.Name = "playerMaxSequencesBox";
-            this.playerMaxSequencesBox.Size = new System.Drawing.Size(298, 20);
-            this.playerMaxSequencesBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.playerMaxSequencesBox, "Max number of sequences the player can play.");
+            playerMaxSequencesBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            playerMaxSequencesBox.Location = new Point(14, 25);
+            playerMaxSequencesBox.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            playerMaxSequencesBox.Name = "playerMaxSequencesBox";
+            playerMaxSequencesBox.Size = new Size(301, 23);
+            playerMaxSequencesBox.TabIndex = 6;
+            toolTip.SetToolTip(playerMaxSequencesBox, "Max number of sequences the player can play.");
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.Location = new System.Drawing.Point(11, 3);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(301, 22);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Max Sequences:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label17.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label17.Location = new Point(11, 3);
+            label17.Name = "label17";
+            label17.Size = new Size(304, 22);
+            label17.TabIndex = 5;
+            label17.Text = "Max Sequences:";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // seqBankPanel
+            // 
+            seqBankPanel.Controls.Add(tableLayoutPanel36);
+            seqBankPanel.Controls.Add(tableLayoutPanel20);
+            seqBankPanel.Controls.Add(label28);
+            seqBankPanel.Controls.Add(tableLayoutPanel12);
+            seqBankPanel.Dock = DockStyle.Fill;
+            seqBankPanel.Location = new Point(0, 334);
+            seqBankPanel.Name = "seqBankPanel";
+            seqBankPanel.Size = new Size(328, 249);
+            seqBankPanel.TabIndex = 18;
+            seqBankPanel.Visible = false;
+            // 
+            // tableLayoutPanel36
+            // 
+            tableLayoutPanel36.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel36.ColumnCount = 2;
+            tableLayoutPanel36.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel36.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel36.Controls.Add(exportWavButton, 0, 0);
+            tableLayoutPanel36.Controls.Add(exportMidiButton, 0, 0);
+            tableLayoutPanel36.Location = new Point(14, 244);
+            tableLayoutPanel36.Name = "tableLayoutPanel36";
+            tableLayoutPanel36.RowCount = 1;
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel36.Size = new Size(301, 25);
+            tableLayoutPanel36.TabIndex = 30;
+            // 
+            // exportWavButton
+            // 
+            exportWavButton.Dock = DockStyle.Fill;
+            exportWavButton.Location = new Point(150, 0);
+            exportWavButton.Margin = new Padding(0);
+            exportWavButton.Name = "exportWavButton";
+            exportWavButton.Size = new Size(151, 25);
+            exportWavButton.TabIndex = 5;
+            exportWavButton.Text = "Export WAV";
+            exportWavButton.UseVisualStyleBackColor = true;
+            // 
+            // exportMidiButton
+            // 
+            exportMidiButton.Dock = DockStyle.Fill;
+            exportMidiButton.Location = new Point(0, 0);
+            exportMidiButton.Margin = new Padding(0);
+            exportMidiButton.Name = "exportMidiButton";
+            exportMidiButton.Size = new Size(150, 25);
+            exportMidiButton.TabIndex = 4;
+            exportMidiButton.Text = "Export MIDI";
+            exportMidiButton.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel20
+            // 
+            tableLayoutPanel20.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel20.ColumnCount = 2;
+            tableLayoutPanel20.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel20.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel35, 1, 7);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel34, 1, 6);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel33, 1, 5);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel32, 1, 4);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel31, 1, 3);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel30, 1, 2);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel29, 1, 1);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel28, 0, 7);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel27, 0, 6);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel26, 0, 5);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel25, 0, 4);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel24, 0, 3);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel23, 0, 2);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel22, 0, 1);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel21, 1, 0);
+            tableLayoutPanel20.Controls.Add(tableLayoutPanel1, 0, 0);
+            tableLayoutPanel20.Location = new Point(14, 62);
+            tableLayoutPanel20.Name = "tableLayoutPanel20";
+            tableLayoutPanel20.RowCount = 8;
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel20.Size = new Size(301, 176);
+            tableLayoutPanel20.TabIndex = 28;
+            // 
+            // tableLayoutPanel35
+            // 
+            tableLayoutPanel35.ColumnCount = 3;
+            tableLayoutPanel35.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel35.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel35.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel35.Controls.Add(track15Box, 0, 0);
+            tableLayoutPanel35.Controls.Add(track15Picture, 2, 0);
+            tableLayoutPanel35.Controls.Add(track15Solo, 1, 0);
+            tableLayoutPanel35.Dock = DockStyle.Fill;
+            tableLayoutPanel35.Location = new Point(150, 154);
+            tableLayoutPanel35.Margin = new Padding(0);
+            tableLayoutPanel35.Name = "tableLayoutPanel35";
+            tableLayoutPanel35.RowCount = 1;
+            tableLayoutPanel35.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel35.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel35.Size = new Size(151, 22);
+            tableLayoutPanel35.TabIndex = 41;
+            // 
+            // track15Box
+            // 
+            track15Box.CheckAlign = ContentAlignment.MiddleRight;
+            track15Box.Checked = true;
+            track15Box.CheckState = CheckState.Checked;
+            track15Box.Dock = DockStyle.Fill;
+            track15Box.Location = new Point(3, 3);
+            track15Box.Name = "track15Box";
+            track15Box.Size = new Size(69, 16);
+            track15Box.TabIndex = 2;
+            track15Box.Text = "Track 15:";
+            track15Box.UseVisualStyleBackColor = true;
+            // 
+            // track15Picture
+            // 
+            track15Picture.BackgroundImage = Properties.Resources.Idle;
+            track15Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track15Picture.Dock = DockStyle.Fill;
+            track15Picture.Location = new Point(112, 0);
+            track15Picture.Margin = new Padding(0);
+            track15Picture.Name = "track15Picture";
+            track15Picture.Size = new Size(39, 22);
+            track15Picture.TabIndex = 0;
+            track15Picture.TabStop = false;
+            // 
+            // track15Solo
+            // 
+            track15Solo.Dock = DockStyle.Fill;
+            track15Solo.Location = new Point(75, 0);
+            track15Solo.Margin = new Padding(0);
+            track15Solo.Name = "track15Solo";
+            track15Solo.Size = new Size(37, 22);
+            track15Solo.TabIndex = 3;
+            track15Solo.Text = "Solo";
+            track15Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel34
+            // 
+            tableLayoutPanel34.ColumnCount = 3;
+            tableLayoutPanel34.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel34.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.Controls.Add(track13Box, 0, 0);
+            tableLayoutPanel34.Controls.Add(track13Picture, 2, 0);
+            tableLayoutPanel34.Controls.Add(track13Solo, 1, 0);
+            tableLayoutPanel34.Dock = DockStyle.Fill;
+            tableLayoutPanel34.Location = new Point(150, 132);
+            tableLayoutPanel34.Margin = new Padding(0);
+            tableLayoutPanel34.Name = "tableLayoutPanel34";
+            tableLayoutPanel34.RowCount = 1;
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel34.Size = new Size(151, 22);
+            tableLayoutPanel34.TabIndex = 40;
+            // 
+            // track13Box
+            // 
+            track13Box.CheckAlign = ContentAlignment.MiddleRight;
+            track13Box.Checked = true;
+            track13Box.CheckState = CheckState.Checked;
+            track13Box.Dock = DockStyle.Fill;
+            track13Box.Location = new Point(3, 3);
+            track13Box.Name = "track13Box";
+            track13Box.Size = new Size(69, 16);
+            track13Box.TabIndex = 2;
+            track13Box.Text = "Track 13:";
+            track13Box.UseVisualStyleBackColor = true;
+            // 
+            // track13Picture
+            // 
+            track13Picture.BackgroundImage = Properties.Resources.Idle;
+            track13Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track13Picture.Dock = DockStyle.Fill;
+            track13Picture.Location = new Point(112, 0);
+            track13Picture.Margin = new Padding(0);
+            track13Picture.Name = "track13Picture";
+            track13Picture.Size = new Size(39, 22);
+            track13Picture.TabIndex = 0;
+            track13Picture.TabStop = false;
+            // 
+            // track13Solo
+            // 
+            track13Solo.Dock = DockStyle.Fill;
+            track13Solo.Location = new Point(75, 0);
+            track13Solo.Margin = new Padding(0);
+            track13Solo.Name = "track13Solo";
+            track13Solo.Size = new Size(37, 22);
+            track13Solo.TabIndex = 3;
+            track13Solo.Text = "Solo";
+            track13Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel33
+            // 
+            tableLayoutPanel33.ColumnCount = 3;
+            tableLayoutPanel33.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel33.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel33.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel33.Controls.Add(track11Box, 0, 0);
+            tableLayoutPanel33.Controls.Add(track11Picture, 2, 0);
+            tableLayoutPanel33.Controls.Add(track11Solo, 1, 0);
+            tableLayoutPanel33.Dock = DockStyle.Fill;
+            tableLayoutPanel33.Location = new Point(150, 110);
+            tableLayoutPanel33.Margin = new Padding(0);
+            tableLayoutPanel33.Name = "tableLayoutPanel33";
+            tableLayoutPanel33.RowCount = 1;
+            tableLayoutPanel33.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel33.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel33.Size = new Size(151, 22);
+            tableLayoutPanel33.TabIndex = 39;
+            // 
+            // track11Box
+            // 
+            track11Box.CheckAlign = ContentAlignment.MiddleRight;
+            track11Box.Checked = true;
+            track11Box.CheckState = CheckState.Checked;
+            track11Box.Dock = DockStyle.Fill;
+            track11Box.Location = new Point(3, 3);
+            track11Box.Name = "track11Box";
+            track11Box.Size = new Size(69, 16);
+            track11Box.TabIndex = 2;
+            track11Box.Text = "Track 11:";
+            track11Box.UseVisualStyleBackColor = true;
+            // 
+            // track11Picture
+            // 
+            track11Picture.BackgroundImage = Properties.Resources.Idle;
+            track11Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track11Picture.Dock = DockStyle.Fill;
+            track11Picture.Location = new Point(112, 0);
+            track11Picture.Margin = new Padding(0);
+            track11Picture.Name = "track11Picture";
+            track11Picture.Size = new Size(39, 22);
+            track11Picture.TabIndex = 0;
+            track11Picture.TabStop = false;
+            // 
+            // track11Solo
+            // 
+            track11Solo.Dock = DockStyle.Fill;
+            track11Solo.Location = new Point(75, 0);
+            track11Solo.Margin = new Padding(0);
+            track11Solo.Name = "track11Solo";
+            track11Solo.Size = new Size(37, 22);
+            track11Solo.TabIndex = 3;
+            track11Solo.Text = "Solo";
+            track11Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel32
+            // 
+            tableLayoutPanel32.ColumnCount = 3;
+            tableLayoutPanel32.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel32.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel32.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel32.Controls.Add(track9Box, 0, 0);
+            tableLayoutPanel32.Controls.Add(track9Picture, 2, 0);
+            tableLayoutPanel32.Controls.Add(track9Solo, 1, 0);
+            tableLayoutPanel32.Dock = DockStyle.Fill;
+            tableLayoutPanel32.Location = new Point(150, 88);
+            tableLayoutPanel32.Margin = new Padding(0);
+            tableLayoutPanel32.Name = "tableLayoutPanel32";
+            tableLayoutPanel32.RowCount = 1;
+            tableLayoutPanel32.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel32.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel32.Size = new Size(151, 22);
+            tableLayoutPanel32.TabIndex = 38;
+            // 
+            // track9Box
+            // 
+            track9Box.CheckAlign = ContentAlignment.MiddleRight;
+            track9Box.Checked = true;
+            track9Box.CheckState = CheckState.Checked;
+            track9Box.Dock = DockStyle.Fill;
+            track9Box.Location = new Point(3, 3);
+            track9Box.Name = "track9Box";
+            track9Box.Size = new Size(69, 16);
+            track9Box.TabIndex = 2;
+            track9Box.Text = "Track 9:";
+            track9Box.UseVisualStyleBackColor = true;
+            // 
+            // track9Picture
+            // 
+            track9Picture.BackgroundImage = Properties.Resources.Idle;
+            track9Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track9Picture.Dock = DockStyle.Fill;
+            track9Picture.Location = new Point(112, 0);
+            track9Picture.Margin = new Padding(0);
+            track9Picture.Name = "track9Picture";
+            track9Picture.Size = new Size(39, 22);
+            track9Picture.TabIndex = 0;
+            track9Picture.TabStop = false;
+            // 
+            // track9Solo
+            // 
+            track9Solo.Dock = DockStyle.Fill;
+            track9Solo.Location = new Point(75, 0);
+            track9Solo.Margin = new Padding(0);
+            track9Solo.Name = "track9Solo";
+            track9Solo.Size = new Size(37, 22);
+            track9Solo.TabIndex = 3;
+            track9Solo.Text = "Solo";
+            track9Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel31
+            // 
+            tableLayoutPanel31.ColumnCount = 3;
+            tableLayoutPanel31.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel31.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel31.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel31.Controls.Add(track7Box, 0, 0);
+            tableLayoutPanel31.Controls.Add(track7Picture, 2, 0);
+            tableLayoutPanel31.Controls.Add(track7Solo, 1, 0);
+            tableLayoutPanel31.Dock = DockStyle.Fill;
+            tableLayoutPanel31.Location = new Point(150, 66);
+            tableLayoutPanel31.Margin = new Padding(0);
+            tableLayoutPanel31.Name = "tableLayoutPanel31";
+            tableLayoutPanel31.RowCount = 1;
+            tableLayoutPanel31.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel31.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel31.Size = new Size(151, 22);
+            tableLayoutPanel31.TabIndex = 37;
+            // 
+            // track7Box
+            // 
+            track7Box.CheckAlign = ContentAlignment.MiddleRight;
+            track7Box.Checked = true;
+            track7Box.CheckState = CheckState.Checked;
+            track7Box.Dock = DockStyle.Fill;
+            track7Box.Location = new Point(3, 3);
+            track7Box.Name = "track7Box";
+            track7Box.Size = new Size(69, 16);
+            track7Box.TabIndex = 2;
+            track7Box.Text = "Track 7:";
+            track7Box.UseVisualStyleBackColor = true;
+            // 
+            // track7Picture
+            // 
+            track7Picture.BackgroundImage = Properties.Resources.Idle;
+            track7Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track7Picture.Dock = DockStyle.Fill;
+            track7Picture.Location = new Point(112, 0);
+            track7Picture.Margin = new Padding(0);
+            track7Picture.Name = "track7Picture";
+            track7Picture.Size = new Size(39, 22);
+            track7Picture.TabIndex = 0;
+            track7Picture.TabStop = false;
+            // 
+            // track7Solo
+            // 
+            track7Solo.Dock = DockStyle.Fill;
+            track7Solo.Location = new Point(75, 0);
+            track7Solo.Margin = new Padding(0);
+            track7Solo.Name = "track7Solo";
+            track7Solo.Size = new Size(37, 22);
+            track7Solo.TabIndex = 3;
+            track7Solo.Text = "Solo";
+            track7Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel30
+            // 
+            tableLayoutPanel30.ColumnCount = 3;
+            tableLayoutPanel30.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel30.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel30.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel30.Controls.Add(track5Box, 0, 0);
+            tableLayoutPanel30.Controls.Add(track5Picture, 2, 0);
+            tableLayoutPanel30.Controls.Add(track5Solo, 1, 0);
+            tableLayoutPanel30.Dock = DockStyle.Fill;
+            tableLayoutPanel30.Location = new Point(150, 44);
+            tableLayoutPanel30.Margin = new Padding(0);
+            tableLayoutPanel30.Name = "tableLayoutPanel30";
+            tableLayoutPanel30.RowCount = 1;
+            tableLayoutPanel30.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel30.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel30.Size = new Size(151, 22);
+            tableLayoutPanel30.TabIndex = 36;
+            // 
+            // track5Box
+            // 
+            track5Box.CheckAlign = ContentAlignment.MiddleRight;
+            track5Box.Checked = true;
+            track5Box.CheckState = CheckState.Checked;
+            track5Box.Dock = DockStyle.Fill;
+            track5Box.Location = new Point(3, 3);
+            track5Box.Name = "track5Box";
+            track5Box.Size = new Size(69, 16);
+            track5Box.TabIndex = 2;
+            track5Box.Text = "Track 5:";
+            track5Box.UseVisualStyleBackColor = true;
+            // 
+            // track5Picture
+            // 
+            track5Picture.BackgroundImage = Properties.Resources.Idle;
+            track5Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track5Picture.Dock = DockStyle.Fill;
+            track5Picture.Location = new Point(112, 0);
+            track5Picture.Margin = new Padding(0);
+            track5Picture.Name = "track5Picture";
+            track5Picture.Size = new Size(39, 22);
+            track5Picture.TabIndex = 0;
+            track5Picture.TabStop = false;
+            // 
+            // track5Solo
+            // 
+            track5Solo.Dock = DockStyle.Fill;
+            track5Solo.Location = new Point(75, 0);
+            track5Solo.Margin = new Padding(0);
+            track5Solo.Name = "track5Solo";
+            track5Solo.Size = new Size(37, 22);
+            track5Solo.TabIndex = 3;
+            track5Solo.Text = "Solo";
+            track5Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel29
+            // 
+            tableLayoutPanel29.ColumnCount = 3;
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel29.Controls.Add(track3Box, 0, 0);
+            tableLayoutPanel29.Controls.Add(track3Picture, 2, 0);
+            tableLayoutPanel29.Controls.Add(track3Solo, 1, 0);
+            tableLayoutPanel29.Dock = DockStyle.Fill;
+            tableLayoutPanel29.Location = new Point(150, 22);
+            tableLayoutPanel29.Margin = new Padding(0);
+            tableLayoutPanel29.Name = "tableLayoutPanel29";
+            tableLayoutPanel29.RowCount = 1;
+            tableLayoutPanel29.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel29.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel29.Size = new Size(151, 22);
+            tableLayoutPanel29.TabIndex = 35;
+            // 
+            // track3Box
+            // 
+            track3Box.CheckAlign = ContentAlignment.MiddleRight;
+            track3Box.Checked = true;
+            track3Box.CheckState = CheckState.Checked;
+            track3Box.Dock = DockStyle.Fill;
+            track3Box.Location = new Point(3, 3);
+            track3Box.Name = "track3Box";
+            track3Box.Size = new Size(69, 16);
+            track3Box.TabIndex = 2;
+            track3Box.Text = "Track 3:";
+            track3Box.UseVisualStyleBackColor = true;
+            // 
+            // track3Picture
+            // 
+            track3Picture.BackgroundImage = Properties.Resources.Idle;
+            track3Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track3Picture.Dock = DockStyle.Fill;
+            track3Picture.Location = new Point(112, 0);
+            track3Picture.Margin = new Padding(0);
+            track3Picture.Name = "track3Picture";
+            track3Picture.Size = new Size(39, 22);
+            track3Picture.TabIndex = 0;
+            track3Picture.TabStop = false;
+            // 
+            // track3Solo
+            // 
+            track3Solo.Dock = DockStyle.Fill;
+            track3Solo.Location = new Point(75, 0);
+            track3Solo.Margin = new Padding(0);
+            track3Solo.Name = "track3Solo";
+            track3Solo.Size = new Size(37, 22);
+            track3Solo.TabIndex = 3;
+            track3Solo.Text = "Solo";
+            track3Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel28
+            // 
+            tableLayoutPanel28.ColumnCount = 3;
+            tableLayoutPanel28.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel28.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel28.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel28.Controls.Add(track14Box, 0, 0);
+            tableLayoutPanel28.Controls.Add(track14Picture, 2, 0);
+            tableLayoutPanel28.Controls.Add(track14Solo, 1, 0);
+            tableLayoutPanel28.Dock = DockStyle.Fill;
+            tableLayoutPanel28.Location = new Point(0, 154);
+            tableLayoutPanel28.Margin = new Padding(0);
+            tableLayoutPanel28.Name = "tableLayoutPanel28";
+            tableLayoutPanel28.RowCount = 1;
+            tableLayoutPanel28.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel28.Size = new Size(150, 22);
+            tableLayoutPanel28.TabIndex = 34;
+            // 
+            // track14Box
+            // 
+            track14Box.CheckAlign = ContentAlignment.MiddleRight;
+            track14Box.Checked = true;
+            track14Box.CheckState = CheckState.Checked;
+            track14Box.Dock = DockStyle.Fill;
+            track14Box.Location = new Point(3, 3);
+            track14Box.Name = "track14Box";
+            track14Box.Size = new Size(69, 16);
+            track14Box.TabIndex = 2;
+            track14Box.Text = "Track 14:";
+            track14Box.UseVisualStyleBackColor = true;
+            // 
+            // track14Picture
+            // 
+            track14Picture.BackgroundImage = Properties.Resources.Idle;
+            track14Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track14Picture.Dock = DockStyle.Fill;
+            track14Picture.Location = new Point(112, 0);
+            track14Picture.Margin = new Padding(0);
+            track14Picture.Name = "track14Picture";
+            track14Picture.Size = new Size(38, 22);
+            track14Picture.TabIndex = 0;
+            track14Picture.TabStop = false;
+            // 
+            // track14Solo
+            // 
+            track14Solo.Dock = DockStyle.Fill;
+            track14Solo.Location = new Point(75, 0);
+            track14Solo.Margin = new Padding(0);
+            track14Solo.Name = "track14Solo";
+            track14Solo.Size = new Size(37, 22);
+            track14Solo.TabIndex = 3;
+            track14Solo.Text = "Solo";
+            track14Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel27
+            // 
+            tableLayoutPanel27.ColumnCount = 3;
+            tableLayoutPanel27.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel27.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel27.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel27.Controls.Add(track12Box, 0, 0);
+            tableLayoutPanel27.Controls.Add(track12Picture, 2, 0);
+            tableLayoutPanel27.Controls.Add(track12Solo, 1, 0);
+            tableLayoutPanel27.Dock = DockStyle.Fill;
+            tableLayoutPanel27.Location = new Point(0, 132);
+            tableLayoutPanel27.Margin = new Padding(0);
+            tableLayoutPanel27.Name = "tableLayoutPanel27";
+            tableLayoutPanel27.RowCount = 1;
+            tableLayoutPanel27.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel27.Size = new Size(150, 22);
+            tableLayoutPanel27.TabIndex = 33;
+            // 
+            // track12Box
+            // 
+            track12Box.CheckAlign = ContentAlignment.MiddleRight;
+            track12Box.Checked = true;
+            track12Box.CheckState = CheckState.Checked;
+            track12Box.Dock = DockStyle.Fill;
+            track12Box.Location = new Point(3, 3);
+            track12Box.Name = "track12Box";
+            track12Box.Size = new Size(69, 16);
+            track12Box.TabIndex = 2;
+            track12Box.Text = "Track 12:";
+            track12Box.UseVisualStyleBackColor = true;
+            // 
+            // track12Picture
+            // 
+            track12Picture.BackgroundImage = Properties.Resources.Idle;
+            track12Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track12Picture.Dock = DockStyle.Fill;
+            track12Picture.Location = new Point(112, 0);
+            track12Picture.Margin = new Padding(0);
+            track12Picture.Name = "track12Picture";
+            track12Picture.Size = new Size(38, 22);
+            track12Picture.TabIndex = 0;
+            track12Picture.TabStop = false;
+            // 
+            // track12Solo
+            // 
+            track12Solo.Dock = DockStyle.Fill;
+            track12Solo.Location = new Point(75, 0);
+            track12Solo.Margin = new Padding(0);
+            track12Solo.Name = "track12Solo";
+            track12Solo.Size = new Size(37, 22);
+            track12Solo.TabIndex = 3;
+            track12Solo.Text = "Solo";
+            track12Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel26
+            // 
+            tableLayoutPanel26.ColumnCount = 3;
+            tableLayoutPanel26.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel26.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel26.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel26.Controls.Add(track10Box, 0, 0);
+            tableLayoutPanel26.Controls.Add(track10Picture, 2, 0);
+            tableLayoutPanel26.Controls.Add(track10Solo, 1, 0);
+            tableLayoutPanel26.Dock = DockStyle.Fill;
+            tableLayoutPanel26.Location = new Point(0, 110);
+            tableLayoutPanel26.Margin = new Padding(0);
+            tableLayoutPanel26.Name = "tableLayoutPanel26";
+            tableLayoutPanel26.RowCount = 1;
+            tableLayoutPanel26.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel26.Size = new Size(150, 22);
+            tableLayoutPanel26.TabIndex = 32;
+            // 
+            // track10Box
+            // 
+            track10Box.CheckAlign = ContentAlignment.MiddleRight;
+            track10Box.Checked = true;
+            track10Box.CheckState = CheckState.Checked;
+            track10Box.Dock = DockStyle.Fill;
+            track10Box.Location = new Point(3, 3);
+            track10Box.Name = "track10Box";
+            track10Box.Size = new Size(69, 16);
+            track10Box.TabIndex = 2;
+            track10Box.Text = "Track 10:";
+            track10Box.UseVisualStyleBackColor = true;
+            // 
+            // track10Picture
+            // 
+            track10Picture.BackgroundImage = Properties.Resources.Idle;
+            track10Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track10Picture.Dock = DockStyle.Fill;
+            track10Picture.Location = new Point(112, 0);
+            track10Picture.Margin = new Padding(0);
+            track10Picture.Name = "track10Picture";
+            track10Picture.Size = new Size(38, 22);
+            track10Picture.TabIndex = 0;
+            track10Picture.TabStop = false;
+            // 
+            // track10Solo
+            // 
+            track10Solo.Dock = DockStyle.Fill;
+            track10Solo.Location = new Point(75, 0);
+            track10Solo.Margin = new Padding(0);
+            track10Solo.Name = "track10Solo";
+            track10Solo.Size = new Size(37, 22);
+            track10Solo.TabIndex = 3;
+            track10Solo.Text = "Solo";
+            track10Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel25
+            // 
+            tableLayoutPanel25.ColumnCount = 3;
+            tableLayoutPanel25.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel25.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel25.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel25.Controls.Add(track8Box, 0, 0);
+            tableLayoutPanel25.Controls.Add(track8Picture, 2, 0);
+            tableLayoutPanel25.Controls.Add(track8Solo, 1, 0);
+            tableLayoutPanel25.Dock = DockStyle.Fill;
+            tableLayoutPanel25.Location = new Point(0, 88);
+            tableLayoutPanel25.Margin = new Padding(0);
+            tableLayoutPanel25.Name = "tableLayoutPanel25";
+            tableLayoutPanel25.RowCount = 1;
+            tableLayoutPanel25.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel25.Size = new Size(150, 22);
+            tableLayoutPanel25.TabIndex = 31;
+            // 
+            // track8Box
+            // 
+            track8Box.CheckAlign = ContentAlignment.MiddleRight;
+            track8Box.Checked = true;
+            track8Box.CheckState = CheckState.Checked;
+            track8Box.Dock = DockStyle.Fill;
+            track8Box.Location = new Point(3, 3);
+            track8Box.Name = "track8Box";
+            track8Box.Size = new Size(69, 16);
+            track8Box.TabIndex = 2;
+            track8Box.Text = "Track 8:";
+            track8Box.UseVisualStyleBackColor = true;
+            // 
+            // track8Picture
+            // 
+            track8Picture.BackgroundImage = Properties.Resources.Idle;
+            track8Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track8Picture.Dock = DockStyle.Fill;
+            track8Picture.Location = new Point(112, 0);
+            track8Picture.Margin = new Padding(0);
+            track8Picture.Name = "track8Picture";
+            track8Picture.Size = new Size(38, 22);
+            track8Picture.TabIndex = 0;
+            track8Picture.TabStop = false;
+            // 
+            // track8Solo
+            // 
+            track8Solo.Dock = DockStyle.Fill;
+            track8Solo.Location = new Point(75, 0);
+            track8Solo.Margin = new Padding(0);
+            track8Solo.Name = "track8Solo";
+            track8Solo.Size = new Size(37, 22);
+            track8Solo.TabIndex = 3;
+            track8Solo.Text = "Solo";
+            track8Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel24
+            // 
+            tableLayoutPanel24.ColumnCount = 3;
+            tableLayoutPanel24.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel24.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel24.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel24.Controls.Add(track6Box, 0, 0);
+            tableLayoutPanel24.Controls.Add(track6Picture, 2, 0);
+            tableLayoutPanel24.Controls.Add(track6Solo, 1, 0);
+            tableLayoutPanel24.Dock = DockStyle.Fill;
+            tableLayoutPanel24.Location = new Point(0, 66);
+            tableLayoutPanel24.Margin = new Padding(0);
+            tableLayoutPanel24.Name = "tableLayoutPanel24";
+            tableLayoutPanel24.RowCount = 1;
+            tableLayoutPanel24.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel24.Size = new Size(150, 22);
+            tableLayoutPanel24.TabIndex = 30;
+            // 
+            // track6Box
+            // 
+            track6Box.CheckAlign = ContentAlignment.MiddleRight;
+            track6Box.Checked = true;
+            track6Box.CheckState = CheckState.Checked;
+            track6Box.Dock = DockStyle.Fill;
+            track6Box.Location = new Point(3, 3);
+            track6Box.Name = "track6Box";
+            track6Box.Size = new Size(69, 16);
+            track6Box.TabIndex = 2;
+            track6Box.Text = "Track 6:";
+            track6Box.UseVisualStyleBackColor = true;
+            // 
+            // track6Picture
+            // 
+            track6Picture.BackgroundImage = Properties.Resources.Idle;
+            track6Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track6Picture.Dock = DockStyle.Fill;
+            track6Picture.Location = new Point(112, 0);
+            track6Picture.Margin = new Padding(0);
+            track6Picture.Name = "track6Picture";
+            track6Picture.Size = new Size(38, 22);
+            track6Picture.TabIndex = 0;
+            track6Picture.TabStop = false;
+            // 
+            // track6Solo
+            // 
+            track6Solo.Dock = DockStyle.Fill;
+            track6Solo.Location = new Point(75, 0);
+            track6Solo.Margin = new Padding(0);
+            track6Solo.Name = "track6Solo";
+            track6Solo.Size = new Size(37, 22);
+            track6Solo.TabIndex = 3;
+            track6Solo.Text = "Solo";
+            track6Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel23
+            // 
+            tableLayoutPanel23.ColumnCount = 3;
+            tableLayoutPanel23.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel23.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel23.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel23.Controls.Add(track4Box, 0, 0);
+            tableLayoutPanel23.Controls.Add(track4Picture, 2, 0);
+            tableLayoutPanel23.Controls.Add(track4Solo, 1, 0);
+            tableLayoutPanel23.Dock = DockStyle.Fill;
+            tableLayoutPanel23.Location = new Point(0, 44);
+            tableLayoutPanel23.Margin = new Padding(0);
+            tableLayoutPanel23.Name = "tableLayoutPanel23";
+            tableLayoutPanel23.RowCount = 1;
+            tableLayoutPanel23.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel23.Size = new Size(150, 22);
+            tableLayoutPanel23.TabIndex = 29;
+            // 
+            // track4Box
+            // 
+            track4Box.CheckAlign = ContentAlignment.MiddleRight;
+            track4Box.Checked = true;
+            track4Box.CheckState = CheckState.Checked;
+            track4Box.Dock = DockStyle.Fill;
+            track4Box.Location = new Point(3, 3);
+            track4Box.Name = "track4Box";
+            track4Box.Size = new Size(69, 16);
+            track4Box.TabIndex = 2;
+            track4Box.Text = "Track 4:";
+            track4Box.UseVisualStyleBackColor = true;
+            // 
+            // track4Picture
+            // 
+            track4Picture.BackgroundImage = Properties.Resources.Idle;
+            track4Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track4Picture.Dock = DockStyle.Fill;
+            track4Picture.Location = new Point(112, 0);
+            track4Picture.Margin = new Padding(0);
+            track4Picture.Name = "track4Picture";
+            track4Picture.Size = new Size(38, 22);
+            track4Picture.TabIndex = 0;
+            track4Picture.TabStop = false;
+            // 
+            // track4Solo
+            // 
+            track4Solo.Dock = DockStyle.Fill;
+            track4Solo.Location = new Point(75, 0);
+            track4Solo.Margin = new Padding(0);
+            track4Solo.Name = "track4Solo";
+            track4Solo.Size = new Size(37, 22);
+            track4Solo.TabIndex = 3;
+            track4Solo.Text = "Solo";
+            track4Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel22
+            // 
+            tableLayoutPanel22.ColumnCount = 3;
+            tableLayoutPanel22.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel22.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel22.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel22.Controls.Add(track2Box, 0, 0);
+            tableLayoutPanel22.Controls.Add(track2Picture, 2, 0);
+            tableLayoutPanel22.Controls.Add(track2Solo, 1, 0);
+            tableLayoutPanel22.Dock = DockStyle.Fill;
+            tableLayoutPanel22.Location = new Point(0, 22);
+            tableLayoutPanel22.Margin = new Padding(0);
+            tableLayoutPanel22.Name = "tableLayoutPanel22";
+            tableLayoutPanel22.RowCount = 1;
+            tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel22.Size = new Size(150, 22);
+            tableLayoutPanel22.TabIndex = 28;
+            // 
+            // track2Box
+            // 
+            track2Box.CheckAlign = ContentAlignment.MiddleRight;
+            track2Box.Checked = true;
+            track2Box.CheckState = CheckState.Checked;
+            track2Box.Dock = DockStyle.Fill;
+            track2Box.Location = new Point(3, 3);
+            track2Box.Name = "track2Box";
+            track2Box.Size = new Size(69, 16);
+            track2Box.TabIndex = 2;
+            track2Box.Text = "Track 2:";
+            track2Box.UseVisualStyleBackColor = true;
+            // 
+            // track2Picture
+            // 
+            track2Picture.BackgroundImage = Properties.Resources.Idle;
+            track2Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track2Picture.Dock = DockStyle.Fill;
+            track2Picture.Location = new Point(112, 0);
+            track2Picture.Margin = new Padding(0);
+            track2Picture.Name = "track2Picture";
+            track2Picture.Size = new Size(38, 22);
+            track2Picture.TabIndex = 0;
+            track2Picture.TabStop = false;
+            // 
+            // track2Solo
+            // 
+            track2Solo.Dock = DockStyle.Fill;
+            track2Solo.Location = new Point(75, 0);
+            track2Solo.Margin = new Padding(0);
+            track2Solo.Name = "track2Solo";
+            track2Solo.Size = new Size(37, 22);
+            track2Solo.TabIndex = 3;
+            track2Solo.Text = "Solo";
+            track2Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel21
+            // 
+            tableLayoutPanel21.ColumnCount = 3;
+            tableLayoutPanel21.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel21.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel21.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel21.Controls.Add(track1Box, 0, 0);
+            tableLayoutPanel21.Controls.Add(track1Picture, 2, 0);
+            tableLayoutPanel21.Controls.Add(track1Solo, 1, 0);
+            tableLayoutPanel21.Dock = DockStyle.Fill;
+            tableLayoutPanel21.Location = new Point(150, 0);
+            tableLayoutPanel21.Margin = new Padding(0);
+            tableLayoutPanel21.Name = "tableLayoutPanel21";
+            tableLayoutPanel21.RowCount = 1;
+            tableLayoutPanel21.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel21.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel21.Size = new Size(151, 22);
+            tableLayoutPanel21.TabIndex = 27;
+            // 
+            // track1Box
+            // 
+            track1Box.CheckAlign = ContentAlignment.MiddleRight;
+            track1Box.Checked = true;
+            track1Box.CheckState = CheckState.Checked;
+            track1Box.Dock = DockStyle.Fill;
+            track1Box.Location = new Point(3, 3);
+            track1Box.Name = "track1Box";
+            track1Box.Size = new Size(69, 16);
+            track1Box.TabIndex = 2;
+            track1Box.Text = "Track 1:";
+            track1Box.UseVisualStyleBackColor = true;
+            // 
+            // track1Picture
+            // 
+            track1Picture.BackgroundImage = Properties.Resources.Idle;
+            track1Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track1Picture.Dock = DockStyle.Fill;
+            track1Picture.Location = new Point(112, 0);
+            track1Picture.Margin = new Padding(0);
+            track1Picture.Name = "track1Picture";
+            track1Picture.Size = new Size(39, 22);
+            track1Picture.TabIndex = 0;
+            track1Picture.TabStop = false;
+            // 
+            // track1Solo
+            // 
+            track1Solo.Dock = DockStyle.Fill;
+            track1Solo.Location = new Point(75, 0);
+            track1Solo.Margin = new Padding(0);
+            track1Solo.Name = "track1Solo";
+            track1Solo.Size = new Size(37, 22);
+            track1Solo.TabIndex = 3;
+            track1Solo.Text = "Solo";
+            track1Solo.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(track0Box, 0, 0);
+            tableLayoutPanel1.Controls.Add(track0Picture, 2, 0);
+            tableLayoutPanel1.Controls.Add(track0Solo, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(150, 22);
+            tableLayoutPanel1.TabIndex = 26;
+            // 
+            // track0Box
+            // 
+            track0Box.CheckAlign = ContentAlignment.MiddleRight;
+            track0Box.Checked = true;
+            track0Box.CheckState = CheckState.Checked;
+            track0Box.Dock = DockStyle.Fill;
+            track0Box.Location = new Point(3, 3);
+            track0Box.Name = "track0Box";
+            track0Box.Size = new Size(69, 16);
+            track0Box.TabIndex = 2;
+            track0Box.Text = "Track 0:";
+            track0Box.UseVisualStyleBackColor = true;
+            // 
+            // track0Picture
+            // 
+            track0Picture.BackgroundImage = Properties.Resources.Idle;
+            track0Picture.BackgroundImageLayout = ImageLayout.Zoom;
+            track0Picture.Dock = DockStyle.Fill;
+            track0Picture.Location = new Point(112, 0);
+            track0Picture.Margin = new Padding(0);
+            track0Picture.Name = "track0Picture";
+            track0Picture.Size = new Size(38, 22);
+            track0Picture.TabIndex = 0;
+            track0Picture.TabStop = false;
+            // 
+            // track0Solo
+            // 
+            track0Solo.Dock = DockStyle.Fill;
+            track0Solo.Location = new Point(75, 0);
+            track0Solo.Margin = new Padding(0);
+            track0Solo.Name = "track0Solo";
+            track0Solo.Size = new Size(37, 22);
+            track0Solo.TabIndex = 3;
+            track0Solo.Text = "Solo";
+            track0Solo.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            label28.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label28.Location = new Point(11, 3);
+            label28.Name = "label28";
+            label28.Size = new Size(304, 20);
+            label28.TabIndex = 25;
+            label28.Text = "Preview Bank:";
+            label28.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel12
+            // 
+            tableLayoutPanel12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel12.ColumnCount = 2;
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel12.Controls.Add(seqEditorBankComboBox, 0, 0);
+            tableLayoutPanel12.Controls.Add(seqEditorBankBox, 1, 0);
+            tableLayoutPanel12.Location = new Point(14, 25);
+            tableLayoutPanel12.Name = "tableLayoutPanel12";
+            tableLayoutPanel12.RowCount = 1;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel12.Size = new Size(301, 31);
+            tableLayoutPanel12.TabIndex = 24;
+            // 
+            // seqEditorBankComboBox
+            // 
+            seqEditorBankComboBox.Dock = DockStyle.Fill;
+            seqEditorBankComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqEditorBankComboBox.FormattingEnabled = true;
+            seqEditorBankComboBox.Location = new Point(3, 3);
+            seqEditorBankComboBox.Name = "seqEditorBankComboBox";
+            seqEditorBankComboBox.Size = new Size(249, 23);
+            seqEditorBankComboBox.TabIndex = 6;
+            toolTip.SetToolTip(seqEditorBankComboBox, "Bank to use with the sequence.");
+            // 
+            // seqEditorBankBox
+            // 
+            seqEditorBankBox.Dock = DockStyle.Fill;
+            seqEditorBankBox.Location = new Point(258, 3);
+            seqEditorBankBox.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            seqEditorBankBox.Name = "seqEditorBankBox";
+            seqEditorBankBox.Size = new Size(40, 23);
+            seqEditorBankBox.TabIndex = 7;
+            toolTip.SetToolTip(seqEditorBankBox, "Id of the bank to use with the sequence.");
+            // 
+            // bankEditorPanel
+            // 
+            bankEditorPanel.Controls.Add(bankRegions);
+            bankEditorPanel.Controls.Add(label32);
+            bankEditorPanel.Controls.Add(tableLayoutPanel15);
+            bankEditorPanel.Controls.Add(drumSetRangeStartLabel);
+            bankEditorPanel.Controls.Add(tableLayoutPanel14);
+            bankEditorPanel.Controls.Add(label30);
+            bankEditorPanel.Dock = DockStyle.Fill;
+            bankEditorPanel.Location = new Point(0, 334);
+            bankEditorPanel.Name = "bankEditorPanel";
+            bankEditorPanel.Size = new Size(328, 249);
+            bankEditorPanel.TabIndex = 21;
+            bankEditorPanel.Visible = false;
+            // 
+            // bankRegions
+            // 
+            bankRegions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            bankRegions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            bankRegions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            bankRegions.Columns.AddRange(new DataGridViewColumn[] { playSampleButton, endNote, instrumentType, waveId, waveArchiveId, baseNote, attack, decay, sustain, release, pan });
+            bankRegions.Location = new Point(14, 141);
+            bankRegions.Name = "bankRegions";
+            bankRegions.Size = new Size(301, 44);
+            bankRegions.TabIndex = 26;
+            // 
+            // playSampleButton
+            // 
+            playSampleButton.HeaderText = "Play";
+            playSampleButton.Name = "playSampleButton";
+            playSampleButton.Text = "Play";
+            playSampleButton.UseColumnTextForButtonValue = true;
+            playSampleButton.Width = 35;
+            // 
+            // endNote
+            // 
+            endNote.FillWeight = 50F;
+            endNote.HeaderText = "End Note";
+            endNote.Items.AddRange(new object[] { "cnm1 (0)", "csm1 (1)", "dnm1 (2)", "dsm1 (3)", "enm1 (4)", "fnm1 (5)", "fsm1 (6)", "gnm1 (7)", "gsm1 (8)", "anm1 (9)", "asm1 (10)", "bnm1 (11)", "cn0 (12)", "cs0 (13)", "dn0 (14)", "ds0 (15)", "en0 (16)", "fn0 (17)", "fs0 (18)", "gn0 (19)", "gs0 (20)", "an0 (21)", "as0 (22)", "bn0 (23)", "cn1 (24)", "cs1 (25)", "dn1 (26)", "ds1 (27)", "en1 (28)", "fn1 (29)", "fs1 (30)", "gn1 (31)", "gs1 (32)", "an1 (33)", "as1 (34)", "bn1 (35)", "cn2 (36)", "cs2 (37)", "dn2 (38)", "ds2 (39)", "en2 (40)", "fn2 (41)", "fs2 (42)", "gn2 (43)", "gs2 (44)", "an2 (45)", "as2 (46)", "bn2 (47)", "cn3 (48)", "cs3 (49)", "dn3 (50)", "ds3 (51)", "en3 (52)", "fn3 (53)", "fs3 (54)", "gn3 (55)", "gs3 (56)", "an3 (57)", "as3 (58)", "bn3 (59)", "cn4 (60)", "cs4 (61)", "dn4 (62)", "ds4 (63)", "en4 (64)", "fn4 (65)", "fs4 (66)", "gn4 (67)", "gs4 (68)", "an4 (69)", "as4 (70)", "bn4 (71)", "cn5 (72)", "cs5 (73)", "dn5 (74)", "ds5 (75)", "en5 (76)", "fn5 (77)", "fs5 (78)", "gn5 (79)", "gs5 (80)", "an5 (81)", "as5 (82)", "bn5 (83)", "cn6 (84)", "cs6 (85)", "dn6 (86)", "ds6 (87)", "en6 (88)", "fn6 (89)", "fs6 (90)", "gn6 (91)", "gs6 (92)", "an6 (93)", "as6 (94)", "bn6 (95)", "cn7 (96)", "cs7 (97)", "dn7 (98)", "ds7 (99)", "en7 (100)", "fn7 (101)", "fs7 (102)", "gn7 (103)", "gs7 (104)", "an7 (105)", "as7 (106)", "bn7 (107)", "cn8 (108)", "cs8 (109)", "dn8 (110)", "ds8 (111)", "en8 (112)", "fn8 (113)", "fs8 (114)", "gn8 (115)", "gs8 (116)", "an8 (117)", "as8 (118)", "bn8 (119)", "cn9 (120)", "cs9 (121)", "dn9 (122)", "ds9 (123)", "en9 (124)", "fn9 (125)", "fs9 (126)", "gn9 (127)" });
+            endNote.Name = "endNote";
+            endNote.Width = 56;
+            // 
+            // instrumentType
+            // 
+            instrumentType.HeaderText = "Instrument Type";
+            instrumentType.Items.AddRange(new object[] { "PCM", "PSG", "Noise", "Direct PCM", "Null" });
+            instrumentType.Name = "instrumentType";
+            instrumentType.Width = 89;
+            // 
+            // waveId
+            // 
+            waveId.HeaderText = "Wave Id/PSG Cycle";
+            waveId.MaxInputLength = 5;
+            waveId.Name = "waveId";
+            waveId.SortMode = DataGridViewColumnSortMode.NotSortable;
+            waveId.Width = 102;
+            // 
+            // waveArchiveId
+            // 
+            waveArchiveId.HeaderText = "Wave Archive Id";
+            waveArchiveId.MaxInputLength = 5;
+            waveArchiveId.Name = "waveArchiveId";
+            waveArchiveId.SortMode = DataGridViewColumnSortMode.NotSortable;
+            waveArchiveId.Width = 79;
+            // 
+            // baseNote
+            // 
+            baseNote.HeaderText = "Base Note";
+            baseNote.Items.AddRange(new object[] { "cnm1 (0)", "csm1 (1)", "dnm1 (2)", "dsm1 (3)", "enm1 (4)", "fnm1 (5)", "fsm1 (6)", "gnm1 (7)", "gsm1 (8)", "anm1 (9)", "asm1 (10)", "bnm1 (11)", "cn0 (12)", "cs0 (13)", "dn0 (14)", "ds0 (15)", "en0 (16)", "fn0 (17)", "fs0 (18)", "gn0 (19)", "gs0 (20)", "an0 (21)", "as0 (22)", "bn0 (23)", "cn1 (24)", "cs1 (25)", "dn1 (26)", "ds1 (27)", "en1 (28)", "fn1 (29)", "fs1 (30)", "gn1 (31)", "gs1 (32)", "an1 (33)", "as1 (34)", "bn1 (35)", "cn2 (36)", "cs2 (37)", "dn2 (38)", "ds2 (39)", "en2 (40)", "fn2 (41)", "fs2 (42)", "gn2 (43)", "gs2 (44)", "an2 (45)", "as2 (46)", "bn2 (47)", "cn3 (48)", "cs3 (49)", "dn3 (50)", "ds3 (51)", "en3 (52)", "fn3 (53)", "fs3 (54)", "gn3 (55)", "gs3 (56)", "an3 (57)", "as3 (58)", "bn3 (59)", "cn4 (60)", "cs4 (61)", "dn4 (62)", "ds4 (63)", "en4 (64)", "fn4 (65)", "fs4 (66)", "gn4 (67)", "gs4 (68)", "an4 (69)", "as4 (70)", "bn4 (71)", "cn5 (72)", "cs5 (73)", "dn5 (74)", "ds5 (75)", "en5 (76)", "fn5 (77)", "fs5 (78)", "gn5 (79)", "gs5 (80)", "an5 (81)", "as5 (82)", "bn5 (83)", "cn6 (84)", "cs6 (85)", "dn6 (86)", "ds6 (87)", "en6 (88)", "fn6 (89)", "fs6 (90)", "gn6 (91)", "gs6 (92)", "an6 (93)", "as6 (94)", "bn6 (95)", "cn7 (96)", "cs7 (97)", "dn7 (98)", "ds7 (99)", "en7 (100)", "fn7 (101)", "fs7 (102)", "gn7 (103)", "gs7 (104)", "an7 (105)", "as7 (106)", "bn7 (107)", "cn8 (108)", "cs8 (109)", "dn8 (110)", "ds8 (111)", "en8 (112)", "fn8 (113)", "fs8 (114)", "gn8 (115)", "gs8 (116)", "an8 (117)", "as8 (118)", "bn8 (119)", "cn9 (120)", "cs9 (121)", "dn9 (122)", "ds9 (123)", "en9 (124)", "fn9 (125)", "fs9 (126)", "gn9 (127)" });
+            baseNote.Name = "baseNote";
+            baseNote.Width = 60;
+            // 
+            // attack
+            // 
+            attack.HeaderText = "Attack";
+            attack.MaxInputLength = 3;
+            attack.Name = "attack";
+            attack.SortMode = DataGridViewColumnSortMode.NotSortable;
+            attack.Width = 47;
+            // 
+            // decay
+            // 
+            decay.HeaderText = "Decay";
+            decay.MaxInputLength = 3;
+            decay.Name = "decay";
+            decay.SortMode = DataGridViewColumnSortMode.NotSortable;
+            decay.Width = 45;
+            // 
+            // sustain
+            // 
+            sustain.HeaderText = "Sustain";
+            sustain.MaxInputLength = 3;
+            sustain.Name = "sustain";
+            sustain.SortMode = DataGridViewColumnSortMode.NotSortable;
+            sustain.Width = 51;
+            // 
+            // release
+            // 
+            release.HeaderText = "Release";
+            release.MaxInputLength = 3;
+            release.Name = "release";
+            release.SortMode = DataGridViewColumnSortMode.NotSortable;
+            release.Width = 52;
+            // 
+            // pan
+            // 
+            pan.HeaderText = "Pan";
+            pan.MaxInputLength = 3;
+            pan.Name = "pan";
+            pan.SortMode = DataGridViewColumnSortMode.NotSortable;
+            pan.Width = 33;
+            // 
+            // label32
+            // 
+            label32.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label32.Location = new Point(11, 118);
+            label32.Name = "label32";
+            label32.Size = new Size(304, 20);
+            label32.TabIndex = 25;
+            label32.Text = "Regions:";
+            label32.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel15
+            // 
+            tableLayoutPanel15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel15.ColumnCount = 2;
+            tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel15.Controls.Add(drumSetStartRangeComboBox, 0, 0);
+            tableLayoutPanel15.Controls.Add(drumSetStartRangeBox, 1, 0);
+            tableLayoutPanel15.Location = new Point(14, 84);
+            tableLayoutPanel15.Name = "tableLayoutPanel15";
+            tableLayoutPanel15.RowCount = 1;
+            tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel15.Size = new Size(301, 31);
+            tableLayoutPanel15.TabIndex = 24;
+            // 
+            // drumSetStartRangeComboBox
+            // 
+            drumSetStartRangeComboBox.Dock = DockStyle.Fill;
+            drumSetStartRangeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            drumSetStartRangeComboBox.FormattingEnabled = true;
+            drumSetStartRangeComboBox.Items.AddRange(new object[] { "cnm1", "csm1", "dnm1", "dsm1", "enm1", "fnm1", "fsm1", "gnm1", "gsm1", "anm1", "asm1", "bnm1", "cn0", "cs0", "dn0", "ds0", "en0", "fn0", "fs0", "gn0", "gs0", "an0", "as0", "bn0", "cn1", "cs1", "dn1", "ds1", "en1", "fn1", "fs1", "gn1", "gs1", "an1", "as1", "bn1", "cn2", "cs2", "dn2", "ds2", "en2", "fn2", "fs2", "gn2", "gs2", "an2", "as2", "bn2", "cn3", "cs3", "dn3", "ds3", "en3", "fn3", "fs3", "gn3", "gs3", "an3", "as3", "bn3", "cn4", "cs4", "dn4", "ds4", "en4", "fn4", "fs4", "gn4", "gs4", "an4", "as4", "bn4", "cn5", "cs5", "dn5", "ds5", "en5", "fn5", "fs5", "gn5", "gs5", "an5", "as5", "bn5", "cn6", "cs6", "dn6", "ds6", "en6", "fn6", "fs6", "gn6", "gs6", "an6", "as6", "bn6", "cn7", "cs7", "dn7", "ds7", "en7", "fn7", "fs7", "gn7", "gs7", "an7", "as7", "bn7", "cn8", "cs8", "dn8", "ds8", "en8", "fn8", "fs8", "gn8", "gs8", "an8", "as8", "bn8", "cn9", "cs9", "dn9", "ds9", "en9", "fn9", "fs9", "gn9" });
+            drumSetStartRangeComboBox.Location = new Point(3, 3);
+            drumSetStartRangeComboBox.Name = "drumSetStartRangeComboBox";
+            drumSetStartRangeComboBox.Size = new Size(249, 23);
+            drumSetStartRangeComboBox.TabIndex = 6;
+            toolTip.SetToolTip(drumSetStartRangeComboBox, "What note to start the drum set range at.");
+            // 
+            // drumSetStartRangeBox
+            // 
+            drumSetStartRangeBox.Dock = DockStyle.Fill;
+            drumSetStartRangeBox.Location = new Point(258, 3);
+            drumSetStartRangeBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            drumSetStartRangeBox.Name = "drumSetStartRangeBox";
+            drumSetStartRangeBox.Size = new Size(40, 23);
+            drumSetStartRangeBox.TabIndex = 7;
+            toolTip.SetToolTip(drumSetStartRangeBox, "What note to start the drum set range at.");
+            // 
+            // drumSetRangeStartLabel
+            // 
+            drumSetRangeStartLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            drumSetRangeStartLabel.Location = new Point(8, 61);
+            drumSetRangeStartLabel.Name = "drumSetRangeStartLabel";
+            drumSetRangeStartLabel.Size = new Size(304, 20);
+            drumSetRangeStartLabel.TabIndex = 3;
+            drumSetRangeStartLabel.Text = "Drum Set Range Start:";
+            drumSetRangeStartLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel14
+            // 
+            tableLayoutPanel14.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel14.ColumnCount = 3;
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel14.Controls.Add(keySplitBox, 2, 0);
+            tableLayoutPanel14.Controls.Add(drumSetBox, 1, 0);
+            tableLayoutPanel14.Controls.Add(directBox, 0, 0);
+            tableLayoutPanel14.Location = new Point(14, 28);
+            tableLayoutPanel14.Name = "tableLayoutPanel14";
+            tableLayoutPanel14.RowCount = 1;
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel14.Size = new Size(301, 28);
+            tableLayoutPanel14.TabIndex = 2;
+            toolTip.SetToolTip(tableLayoutPanel14, "Type of instrument.");
+            // 
+            // keySplitBox
+            // 
+            keySplitBox.Dock = DockStyle.Fill;
+            keySplitBox.Location = new Point(203, 3);
+            keySplitBox.Name = "keySplitBox";
+            keySplitBox.Size = new Size(95, 22);
+            keySplitBox.TabIndex = 2;
+            keySplitBox.TabStop = true;
+            keySplitBox.Text = "Key Split";
+            keySplitBox.UseVisualStyleBackColor = true;
+            // 
+            // drumSetBox
+            // 
+            drumSetBox.Dock = DockStyle.Fill;
+            drumSetBox.Location = new Point(103, 3);
+            drumSetBox.Name = "drumSetBox";
+            drumSetBox.Size = new Size(94, 22);
+            drumSetBox.TabIndex = 1;
+            drumSetBox.TabStop = true;
+            drumSetBox.Text = "Drum Set";
+            drumSetBox.UseVisualStyleBackColor = true;
+            // 
+            // directBox
+            // 
+            directBox.Dock = DockStyle.Fill;
+            directBox.Location = new Point(3, 3);
+            directBox.Name = "directBox";
+            directBox.Size = new Size(94, 22);
+            directBox.TabIndex = 0;
+            directBox.TabStop = true;
+            directBox.Text = "Direct";
+            directBox.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            label30.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label30.Location = new Point(11, 3);
+            label30.Name = "label30";
+            label30.Size = new Size(304, 20);
+            label30.TabIndex = 1;
+            label30.Text = "Instrument Type:";
+            label30.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // seqArcSeqPanel
+            // 
+            seqArcSeqPanel.Controls.Add(label29);
+            seqArcSeqPanel.Controls.Add(tableLayoutPanel13);
+            seqArcSeqPanel.Dock = DockStyle.Top;
+            seqArcSeqPanel.Location = new Point(0, 270);
+            seqArcSeqPanel.Name = "seqArcSeqPanel";
+            seqArcSeqPanel.Size = new Size(328, 64);
+            seqArcSeqPanel.TabIndex = 20;
+            seqArcSeqPanel.Visible = false;
+            // 
+            // label29
+            // 
+            label29.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label29.Location = new Point(11, 3);
+            label29.Name = "label29";
+            label29.Size = new Size(304, 20);
+            label29.TabIndex = 25;
+            label29.Text = "Preview Sequence:";
+            label29.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel13
+            // 
+            tableLayoutPanel13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel13.ColumnCount = 2;
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel13.Controls.Add(seqArcSeqComboBox, 0, 0);
+            tableLayoutPanel13.Controls.Add(seqArcSeqBox, 1, 0);
+            tableLayoutPanel13.Location = new Point(14, 25);
+            tableLayoutPanel13.Name = "tableLayoutPanel13";
+            tableLayoutPanel13.RowCount = 1;
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel13.Size = new Size(301, 31);
+            tableLayoutPanel13.TabIndex = 24;
+            // 
+            // seqArcSeqComboBox
+            // 
+            seqArcSeqComboBox.Dock = DockStyle.Fill;
+            seqArcSeqComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqArcSeqComboBox.FormattingEnabled = true;
+            seqArcSeqComboBox.Location = new Point(3, 3);
+            seqArcSeqComboBox.Name = "seqArcSeqComboBox";
+            seqArcSeqComboBox.Size = new Size(249, 23);
+            seqArcSeqComboBox.TabIndex = 6;
+            toolTip.SetToolTip(seqArcSeqComboBox, "Sequence to play.");
+            // 
+            // seqArcSeqBox
+            // 
+            seqArcSeqBox.Dock = DockStyle.Fill;
+            seqArcSeqBox.Location = new Point(258, 3);
+            seqArcSeqBox.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            seqArcSeqBox.Name = "seqArcSeqBox";
+            seqArcSeqBox.Size = new Size(40, 23);
+            seqArcSeqBox.TabIndex = 7;
+            toolTip.SetToolTip(seqArcSeqBox, "Id of the sequence to play.");
+            // 
+            // seqArcPanel
+            // 
+            seqArcPanel.Controls.Add(seqArcOpenFileButton);
+            seqArcPanel.Dock = DockStyle.Fill;
+            seqArcPanel.Location = new Point(0, 270);
+            seqArcPanel.Name = "seqArcPanel";
+            seqArcPanel.Size = new Size(328, 313);
+            seqArcPanel.TabIndex = 19;
+            seqArcPanel.Visible = false;
+            // 
+            // seqArcOpenFileButton
+            // 
+            seqArcOpenFileButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqArcOpenFileButton.Location = new Point(14, 6);
+            seqArcOpenFileButton.Name = "seqArcOpenFileButton";
+            seqArcOpenFileButton.Size = new Size(301, 25);
+            seqArcOpenFileButton.TabIndex = 1;
+            seqArcOpenFileButton.Text = "Open File";
+            seqArcOpenFileButton.UseVisualStyleBackColor = true;
             // 
             // stmPanel
             // 
-            this.stmPanel.Controls.Add(this.stmMonoToStereoBox);
-            this.stmPanel.Controls.Add(this.label16);
-            this.stmPanel.Controls.Add(this.label15);
-            this.stmPanel.Controls.Add(this.tableLayoutPanel7);
-            this.stmPanel.Controls.Add(this.stmPriorityBox);
-            this.stmPanel.Controls.Add(this.label14);
-            this.stmPanel.Controls.Add(this.stmVolumeBox);
-            this.stmPanel.Controls.Add(this.label13);
-            this.stmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stmPanel.Location = new System.Drawing.Point(0, 270);
-            this.stmPanel.Name = "stmPanel";
-            this.stmPanel.Size = new System.Drawing.Size(325, 269);
-            this.stmPanel.TabIndex = 14;
-            this.stmPanel.Visible = false;
+            stmPanel.Controls.Add(stmMonoToStereoBox);
+            stmPanel.Controls.Add(label16);
+            stmPanel.Controls.Add(label15);
+            stmPanel.Controls.Add(tableLayoutPanel7);
+            stmPanel.Controls.Add(stmPriorityBox);
+            stmPanel.Controls.Add(label14);
+            stmPanel.Controls.Add(stmVolumeBox);
+            stmPanel.Controls.Add(label13);
+            stmPanel.Dock = DockStyle.Fill;
+            stmPanel.Location = new Point(0, 270);
+            stmPanel.Name = "stmPanel";
+            stmPanel.Size = new Size(328, 313);
+            stmPanel.TabIndex = 14;
+            stmPanel.Visible = false;
             // 
             // stmMonoToStereoBox
             // 
-            this.stmMonoToStereoBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stmMonoToStereoBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.stmMonoToStereoBox.Location = new System.Drawing.Point(11, 171);
-            this.stmMonoToStereoBox.Name = "stmMonoToStereoBox";
-            this.stmMonoToStereoBox.Size = new System.Drawing.Size(301, 24);
-            this.stmMonoToStereoBox.TabIndex = 17;
-            this.toolTip.SetToolTip(this.stmMonoToStereoBox, "If the stream is mono, play it through two channels.");
-            this.stmMonoToStereoBox.UseVisualStyleBackColor = true;
+            stmMonoToStereoBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            stmMonoToStereoBox.CheckAlign = ContentAlignment.MiddleCenter;
+            stmMonoToStereoBox.Location = new Point(11, 171);
+            stmMonoToStereoBox.Name = "stmMonoToStereoBox";
+            stmMonoToStereoBox.Size = new Size(304, 24);
+            stmMonoToStereoBox.TabIndex = 17;
+            toolTip.SetToolTip(stmMonoToStereoBox, "If the stream is mono, play it through two channels.");
+            stmMonoToStereoBox.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.Location = new System.Drawing.Point(11, 149);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(301, 22);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Mono To Stereo:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label16.Location = new Point(11, 149);
+            label16.Name = "label16";
+            label16.Size = new Size(304, 22);
+            label16.TabIndex = 16;
+            label16.Text = "Mono To Stereo:";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.Location = new System.Drawing.Point(11, 93);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(301, 22);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Player:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label15.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label15.Location = new Point(11, 93);
+            label15.Name = "label15";
+            label15.Size = new Size(304, 22);
+            label15.TabIndex = 15;
+            label15.Text = "Player:";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel7.Controls.Add(this.stmPlayerComboBox, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.stmPlayerBox, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(14, 115);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel7.TabIndex = 14;
+            tableLayoutPanel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel7.ColumnCount = 2;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel7.Controls.Add(stmPlayerComboBox, 0, 0);
+            tableLayoutPanel7.Controls.Add(stmPlayerBox, 1, 0);
+            tableLayoutPanel7.Location = new Point(14, 115);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel7.Size = new Size(301, 31);
+            tableLayoutPanel7.TabIndex = 14;
             // 
             // stmPlayerComboBox
             // 
-            this.stmPlayerComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stmPlayerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stmPlayerComboBox.FormattingEnabled = true;
-            this.stmPlayerComboBox.Location = new System.Drawing.Point(3, 3);
-            this.stmPlayerComboBox.Name = "stmPlayerComboBox";
-            this.stmPlayerComboBox.Size = new System.Drawing.Size(247, 21);
-            this.stmPlayerComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.stmPlayerComboBox, "The player to play the stream.");
+            stmPlayerComboBox.Dock = DockStyle.Fill;
+            stmPlayerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            stmPlayerComboBox.FormattingEnabled = true;
+            stmPlayerComboBox.Location = new Point(3, 3);
+            stmPlayerComboBox.Name = "stmPlayerComboBox";
+            stmPlayerComboBox.Size = new Size(249, 23);
+            stmPlayerComboBox.TabIndex = 6;
+            toolTip.SetToolTip(stmPlayerComboBox, "The player to play the stream.");
             // 
             // stmPlayerBox
             // 
-            this.stmPlayerBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stmPlayerBox.Location = new System.Drawing.Point(256, 3);
-            this.stmPlayerBox.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.stmPlayerBox.Name = "stmPlayerBox";
-            this.stmPlayerBox.Size = new System.Drawing.Size(39, 20);
-            this.stmPlayerBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.stmPlayerBox, "Id of the player to play the stream.");
+            stmPlayerBox.Dock = DockStyle.Fill;
+            stmPlayerBox.Location = new Point(258, 3);
+            stmPlayerBox.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
+            stmPlayerBox.Name = "stmPlayerBox";
+            stmPlayerBox.Size = new Size(40, 23);
+            stmPlayerBox.TabIndex = 7;
+            toolTip.SetToolTip(stmPlayerBox, "Id of the player to play the stream.");
             // 
             // stmPriorityBox
             // 
-            this.stmPriorityBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stmPriorityBox.Location = new System.Drawing.Point(14, 70);
-            this.stmPriorityBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.stmPriorityBox.Name = "stmPriorityBox";
-            this.stmPriorityBox.Size = new System.Drawing.Size(298, 20);
-            this.stmPriorityBox.TabIndex = 7;
-            this.toolTip.SetToolTip(this.stmPriorityBox, "If the sounds can not all be played at once, the one with the highest priority wi" +
-        "ll play.");
+            stmPriorityBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            stmPriorityBox.Location = new Point(14, 70);
+            stmPriorityBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            stmPriorityBox.Name = "stmPriorityBox";
+            stmPriorityBox.Size = new Size(301, 23);
+            stmPriorityBox.TabIndex = 7;
+            toolTip.SetToolTip(stmPriorityBox, "If the sounds can not all be played at once, the one with the highest priority will play.");
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.Location = new System.Drawing.Point(11, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(301, 22);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Priority:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label14.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label14.Location = new Point(11, 48);
+            label14.Name = "label14";
+            label14.Size = new Size(304, 22);
+            label14.TabIndex = 6;
+            label14.Text = "Priority:";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // stmVolumeBox
             // 
-            this.stmVolumeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stmVolumeBox.Location = new System.Drawing.Point(14, 25);
-            this.stmVolumeBox.Maximum = new decimal(new int[] {
-            127,
-            0,
-            0,
-            0});
-            this.stmVolumeBox.Name = "stmVolumeBox";
-            this.stmVolumeBox.Size = new System.Drawing.Size(298, 20);
-            this.stmVolumeBox.TabIndex = 5;
-            this.toolTip.SetToolTip(this.stmVolumeBox, "The volume of the stream.");
+            stmVolumeBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            stmVolumeBox.Location = new Point(14, 25);
+            stmVolumeBox.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            stmVolumeBox.Name = "stmVolumeBox";
+            stmVolumeBox.Size = new Size(301, 23);
+            stmVolumeBox.TabIndex = 5;
+            toolTip.SetToolTip(stmVolumeBox, "The volume of the stream.");
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.Location = new System.Drawing.Point(11, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(301, 22);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Volume:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label13.Location = new Point(11, 3);
+            label13.Name = "label13";
+            label13.Size = new Size(304, 22);
+            label13.TabIndex = 4;
+            label13.Text = "Volume:";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // streamPlayerPanel
             // 
-            this.streamPlayerPanel.Controls.Add(this.stmPlayerChannelType);
-            this.streamPlayerPanel.Controls.Add(this.label12);
-            this.streamPlayerPanel.Controls.Add(this.tableLayoutPanel6);
-            this.streamPlayerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.streamPlayerPanel.Location = new System.Drawing.Point(0, 270);
-            this.streamPlayerPanel.Name = "streamPlayerPanel";
-            this.streamPlayerPanel.Size = new System.Drawing.Size(325, 269);
-            this.streamPlayerPanel.TabIndex = 13;
-            this.streamPlayerPanel.Visible = false;
+            streamPlayerPanel.Controls.Add(stmPlayerChannelType);
+            streamPlayerPanel.Controls.Add(label12);
+            streamPlayerPanel.Controls.Add(tableLayoutPanel6);
+            streamPlayerPanel.Dock = DockStyle.Fill;
+            streamPlayerPanel.Location = new Point(0, 270);
+            streamPlayerPanel.Name = "streamPlayerPanel";
+            streamPlayerPanel.Size = new Size(328, 313);
+            streamPlayerPanel.TabIndex = 13;
+            streamPlayerPanel.Visible = false;
             // 
             // stmPlayerChannelType
             // 
-            this.stmPlayerChannelType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stmPlayerChannelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stmPlayerChannelType.FormattingEnabled = true;
-            this.stmPlayerChannelType.Items.AddRange(new object[] {
-            "Mono",
-            "Stereo"});
-            this.stmPlayerChannelType.Location = new System.Drawing.Point(14, 28);
-            this.stmPlayerChannelType.Name = "stmPlayerChannelType";
-            this.stmPlayerChannelType.Size = new System.Drawing.Size(298, 21);
-            this.stmPlayerChannelType.TabIndex = 4;
-            this.toolTip.SetToolTip(this.stmPlayerChannelType, "If the stream is stereo or mono.");
+            stmPlayerChannelType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            stmPlayerChannelType.DropDownStyle = ComboBoxStyle.DropDownList;
+            stmPlayerChannelType.FormattingEnabled = true;
+            stmPlayerChannelType.Items.AddRange(new object[] { "Mono", "Stereo" });
+            stmPlayerChannelType.Location = new Point(14, 28);
+            stmPlayerChannelType.Name = "stmPlayerChannelType";
+            stmPlayerChannelType.Size = new Size(301, 23);
+            stmPlayerChannelType.TabIndex = 4;
+            toolTip.SetToolTip(stmPlayerChannelType, "If the stream is stereo or mono.");
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.Location = new System.Drawing.Point(11, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(301, 22);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Channel Type:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label12.Location = new Point(11, 3);
+            label12.Name = "label12";
+            label12.Size = new Size(304, 22);
+            label12.TabIndex = 3;
+            label12.Text = "Channel Type:";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.stmPlayerLeftChannelBox, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.stmPlayerRightChannelBox, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.rightChannelLabel, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.leftChannelLabel, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(14, 55);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(298, 45);
-            this.tableLayoutPanel6.TabIndex = 0;
+            tableLayoutPanel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel6.ColumnCount = 2;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.Controls.Add(stmPlayerLeftChannelBox, 0, 1);
+            tableLayoutPanel6.Controls.Add(stmPlayerRightChannelBox, 0, 1);
+            tableLayoutPanel6.Controls.Add(rightChannelLabel, 1, 0);
+            tableLayoutPanel6.Controls.Add(leftChannelLabel, 0, 0);
+            tableLayoutPanel6.Location = new Point(14, 55);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 2;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel6.Size = new Size(301, 45);
+            tableLayoutPanel6.TabIndex = 0;
             // 
             // stmPlayerLeftChannelBox
             // 
-            this.stmPlayerLeftChannelBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stmPlayerLeftChannelBox.Location = new System.Drawing.Point(3, 25);
-            this.stmPlayerLeftChannelBox.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.stmPlayerLeftChannelBox.Name = "stmPlayerLeftChannelBox";
-            this.stmPlayerLeftChannelBox.Size = new System.Drawing.Size(143, 20);
-            this.stmPlayerLeftChannelBox.TabIndex = 4;
-            this.toolTip.SetToolTip(this.stmPlayerLeftChannelBox, "Channel to use for the stream.");
+            stmPlayerLeftChannelBox.Dock = DockStyle.Fill;
+            stmPlayerLeftChannelBox.Location = new Point(3, 25);
+            stmPlayerLeftChannelBox.Maximum = new decimal(new int[] { 15, 0, 0, 0 });
+            stmPlayerLeftChannelBox.Name = "stmPlayerLeftChannelBox";
+            stmPlayerLeftChannelBox.Size = new Size(144, 23);
+            stmPlayerLeftChannelBox.TabIndex = 4;
+            toolTip.SetToolTip(stmPlayerLeftChannelBox, "Channel to use for the stream.");
             // 
             // stmPlayerRightChannelBox
             // 
-            this.stmPlayerRightChannelBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stmPlayerRightChannelBox.Location = new System.Drawing.Point(152, 25);
-            this.stmPlayerRightChannelBox.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.stmPlayerRightChannelBox.Name = "stmPlayerRightChannelBox";
-            this.stmPlayerRightChannelBox.Size = new System.Drawing.Size(143, 20);
-            this.stmPlayerRightChannelBox.TabIndex = 3;
-            this.toolTip.SetToolTip(this.stmPlayerRightChannelBox, "Channel to use for the stream.");
+            stmPlayerRightChannelBox.Dock = DockStyle.Fill;
+            stmPlayerRightChannelBox.Location = new Point(153, 25);
+            stmPlayerRightChannelBox.Maximum = new decimal(new int[] { 15, 0, 0, 0 });
+            stmPlayerRightChannelBox.Name = "stmPlayerRightChannelBox";
+            stmPlayerRightChannelBox.Size = new Size(145, 23);
+            stmPlayerRightChannelBox.TabIndex = 3;
+            toolTip.SetToolTip(stmPlayerRightChannelBox, "Channel to use for the stream.");
             // 
             // rightChannelLabel
             // 
-            this.rightChannelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightChannelLabel.Location = new System.Drawing.Point(152, 0);
-            this.rightChannelLabel.Name = "rightChannelLabel";
-            this.rightChannelLabel.Size = new System.Drawing.Size(143, 22);
-            this.rightChannelLabel.TabIndex = 2;
-            this.rightChannelLabel.Text = "Right Channel:";
-            this.rightChannelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            rightChannelLabel.Dock = DockStyle.Fill;
+            rightChannelLabel.Location = new Point(153, 0);
+            rightChannelLabel.Name = "rightChannelLabel";
+            rightChannelLabel.Size = new Size(145, 22);
+            rightChannelLabel.TabIndex = 2;
+            rightChannelLabel.Text = "Right Channel:";
+            rightChannelLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // leftChannelLabel
             // 
-            this.leftChannelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.leftChannelLabel.Location = new System.Drawing.Point(3, 0);
-            this.leftChannelLabel.Name = "leftChannelLabel";
-            this.leftChannelLabel.Size = new System.Drawing.Size(143, 22);
-            this.leftChannelLabel.TabIndex = 1;
-            this.leftChannelLabel.Text = "Left Channel:";
-            this.leftChannelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            leftChannelLabel.Dock = DockStyle.Fill;
+            leftChannelLabel.Location = new Point(3, 0);
+            leftChannelLabel.Name = "leftChannelLabel";
+            leftChannelLabel.Size = new Size(144, 22);
+            leftChannelLabel.TabIndex = 1;
+            leftChannelLabel.Text = "Left Channel:";
+            leftChannelLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // grpPanel
             // 
-            this.grpPanel.Controls.Add(this.grpEntries);
-            this.grpPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpPanel.Location = new System.Drawing.Point(0, 270);
-            this.grpPanel.Name = "grpPanel";
-            this.grpPanel.Size = new System.Drawing.Size(325, 269);
-            this.grpPanel.TabIndex = 12;
-            this.grpPanel.Visible = false;
+            grpPanel.Controls.Add(grpEntries);
+            grpPanel.Dock = DockStyle.Fill;
+            grpPanel.Location = new Point(0, 270);
+            grpPanel.Name = "grpPanel";
+            grpPanel.Size = new Size(328, 313);
+            grpPanel.TabIndex = 12;
+            grpPanel.Visible = false;
             // 
             // grpEntries
             // 
-            this.grpEntries.AllowUserToOrderColumns = true;
-            this.grpEntries.AllowUserToResizeRows = false;
-            this.grpEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grpEntries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.item,
-            this.loadFlags});
-            this.grpEntries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpEntries.Location = new System.Drawing.Point(0, 0);
-            this.grpEntries.Name = "grpEntries";
-            this.grpEntries.Size = new System.Drawing.Size(325, 269);
-            this.grpEntries.TabIndex = 0;
+            grpEntries.AllowUserToOrderColumns = true;
+            grpEntries.AllowUserToResizeRows = false;
+            grpEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grpEntries.Columns.AddRange(new DataGridViewColumn[] { item, loadFlags });
+            grpEntries.Dock = DockStyle.Fill;
+            grpEntries.Location = new Point(0, 0);
+            grpEntries.Name = "grpEntries";
+            grpEntries.Size = new Size(328, 313);
+            grpEntries.TabIndex = 0;
             // 
             // item
             // 
-            this.item.FillWeight = 1750F;
-            this.item.HeaderText = "Item";
-            this.item.Name = "item";
-            this.item.Width = 175;
+            item.FillWeight = 1750F;
+            item.HeaderText = "Item";
+            item.Name = "item";
+            item.Width = 175;
             // 
             // loadFlags
             // 
-            this.loadFlags.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.loadFlags.HeaderText = "Load Flags";
-            this.loadFlags.Name = "loadFlags";
-            this.loadFlags.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.loadFlags.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            loadFlags.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            loadFlags.HeaderText = "Load Flags";
+            loadFlags.Name = "loadFlags";
+            loadFlags.Resizable = DataGridViewTriState.True;
+            loadFlags.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // bankPanel
             // 
-            this.bankPanel.Controls.Add(this.tableLayoutPanel5);
-            this.bankPanel.Controls.Add(this.label11);
-            this.bankPanel.Controls.Add(this.tableLayoutPanel4);
-            this.bankPanel.Controls.Add(this.label10);
-            this.bankPanel.Controls.Add(this.tableLayoutPanel3);
-            this.bankPanel.Controls.Add(this.label7);
-            this.bankPanel.Controls.Add(this.tableLayoutPanel2);
-            this.bankPanel.Controls.Add(this.label6);
-            this.bankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bankPanel.Location = new System.Drawing.Point(0, 270);
-            this.bankPanel.Name = "bankPanel";
-            this.bankPanel.Size = new System.Drawing.Size(325, 269);
-            this.bankPanel.TabIndex = 11;
-            this.bankPanel.Visible = false;
+            bankPanel.Controls.Add(tableLayoutPanel5);
+            bankPanel.Controls.Add(label11);
+            bankPanel.Controls.Add(tableLayoutPanel4);
+            bankPanel.Controls.Add(label10);
+            bankPanel.Controls.Add(tableLayoutPanel3);
+            bankPanel.Controls.Add(label7);
+            bankPanel.Controls.Add(tableLayoutPanel2);
+            bankPanel.Controls.Add(label6);
+            bankPanel.Dock = DockStyle.Fill;
+            bankPanel.Location = new Point(0, 270);
+            bankPanel.Name = "bankPanel";
+            bankPanel.Size = new Size(328, 313);
+            bankPanel.TabIndex = 11;
+            bankPanel.Visible = false;
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel5.Controls.Add(this.bnkWar3ComboBox, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.bnkWar3Box, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(14, 193);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel5.TabIndex = 13;
+            tableLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel5.Controls.Add(bnkWar3ComboBox, 0, 0);
+            tableLayoutPanel5.Controls.Add(bnkWar3Box, 1, 0);
+            tableLayoutPanel5.Location = new Point(14, 193);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.Size = new Size(301, 31);
+            tableLayoutPanel5.TabIndex = 13;
             // 
             // bnkWar3ComboBox
             // 
-            this.bnkWar3ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bnkWar3ComboBox.FormattingEnabled = true;
-            this.bnkWar3ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.bnkWar3ComboBox.Name = "bnkWar3ComboBox";
-            this.bnkWar3ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.bnkWar3ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.bnkWar3ComboBox, "Wave archive to be used for the bank.");
+            bnkWar3ComboBox.Dock = DockStyle.Fill;
+            bnkWar3ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            bnkWar3ComboBox.FormattingEnabled = true;
+            bnkWar3ComboBox.Location = new Point(3, 3);
+            bnkWar3ComboBox.Name = "bnkWar3ComboBox";
+            bnkWar3ComboBox.Size = new Size(249, 23);
+            bnkWar3ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(bnkWar3ComboBox, "Wave archive to be used for the bank.");
             // 
             // bnkWar3Box
             // 
-            this.bnkWar3Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar3Box.Location = new System.Drawing.Point(256, 3);
-            this.bnkWar3Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.bnkWar3Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.bnkWar3Box.Name = "bnkWar3Box";
-            this.bnkWar3Box.Size = new System.Drawing.Size(39, 20);
-            this.bnkWar3Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.bnkWar3Box, "Id of the wave archive to use for this bank.");
+            bnkWar3Box.Dock = DockStyle.Fill;
+            bnkWar3Box.Location = new Point(258, 3);
+            bnkWar3Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            bnkWar3Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            bnkWar3Box.Name = "bnkWar3Box";
+            bnkWar3Box.Size = new Size(40, 23);
+            bnkWar3Box.TabIndex = 7;
+            toolTip.SetToolTip(bnkWar3Box, "Id of the wave archive to use for this bank.");
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.Location = new System.Drawing.Point(11, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(301, 22);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Wave Archive 3:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label11.Location = new Point(11, 171);
+            label11.Name = "label11";
+            label11.Size = new Size(304, 22);
+            label11.TabIndex = 12;
+            label11.Text = "Wave Archive 3:";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel4.Controls.Add(this.bnkWar2ComboBox, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.bnkWar2Box, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(14, 137);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel4.TabIndex = 11;
+            tableLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel4.Controls.Add(bnkWar2ComboBox, 0, 0);
+            tableLayoutPanel4.Controls.Add(bnkWar2Box, 1, 0);
+            tableLayoutPanel4.Location = new Point(14, 137);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(301, 31);
+            tableLayoutPanel4.TabIndex = 11;
             // 
             // bnkWar2ComboBox
             // 
-            this.bnkWar2ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bnkWar2ComboBox.FormattingEnabled = true;
-            this.bnkWar2ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.bnkWar2ComboBox.Name = "bnkWar2ComboBox";
-            this.bnkWar2ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.bnkWar2ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.bnkWar2ComboBox, "Wave archive to be used for the bank.");
+            bnkWar2ComboBox.Dock = DockStyle.Fill;
+            bnkWar2ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            bnkWar2ComboBox.FormattingEnabled = true;
+            bnkWar2ComboBox.Location = new Point(3, 3);
+            bnkWar2ComboBox.Name = "bnkWar2ComboBox";
+            bnkWar2ComboBox.Size = new Size(249, 23);
+            bnkWar2ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(bnkWar2ComboBox, "Wave archive to be used for the bank.");
             // 
             // bnkWar2Box
             // 
-            this.bnkWar2Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar2Box.Location = new System.Drawing.Point(256, 3);
-            this.bnkWar2Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.bnkWar2Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.bnkWar2Box.Name = "bnkWar2Box";
-            this.bnkWar2Box.Size = new System.Drawing.Size(39, 20);
-            this.bnkWar2Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.bnkWar2Box, "Id of the wave archive to use for this bank.");
+            bnkWar2Box.Dock = DockStyle.Fill;
+            bnkWar2Box.Location = new Point(258, 3);
+            bnkWar2Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            bnkWar2Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            bnkWar2Box.Name = "bnkWar2Box";
+            bnkWar2Box.Size = new Size(40, 23);
+            bnkWar2Box.TabIndex = 7;
+            toolTip.SetToolTip(bnkWar2Box, "Id of the wave archive to use for this bank.");
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.Location = new System.Drawing.Point(11, 115);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(301, 22);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Wave Archive 2:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label10.Location = new Point(11, 115);
+            label10.Name = "label10";
+            label10.Size = new Size(304, 22);
+            label10.TabIndex = 10;
+            label10.Text = "Wave Archive 2:";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.Controls.Add(this.bnkWar1ComboBox, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.bnkWar1Box, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(14, 81);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel3.TabIndex = 9;
+            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel3.Controls.Add(bnkWar1ComboBox, 0, 0);
+            tableLayoutPanel3.Controls.Add(bnkWar1Box, 1, 0);
+            tableLayoutPanel3.Location = new Point(14, 81);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(301, 31);
+            tableLayoutPanel3.TabIndex = 9;
             // 
             // bnkWar1ComboBox
             // 
-            this.bnkWar1ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bnkWar1ComboBox.FormattingEnabled = true;
-            this.bnkWar1ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.bnkWar1ComboBox.Name = "bnkWar1ComboBox";
-            this.bnkWar1ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.bnkWar1ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.bnkWar1ComboBox, "Wave archive to be used for the bank.");
+            bnkWar1ComboBox.Dock = DockStyle.Fill;
+            bnkWar1ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            bnkWar1ComboBox.FormattingEnabled = true;
+            bnkWar1ComboBox.Location = new Point(3, 3);
+            bnkWar1ComboBox.Name = "bnkWar1ComboBox";
+            bnkWar1ComboBox.Size = new Size(249, 23);
+            bnkWar1ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(bnkWar1ComboBox, "Wave archive to be used for the bank.");
             // 
             // bnkWar1Box
             // 
-            this.bnkWar1Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar1Box.Location = new System.Drawing.Point(256, 3);
-            this.bnkWar1Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.bnkWar1Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.bnkWar1Box.Name = "bnkWar1Box";
-            this.bnkWar1Box.Size = new System.Drawing.Size(39, 20);
-            this.bnkWar1Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.bnkWar1Box, "Id of the wave archive to use for this bank.");
+            bnkWar1Box.Dock = DockStyle.Fill;
+            bnkWar1Box.Location = new Point(258, 3);
+            bnkWar1Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            bnkWar1Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            bnkWar1Box.Name = "bnkWar1Box";
+            bnkWar1Box.Size = new Size(40, 23);
+            bnkWar1Box.TabIndex = 7;
+            toolTip.SetToolTip(bnkWar1Box, "Id of the wave archive to use for this bank.");
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Location = new System.Drawing.Point(11, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(301, 22);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Wave Archive 1:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label7.Location = new Point(11, 59);
+            label7.Name = "label7";
+            label7.Size = new Size(304, 22);
+            label7.TabIndex = 8;
+            label7.Text = "Wave Archive 1:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.Controls.Add(this.bnkWar0ComboBox, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bnkWar0Box, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel2.TabIndex = 7;
+            tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel2.Controls.Add(bnkWar0ComboBox, 0, 0);
+            tableLayoutPanel2.Controls.Add(bnkWar0Box, 1, 0);
+            tableLayoutPanel2.Location = new Point(14, 25);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(301, 31);
+            tableLayoutPanel2.TabIndex = 7;
             // 
             // bnkWar0ComboBox
             // 
-            this.bnkWar0ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar0ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bnkWar0ComboBox.FormattingEnabled = true;
-            this.bnkWar0ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.bnkWar0ComboBox.Name = "bnkWar0ComboBox";
-            this.bnkWar0ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.bnkWar0ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.bnkWar0ComboBox, "Wave archive to be used for the bank.");
+            bnkWar0ComboBox.Dock = DockStyle.Fill;
+            bnkWar0ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            bnkWar0ComboBox.FormattingEnabled = true;
+            bnkWar0ComboBox.Location = new Point(3, 3);
+            bnkWar0ComboBox.Name = "bnkWar0ComboBox";
+            bnkWar0ComboBox.Size = new Size(249, 23);
+            bnkWar0ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(bnkWar0ComboBox, "Wave archive to be used for the bank.");
             // 
             // bnkWar0Box
             // 
-            this.bnkWar0Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bnkWar0Box.Location = new System.Drawing.Point(256, 3);
-            this.bnkWar0Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.bnkWar0Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.bnkWar0Box.Name = "bnkWar0Box";
-            this.bnkWar0Box.Size = new System.Drawing.Size(39, 20);
-            this.bnkWar0Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.bnkWar0Box, "Id of the wave archive to use for this bank.");
+            bnkWar0Box.Dock = DockStyle.Fill;
+            bnkWar0Box.Location = new Point(258, 3);
+            bnkWar0Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            bnkWar0Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            bnkWar0Box.Name = "bnkWar0Box";
+            bnkWar0Box.Size = new Size(40, 23);
+            bnkWar0Box.TabIndex = 7;
+            toolTip.SetToolTip(bnkWar0Box, "Id of the wave archive to use for this bank.");
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Location = new System.Drawing.Point(11, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(301, 22);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Wave Archive 0:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label6.Location = new Point(11, 3);
+            label6.Name = "label6";
+            label6.Size = new Size(304, 22);
+            label6.TabIndex = 2;
+            label6.Text = "Wave Archive 0:";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // blankPanel
             // 
-            this.blankPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.blankPanel.Location = new System.Drawing.Point(0, 270);
-            this.blankPanel.Name = "blankPanel";
-            this.blankPanel.Size = new System.Drawing.Size(325, 269);
-            this.blankPanel.TabIndex = 10;
-            this.blankPanel.Visible = false;
+            blankPanel.Dock = DockStyle.Fill;
+            blankPanel.Location = new Point(0, 270);
+            blankPanel.Name = "blankPanel";
+            blankPanel.Size = new Size(328, 313);
+            blankPanel.TabIndex = 10;
+            blankPanel.Visible = false;
             // 
             // warPanel
             // 
-            this.warPanel.Controls.Add(this.loadIndividuallyBox);
-            this.warPanel.Controls.Add(this.label9);
-            this.warPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.warPanel.Location = new System.Drawing.Point(0, 270);
-            this.warPanel.Name = "warPanel";
-            this.warPanel.Size = new System.Drawing.Size(325, 269);
-            this.warPanel.TabIndex = 9;
-            this.warPanel.Visible = false;
+            warPanel.Controls.Add(loadIndividuallyBox);
+            warPanel.Controls.Add(label9);
+            warPanel.Dock = DockStyle.Fill;
+            warPanel.Location = new Point(0, 270);
+            warPanel.Name = "warPanel";
+            warPanel.Size = new Size(328, 313);
+            warPanel.TabIndex = 9;
+            warPanel.Visible = false;
             // 
             // loadIndividuallyBox
             // 
-            this.loadIndividuallyBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadIndividuallyBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.loadIndividuallyBox.Location = new System.Drawing.Point(11, 25);
-            this.loadIndividuallyBox.Name = "loadIndividuallyBox";
-            this.loadIndividuallyBox.Size = new System.Drawing.Size(301, 24);
-            this.loadIndividuallyBox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.loadIndividuallyBox, "If the wave archive should be loaded individually.");
-            this.loadIndividuallyBox.UseVisualStyleBackColor = true;
+            loadIndividuallyBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            loadIndividuallyBox.CheckAlign = ContentAlignment.MiddleCenter;
+            loadIndividuallyBox.Location = new Point(11, 25);
+            loadIndividuallyBox.Name = "loadIndividuallyBox";
+            loadIndividuallyBox.Size = new Size(304, 24);
+            loadIndividuallyBox.TabIndex = 1;
+            toolTip.SetToolTip(loadIndividuallyBox, "If the wave archive should be loaded individually.");
+            loadIndividuallyBox.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Location = new System.Drawing.Point(11, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(301, 22);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Load Individually:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label9.Location = new Point(11, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(304, 22);
+            label9.TabIndex = 0;
+            label9.Text = "Load Individually:";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // forceUniqueFilePanel
             // 
-            this.forceUniqueFilePanel.Controls.Add(this.forceUniqueFileBox);
-            this.forceUniqueFilePanel.Controls.Add(this.label8);
-            this.forceUniqueFilePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.forceUniqueFilePanel.Location = new System.Drawing.Point(0, 231);
-            this.forceUniqueFilePanel.Name = "forceUniqueFilePanel";
-            this.forceUniqueFilePanel.Size = new System.Drawing.Size(325, 39);
-            this.forceUniqueFilePanel.TabIndex = 8;
-            this.forceUniqueFilePanel.Visible = false;
+            forceUniqueFilePanel.Controls.Add(forceUniqueFileBox);
+            forceUniqueFilePanel.Controls.Add(label8);
+            forceUniqueFilePanel.Dock = DockStyle.Top;
+            forceUniqueFilePanel.Location = new Point(0, 231);
+            forceUniqueFilePanel.Name = "forceUniqueFilePanel";
+            forceUniqueFilePanel.Size = new Size(328, 39);
+            forceUniqueFilePanel.TabIndex = 8;
+            forceUniqueFilePanel.Visible = false;
             // 
             // forceUniqueFileBox
             // 
-            this.forceUniqueFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.forceUniqueFileBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.forceUniqueFileBox.Location = new System.Drawing.Point(11, 19);
-            this.forceUniqueFileBox.Name = "forceUniqueFileBox";
-            this.forceUniqueFileBox.Size = new System.Drawing.Size(301, 18);
-            this.forceUniqueFileBox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.forceUniqueFileBox, "Write this file in the sound archive as its own file, even if it has the exact sa" +
-        "me data as another one. If this is not checked, files will be shared between ent" +
-        "ries for efficiency.");
-            this.forceUniqueFileBox.UseVisualStyleBackColor = true;
+            forceUniqueFileBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            forceUniqueFileBox.CheckAlign = ContentAlignment.MiddleCenter;
+            forceUniqueFileBox.Location = new Point(11, 19);
+            forceUniqueFileBox.Name = "forceUniqueFileBox";
+            forceUniqueFileBox.Size = new Size(304, 18);
+            forceUniqueFileBox.TabIndex = 1;
+            toolTip.SetToolTip(forceUniqueFileBox, "Write this file in the sound archive as its own file, even if it has the exact same data as another one. If this is not checked, files will be shared between entries for efficiency.");
+            forceUniqueFileBox.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Location = new System.Drawing.Point(11, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(301, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Force Unique File:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label8.Location = new Point(11, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(304, 17);
+            label8.TabIndex = 0;
+            label8.Text = "Force Unique File:";
+            label8.TextAlign = ContentAlignment.BottomCenter;
             // 
             // indexPanel
             // 
-            this.indexPanel.Controls.Add(this.swapAtIndexButton);
-            this.indexPanel.Controls.Add(this.itemIndexBox);
-            this.indexPanel.Controls.Add(this.label5);
-            this.indexPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.indexPanel.Location = new System.Drawing.Point(0, 150);
-            this.indexPanel.Name = "indexPanel";
-            this.indexPanel.Size = new System.Drawing.Size(325, 81);
-            this.indexPanel.TabIndex = 0;
-            this.indexPanel.Visible = false;
+            indexPanel.Controls.Add(swapAtIndexButton);
+            indexPanel.Controls.Add(itemIndexBox);
+            indexPanel.Controls.Add(label5);
+            indexPanel.Dock = DockStyle.Top;
+            indexPanel.Location = new Point(0, 150);
+            indexPanel.Name = "indexPanel";
+            indexPanel.Size = new Size(328, 81);
+            indexPanel.TabIndex = 0;
+            indexPanel.Visible = false;
             // 
             // swapAtIndexButton
             // 
-            this.swapAtIndexButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.swapAtIndexButton.Location = new System.Drawing.Point(14, 49);
-            this.swapAtIndexButton.Name = "swapAtIndexButton";
-            this.swapAtIndexButton.Size = new System.Drawing.Size(298, 25);
-            this.swapAtIndexButton.TabIndex = 0;
-            this.swapAtIndexButton.Text = "Swap With Index";
-            this.toolTip.SetToolTip(this.swapAtIndexButton, "Swap this entry with the one at the new index. If that entry doesn\'t exist, simpl" +
-        "y just change the index.");
-            this.swapAtIndexButton.UseVisualStyleBackColor = true;
+            swapAtIndexButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            swapAtIndexButton.Location = new Point(14, 49);
+            swapAtIndexButton.Name = "swapAtIndexButton";
+            swapAtIndexButton.Size = new Size(301, 25);
+            swapAtIndexButton.TabIndex = 0;
+            swapAtIndexButton.Text = "Swap With Index";
+            toolTip.SetToolTip(swapAtIndexButton, "Swap this entry with the one at the new index. If that entry doesn't exist, simply just change the index.");
+            swapAtIndexButton.UseVisualStyleBackColor = true;
             // 
             // itemIndexBox
             // 
-            this.itemIndexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.itemIndexBox.Location = new System.Drawing.Point(14, 23);
-            this.itemIndexBox.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.itemIndexBox.Name = "itemIndexBox";
-            this.itemIndexBox.Size = new System.Drawing.Size(298, 20);
-            this.itemIndexBox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.itemIndexBox, "The index of the item as referenced to by the game.");
+            itemIndexBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            itemIndexBox.Location = new Point(14, 23);
+            itemIndexBox.Maximum = new decimal(new int[] { -1, 0, 0, 0 });
+            itemIndexBox.Name = "itemIndexBox";
+            itemIndexBox.Size = new Size(301, 23);
+            itemIndexBox.TabIndex = 1;
+            toolTip.SetToolTip(itemIndexBox, "The index of the item as referenced to by the game.");
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Location = new System.Drawing.Point(11, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(301, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Item Index:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label5.Location = new Point(11, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(304, 20);
+            label5.TabIndex = 0;
+            label5.Text = "Item Index:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // settingsPanel
             // 
-            this.settingsPanel.Controls.Add(this.seqExportModeBox);
-            this.settingsPanel.Controls.Add(this.label4);
-            this.settingsPanel.Controls.Add(this.seqImportModeBox);
-            this.settingsPanel.Controls.Add(this.label3);
-            this.settingsPanel.Controls.Add(this.writeNamesBox);
-            this.settingsPanel.Controls.Add(this.label2);
-            this.settingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsPanel.Location = new System.Drawing.Point(0, 150);
-            this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(325, 389);
-            this.settingsPanel.TabIndex = 1;
-            this.settingsPanel.Visible = false;
+            settingsPanel.Controls.Add(seqExportModeBox);
+            settingsPanel.Controls.Add(label4);
+            settingsPanel.Controls.Add(seqImportModeBox);
+            settingsPanel.Controls.Add(label3);
+            settingsPanel.Controls.Add(writeNamesBox);
+            settingsPanel.Controls.Add(label2);
+            settingsPanel.Dock = DockStyle.Fill;
+            settingsPanel.Location = new Point(0, 150);
+            settingsPanel.Name = "settingsPanel";
+            settingsPanel.Size = new Size(328, 433);
+            settingsPanel.TabIndex = 1;
+            settingsPanel.Visible = false;
             // 
             // seqExportModeBox
             // 
-            this.seqExportModeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqExportModeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqExportModeBox.FormattingEnabled = true;
-            this.seqExportModeBox.Items.AddRange(new object[] {
-            "Nitro Studio",
-            "Sseq2Midi"});
-            this.seqExportModeBox.Location = new System.Drawing.Point(11, 126);
-            this.seqExportModeBox.Name = "seqExportModeBox";
-            this.seqExportModeBox.Size = new System.Drawing.Size(301, 21);
-            this.seqExportModeBox.TabIndex = 5;
-            this.toolTip.SetToolTip(this.seqExportModeBox, "What program should be used to export sequences. Nitro Studio is my custom export" +
-        "er, while Sseq2Midi is the exe included. I recommend you use my exporter.");
+            seqExportModeBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqExportModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqExportModeBox.FormattingEnabled = true;
+            seqExportModeBox.Items.AddRange(new object[] { "Nitro Studio", "Sseq2Midi" });
+            seqExportModeBox.Location = new Point(11, 126);
+            seqExportModeBox.Name = "seqExportModeBox";
+            seqExportModeBox.Size = new Size(304, 23);
+            seqExportModeBox.TabIndex = 5;
+            toolTip.SetToolTip(seqExportModeBox, "What program should be used to export sequences. Nitro Studio is my custom exporter, while Sseq2Midi is the exe included. I recommend you use my exporter.");
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(11, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(301, 22);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Sequence Export Mode:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.Location = new Point(11, 101);
+            label4.Name = "label4";
+            label4.Size = new Size(304, 22);
+            label4.TabIndex = 4;
+            label4.Text = "Sequence Export Mode:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // seqImportModeBox
             // 
-            this.seqImportModeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seqImportModeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.seqImportModeBox.FormattingEnabled = true;
-            this.seqImportModeBox.Items.AddRange(new object[] {
-            "Nitro Studio",
-            "Midi2Sseq",
-            "Nintendo Tools"});
-            this.seqImportModeBox.Location = new System.Drawing.Point(11, 77);
-            this.seqImportModeBox.Name = "seqImportModeBox";
-            this.seqImportModeBox.Size = new System.Drawing.Size(301, 21);
-            this.seqImportModeBox.TabIndex = 3;
-            this.toolTip.SetToolTip(this.seqImportModeBox, resources.GetString("seqImportModeBox.ToolTip"));
+            seqImportModeBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            seqImportModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            seqImportModeBox.FormattingEnabled = true;
+            seqImportModeBox.Items.AddRange(new object[] { "Nitro Studio", "Midi2Sseq", "Nintendo Tools" });
+            seqImportModeBox.Location = new Point(11, 77);
+            seqImportModeBox.Name = "seqImportModeBox";
+            seqImportModeBox.Size = new Size(304, 23);
+            seqImportModeBox.TabIndex = 3;
+            toolTip.SetToolTip(seqImportModeBox, resources.GetString("seqImportModeBox.ToolTip"));
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(11, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 22);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Sequence Import Mode:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label3.Location = new Point(11, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(304, 22);
+            label3.TabIndex = 2;
+            label3.Text = "Sequence Import Mode:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // writeNamesBox
             // 
-            this.writeNamesBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.writeNamesBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.writeNamesBox.Location = new System.Drawing.Point(11, 25);
-            this.writeNamesBox.Name = "writeNamesBox";
-            this.writeNamesBox.Size = new System.Drawing.Size(301, 24);
-            this.writeNamesBox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.writeNamesBox, "If the editor should export names for the sound archive.");
-            this.writeNamesBox.UseVisualStyleBackColor = true;
+            writeNamesBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            writeNamesBox.CheckAlign = ContentAlignment.MiddleCenter;
+            writeNamesBox.Location = new Point(11, 25);
+            writeNamesBox.Name = "writeNamesBox";
+            writeNamesBox.Size = new Size(304, 24);
+            writeNamesBox.TabIndex = 1;
+            toolTip.SetToolTip(writeNamesBox, "If the editor should export names for the sound archive.");
+            writeNamesBox.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(11, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Write Names:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Location = new Point(11, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(304, 22);
+            label2.TabIndex = 0;
+            label2.Text = "Write Names:";
+            label2.TextAlign = ContentAlignment.BottomCenter;
             // 
             // noInfoPanel
             // 
-            this.noInfoPanel.Controls.Add(this.label1);
-            this.noInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noInfoPanel.Location = new System.Drawing.Point(0, 150);
-            this.noInfoPanel.Name = "noInfoPanel";
-            this.noInfoPanel.Size = new System.Drawing.Size(325, 389);
-            this.noInfoPanel.TabIndex = 0;
+            noInfoPanel.Controls.Add(label1);
+            noInfoPanel.Dock = DockStyle.Fill;
+            noInfoPanel.Location = new Point(0, 150);
+            noInfoPanel.Name = "noInfoPanel";
+            noInfoPanel.Size = new Size(328, 433);
+            noInfoPanel.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 389);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "No Valid Info Selected!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(328, 433);
+            label1.TabIndex = 0;
+            label1.Text = "No Valid Info Selected!";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // kermalisSoundPlayerPanel
             // 
-            this.kermalisSoundPlayerPanel.Controls.Add(this.kermalisPosition);
-            this.kermalisSoundPlayerPanel.Controls.Add(this.tableLayoutPanel9);
-            this.kermalisSoundPlayerPanel.Controls.Add(this.kermalisPlayButton);
-            this.kermalisSoundPlayerPanel.Controls.Add(this.soundPlayerLabel);
-            this.kermalisSoundPlayerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kermalisSoundPlayerPanel.Location = new System.Drawing.Point(0, 0);
-            this.kermalisSoundPlayerPanel.Name = "kermalisSoundPlayerPanel";
-            this.kermalisSoundPlayerPanel.Size = new System.Drawing.Size(325, 150);
-            this.kermalisSoundPlayerPanel.TabIndex = 16;
-            this.kermalisSoundPlayerPanel.Visible = false;
+            kermalisSoundPlayerPanel.Controls.Add(kermalisPosition);
+            kermalisSoundPlayerPanel.Controls.Add(tableLayoutPanel9);
+            kermalisSoundPlayerPanel.Controls.Add(kermalisPlayButton);
+            kermalisSoundPlayerPanel.Controls.Add(soundPlayerLabel);
+            kermalisSoundPlayerPanel.Dock = DockStyle.Top;
+            kermalisSoundPlayerPanel.Location = new Point(0, 0);
+            kermalisSoundPlayerPanel.Name = "kermalisSoundPlayerPanel";
+            kermalisSoundPlayerPanel.Size = new Size(328, 150);
+            kermalisSoundPlayerPanel.TabIndex = 16;
+            kermalisSoundPlayerPanel.Visible = false;
             // 
             // kermalisPosition
             // 
-            this.kermalisPosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kermalisPosition.LargeChange = 20;
-            this.kermalisPosition.Location = new System.Drawing.Point(14, 118);
-            this.kermalisPosition.Maximum = 100;
-            this.kermalisPosition.Name = "kermalisPosition";
-            this.kermalisPosition.Size = new System.Drawing.Size(298, 45);
-            this.kermalisPosition.TabIndex = 5;
-            this.kermalisPosition.TickFrequency = 5;
-            this.toolTip.SetToolTip(this.kermalisPosition, "Sound position.");
+            kermalisPosition.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            kermalisPosition.LargeChange = 20;
+            kermalisPosition.Location = new Point(14, 118);
+            kermalisPosition.Maximum = 100;
+            kermalisPosition.Name = "kermalisPosition";
+            kermalisPosition.Size = new Size(301, 45);
+            kermalisPosition.TabIndex = 5;
+            kermalisPosition.TickFrequency = 5;
+            toolTip.SetToolTip(kermalisPosition, "Sound position.");
             // 
             // tableLayoutPanel9
             // 
-            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.label22, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.label21, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.kermalisStopButton, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.kermalisPauseButton, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.kermalisVolumeSlider, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.kermalisLoopBox, 1, 2);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(14, 49);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 3;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(298, 63);
-            this.tableLayoutPanel9.TabIndex = 4;
+            tableLayoutPanel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel9.ColumnCount = 2;
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel9.Controls.Add(label22, 1, 1);
+            tableLayoutPanel9.Controls.Add(label21, 0, 1);
+            tableLayoutPanel9.Controls.Add(kermalisStopButton, 1, 0);
+            tableLayoutPanel9.Controls.Add(kermalisPauseButton, 0, 0);
+            tableLayoutPanel9.Controls.Add(kermalisVolumeSlider, 0, 2);
+            tableLayoutPanel9.Controls.Add(kermalisLoopBox, 1, 2);
+            tableLayoutPanel9.Location = new Point(14, 49);
+            tableLayoutPanel9.Name = "tableLayoutPanel9";
+            tableLayoutPanel9.RowCount = 3;
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tableLayoutPanel9.Size = new Size(301, 63);
+            tableLayoutPanel9.TabIndex = 4;
             // 
             // label22
             // 
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Location = new System.Drawing.Point(152, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(143, 15);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Loop:";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            label22.Dock = DockStyle.Fill;
+            label22.Location = new Point(153, 27);
+            label22.Name = "label22";
+            label22.Size = new Size(145, 15);
+            label22.TabIndex = 5;
+            label22.Text = "Loop:";
+            label22.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label21
             // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Location = new System.Drawing.Point(3, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(143, 15);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Volume:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            label21.Dock = DockStyle.Fill;
+            label21.Location = new Point(3, 27);
+            label21.Name = "label21";
+            label21.Size = new Size(144, 15);
+            label21.TabIndex = 4;
+            label21.Text = "Volume:";
+            label21.TextAlign = ContentAlignment.BottomCenter;
             // 
             // kermalisStopButton
             // 
-            this.kermalisStopButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kermalisStopButton.Location = new System.Drawing.Point(152, 3);
-            this.kermalisStopButton.Name = "kermalisStopButton";
-            this.kermalisStopButton.Size = new System.Drawing.Size(143, 21);
-            this.kermalisStopButton.TabIndex = 1;
-            this.kermalisStopButton.Text = "Stop";
-            this.kermalisStopButton.UseVisualStyleBackColor = true;
+            kermalisStopButton.Dock = DockStyle.Fill;
+            kermalisStopButton.Location = new Point(153, 3);
+            kermalisStopButton.Name = "kermalisStopButton";
+            kermalisStopButton.Size = new Size(145, 21);
+            kermalisStopButton.TabIndex = 1;
+            kermalisStopButton.Text = "Stop";
+            kermalisStopButton.UseVisualStyleBackColor = true;
             // 
             // kermalisPauseButton
             // 
-            this.kermalisPauseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kermalisPauseButton.Location = new System.Drawing.Point(3, 3);
-            this.kermalisPauseButton.Name = "kermalisPauseButton";
-            this.kermalisPauseButton.Size = new System.Drawing.Size(143, 21);
-            this.kermalisPauseButton.TabIndex = 0;
-            this.kermalisPauseButton.Text = "Pause / Resume";
-            this.kermalisPauseButton.UseVisualStyleBackColor = true;
+            kermalisPauseButton.Dock = DockStyle.Fill;
+            kermalisPauseButton.Location = new Point(3, 3);
+            kermalisPauseButton.Name = "kermalisPauseButton";
+            kermalisPauseButton.Size = new Size(144, 21);
+            kermalisPauseButton.TabIndex = 0;
+            kermalisPauseButton.Text = "Pause / Resume";
+            kermalisPauseButton.UseVisualStyleBackColor = true;
             // 
             // kermalisVolumeSlider
             // 
-            this.kermalisVolumeSlider.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kermalisVolumeSlider.LargeChange = 10;
-            this.kermalisVolumeSlider.Location = new System.Drawing.Point(3, 45);
-            this.kermalisVolumeSlider.Maximum = 100;
-            this.kermalisVolumeSlider.Name = "kermalisVolumeSlider";
-            this.kermalisVolumeSlider.Size = new System.Drawing.Size(143, 21);
-            this.kermalisVolumeSlider.SmallChange = 5;
-            this.kermalisVolumeSlider.TabIndex = 2;
-            this.kermalisVolumeSlider.TickFrequency = 10;
-            this.kermalisVolumeSlider.Value = 75;
+            kermalisVolumeSlider.Dock = DockStyle.Fill;
+            kermalisVolumeSlider.LargeChange = 10;
+            kermalisVolumeSlider.Location = new Point(3, 45);
+            kermalisVolumeSlider.Maximum = 100;
+            kermalisVolumeSlider.Name = "kermalisVolumeSlider";
+            kermalisVolumeSlider.Size = new Size(144, 21);
+            kermalisVolumeSlider.SmallChange = 5;
+            kermalisVolumeSlider.TabIndex = 2;
+            kermalisVolumeSlider.TickFrequency = 10;
+            kermalisVolumeSlider.Value = 75;
             // 
             // kermalisLoopBox
             // 
-            this.kermalisLoopBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.kermalisLoopBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kermalisLoopBox.Location = new System.Drawing.Point(152, 45);
-            this.kermalisLoopBox.Name = "kermalisLoopBox";
-            this.kermalisLoopBox.Size = new System.Drawing.Size(143, 21);
-            this.kermalisLoopBox.TabIndex = 3;
-            this.kermalisLoopBox.UseVisualStyleBackColor = true;
+            kermalisLoopBox.CheckAlign = ContentAlignment.MiddleCenter;
+            kermalisLoopBox.Dock = DockStyle.Fill;
+            kermalisLoopBox.Location = new Point(153, 45);
+            kermalisLoopBox.Name = "kermalisLoopBox";
+            kermalisLoopBox.Size = new Size(145, 21);
+            kermalisLoopBox.TabIndex = 3;
+            kermalisLoopBox.UseVisualStyleBackColor = true;
             // 
             // kermalisPlayButton
             // 
-            this.kermalisPlayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kermalisPlayButton.Location = new System.Drawing.Point(14, 25);
-            this.kermalisPlayButton.Name = "kermalisPlayButton";
-            this.kermalisPlayButton.Size = new System.Drawing.Size(298, 20);
-            this.kermalisPlayButton.TabIndex = 3;
-            this.kermalisPlayButton.Text = "Play";
-            this.kermalisPlayButton.UseVisualStyleBackColor = true;
+            kermalisPlayButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            kermalisPlayButton.Location = new Point(14, 25);
+            kermalisPlayButton.Name = "kermalisPlayButton";
+            kermalisPlayButton.Size = new Size(301, 20);
+            kermalisPlayButton.TabIndex = 3;
+            kermalisPlayButton.Text = "Play";
+            kermalisPlayButton.UseVisualStyleBackColor = true;
             // 
             // soundPlayerLabel
             // 
-            this.soundPlayerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.soundPlayerLabel.Location = new System.Drawing.Point(11, 3);
-            this.soundPlayerLabel.Name = "soundPlayerLabel";
-            this.soundPlayerLabel.Size = new System.Drawing.Size(301, 22);
-            this.soundPlayerLabel.TabIndex = 1;
-            this.soundPlayerLabel.Text = "Kermalis Sound Player:";
-            this.soundPlayerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            soundPlayerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            soundPlayerLabel.Location = new Point(11, 3);
+            soundPlayerLabel.Name = "soundPlayerLabel";
+            soundPlayerLabel.Size = new Size(304, 22);
+            soundPlayerLabel.TabIndex = 1;
+            soundPlayerLabel.Text = "Kermalis Sound Player:";
+            soundPlayerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlPianoKeys
             // 
-            this.pnlPianoKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPianoKeys.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlPianoKeys.Controls.Add(this.pkeyC7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB7);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB6);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB1);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB2);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB3);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB4);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyCSharp5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyD5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyDSharp5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyE5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyF5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyFSharp5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyG5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyGSharp5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyA5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyASharp5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyB5);
-            this.pnlPianoKeys.Controls.Add(this.pkeyC8);
-            this.pnlPianoKeys.Location = new System.Drawing.Point(44, 142);
-            this.pnlPianoKeys.Name = "pnlPianoKeys";
-            this.pnlPianoKeys.Size = new System.Drawing.Size(565, 46);
-            this.pnlPianoKeys.TabIndex = 6;
-            this.pnlPianoKeys.Visible = false;
+            pnlPianoKeys.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pnlPianoKeys.BackColor = SystemColors.ControlLightLight;
+            pnlPianoKeys.Controls.Add(pkeyC7);
+            pnlPianoKeys.Controls.Add(pkeyE7);
+            pnlPianoKeys.Controls.Add(pkeyCSharp7);
+            pnlPianoKeys.Controls.Add(pkeyD7);
+            pnlPianoKeys.Controls.Add(pkeyDSharp7);
+            pnlPianoKeys.Controls.Add(pkeyF7);
+            pnlPianoKeys.Controls.Add(pkeyFSharp7);
+            pnlPianoKeys.Controls.Add(pkeyG7);
+            pnlPianoKeys.Controls.Add(pkeyGSharp7);
+            pnlPianoKeys.Controls.Add(pkeyA7);
+            pnlPianoKeys.Controls.Add(pkeyASharp7);
+            pnlPianoKeys.Controls.Add(pkeyB7);
+            pnlPianoKeys.Controls.Add(pkeyC6);
+            pnlPianoKeys.Controls.Add(pkeyE6);
+            pnlPianoKeys.Controls.Add(pkeyCSharp6);
+            pnlPianoKeys.Controls.Add(pkeyD6);
+            pnlPianoKeys.Controls.Add(pkeyDSharp6);
+            pnlPianoKeys.Controls.Add(pkeyF6);
+            pnlPianoKeys.Controls.Add(pkeyFSharp6);
+            pnlPianoKeys.Controls.Add(pkeyG6);
+            pnlPianoKeys.Controls.Add(pkeyGSharp6);
+            pnlPianoKeys.Controls.Add(pkeyA6);
+            pnlPianoKeys.Controls.Add(pkeyASharp6);
+            pnlPianoKeys.Controls.Add(pkeyB6);
+            pnlPianoKeys.Controls.Add(pkeyC1);
+            pnlPianoKeys.Controls.Add(pkeyCSharp1);
+            pnlPianoKeys.Controls.Add(pkeyD1);
+            pnlPianoKeys.Controls.Add(pkeyDSharp1);
+            pnlPianoKeys.Controls.Add(pkeyE1);
+            pnlPianoKeys.Controls.Add(pkeyF1);
+            pnlPianoKeys.Controls.Add(pkeyFSharp1);
+            pnlPianoKeys.Controls.Add(pkeyG1);
+            pnlPianoKeys.Controls.Add(pkeyGSharp1);
+            pnlPianoKeys.Controls.Add(pkeyA1);
+            pnlPianoKeys.Controls.Add(pkeyASharp1);
+            pnlPianoKeys.Controls.Add(pkeyB1);
+            pnlPianoKeys.Controls.Add(pkeyC2);
+            pnlPianoKeys.Controls.Add(pkeyCSharp2);
+            pnlPianoKeys.Controls.Add(pkeyD2);
+            pnlPianoKeys.Controls.Add(pkeyDSharp2);
+            pnlPianoKeys.Controls.Add(pkeyE2);
+            pnlPianoKeys.Controls.Add(pkeyF2);
+            pnlPianoKeys.Controls.Add(pkeyFSharp2);
+            pnlPianoKeys.Controls.Add(pkeyG2);
+            pnlPianoKeys.Controls.Add(pkeyGSharp2);
+            pnlPianoKeys.Controls.Add(pkeyA2);
+            pnlPianoKeys.Controls.Add(pkeyASharp2);
+            pnlPianoKeys.Controls.Add(pkeyB2);
+            pnlPianoKeys.Controls.Add(pkeyC3);
+            pnlPianoKeys.Controls.Add(pkeyCSharp3);
+            pnlPianoKeys.Controls.Add(pkeyD3);
+            pnlPianoKeys.Controls.Add(pkeyDSharp3);
+            pnlPianoKeys.Controls.Add(pkeyE3);
+            pnlPianoKeys.Controls.Add(pkeyF3);
+            pnlPianoKeys.Controls.Add(pkeyFSharp3);
+            pnlPianoKeys.Controls.Add(pkeyG3);
+            pnlPianoKeys.Controls.Add(pkeyGSharp3);
+            pnlPianoKeys.Controls.Add(pkeyA3);
+            pnlPianoKeys.Controls.Add(pkeyASharp3);
+            pnlPianoKeys.Controls.Add(pkeyB3);
+            pnlPianoKeys.Controls.Add(pkeyC4);
+            pnlPianoKeys.Controls.Add(pkeyCSharp4);
+            pnlPianoKeys.Controls.Add(pkeyD4);
+            pnlPianoKeys.Controls.Add(pkeyDSharp4);
+            pnlPianoKeys.Controls.Add(pkeyE4);
+            pnlPianoKeys.Controls.Add(pkeyF4);
+            pnlPianoKeys.Controls.Add(pkeyFSharp4);
+            pnlPianoKeys.Controls.Add(pkeyG4);
+            pnlPianoKeys.Controls.Add(pkeyGSharp4);
+            pnlPianoKeys.Controls.Add(pkeyA4);
+            pnlPianoKeys.Controls.Add(pkeyASharp4);
+            pnlPianoKeys.Controls.Add(pkeyB4);
+            pnlPianoKeys.Controls.Add(pkeyC5);
+            pnlPianoKeys.Controls.Add(pkeyCSharp5);
+            pnlPianoKeys.Controls.Add(pkeyD5);
+            pnlPianoKeys.Controls.Add(pkeyDSharp5);
+            pnlPianoKeys.Controls.Add(pkeyE5);
+            pnlPianoKeys.Controls.Add(pkeyF5);
+            pnlPianoKeys.Controls.Add(pkeyFSharp5);
+            pnlPianoKeys.Controls.Add(pkeyG5);
+            pnlPianoKeys.Controls.Add(pkeyGSharp5);
+            pnlPianoKeys.Controls.Add(pkeyA5);
+            pnlPianoKeys.Controls.Add(pkeyASharp5);
+            pnlPianoKeys.Controls.Add(pkeyB5);
+            pnlPianoKeys.Controls.Add(pkeyC8);
+            pnlPianoKeys.Location = new Point(41, 186);
+            pnlPianoKeys.Name = "pnlPianoKeys";
+            pnlPianoKeys.Size = new Size(565, 46);
+            pnlPianoKeys.TabIndex = 6;
+            pnlPianoKeys.Visible = false;
             // 
             // pkeyC7
             // 
-            this.pkeyC7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC7.Location = new System.Drawing.Point(466, 2);
-            this.pkeyC7.Name = "pkeyC7";
-            this.pkeyC7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC7.Shape = PianoKeyShape.LShape;
-            this.pkeyC7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC7.TabIndex = 83;
-            this.pkeyC7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC7.Location = new Point(466, 2);
+            pkeyC7.Name = "pkeyC7";
+            pkeyC7.Size = new Size(12, 42);
+            pkeyC7.TabIndex = 83;
+            pkeyC7.StateChanged += PianoChanged;
             // 
             // pkeyE7
             // 
-            this.pkeyE7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE7.Location = new System.Drawing.Point(488, 2);
-            this.pkeyE7.Name = "pkeyE7";
-            this.pkeyE7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE7.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE7.TabIndex = 84;
-            this.pkeyE7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE7.Location = new Point(488, 2);
+            pkeyE7.Name = "pkeyE7";
+            pkeyE7.Size = new Size(12, 42);
+            pkeyE7.TabIndex = 84;
+            pkeyE7.StateChanged += PianoChanged;
             // 
             // pkeyCSharp7
             // 
-            this.pkeyCSharp7.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp7.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp7.Location = new System.Drawing.Point(474, 2);
-            this.pkeyCSharp7.Name = "pkeyCSharp7";
-            this.pkeyCSharp7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp7.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp7.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp7.TabIndex = 74;
-            this.pkeyCSharp7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp7.BackColor = Color.Black;
+            pkeyCSharp7.Location = new Point(474, 2);
+            pkeyCSharp7.Name = "pkeyCSharp7";
+            pkeyCSharp7.Size = new Size(8, 28);
+            pkeyCSharp7.TabIndex = 74;
+            pkeyCSharp7.StateChanged += PianoChanged;
             // 
             // pkeyD7
             // 
-            this.pkeyD7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD7.Location = new System.Drawing.Point(477, 2);
-            this.pkeyD7.Name = "pkeyD7";
-            this.pkeyD7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD7.Shape = PianoKeyShape.TShape;
-            this.pkeyD7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD7.TabIndex = 73;
-            this.pkeyD7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD7.Location = new Point(477, 2);
+            pkeyD7.Name = "pkeyD7";
+            pkeyD7.Size = new Size(12, 42);
+            pkeyD7.TabIndex = 73;
+            pkeyD7.StateChanged += PianoChanged;
             // 
             // pkeyDSharp7
             // 
-            this.pkeyDSharp7.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp7.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp7.Location = new System.Drawing.Point(485, 2);
-            this.pkeyDSharp7.Name = "pkeyDSharp7";
-            this.pkeyDSharp7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp7.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp7.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp7.TabIndex = 75;
-            this.pkeyDSharp7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp7.BackColor = Color.Black;
+            pkeyDSharp7.Location = new Point(485, 2);
+            pkeyDSharp7.Name = "pkeyDSharp7";
+            pkeyDSharp7.Size = new Size(8, 29);
+            pkeyDSharp7.TabIndex = 75;
+            pkeyDSharp7.StateChanged += PianoChanged;
             // 
             // pkeyF7
             // 
-            this.pkeyF7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF7.Location = new System.Drawing.Point(499, 2);
-            this.pkeyF7.Name = "pkeyF7";
-            this.pkeyF7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF7.Shape = PianoKeyShape.LShape;
-            this.pkeyF7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF7.TabIndex = 76;
-            this.pkeyF7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF7.Location = new Point(499, 2);
+            pkeyF7.Name = "pkeyF7";
+            pkeyF7.Size = new Size(12, 42);
+            pkeyF7.TabIndex = 76;
+            pkeyF7.StateChanged += PianoChanged;
             // 
             // pkeyFSharp7
             // 
-            this.pkeyFSharp7.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp7.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp7.Location = new System.Drawing.Point(507, 2);
-            this.pkeyFSharp7.Name = "pkeyFSharp7";
-            this.pkeyFSharp7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp7.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp7.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp7.TabIndex = 78;
-            this.pkeyFSharp7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp7.BackColor = Color.Black;
+            pkeyFSharp7.Location = new Point(507, 2);
+            pkeyFSharp7.Name = "pkeyFSharp7";
+            pkeyFSharp7.Size = new Size(8, 28);
+            pkeyFSharp7.TabIndex = 78;
+            pkeyFSharp7.StateChanged += PianoChanged;
             // 
             // pkeyG7
             // 
-            this.pkeyG7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG7.Location = new System.Drawing.Point(510, 2);
-            this.pkeyG7.Name = "pkeyG7";
-            this.pkeyG7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG7.Shape = PianoKeyShape.TShape;
-            this.pkeyG7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG7.TabIndex = 77;
-            this.pkeyG7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG7.Location = new Point(510, 2);
+            pkeyG7.Name = "pkeyG7";
+            pkeyG7.Size = new Size(12, 42);
+            pkeyG7.TabIndex = 77;
+            pkeyG7.StateChanged += PianoChanged;
             // 
             // pkeyGSharp7
             // 
-            this.pkeyGSharp7.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp7.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp7.Location = new System.Drawing.Point(518, 2);
-            this.pkeyGSharp7.Name = "pkeyGSharp7";
-            this.pkeyGSharp7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp7.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp7.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp7.TabIndex = 79;
-            this.pkeyGSharp7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp7.BackColor = Color.Black;
+            pkeyGSharp7.Location = new Point(518, 2);
+            pkeyGSharp7.Name = "pkeyGSharp7";
+            pkeyGSharp7.Size = new Size(8, 29);
+            pkeyGSharp7.TabIndex = 79;
+            pkeyGSharp7.StateChanged += PianoChanged;
             // 
             // pkeyA7
             // 
-            this.pkeyA7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA7.Location = new System.Drawing.Point(521, 2);
-            this.pkeyA7.Name = "pkeyA7";
-            this.pkeyA7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA7.Shape = PianoKeyShape.TShape;
-            this.pkeyA7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA7.TabIndex = 80;
-            this.pkeyA7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA7.Location = new Point(521, 2);
+            pkeyA7.Name = "pkeyA7";
+            pkeyA7.Size = new Size(12, 42);
+            pkeyA7.TabIndex = 80;
+            pkeyA7.StateChanged += PianoChanged;
             // 
             // pkeyASharp7
             // 
-            this.pkeyASharp7.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp7.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp7.Location = new System.Drawing.Point(529, 2);
-            this.pkeyASharp7.Name = "pkeyASharp7";
-            this.pkeyASharp7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp7.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp7.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp7.TabIndex = 81;
-            this.pkeyASharp7.Text = "pianoKey13";
-            this.pkeyASharp7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp7.BackColor = Color.Black;
+            pkeyASharp7.Location = new Point(529, 2);
+            pkeyASharp7.Name = "pkeyASharp7";
+            pkeyASharp7.Size = new Size(8, 29);
+            pkeyASharp7.TabIndex = 81;
+            pkeyASharp7.Text = "pianoKey13";
+            pkeyASharp7.StateChanged += PianoChanged;
             // 
             // pkeyB7
             // 
-            this.pkeyB7.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB7.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB7.Location = new System.Drawing.Point(532, 2);
-            this.pkeyB7.Name = "pkeyB7";
-            this.pkeyB7.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB7.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB7.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB7.TabIndex = 82;
-            this.pkeyB7.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB7.Location = new Point(532, 2);
+            pkeyB7.Name = "pkeyB7";
+            pkeyB7.Size = new Size(12, 42);
+            pkeyB7.TabIndex = 82;
+            pkeyB7.StateChanged += PianoChanged;
             // 
             // pkeyC6
             // 
-            this.pkeyC6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC6.Location = new System.Drawing.Point(389, 2);
-            this.pkeyC6.Name = "pkeyC6";
-            this.pkeyC6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC6.Shape = PianoKeyShape.LShape;
-            this.pkeyC6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC6.TabIndex = 71;
-            this.pkeyC6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC6.Location = new Point(389, 2);
+            pkeyC6.Name = "pkeyC6";
+            pkeyC6.Size = new Size(12, 42);
+            pkeyC6.TabIndex = 71;
+            pkeyC6.StateChanged += PianoChanged;
             // 
             // pkeyE6
             // 
-            this.pkeyE6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE6.Location = new System.Drawing.Point(411, 2);
-            this.pkeyE6.Name = "pkeyE6";
-            this.pkeyE6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE6.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE6.TabIndex = 72;
-            this.pkeyE6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE6.Location = new Point(411, 2);
+            pkeyE6.Name = "pkeyE6";
+            pkeyE6.Size = new Size(12, 42);
+            pkeyE6.TabIndex = 72;
+            pkeyE6.StateChanged += PianoChanged;
             // 
             // pkeyCSharp6
             // 
-            this.pkeyCSharp6.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp6.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp6.Location = new System.Drawing.Point(397, 2);
-            this.pkeyCSharp6.Name = "pkeyCSharp6";
-            this.pkeyCSharp6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp6.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp6.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp6.TabIndex = 62;
-            this.pkeyCSharp6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp6.BackColor = Color.Black;
+            pkeyCSharp6.Location = new Point(397, 2);
+            pkeyCSharp6.Name = "pkeyCSharp6";
+            pkeyCSharp6.Size = new Size(8, 28);
+            pkeyCSharp6.TabIndex = 62;
+            pkeyCSharp6.StateChanged += PianoChanged;
             // 
             // pkeyD6
             // 
-            this.pkeyD6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD6.Location = new System.Drawing.Point(400, 2);
-            this.pkeyD6.Name = "pkeyD6";
-            this.pkeyD6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD6.Shape = PianoKeyShape.TShape;
-            this.pkeyD6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD6.TabIndex = 61;
-            this.pkeyD6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD6.Location = new Point(400, 2);
+            pkeyD6.Name = "pkeyD6";
+            pkeyD6.Size = new Size(12, 42);
+            pkeyD6.TabIndex = 61;
+            pkeyD6.StateChanged += PianoChanged;
             // 
             // pkeyDSharp6
             // 
-            this.pkeyDSharp6.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp6.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp6.Location = new System.Drawing.Point(408, 2);
-            this.pkeyDSharp6.Name = "pkeyDSharp6";
-            this.pkeyDSharp6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp6.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp6.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp6.TabIndex = 63;
-            this.pkeyDSharp6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp6.BackColor = Color.Black;
+            pkeyDSharp6.Location = new Point(408, 2);
+            pkeyDSharp6.Name = "pkeyDSharp6";
+            pkeyDSharp6.Size = new Size(8, 29);
+            pkeyDSharp6.TabIndex = 63;
+            pkeyDSharp6.StateChanged += PianoChanged;
             // 
             // pkeyF6
             // 
-            this.pkeyF6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF6.Location = new System.Drawing.Point(422, 2);
-            this.pkeyF6.Name = "pkeyF6";
-            this.pkeyF6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF6.Shape = PianoKeyShape.LShape;
-            this.pkeyF6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF6.TabIndex = 64;
-            this.pkeyF6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF6.Location = new Point(422, 2);
+            pkeyF6.Name = "pkeyF6";
+            pkeyF6.Size = new Size(12, 42);
+            pkeyF6.TabIndex = 64;
+            pkeyF6.StateChanged += PianoChanged;
             // 
             // pkeyFSharp6
             // 
-            this.pkeyFSharp6.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp6.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp6.Location = new System.Drawing.Point(430, 2);
-            this.pkeyFSharp6.Name = "pkeyFSharp6";
-            this.pkeyFSharp6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp6.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp6.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp6.TabIndex = 66;
-            this.pkeyFSharp6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp6.BackColor = Color.Black;
+            pkeyFSharp6.Location = new Point(430, 2);
+            pkeyFSharp6.Name = "pkeyFSharp6";
+            pkeyFSharp6.Size = new Size(8, 28);
+            pkeyFSharp6.TabIndex = 66;
+            pkeyFSharp6.StateChanged += PianoChanged;
             // 
             // pkeyG6
             // 
-            this.pkeyG6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG6.Location = new System.Drawing.Point(433, 2);
-            this.pkeyG6.Name = "pkeyG6";
-            this.pkeyG6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG6.Shape = PianoKeyShape.TShape;
-            this.pkeyG6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG6.TabIndex = 65;
-            this.pkeyG6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG6.Location = new Point(433, 2);
+            pkeyG6.Name = "pkeyG6";
+            pkeyG6.Size = new Size(12, 42);
+            pkeyG6.TabIndex = 65;
+            pkeyG6.StateChanged += PianoChanged;
             // 
             // pkeyGSharp6
             // 
-            this.pkeyGSharp6.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp6.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp6.Location = new System.Drawing.Point(441, 2);
-            this.pkeyGSharp6.Name = "pkeyGSharp6";
-            this.pkeyGSharp6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp6.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp6.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp6.TabIndex = 67;
-            this.pkeyGSharp6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp6.BackColor = Color.Black;
+            pkeyGSharp6.Location = new Point(441, 2);
+            pkeyGSharp6.Name = "pkeyGSharp6";
+            pkeyGSharp6.Size = new Size(8, 29);
+            pkeyGSharp6.TabIndex = 67;
+            pkeyGSharp6.StateChanged += PianoChanged;
             // 
             // pkeyA6
             // 
-            this.pkeyA6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA6.Location = new System.Drawing.Point(444, 2);
-            this.pkeyA6.Name = "pkeyA6";
-            this.pkeyA6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA6.Shape = PianoKeyShape.TShape;
-            this.pkeyA6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA6.TabIndex = 68;
-            this.pkeyA6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA6.Location = new Point(444, 2);
+            pkeyA6.Name = "pkeyA6";
+            pkeyA6.Size = new Size(12, 42);
+            pkeyA6.TabIndex = 68;
+            pkeyA6.StateChanged += PianoChanged;
             // 
             // pkeyASharp6
             // 
-            this.pkeyASharp6.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp6.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp6.Location = new System.Drawing.Point(452, 2);
-            this.pkeyASharp6.Name = "pkeyASharp6";
-            this.pkeyASharp6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp6.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp6.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp6.TabIndex = 69;
-            this.pkeyASharp6.Text = "pianoKey13";
-            this.pkeyASharp6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp6.BackColor = Color.Black;
+            pkeyASharp6.Location = new Point(452, 2);
+            pkeyASharp6.Name = "pkeyASharp6";
+            pkeyASharp6.Size = new Size(8, 29);
+            pkeyASharp6.TabIndex = 69;
+            pkeyASharp6.Text = "pianoKey13";
+            pkeyASharp6.StateChanged += PianoChanged;
             // 
             // pkeyB6
             // 
-            this.pkeyB6.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB6.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB6.Location = new System.Drawing.Point(455, 2);
-            this.pkeyB6.Name = "pkeyB6";
-            this.pkeyB6.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB6.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB6.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB6.TabIndex = 70;
-            this.pkeyB6.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB6.Location = new Point(455, 2);
+            pkeyB6.Name = "pkeyB6";
+            pkeyB6.Size = new Size(12, 42);
+            pkeyB6.TabIndex = 70;
+            pkeyB6.StateChanged += PianoChanged;
             // 
             // pkeyC1
             // 
-            this.pkeyC1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC1.Location = new System.Drawing.Point(4, 2);
-            this.pkeyC1.Name = "pkeyC1";
-            this.pkeyC1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC1.Shape = PianoKeyShape.LShape;
-            this.pkeyC1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC1.TabIndex = 0;
-            this.pkeyC1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC1.Location = new Point(4, 2);
+            pkeyC1.Name = "pkeyC1";
+            pkeyC1.Size = new Size(12, 42);
+            pkeyC1.TabIndex = 0;
+            pkeyC1.StateChanged += PianoChanged;
             // 
             // pkeyCSharp1
             // 
-            this.pkeyCSharp1.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp1.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp1.Location = new System.Drawing.Point(12, 2);
-            this.pkeyCSharp1.Name = "pkeyCSharp1";
-            this.pkeyCSharp1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp1.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp1.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp1.TabIndex = 3;
-            this.pkeyCSharp1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp1.BackColor = Color.Black;
+            pkeyCSharp1.Location = new Point(12, 2);
+            pkeyCSharp1.Name = "pkeyCSharp1";
+            pkeyCSharp1.Size = new Size(8, 28);
+            pkeyCSharp1.TabIndex = 3;
+            pkeyCSharp1.StateChanged += PianoChanged;
             // 
             // pkeyD1
             // 
-            this.pkeyD1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD1.Location = new System.Drawing.Point(15, 2);
-            this.pkeyD1.Name = "pkeyD1";
-            this.pkeyD1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD1.Shape = PianoKeyShape.TShape;
-            this.pkeyD1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD1.TabIndex = 1;
-            this.pkeyD1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD1.Location = new Point(15, 2);
+            pkeyD1.Name = "pkeyD1";
+            pkeyD1.Size = new Size(12, 42);
+            pkeyD1.TabIndex = 1;
+            pkeyD1.StateChanged += PianoChanged;
             // 
             // pkeyDSharp1
             // 
-            this.pkeyDSharp1.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp1.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp1.Location = new System.Drawing.Point(23, 2);
-            this.pkeyDSharp1.Name = "pkeyDSharp1";
-            this.pkeyDSharp1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp1.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp1.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp1.TabIndex = 4;
-            this.pkeyDSharp1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp1.BackColor = Color.Black;
+            pkeyDSharp1.Location = new Point(23, 2);
+            pkeyDSharp1.Name = "pkeyDSharp1";
+            pkeyDSharp1.Size = new Size(8, 29);
+            pkeyDSharp1.TabIndex = 4;
+            pkeyDSharp1.StateChanged += PianoChanged;
             // 
             // pkeyE1
             // 
-            this.pkeyE1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE1.Location = new System.Drawing.Point(26, 2);
-            this.pkeyE1.Name = "pkeyE1";
-            this.pkeyE1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE1.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE1.TabIndex = 2;
-            this.pkeyE1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE1.Location = new Point(26, 2);
+            pkeyE1.Name = "pkeyE1";
+            pkeyE1.Size = new Size(12, 42);
+            pkeyE1.TabIndex = 2;
+            pkeyE1.StateChanged += PianoChanged;
             // 
             // pkeyF1
             // 
-            this.pkeyF1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF1.Location = new System.Drawing.Point(37, 2);
-            this.pkeyF1.Name = "pkeyF1";
-            this.pkeyF1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF1.Shape = PianoKeyShape.LShape;
-            this.pkeyF1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF1.TabIndex = 5;
-            this.pkeyF1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF1.Location = new Point(37, 2);
+            pkeyF1.Name = "pkeyF1";
+            pkeyF1.Size = new Size(12, 42);
+            pkeyF1.TabIndex = 5;
+            pkeyF1.StateChanged += PianoChanged;
             // 
             // pkeyFSharp1
             // 
-            this.pkeyFSharp1.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp1.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp1.Location = new System.Drawing.Point(45, 2);
-            this.pkeyFSharp1.Name = "pkeyFSharp1";
-            this.pkeyFSharp1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp1.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp1.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp1.TabIndex = 7;
-            this.pkeyFSharp1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp1.BackColor = Color.Black;
+            pkeyFSharp1.Location = new Point(45, 2);
+            pkeyFSharp1.Name = "pkeyFSharp1";
+            pkeyFSharp1.Size = new Size(8, 28);
+            pkeyFSharp1.TabIndex = 7;
+            pkeyFSharp1.StateChanged += PianoChanged;
             // 
             // pkeyG1
             // 
-            this.pkeyG1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG1.Location = new System.Drawing.Point(48, 2);
-            this.pkeyG1.Name = "pkeyG1";
-            this.pkeyG1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG1.Shape = PianoKeyShape.TShape;
-            this.pkeyG1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG1.TabIndex = 6;
-            this.pkeyG1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG1.Location = new Point(48, 2);
+            pkeyG1.Name = "pkeyG1";
+            pkeyG1.Size = new Size(12, 42);
+            pkeyG1.TabIndex = 6;
+            pkeyG1.StateChanged += PianoChanged;
             // 
             // pkeyGSharp1
             // 
-            this.pkeyGSharp1.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp1.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp1.Location = new System.Drawing.Point(56, 2);
-            this.pkeyGSharp1.Name = "pkeyGSharp1";
-            this.pkeyGSharp1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp1.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp1.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp1.TabIndex = 8;
-            this.pkeyGSharp1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp1.BackColor = Color.Black;
+            pkeyGSharp1.Location = new Point(56, 2);
+            pkeyGSharp1.Name = "pkeyGSharp1";
+            pkeyGSharp1.Size = new Size(8, 29);
+            pkeyGSharp1.TabIndex = 8;
+            pkeyGSharp1.StateChanged += PianoChanged;
             // 
             // pkeyA1
             // 
-            this.pkeyA1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA1.Location = new System.Drawing.Point(59, 2);
-            this.pkeyA1.Name = "pkeyA1";
-            this.pkeyA1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA1.Shape = PianoKeyShape.TShape;
-            this.pkeyA1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA1.TabIndex = 9;
-            this.pkeyA1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA1.Location = new Point(59, 2);
+            pkeyA1.Name = "pkeyA1";
+            pkeyA1.Size = new Size(12, 42);
+            pkeyA1.TabIndex = 9;
+            pkeyA1.StateChanged += PianoChanged;
             // 
             // pkeyASharp1
             // 
-            this.pkeyASharp1.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp1.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp1.Location = new System.Drawing.Point(67, 2);
-            this.pkeyASharp1.Name = "pkeyASharp1";
-            this.pkeyASharp1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp1.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp1.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp1.TabIndex = 10;
-            this.pkeyASharp1.Text = "pianoKey13";
-            this.pkeyASharp1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp1.BackColor = Color.Black;
+            pkeyASharp1.Location = new Point(67, 2);
+            pkeyASharp1.Name = "pkeyASharp1";
+            pkeyASharp1.Size = new Size(8, 29);
+            pkeyASharp1.TabIndex = 10;
+            pkeyASharp1.Text = "pianoKey13";
+            pkeyASharp1.StateChanged += PianoChanged;
             // 
             // pkeyB1
             // 
-            this.pkeyB1.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB1.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB1.Location = new System.Drawing.Point(70, 2);
-            this.pkeyB1.Name = "pkeyB1";
-            this.pkeyB1.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB1.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB1.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB1.TabIndex = 11;
-            this.pkeyB1.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB1.Location = new Point(70, 2);
+            pkeyB1.Name = "pkeyB1";
+            pkeyB1.Size = new Size(12, 42);
+            pkeyB1.TabIndex = 11;
+            pkeyB1.StateChanged += PianoChanged;
             // 
             // pkeyC2
             // 
-            this.pkeyC2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC2.Location = new System.Drawing.Point(81, 2);
-            this.pkeyC2.Name = "pkeyC2";
-            this.pkeyC2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC2.Shape = PianoKeyShape.LShape;
-            this.pkeyC2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC2.TabIndex = 12;
-            this.pkeyC2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC2.Location = new Point(81, 2);
+            pkeyC2.Name = "pkeyC2";
+            pkeyC2.Size = new Size(12, 42);
+            pkeyC2.TabIndex = 12;
+            pkeyC2.StateChanged += PianoChanged;
             // 
             // pkeyCSharp2
             // 
-            this.pkeyCSharp2.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp2.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp2.Location = new System.Drawing.Point(89, 2);
-            this.pkeyCSharp2.Name = "pkeyCSharp2";
-            this.pkeyCSharp2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp2.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp2.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp2.TabIndex = 15;
-            this.pkeyCSharp2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp2.BackColor = Color.Black;
+            pkeyCSharp2.Location = new Point(89, 2);
+            pkeyCSharp2.Name = "pkeyCSharp2";
+            pkeyCSharp2.Size = new Size(8, 28);
+            pkeyCSharp2.TabIndex = 15;
+            pkeyCSharp2.StateChanged += PianoChanged;
             // 
             // pkeyD2
             // 
-            this.pkeyD2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD2.Location = new System.Drawing.Point(92, 2);
-            this.pkeyD2.Name = "pkeyD2";
-            this.pkeyD2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD2.Shape = PianoKeyShape.TShape;
-            this.pkeyD2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD2.TabIndex = 13;
-            this.pkeyD2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD2.Location = new Point(92, 2);
+            pkeyD2.Name = "pkeyD2";
+            pkeyD2.Size = new Size(12, 42);
+            pkeyD2.TabIndex = 13;
+            pkeyD2.StateChanged += PianoChanged;
             // 
             // pkeyDSharp2
             // 
-            this.pkeyDSharp2.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp2.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp2.Location = new System.Drawing.Point(100, 2);
-            this.pkeyDSharp2.Name = "pkeyDSharp2";
-            this.pkeyDSharp2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp2.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp2.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp2.TabIndex = 16;
-            this.pkeyDSharp2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp2.BackColor = Color.Black;
+            pkeyDSharp2.Location = new Point(100, 2);
+            pkeyDSharp2.Name = "pkeyDSharp2";
+            pkeyDSharp2.Size = new Size(8, 29);
+            pkeyDSharp2.TabIndex = 16;
+            pkeyDSharp2.StateChanged += PianoChanged;
             // 
             // pkeyE2
             // 
-            this.pkeyE2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE2.Location = new System.Drawing.Point(103, 2);
-            this.pkeyE2.Name = "pkeyE2";
-            this.pkeyE2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE2.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE2.TabIndex = 14;
-            this.pkeyE2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE2.Location = new Point(103, 2);
+            pkeyE2.Name = "pkeyE2";
+            pkeyE2.Size = new Size(12, 42);
+            pkeyE2.TabIndex = 14;
+            pkeyE2.StateChanged += PianoChanged;
             // 
             // pkeyF2
             // 
-            this.pkeyF2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF2.Location = new System.Drawing.Point(114, 2);
-            this.pkeyF2.Name = "pkeyF2";
-            this.pkeyF2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF2.Shape = PianoKeyShape.LShape;
-            this.pkeyF2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF2.TabIndex = 17;
-            this.pkeyF2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF2.Location = new Point(114, 2);
+            pkeyF2.Name = "pkeyF2";
+            pkeyF2.Size = new Size(12, 42);
+            pkeyF2.TabIndex = 17;
+            pkeyF2.StateChanged += PianoChanged;
             // 
             // pkeyFSharp2
             // 
-            this.pkeyFSharp2.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp2.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp2.Location = new System.Drawing.Point(122, 2);
-            this.pkeyFSharp2.Name = "pkeyFSharp2";
-            this.pkeyFSharp2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp2.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp2.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp2.TabIndex = 19;
-            this.pkeyFSharp2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp2.BackColor = Color.Black;
+            pkeyFSharp2.Location = new Point(122, 2);
+            pkeyFSharp2.Name = "pkeyFSharp2";
+            pkeyFSharp2.Size = new Size(8, 28);
+            pkeyFSharp2.TabIndex = 19;
+            pkeyFSharp2.StateChanged += PianoChanged;
             // 
             // pkeyG2
             // 
-            this.pkeyG2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG2.Location = new System.Drawing.Point(125, 2);
-            this.pkeyG2.Name = "pkeyG2";
-            this.pkeyG2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG2.Shape = PianoKeyShape.TShape;
-            this.pkeyG2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG2.TabIndex = 18;
-            this.pkeyG2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG2.Location = new Point(125, 2);
+            pkeyG2.Name = "pkeyG2";
+            pkeyG2.Size = new Size(12, 42);
+            pkeyG2.TabIndex = 18;
+            pkeyG2.StateChanged += PianoChanged;
             // 
             // pkeyGSharp2
             // 
-            this.pkeyGSharp2.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp2.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp2.Location = new System.Drawing.Point(133, 2);
-            this.pkeyGSharp2.Name = "pkeyGSharp2";
-            this.pkeyGSharp2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp2.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp2.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp2.TabIndex = 20;
-            this.pkeyGSharp2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp2.BackColor = Color.Black;
+            pkeyGSharp2.Location = new Point(133, 2);
+            pkeyGSharp2.Name = "pkeyGSharp2";
+            pkeyGSharp2.Size = new Size(8, 29);
+            pkeyGSharp2.TabIndex = 20;
+            pkeyGSharp2.StateChanged += PianoChanged;
             // 
             // pkeyA2
             // 
-            this.pkeyA2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA2.Location = new System.Drawing.Point(136, 2);
-            this.pkeyA2.Name = "pkeyA2";
-            this.pkeyA2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA2.Shape = PianoKeyShape.TShape;
-            this.pkeyA2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA2.TabIndex = 21;
-            this.pkeyA2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA2.Location = new Point(136, 2);
+            pkeyA2.Name = "pkeyA2";
+            pkeyA2.Size = new Size(12, 42);
+            pkeyA2.TabIndex = 21;
+            pkeyA2.StateChanged += PianoChanged;
             // 
             // pkeyASharp2
             // 
-            this.pkeyASharp2.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp2.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp2.Location = new System.Drawing.Point(144, 2);
-            this.pkeyASharp2.Name = "pkeyASharp2";
-            this.pkeyASharp2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp2.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp2.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp2.TabIndex = 22;
-            this.pkeyASharp2.Text = "pianoKey13";
-            this.pkeyASharp2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp2.BackColor = Color.Black;
+            pkeyASharp2.Location = new Point(144, 2);
+            pkeyASharp2.Name = "pkeyASharp2";
+            pkeyASharp2.Size = new Size(8, 29);
+            pkeyASharp2.TabIndex = 22;
+            pkeyASharp2.Text = "pianoKey13";
+            pkeyASharp2.StateChanged += PianoChanged;
             // 
             // pkeyB2
             // 
-            this.pkeyB2.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB2.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB2.Location = new System.Drawing.Point(147, 2);
-            this.pkeyB2.Name = "pkeyB2";
-            this.pkeyB2.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB2.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB2.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB2.TabIndex = 23;
-            this.pkeyB2.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB2.Location = new Point(147, 2);
+            pkeyB2.Name = "pkeyB2";
+            pkeyB2.Size = new Size(12, 42);
+            pkeyB2.TabIndex = 23;
+            pkeyB2.StateChanged += PianoChanged;
             // 
             // pkeyC3
             // 
-            this.pkeyC3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC3.Location = new System.Drawing.Point(158, 2);
-            this.pkeyC3.Name = "pkeyC3";
-            this.pkeyC3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC3.Shape = PianoKeyShape.LShape;
-            this.pkeyC3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC3.TabIndex = 24;
-            this.pkeyC3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC3.Location = new Point(158, 2);
+            pkeyC3.Name = "pkeyC3";
+            pkeyC3.Size = new Size(12, 42);
+            pkeyC3.TabIndex = 24;
+            pkeyC3.StateChanged += PianoChanged;
             // 
             // pkeyCSharp3
             // 
-            this.pkeyCSharp3.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp3.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp3.Location = new System.Drawing.Point(166, 2);
-            this.pkeyCSharp3.Name = "pkeyCSharp3";
-            this.pkeyCSharp3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp3.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp3.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp3.TabIndex = 27;
-            this.pkeyCSharp3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp3.BackColor = Color.Black;
+            pkeyCSharp3.Location = new Point(166, 2);
+            pkeyCSharp3.Name = "pkeyCSharp3";
+            pkeyCSharp3.Size = new Size(8, 28);
+            pkeyCSharp3.TabIndex = 27;
+            pkeyCSharp3.StateChanged += PianoChanged;
             // 
             // pkeyD3
             // 
-            this.pkeyD3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD3.Location = new System.Drawing.Point(169, 2);
-            this.pkeyD3.Name = "pkeyD3";
-            this.pkeyD3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD3.Shape = PianoKeyShape.TShape;
-            this.pkeyD3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD3.TabIndex = 25;
-            this.pkeyD3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD3.Location = new Point(169, 2);
+            pkeyD3.Name = "pkeyD3";
+            pkeyD3.Size = new Size(12, 42);
+            pkeyD3.TabIndex = 25;
+            pkeyD3.StateChanged += PianoChanged;
             // 
             // pkeyDSharp3
             // 
-            this.pkeyDSharp3.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp3.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp3.Location = new System.Drawing.Point(177, 2);
-            this.pkeyDSharp3.Name = "pkeyDSharp3";
-            this.pkeyDSharp3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp3.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp3.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp3.TabIndex = 28;
-            this.pkeyDSharp3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp3.BackColor = Color.Black;
+            pkeyDSharp3.Location = new Point(177, 2);
+            pkeyDSharp3.Name = "pkeyDSharp3";
+            pkeyDSharp3.Size = new Size(8, 29);
+            pkeyDSharp3.TabIndex = 28;
+            pkeyDSharp3.StateChanged += PianoChanged;
             // 
             // pkeyE3
             // 
-            this.pkeyE3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE3.Location = new System.Drawing.Point(180, 2);
-            this.pkeyE3.Name = "pkeyE3";
-            this.pkeyE3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE3.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE3.TabIndex = 26;
-            this.pkeyE3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE3.Location = new Point(180, 2);
+            pkeyE3.Name = "pkeyE3";
+            pkeyE3.Size = new Size(12, 42);
+            pkeyE3.TabIndex = 26;
+            pkeyE3.StateChanged += PianoChanged;
             // 
             // pkeyF3
             // 
-            this.pkeyF3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF3.Location = new System.Drawing.Point(191, 2);
-            this.pkeyF3.Name = "pkeyF3";
-            this.pkeyF3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF3.Shape = PianoKeyShape.LShape;
-            this.pkeyF3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF3.TabIndex = 29;
-            this.pkeyF3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF3.Location = new Point(191, 2);
+            pkeyF3.Name = "pkeyF3";
+            pkeyF3.Size = new Size(12, 42);
+            pkeyF3.TabIndex = 29;
+            pkeyF3.StateChanged += PianoChanged;
             // 
             // pkeyFSharp3
             // 
-            this.pkeyFSharp3.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp3.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp3.Location = new System.Drawing.Point(199, 2);
-            this.pkeyFSharp3.Name = "pkeyFSharp3";
-            this.pkeyFSharp3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp3.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp3.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp3.TabIndex = 31;
-            this.pkeyFSharp3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp3.BackColor = Color.Black;
+            pkeyFSharp3.Location = new Point(199, 2);
+            pkeyFSharp3.Name = "pkeyFSharp3";
+            pkeyFSharp3.Size = new Size(8, 28);
+            pkeyFSharp3.TabIndex = 31;
+            pkeyFSharp3.StateChanged += PianoChanged;
             // 
             // pkeyG3
             // 
-            this.pkeyG3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG3.Location = new System.Drawing.Point(202, 2);
-            this.pkeyG3.Name = "pkeyG3";
-            this.pkeyG3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG3.Shape = PianoKeyShape.TShape;
-            this.pkeyG3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG3.TabIndex = 30;
-            this.pkeyG3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG3.Location = new Point(202, 2);
+            pkeyG3.Name = "pkeyG3";
+            pkeyG3.Size = new Size(12, 42);
+            pkeyG3.TabIndex = 30;
+            pkeyG3.StateChanged += PianoChanged;
             // 
             // pkeyGSharp3
             // 
-            this.pkeyGSharp3.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp3.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp3.Location = new System.Drawing.Point(210, 2);
-            this.pkeyGSharp3.Name = "pkeyGSharp3";
-            this.pkeyGSharp3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp3.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp3.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp3.TabIndex = 32;
-            this.pkeyGSharp3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp3.BackColor = Color.Black;
+            pkeyGSharp3.Location = new Point(210, 2);
+            pkeyGSharp3.Name = "pkeyGSharp3";
+            pkeyGSharp3.Size = new Size(8, 29);
+            pkeyGSharp3.TabIndex = 32;
+            pkeyGSharp3.StateChanged += PianoChanged;
             // 
             // pkeyA3
             // 
-            this.pkeyA3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA3.Location = new System.Drawing.Point(213, 2);
-            this.pkeyA3.Name = "pkeyA3";
-            this.pkeyA3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA3.Shape = PianoKeyShape.TShape;
-            this.pkeyA3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA3.TabIndex = 33;
-            this.pkeyA3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA3.Location = new Point(213, 2);
+            pkeyA3.Name = "pkeyA3";
+            pkeyA3.Size = new Size(12, 42);
+            pkeyA3.TabIndex = 33;
+            pkeyA3.StateChanged += PianoChanged;
             // 
             // pkeyASharp3
             // 
-            this.pkeyASharp3.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp3.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp3.Location = new System.Drawing.Point(221, 2);
-            this.pkeyASharp3.Name = "pkeyASharp3";
-            this.pkeyASharp3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp3.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp3.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp3.TabIndex = 34;
-            this.pkeyASharp3.Text = "pianoKey13";
-            this.pkeyASharp3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp3.BackColor = Color.Black;
+            pkeyASharp3.Location = new Point(221, 2);
+            pkeyASharp3.Name = "pkeyASharp3";
+            pkeyASharp3.Size = new Size(8, 29);
+            pkeyASharp3.TabIndex = 34;
+            pkeyASharp3.Text = "pianoKey13";
+            pkeyASharp3.StateChanged += PianoChanged;
             // 
             // pkeyB3
             // 
-            this.pkeyB3.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB3.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB3.Location = new System.Drawing.Point(224, 2);
-            this.pkeyB3.Name = "pkeyB3";
-            this.pkeyB3.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB3.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB3.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB3.TabIndex = 35;
-            this.pkeyB3.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB3.Location = new Point(224, 2);
+            pkeyB3.Name = "pkeyB3";
+            pkeyB3.Size = new Size(12, 42);
+            pkeyB3.TabIndex = 35;
+            pkeyB3.StateChanged += PianoChanged;
             // 
             // pkeyC4
             // 
-            this.pkeyC4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC4.Location = new System.Drawing.Point(235, 2);
-            this.pkeyC4.Name = "pkeyC4";
-            this.pkeyC4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC4.Shape = PianoKeyShape.LShape;
-            this.pkeyC4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC4.TabIndex = 36;
-            this.pkeyC4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC4.Location = new Point(235, 2);
+            pkeyC4.Name = "pkeyC4";
+            pkeyC4.Size = new Size(12, 42);
+            pkeyC4.TabIndex = 36;
+            pkeyC4.StateChanged += PianoChanged;
             // 
             // pkeyCSharp4
             // 
-            this.pkeyCSharp4.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp4.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp4.Location = new System.Drawing.Point(243, 2);
-            this.pkeyCSharp4.Name = "pkeyCSharp4";
-            this.pkeyCSharp4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp4.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp4.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp4.TabIndex = 39;
-            this.pkeyCSharp4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp4.BackColor = Color.Black;
+            pkeyCSharp4.Location = new Point(243, 2);
+            pkeyCSharp4.Name = "pkeyCSharp4";
+            pkeyCSharp4.Size = new Size(8, 28);
+            pkeyCSharp4.TabIndex = 39;
+            pkeyCSharp4.StateChanged += PianoChanged;
             // 
             // pkeyD4
             // 
-            this.pkeyD4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD4.Location = new System.Drawing.Point(246, 2);
-            this.pkeyD4.Name = "pkeyD4";
-            this.pkeyD4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD4.Shape = PianoKeyShape.TShape;
-            this.pkeyD4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD4.TabIndex = 37;
-            this.pkeyD4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD4.Location = new Point(246, 2);
+            pkeyD4.Name = "pkeyD4";
+            pkeyD4.Size = new Size(12, 42);
+            pkeyD4.TabIndex = 37;
+            pkeyD4.StateChanged += PianoChanged;
             // 
             // pkeyDSharp4
             // 
-            this.pkeyDSharp4.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp4.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp4.Location = new System.Drawing.Point(254, 2);
-            this.pkeyDSharp4.Name = "pkeyDSharp4";
-            this.pkeyDSharp4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp4.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp4.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp4.TabIndex = 40;
-            this.pkeyDSharp4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp4.BackColor = Color.Black;
+            pkeyDSharp4.Location = new Point(254, 2);
+            pkeyDSharp4.Name = "pkeyDSharp4";
+            pkeyDSharp4.Size = new Size(8, 29);
+            pkeyDSharp4.TabIndex = 40;
+            pkeyDSharp4.StateChanged += PianoChanged;
             // 
             // pkeyE4
             // 
-            this.pkeyE4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE4.Location = new System.Drawing.Point(257, 2);
-            this.pkeyE4.Name = "pkeyE4";
-            this.pkeyE4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE4.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE4.TabIndex = 38;
-            this.pkeyE4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE4.Location = new Point(257, 2);
+            pkeyE4.Name = "pkeyE4";
+            pkeyE4.Size = new Size(12, 42);
+            pkeyE4.TabIndex = 38;
+            pkeyE4.StateChanged += PianoChanged;
             // 
             // pkeyF4
             // 
-            this.pkeyF4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF4.Location = new System.Drawing.Point(268, 2);
-            this.pkeyF4.Name = "pkeyF4";
-            this.pkeyF4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF4.Shape = PianoKeyShape.LShape;
-            this.pkeyF4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF4.TabIndex = 41;
-            this.pkeyF4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF4.Location = new Point(268, 2);
+            pkeyF4.Name = "pkeyF4";
+            pkeyF4.Size = new Size(12, 42);
+            pkeyF4.TabIndex = 41;
+            pkeyF4.StateChanged += PianoChanged;
             // 
             // pkeyFSharp4
             // 
-            this.pkeyFSharp4.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp4.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp4.Location = new System.Drawing.Point(276, 2);
-            this.pkeyFSharp4.Name = "pkeyFSharp4";
-            this.pkeyFSharp4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp4.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp4.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp4.TabIndex = 43;
-            this.pkeyFSharp4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp4.BackColor = Color.Black;
+            pkeyFSharp4.Location = new Point(276, 2);
+            pkeyFSharp4.Name = "pkeyFSharp4";
+            pkeyFSharp4.Size = new Size(8, 28);
+            pkeyFSharp4.TabIndex = 43;
+            pkeyFSharp4.StateChanged += PianoChanged;
             // 
             // pkeyG4
             // 
-            this.pkeyG4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG4.Location = new System.Drawing.Point(279, 2);
-            this.pkeyG4.Name = "pkeyG4";
-            this.pkeyG4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG4.Shape = PianoKeyShape.TShape;
-            this.pkeyG4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG4.TabIndex = 42;
-            this.pkeyG4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG4.Location = new Point(279, 2);
+            pkeyG4.Name = "pkeyG4";
+            pkeyG4.Size = new Size(12, 42);
+            pkeyG4.TabIndex = 42;
+            pkeyG4.StateChanged += PianoChanged;
             // 
             // pkeyGSharp4
             // 
-            this.pkeyGSharp4.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp4.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp4.Location = new System.Drawing.Point(287, 2);
-            this.pkeyGSharp4.Name = "pkeyGSharp4";
-            this.pkeyGSharp4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp4.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp4.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp4.TabIndex = 44;
-            this.pkeyGSharp4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp4.BackColor = Color.Black;
+            pkeyGSharp4.Location = new Point(287, 2);
+            pkeyGSharp4.Name = "pkeyGSharp4";
+            pkeyGSharp4.Size = new Size(8, 29);
+            pkeyGSharp4.TabIndex = 44;
+            pkeyGSharp4.StateChanged += PianoChanged;
             // 
             // pkeyA4
             // 
-            this.pkeyA4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA4.Location = new System.Drawing.Point(290, 2);
-            this.pkeyA4.Name = "pkeyA4";
-            this.pkeyA4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA4.Shape = PianoKeyShape.TShape;
-            this.pkeyA4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA4.TabIndex = 45;
-            this.pkeyA4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA4.Location = new Point(290, 2);
+            pkeyA4.Name = "pkeyA4";
+            pkeyA4.Size = new Size(12, 42);
+            pkeyA4.TabIndex = 45;
+            pkeyA4.StateChanged += PianoChanged;
             // 
             // pkeyASharp4
             // 
-            this.pkeyASharp4.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp4.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp4.Location = new System.Drawing.Point(298, 2);
-            this.pkeyASharp4.Name = "pkeyASharp4";
-            this.pkeyASharp4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp4.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp4.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp4.TabIndex = 46;
-            this.pkeyASharp4.Text = "pianoKey13";
-            this.pkeyASharp4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp4.BackColor = Color.Black;
+            pkeyASharp4.Location = new Point(298, 2);
+            pkeyASharp4.Name = "pkeyASharp4";
+            pkeyASharp4.Size = new Size(8, 29);
+            pkeyASharp4.TabIndex = 46;
+            pkeyASharp4.Text = "pianoKey13";
+            pkeyASharp4.StateChanged += PianoChanged;
             // 
             // pkeyB4
             // 
-            this.pkeyB4.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB4.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB4.Location = new System.Drawing.Point(301, 2);
-            this.pkeyB4.Name = "pkeyB4";
-            this.pkeyB4.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB4.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB4.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB4.TabIndex = 47;
-            this.pkeyB4.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB4.Location = new Point(301, 2);
+            pkeyB4.Name = "pkeyB4";
+            pkeyB4.Size = new Size(12, 42);
+            pkeyB4.TabIndex = 47;
+            pkeyB4.StateChanged += PianoChanged;
             // 
             // pkeyC5
             // 
-            this.pkeyC5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC5.Location = new System.Drawing.Point(312, 2);
-            this.pkeyC5.Name = "pkeyC5";
-            this.pkeyC5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC5.Shape = PianoKeyShape.LShape;
-            this.pkeyC5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC5.TabIndex = 48;
-            this.pkeyC5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC5.Location = new Point(312, 2);
+            pkeyC5.Name = "pkeyC5";
+            pkeyC5.Size = new Size(12, 42);
+            pkeyC5.TabIndex = 48;
+            pkeyC5.StateChanged += PianoChanged;
             // 
             // pkeyCSharp5
             // 
-            this.pkeyCSharp5.BackColor = System.Drawing.Color.Black;
-            this.pkeyCSharp5.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyCSharp5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyCSharp5.Location = new System.Drawing.Point(320, 2);
-            this.pkeyCSharp5.Name = "pkeyCSharp5";
-            this.pkeyCSharp5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyCSharp5.Shape = PianoKeyShape.RectShape;
-            this.pkeyCSharp5.Size = new System.Drawing.Size(8, 28);
-            this.pkeyCSharp5.TabIndex = 51;
-            this.pkeyCSharp5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyCSharp5.BackColor = Color.Black;
+            pkeyCSharp5.Location = new Point(320, 2);
+            pkeyCSharp5.Name = "pkeyCSharp5";
+            pkeyCSharp5.Size = new Size(8, 28);
+            pkeyCSharp5.TabIndex = 51;
+            pkeyCSharp5.StateChanged += PianoChanged;
             // 
             // pkeyD5
             // 
-            this.pkeyD5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pkeyD5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyD5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyD5.Location = new System.Drawing.Point(323, 2);
-            this.pkeyD5.Name = "pkeyD5";
-            this.pkeyD5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyD5.Shape = PianoKeyShape.TShape;
-            this.pkeyD5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyD5.TabIndex = 49;
-            this.pkeyD5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyD5.BackColor = SystemColors.ControlLightLight;
+            pkeyD5.Location = new Point(323, 2);
+            pkeyD5.Name = "pkeyD5";
+            pkeyD5.Size = new Size(12, 42);
+            pkeyD5.TabIndex = 49;
+            pkeyD5.StateChanged += PianoChanged;
             // 
             // pkeyDSharp5
             // 
-            this.pkeyDSharp5.BackColor = System.Drawing.Color.Black;
-            this.pkeyDSharp5.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyDSharp5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyDSharp5.Location = new System.Drawing.Point(331, 2);
-            this.pkeyDSharp5.Name = "pkeyDSharp5";
-            this.pkeyDSharp5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyDSharp5.Shape = PianoKeyShape.RectShape;
-            this.pkeyDSharp5.Size = new System.Drawing.Size(8, 29);
-            this.pkeyDSharp5.TabIndex = 52;
-            this.pkeyDSharp5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyDSharp5.BackColor = Color.Black;
+            pkeyDSharp5.Location = new Point(331, 2);
+            pkeyDSharp5.Name = "pkeyDSharp5";
+            pkeyDSharp5.Size = new Size(8, 29);
+            pkeyDSharp5.TabIndex = 52;
+            pkeyDSharp5.StateChanged += PianoChanged;
             // 
             // pkeyE5
             // 
-            this.pkeyE5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyE5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyE5.Location = new System.Drawing.Point(334, 2);
-            this.pkeyE5.Name = "pkeyE5";
-            this.pkeyE5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyE5.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyE5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyE5.TabIndex = 50;
-            this.pkeyE5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyE5.Location = new Point(334, 2);
+            pkeyE5.Name = "pkeyE5";
+            pkeyE5.Size = new Size(12, 42);
+            pkeyE5.TabIndex = 50;
+            pkeyE5.StateChanged += PianoChanged;
             // 
             // pkeyF5
             // 
-            this.pkeyF5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyF5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyF5.Location = new System.Drawing.Point(345, 2);
-            this.pkeyF5.Name = "pkeyF5";
-            this.pkeyF5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyF5.Shape = PianoKeyShape.LShape;
-            this.pkeyF5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyF5.TabIndex = 53;
-            this.pkeyF5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyF5.Location = new Point(345, 2);
+            pkeyF5.Name = "pkeyF5";
+            pkeyF5.Size = new Size(12, 42);
+            pkeyF5.TabIndex = 53;
+            pkeyF5.StateChanged += PianoChanged;
             // 
             // pkeyFSharp5
             // 
-            this.pkeyFSharp5.BackColor = System.Drawing.Color.Black;
-            this.pkeyFSharp5.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyFSharp5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyFSharp5.Location = new System.Drawing.Point(353, 2);
-            this.pkeyFSharp5.Name = "pkeyFSharp5";
-            this.pkeyFSharp5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyFSharp5.Shape = PianoKeyShape.RectShape;
-            this.pkeyFSharp5.Size = new System.Drawing.Size(8, 28);
-            this.pkeyFSharp5.TabIndex = 55;
-            this.pkeyFSharp5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyFSharp5.BackColor = Color.Black;
+            pkeyFSharp5.Location = new Point(353, 2);
+            pkeyFSharp5.Name = "pkeyFSharp5";
+            pkeyFSharp5.Size = new Size(8, 28);
+            pkeyFSharp5.TabIndex = 55;
+            pkeyFSharp5.StateChanged += PianoChanged;
             // 
             // pkeyG5
             // 
-            this.pkeyG5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyG5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyG5.Location = new System.Drawing.Point(356, 2);
-            this.pkeyG5.Name = "pkeyG5";
-            this.pkeyG5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyG5.Shape = PianoKeyShape.TShape;
-            this.pkeyG5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyG5.TabIndex = 54;
-            this.pkeyG5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyG5.Location = new Point(356, 2);
+            pkeyG5.Name = "pkeyG5";
+            pkeyG5.Size = new Size(12, 42);
+            pkeyG5.TabIndex = 54;
+            pkeyG5.StateChanged += PianoChanged;
             // 
             // pkeyGSharp5
             // 
-            this.pkeyGSharp5.BackColor = System.Drawing.Color.Black;
-            this.pkeyGSharp5.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyGSharp5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyGSharp5.Location = new System.Drawing.Point(364, 2);
-            this.pkeyGSharp5.Name = "pkeyGSharp5";
-            this.pkeyGSharp5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyGSharp5.Shape = PianoKeyShape.RectShape;
-            this.pkeyGSharp5.Size = new System.Drawing.Size(8, 29);
-            this.pkeyGSharp5.TabIndex = 56;
-            this.pkeyGSharp5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyGSharp5.BackColor = Color.Black;
+            pkeyGSharp5.Location = new Point(364, 2);
+            pkeyGSharp5.Name = "pkeyGSharp5";
+            pkeyGSharp5.Size = new Size(8, 29);
+            pkeyGSharp5.TabIndex = 56;
+            pkeyGSharp5.StateChanged += PianoChanged;
             // 
             // pkeyA5
             // 
-            this.pkeyA5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyA5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyA5.Location = new System.Drawing.Point(367, 2);
-            this.pkeyA5.Name = "pkeyA5";
-            this.pkeyA5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyA5.Shape = PianoKeyShape.TShape;
-            this.pkeyA5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyA5.TabIndex = 57;
-            this.pkeyA5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyA5.Location = new Point(367, 2);
+            pkeyA5.Name = "pkeyA5";
+            pkeyA5.Size = new Size(12, 42);
+            pkeyA5.TabIndex = 57;
+            pkeyA5.StateChanged += PianoChanged;
             // 
             // pkeyASharp5
             // 
-            this.pkeyASharp5.BackColor = System.Drawing.Color.Black;
-            this.pkeyASharp5.KeyOffColor = System.Drawing.Color.Black;
-            this.pkeyASharp5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyASharp5.Location = new System.Drawing.Point(375, 2);
-            this.pkeyASharp5.Name = "pkeyASharp5";
-            this.pkeyASharp5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyASharp5.Shape = PianoKeyShape.RectShape;
-            this.pkeyASharp5.Size = new System.Drawing.Size(8, 29);
-            this.pkeyASharp5.TabIndex = 58;
-            this.pkeyASharp5.Text = "pianoKey13";
-            this.pkeyASharp5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyASharp5.BackColor = Color.Black;
+            pkeyASharp5.Location = new Point(375, 2);
+            pkeyASharp5.Name = "pkeyASharp5";
+            pkeyASharp5.Size = new Size(8, 29);
+            pkeyASharp5.TabIndex = 58;
+            pkeyASharp5.Text = "pianoKey13";
+            pkeyASharp5.StateChanged += PianoChanged;
             // 
             // pkeyB5
             // 
-            this.pkeyB5.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyB5.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyB5.Location = new System.Drawing.Point(378, 2);
-            this.pkeyB5.Name = "pkeyB5";
-            this.pkeyB5.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyB5.Shape = PianoKeyShape.LShapeBackwards;
-            this.pkeyB5.Size = new System.Drawing.Size(12, 42);
-            this.pkeyB5.TabIndex = 59;
-            this.pkeyB5.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyB5.Location = new Point(378, 2);
+            pkeyB5.Name = "pkeyB5";
+            pkeyB5.Size = new Size(12, 42);
+            pkeyB5.TabIndex = 59;
+            pkeyB5.StateChanged += PianoChanged;
             // 
             // pkeyC8
             // 
-            this.pkeyC8.KeyOffColor = System.Drawing.Color.White;
-            this.pkeyC8.KeyOnColor = System.Drawing.Color.Blue;
-            this.pkeyC8.Location = new System.Drawing.Point(543, 2);
-            this.pkeyC8.Name = "pkeyC8";
-            this.pkeyC8.Orientation = PianoKeyOrientation.Vertical;
-            this.pkeyC8.Shape = PianoKeyShape.RectShape;
-            this.pkeyC8.Size = new System.Drawing.Size(12, 42);
-            this.pkeyC8.TabIndex = 60;
-            this.pkeyC8.StateChanged += new System.EventHandler(this.PianoChanged);
+            pkeyC8.Location = new Point(543, 2);
+            pkeyC8.Name = "pkeyC8";
+            pkeyC8.Size = new Size(12, 42);
+            pkeyC8.TabIndex = 60;
+            pkeyC8.StateChanged += PianoChanged;
             // 
             // bankEditorWars
             // 
-            this.bankEditorWars.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bankEditorWars.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel16);
-            this.bankEditorWars.Controls.Add(this.label31);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel17);
-            this.bankEditorWars.Controls.Add(this.label33);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel18);
-            this.bankEditorWars.Controls.Add(this.label34);
-            this.bankEditorWars.Controls.Add(this.tableLayoutPanel19);
-            this.bankEditorWars.Controls.Add(this.label35);
-            this.bankEditorWars.Location = new System.Drawing.Point(315, 13);
-            this.bankEditorWars.Name = "bankEditorWars";
-            this.bankEditorWars.Size = new System.Drawing.Size(325, 253);
-            this.bankEditorWars.TabIndex = 13;
-            this.bankEditorWars.Visible = false;
+            bankEditorWars.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            bankEditorWars.BackColor = SystemColors.ControlLightLight;
+            bankEditorWars.Controls.Add(tableLayoutPanel16);
+            bankEditorWars.Controls.Add(label31);
+            bankEditorWars.Controls.Add(tableLayoutPanel17);
+            bankEditorWars.Controls.Add(label33);
+            bankEditorWars.Controls.Add(tableLayoutPanel18);
+            bankEditorWars.Controls.Add(label34);
+            bankEditorWars.Controls.Add(tableLayoutPanel19);
+            bankEditorWars.Controls.Add(label35);
+            bankEditorWars.Location = new Point(312, 13);
+            bankEditorWars.Name = "bankEditorWars";
+            bankEditorWars.Size = new Size(325, 253);
+            bankEditorWars.TabIndex = 13;
+            bankEditorWars.Visible = false;
             // 
             // tableLayoutPanel16
             // 
-            this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel16.ColumnCount = 2;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel16.Controls.Add(this.war3ComboBox, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.war3Box, 1, 0);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(14, 193);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 1;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel16.TabIndex = 13;
+            tableLayoutPanel16.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel16.ColumnCount = 2;
+            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel16.Controls.Add(war3ComboBox, 0, 0);
+            tableLayoutPanel16.Controls.Add(war3Box, 1, 0);
+            tableLayoutPanel16.Location = new Point(14, 193);
+            tableLayoutPanel16.Name = "tableLayoutPanel16";
+            tableLayoutPanel16.RowCount = 1;
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel16.Size = new Size(298, 31);
+            tableLayoutPanel16.TabIndex = 13;
             // 
             // war3ComboBox
             // 
-            this.war3ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war3ComboBox.FormattingEnabled = true;
-            this.war3ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war3ComboBox.Name = "war3ComboBox";
-            this.war3ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war3ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war3ComboBox, "Wave archive to be used for the bank.");
+            war3ComboBox.Dock = DockStyle.Fill;
+            war3ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            war3ComboBox.FormattingEnabled = true;
+            war3ComboBox.Location = new Point(3, 3);
+            war3ComboBox.Name = "war3ComboBox";
+            war3ComboBox.Size = new Size(247, 23);
+            war3ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(war3ComboBox, "Wave archive to be used for the bank.");
             // 
             // war3Box
             // 
-            this.war3Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war3Box.Location = new System.Drawing.Point(256, 3);
-            this.war3Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war3Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war3Box.Name = "war3Box";
-            this.war3Box.Size = new System.Drawing.Size(39, 20);
-            this.war3Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war3Box, "Id of the wave archive to use for this bank.");
+            war3Box.Dock = DockStyle.Fill;
+            war3Box.Location = new Point(256, 3);
+            war3Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            war3Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            war3Box.Name = "war3Box";
+            war3Box.Size = new Size(39, 23);
+            war3Box.TabIndex = 7;
+            toolTip.SetToolTip(war3Box, "Id of the wave archive to use for this bank.");
             // 
             // label31
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.Location = new System.Drawing.Point(11, 171);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(301, 22);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "Wave Archive 3:";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label31.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label31.Location = new Point(11, 171);
+            label31.Name = "label31";
+            label31.Size = new Size(301, 22);
+            label31.TabIndex = 12;
+            label31.Text = "Wave Archive 3:";
+            label31.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel17
             // 
-            this.tableLayoutPanel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel17.ColumnCount = 2;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel17.Controls.Add(this.war2ComboBox, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.war2Box, 1, 0);
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(14, 137);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 1;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel17.TabIndex = 11;
+            tableLayoutPanel17.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel17.ColumnCount = 2;
+            tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel17.Controls.Add(war2ComboBox, 0, 0);
+            tableLayoutPanel17.Controls.Add(war2Box, 1, 0);
+            tableLayoutPanel17.Location = new Point(14, 137);
+            tableLayoutPanel17.Name = "tableLayoutPanel17";
+            tableLayoutPanel17.RowCount = 1;
+            tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel17.Size = new Size(298, 31);
+            tableLayoutPanel17.TabIndex = 11;
             // 
             // war2ComboBox
             // 
-            this.war2ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war2ComboBox.FormattingEnabled = true;
-            this.war2ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war2ComboBox.Name = "war2ComboBox";
-            this.war2ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war2ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war2ComboBox, "Wave archive to be used for the bank.");
+            war2ComboBox.Dock = DockStyle.Fill;
+            war2ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            war2ComboBox.FormattingEnabled = true;
+            war2ComboBox.Location = new Point(3, 3);
+            war2ComboBox.Name = "war2ComboBox";
+            war2ComboBox.Size = new Size(247, 23);
+            war2ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(war2ComboBox, "Wave archive to be used for the bank.");
             // 
             // war2Box
             // 
-            this.war2Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war2Box.Location = new System.Drawing.Point(256, 3);
-            this.war2Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war2Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war2Box.Name = "war2Box";
-            this.war2Box.Size = new System.Drawing.Size(39, 20);
-            this.war2Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war2Box, "Id of the wave archive to use for this bank.");
+            war2Box.Dock = DockStyle.Fill;
+            war2Box.Location = new Point(256, 3);
+            war2Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            war2Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            war2Box.Name = "war2Box";
+            war2Box.Size = new Size(39, 23);
+            war2Box.TabIndex = 7;
+            toolTip.SetToolTip(war2Box, "Id of the wave archive to use for this bank.");
             // 
             // label33
             // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.Location = new System.Drawing.Point(11, 115);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(301, 22);
-            this.label33.TabIndex = 10;
-            this.label33.Text = "Wave Archive 2:";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label33.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label33.Location = new Point(11, 115);
+            label33.Name = "label33";
+            label33.Size = new Size(301, 22);
+            label33.TabIndex = 10;
+            label33.Text = "Wave Archive 2:";
+            label33.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel18
             // 
-            this.tableLayoutPanel18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel18.ColumnCount = 2;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel18.Controls.Add(this.war1ComboBox, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.war1Box, 1, 0);
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(14, 81);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 1;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel18.TabIndex = 9;
+            tableLayoutPanel18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel18.ColumnCount = 2;
+            tableLayoutPanel18.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel18.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel18.Controls.Add(war1ComboBox, 0, 0);
+            tableLayoutPanel18.Controls.Add(war1Box, 1, 0);
+            tableLayoutPanel18.Location = new Point(14, 81);
+            tableLayoutPanel18.Name = "tableLayoutPanel18";
+            tableLayoutPanel18.RowCount = 1;
+            tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel18.Size = new Size(298, 31);
+            tableLayoutPanel18.TabIndex = 9;
             // 
             // war1ComboBox
             // 
-            this.war1ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war1ComboBox.FormattingEnabled = true;
-            this.war1ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war1ComboBox.Name = "war1ComboBox";
-            this.war1ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war1ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war1ComboBox, "Wave archive to be used for the bank.");
+            war1ComboBox.Dock = DockStyle.Fill;
+            war1ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            war1ComboBox.FormattingEnabled = true;
+            war1ComboBox.Location = new Point(3, 3);
+            war1ComboBox.Name = "war1ComboBox";
+            war1ComboBox.Size = new Size(247, 23);
+            war1ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(war1ComboBox, "Wave archive to be used for the bank.");
             // 
             // war1Box
             // 
-            this.war1Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war1Box.Location = new System.Drawing.Point(256, 3);
-            this.war1Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war1Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war1Box.Name = "war1Box";
-            this.war1Box.Size = new System.Drawing.Size(39, 20);
-            this.war1Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war1Box, "Id of the wave archive to use for this bank.");
+            war1Box.Dock = DockStyle.Fill;
+            war1Box.Location = new Point(256, 3);
+            war1Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            war1Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            war1Box.Name = "war1Box";
+            war1Box.Size = new Size(39, 23);
+            war1Box.TabIndex = 7;
+            toolTip.SetToolTip(war1Box, "Id of the wave archive to use for this bank.");
             // 
             // label34
             // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.Location = new System.Drawing.Point(11, 59);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(301, 22);
-            this.label34.TabIndex = 8;
-            this.label34.Text = "Wave Archive 1:";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label34.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label34.Location = new Point(11, 59);
+            label34.Name = "label34";
+            label34.Size = new Size(301, 22);
+            label34.TabIndex = 8;
+            label34.Text = "Wave Archive 1:";
+            label34.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel19
             // 
-            this.tableLayoutPanel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel19.ColumnCount = 2;
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel19.Controls.Add(this.war0ComboBox, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.war0Box, 1, 0);
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(14, 25);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.RowCount = 1;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(298, 31);
-            this.tableLayoutPanel19.TabIndex = 7;
+            tableLayoutPanel19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel19.ColumnCount = 2;
+            tableLayoutPanel19.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tableLayoutPanel19.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel19.Controls.Add(war0ComboBox, 0, 0);
+            tableLayoutPanel19.Controls.Add(war0Box, 1, 0);
+            tableLayoutPanel19.Location = new Point(14, 25);
+            tableLayoutPanel19.Name = "tableLayoutPanel19";
+            tableLayoutPanel19.RowCount = 1;
+            tableLayoutPanel19.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel19.Size = new Size(298, 31);
+            tableLayoutPanel19.TabIndex = 7;
             // 
             // war0ComboBox
             // 
-            this.war0ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war0ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.war0ComboBox.FormattingEnabled = true;
-            this.war0ComboBox.Location = new System.Drawing.Point(3, 3);
-            this.war0ComboBox.Name = "war0ComboBox";
-            this.war0ComboBox.Size = new System.Drawing.Size(247, 21);
-            this.war0ComboBox.TabIndex = 6;
-            this.toolTip.SetToolTip(this.war0ComboBox, "Wave archive to be used for the bank.");
+            war0ComboBox.Dock = DockStyle.Fill;
+            war0ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            war0ComboBox.FormattingEnabled = true;
+            war0ComboBox.Location = new Point(3, 3);
+            war0ComboBox.Name = "war0ComboBox";
+            war0ComboBox.Size = new Size(247, 23);
+            war0ComboBox.TabIndex = 6;
+            toolTip.SetToolTip(war0ComboBox, "Wave archive to be used for the bank.");
             // 
             // war0Box
             // 
-            this.war0Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.war0Box.Location = new System.Drawing.Point(256, 3);
-            this.war0Box.Maximum = new decimal(new int[] {
-            65534,
-            0,
-            0,
-            0});
-            this.war0Box.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.war0Box.Name = "war0Box";
-            this.war0Box.Size = new System.Drawing.Size(39, 20);
-            this.war0Box.TabIndex = 7;
-            this.toolTip.SetToolTip(this.war0Box, "Id of the wave archive to use for this bank.");
+            war0Box.Dock = DockStyle.Fill;
+            war0Box.Location = new Point(256, 3);
+            war0Box.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
+            war0Box.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
+            war0Box.Name = "war0Box";
+            war0Box.Size = new Size(39, 23);
+            war0Box.TabIndex = 7;
+            toolTip.SetToolTip(war0Box, "Id of the wave archive to use for this bank.");
             // 
             // label35
             // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.Location = new System.Drawing.Point(11, 3);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(301, 22);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "Wave Archive 0:";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label35.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label35.Location = new Point(11, 3);
+            label35.Name = "label35";
+            label35.Size = new Size(301, 22);
+            label35.TabIndex = 2;
+            label35.Text = "Wave Archive 0:";
+            label35.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tree
             // 
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.ImageIndex = 0;
-            this.tree.ImageList = this.treeIcons;
-            this.tree.Indent = 12;
-            this.tree.Location = new System.Drawing.Point(0, 0);
-            this.tree.Name = "tree";
-            treeNode2.ImageIndex = 10;
-            treeNode2.Name = "fileInfo";
-            treeNode2.SelectedImageIndex = 10;
-            treeNode2.Text = "File Information";
-            this.tree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.tree.SelectedImageIndex = 0;
-            this.tree.ShowLines = false;
-            this.tree.Size = new System.Drawing.Size(651, 539);
-            this.tree.TabIndex = 0;
-            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
-            this.tree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseDoubleClick);
-            this.tree.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tree_NodeKey);
+            tree.Dock = DockStyle.Fill;
+            tree.ImageIndex = 0;
+            tree.ImageList = treeIcons;
+            tree.Indent = 12;
+            tree.Location = new Point(0, 0);
+            tree.Name = "tree";
+            treeNode1.ImageIndex = 10;
+            treeNode1.Name = "fileInfo";
+            treeNode1.SelectedImageIndex = 10;
+            treeNode1.Text = "File Information";
+            tree.Nodes.AddRange(new TreeNode[] { treeNode1 });
+            tree.SelectedImageIndex = 0;
+            tree.ShowLines = false;
+            tree.Size = new Size(648, 583);
+            tree.TabIndex = 0;
+            tree.NodeMouseClick += tree_NodeMouseClick;
+            tree.NodeMouseDoubleClick += tree_NodeMouseDoubleClick;
+            tree.KeyUp += tree_NodeKey;
             // 
             // treeIcons
             // 
-            this.treeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeIcons.ImageStream")));
-            this.treeIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.treeIcons.Images.SetKeyName(0, "blank.png");
-            this.treeIcons.Images.SetKeyName(1, "version.png");
-            this.treeIcons.Images.SetKeyName(2, "sseq.png");
-            this.treeIcons.Images.SetKeyName(3, "seqArc.png");
-            this.treeIcons.Images.SetKeyName(4, "bank.png");
-            this.treeIcons.Images.SetKeyName(5, "waveArchive.png");
-            this.treeIcons.Images.SetKeyName(6, "player.png");
-            this.treeIcons.Images.SetKeyName(7, "group.png");
-            this.treeIcons.Images.SetKeyName(8, "streamPlayer.png");
-            this.treeIcons.Images.SetKeyName(9, "strm.png");
-            this.treeIcons.Images.SetKeyName(10, "record.png");
-            this.treeIcons.Images.SetKeyName(11, "recordArc.png");
-            this.treeIcons.Images.SetKeyName(12, "lookup.png");
-            this.treeIcons.Images.SetKeyName(13, "recordRegion.png");
-            this.treeIcons.Images.SetKeyName(14, "wave.png");
-            this.treeIcons.Images.SetKeyName(15, "ranged.png");
-            this.treeIcons.Images.SetKeyName(16, "regional.png");
-            this.treeIcons.Images.SetKeyName(17, "psg.png");
-            this.treeIcons.Images.SetKeyName(18, "whiteNoise.png");
+            treeIcons.ColorDepth = ColorDepth.Depth8Bit;
+            treeIcons.ImageStream = (ImageListStreamer)resources.GetObject("treeIcons.ImageStream");
+            treeIcons.TransparentColor = Color.Transparent;
+            treeIcons.Images.SetKeyName(0, "blank.png");
+            treeIcons.Images.SetKeyName(1, "version.png");
+            treeIcons.Images.SetKeyName(2, "sseq.png");
+            treeIcons.Images.SetKeyName(3, "seqArc.png");
+            treeIcons.Images.SetKeyName(4, "bank.png");
+            treeIcons.Images.SetKeyName(5, "waveArchive.png");
+            treeIcons.Images.SetKeyName(6, "player.png");
+            treeIcons.Images.SetKeyName(7, "group.png");
+            treeIcons.Images.SetKeyName(8, "streamPlayer.png");
+            treeIcons.Images.SetKeyName(9, "strm.png");
+            treeIcons.Images.SetKeyName(10, "record.png");
+            treeIcons.Images.SetKeyName(11, "recordArc.png");
+            treeIcons.Images.SetKeyName(12, "lookup.png");
+            treeIcons.Images.SetKeyName(13, "recordRegion.png");
+            treeIcons.Images.SetKeyName(14, "wave.png");
+            treeIcons.Images.SetKeyName(15, "ranged.png");
+            treeIcons.Images.SetKeyName(16, "regional.png");
+            treeIcons.Images.SetKeyName(17, "psg.png");
+            treeIcons.Images.SetKeyName(18, "whiteNoise.png");
             // 
             // sequenceEditorPanel
             // 
-            this.sequenceEditorPanel.Controls.Add(this.sequenceEditor);
-            this.sequenceEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceEditorPanel.Location = new System.Drawing.Point(0, 0);
-            this.sequenceEditorPanel.Name = "sequenceEditorPanel";
-            this.sequenceEditorPanel.Size = new System.Drawing.Size(651, 539);
-            this.sequenceEditorPanel.TabIndex = 3;
-            this.sequenceEditorPanel.Visible = false;
+            sequenceEditorPanel.Controls.Add(sequenceEditor);
+            sequenceEditorPanel.Dock = DockStyle.Fill;
+            sequenceEditorPanel.Location = new Point(0, 0);
+            sequenceEditorPanel.Name = "sequenceEditorPanel";
+            sequenceEditorPanel.Size = new Size(648, 583);
+            sequenceEditorPanel.TabIndex = 3;
+            sequenceEditorPanel.Visible = false;
             // 
             // sequenceEditor
             // 
-            this.sequenceEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceEditor.Location = new System.Drawing.Point(0, 0);
-            this.sequenceEditor.Name = "sequenceEditor";
-            this.sequenceEditor.Size = new System.Drawing.Size(651, 539);
-            this.sequenceEditor.TabIndex = 0;
+            sequenceEditor.AutocompleteListSelectedBackColor = Color.FromArgb(0, 120, 212);
+            sequenceEditor.Dock = DockStyle.Fill;
+            sequenceEditor.LexerName = null;
+            sequenceEditor.Location = new Point(0, 0);
+            sequenceEditor.Name = "sequenceEditor";
+            sequenceEditor.Size = new Size(648, 583);
+            sequenceEditor.TabIndex = 0;
             // 
             // openFileDialog
             // 
-            this.openFileDialog.RestoreDirectory = true;
+            openFileDialog.RestoreDirectory = true;
             // 
             // statusStrip
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.status,
-            this.currentNote});
-            this.statusStrip.Location = new System.Drawing.Point(0, 565);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(984, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "statusStrip1";
+            statusStrip.Items.AddRange(new ToolStripItem[] { status, currentNote });
+            statusStrip.Location = new Point(0, 609);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(984, 22);
+            statusStrip.TabIndex = 2;
+            statusStrip.Text = "statusStrip1";
             // 
             // status
             // 
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(125, 17);
-            this.status.Text = "No Valid Info Selected!";
+            status.Name = "status";
+            status.Size = new Size(125, 17);
+            status.Text = "No Valid Info Selected!";
             // 
             // currentNote
             // 
-            this.currentNote.Name = "currentNote";
-            this.currentNote.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.currentNote.Size = new System.Drawing.Size(0, 17);
+            currentNote.Name = "currentNote";
+            currentNote.RightToLeft = RightToLeft.No;
+            currentNote.Size = new Size(0, 17);
             // 
             // rootMenu
             // 
-            this.rootMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.expandToolStripMenuItem,
-            this.collapseToolStripMenuItem});
-            this.rootMenu.Name = "rootMenu";
-            this.rootMenu.Size = new System.Drawing.Size(120, 70);
+            rootMenu.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, expandToolStripMenuItem, collapseToolStripMenuItem });
+            rootMenu.Name = "rootMenu";
+            rootMenu.Size = new Size(120, 70);
             // 
             // addToolStripMenuItem
             // 
-            this.addToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.New;
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            addToolStripMenuItem.Image = Properties.Resources.New;
+            addToolStripMenuItem.Name = "addToolStripMenuItem";
+            addToolStripMenuItem.Size = new Size(119, 22);
+            addToolStripMenuItem.Text = "Add";
+            addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // expandToolStripMenuItem
             // 
-            this.expandToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.expandToolStripMenuItem.Name = "expandToolStripMenuItem";
-            this.expandToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.expandToolStripMenuItem.Text = "Expand";
-            this.expandToolStripMenuItem.Click += new System.EventHandler(this.expandToolStripMenuItem_Click);
+            expandToolStripMenuItem.Image = Properties.Resources.Save;
+            expandToolStripMenuItem.Name = "expandToolStripMenuItem";
+            expandToolStripMenuItem.Size = new Size(119, 22);
+            expandToolStripMenuItem.Text = "Expand";
+            expandToolStripMenuItem.Click += expandToolStripMenuItem_Click;
             // 
             // collapseToolStripMenuItem
             // 
-            this.collapseToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.collapseToolStripMenuItem.Name = "collapseToolStripMenuItem";
-            this.collapseToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.collapseToolStripMenuItem.Text = "Collapse";
-            this.collapseToolStripMenuItem.Click += new System.EventHandler(this.collapseToolStripMenuItem_Click);
+            collapseToolStripMenuItem.Image = Properties.Resources.Save_As;
+            collapseToolStripMenuItem.Name = "collapseToolStripMenuItem";
+            collapseToolStripMenuItem.Size = new Size(119, 22);
+            collapseToolStripMenuItem.Text = "Collapse";
+            collapseToolStripMenuItem.Click += collapseToolStripMenuItem_Click;
             // 
             // nodeMenu
             // 
-            this.nodeMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.nodeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addAboveToolStripMenuItem1,
-            this.addBelowToolStripMenuItem1,
-            this.moveUpToolStripMenuItem1,
-            this.moveDownToolStripMenuItem1,
-            this.replaceFileToolStripMenuItem,
-            this.exportToolStripMenuItem1,
-            this.deleteToolStripMenuItem1});
-            this.nodeMenu.Name = "contextMenuStrip1";
-            this.nodeMenu.Size = new System.Drawing.Size(139, 158);
+            nodeMenu.ImeMode = ImeMode.Off;
+            nodeMenu.Items.AddRange(new ToolStripItem[] { addAboveToolStripMenuItem1, addBelowToolStripMenuItem1, moveUpToolStripMenuItem1, moveDownToolStripMenuItem1, replaceFileToolStripMenuItem, exportToolStripMenuItem1, deleteToolStripMenuItem1 });
+            nodeMenu.Name = "contextMenuStrip1";
+            nodeMenu.Size = new Size(139, 158);
             // 
             // addAboveToolStripMenuItem1
             // 
-            this.addAboveToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.New;
-            this.addAboveToolStripMenuItem1.Name = "addAboveToolStripMenuItem1";
-            this.addAboveToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.addAboveToolStripMenuItem1.Text = "Add Above";
-            this.addAboveToolStripMenuItem1.Click += new System.EventHandler(this.addAboveToolStripMenuItem1_Click);
+            addAboveToolStripMenuItem1.Image = Properties.Resources.New;
+            addAboveToolStripMenuItem1.Name = "addAboveToolStripMenuItem1";
+            addAboveToolStripMenuItem1.Size = new Size(138, 22);
+            addAboveToolStripMenuItem1.Text = "Add Above";
+            addAboveToolStripMenuItem1.Click += addAboveToolStripMenuItem1_Click;
             // 
             // addBelowToolStripMenuItem1
             // 
-            this.addBelowToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Open;
-            this.addBelowToolStripMenuItem1.Name = "addBelowToolStripMenuItem1";
-            this.addBelowToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.addBelowToolStripMenuItem1.Text = "Add Below";
-            this.addBelowToolStripMenuItem1.Click += new System.EventHandler(this.addBelowToolStripMenuItem1_Click);
+            addBelowToolStripMenuItem1.Image = Properties.Resources.Open;
+            addBelowToolStripMenuItem1.Name = "addBelowToolStripMenuItem1";
+            addBelowToolStripMenuItem1.Size = new Size(138, 22);
+            addBelowToolStripMenuItem1.Text = "Add Below";
+            addBelowToolStripMenuItem1.Click += addBelowToolStripMenuItem1_Click;
             // 
             // moveUpToolStripMenuItem1
             // 
-            this.moveUpToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.moveUpToolStripMenuItem1.Name = "moveUpToolStripMenuItem1";
-            this.moveUpToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.moveUpToolStripMenuItem1.Text = "Move Up";
-            this.moveUpToolStripMenuItem1.Click += new System.EventHandler(this.moveUpToolStripMenuItem1_Click);
+            moveUpToolStripMenuItem1.Image = Properties.Resources.Save;
+            moveUpToolStripMenuItem1.Name = "moveUpToolStripMenuItem1";
+            moveUpToolStripMenuItem1.Size = new Size(138, 22);
+            moveUpToolStripMenuItem1.Text = "Move Up";
+            moveUpToolStripMenuItem1.Click += moveUpToolStripMenuItem1_Click;
             // 
             // moveDownToolStripMenuItem1
             // 
-            this.moveDownToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.moveDownToolStripMenuItem1.Name = "moveDownToolStripMenuItem1";
-            this.moveDownToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.moveDownToolStripMenuItem1.Text = "Move Down";
-            this.moveDownToolStripMenuItem1.Click += new System.EventHandler(this.moveDownToolStripMenuItem1_Click);
+            moveDownToolStripMenuItem1.Image = Properties.Resources.Save_As;
+            moveDownToolStripMenuItem1.Name = "moveDownToolStripMenuItem1";
+            moveDownToolStripMenuItem1.Size = new Size(138, 22);
+            moveDownToolStripMenuItem1.Text = "Move Down";
+            moveDownToolStripMenuItem1.Click += moveDownToolStripMenuItem1_Click;
             // 
             // replaceFileToolStripMenuItem
             // 
-            this.replaceFileToolStripMenuItem.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.replaceFileToolStripMenuItem.Name = "replaceFileToolStripMenuItem";
-            this.replaceFileToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.replaceFileToolStripMenuItem.Text = "Replace";
-            this.replaceFileToolStripMenuItem.Click += new System.EventHandler(this.replaceFileToolStripMenuItem_Click);
+            replaceFileToolStripMenuItem.Image = Properties.Resources.Import;
+            replaceFileToolStripMenuItem.Name = "replaceFileToolStripMenuItem";
+            replaceFileToolStripMenuItem.Size = new Size(138, 22);
+            replaceFileToolStripMenuItem.Text = "Replace";
+            replaceFileToolStripMenuItem.Click += replaceFileToolStripMenuItem_Click;
             // 
             // exportToolStripMenuItem1
             // 
-            this.exportToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Export;
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
-            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
+            exportToolStripMenuItem1.Image = Properties.Resources.Export;
+            exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            exportToolStripMenuItem1.Size = new Size(138, 22);
+            exportToolStripMenuItem1.Text = "Export";
+            exportToolStripMenuItem1.Click += exportToolStripMenuItem1_Click;
             // 
             // deleteToolStripMenuItem1
             // 
-            this.deleteToolStripMenuItem1.Image = global::NitroStudio2.Properties.Resources.Close;
-            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.deleteToolStripMenuItem1.Text = "Delete";
-            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            deleteToolStripMenuItem1.Image = Properties.Resources.Close;
+            deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            deleteToolStripMenuItem1.ShortcutKeys = Keys.Delete;
+            deleteToolStripMenuItem1.Size = new Size(138, 22);
+            deleteToolStripMenuItem1.Text = "Delete";
+            deleteToolStripMenuItem1.Click += deleteToolStripMenuItem1_Click;
             // 
             // sarEntryMenu
             // 
-            this.sarEntryMenu.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.sarEntryMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sarAddAbove,
-            this.sarAddBelow,
-            this.sarMoveUp,
-            this.sarMoveDown,
-            this.sarReplace,
-            this.sarExport,
-            this.sarRename,
-            this.sarDelete});
-            this.sarEntryMenu.Name = "contextMenuStrip1";
-            this.sarEntryMenu.Size = new System.Drawing.Size(139, 180);
+            sarEntryMenu.ImeMode = ImeMode.Off;
+            sarEntryMenu.Items.AddRange(new ToolStripItem[] { sarAddAbove, sarAddBelow, sarMoveUp, sarMoveDown, sarReplace, sarExport, sarRename, sarDelete });
+            sarEntryMenu.Name = "contextMenuStrip1";
+            sarEntryMenu.Size = new Size(139, 180);
             // 
             // sarAddAbove
             // 
-            this.sarAddAbove.Image = global::NitroStudio2.Properties.Resources.New;
-            this.sarAddAbove.Name = "sarAddAbove";
-            this.sarAddAbove.Size = new System.Drawing.Size(138, 22);
-            this.sarAddAbove.Text = "Add Above";
-            this.sarAddAbove.Click += new System.EventHandler(this.SarAddAbove_Click);
+            sarAddAbove.Image = Properties.Resources.New;
+            sarAddAbove.Name = "sarAddAbove";
+            sarAddAbove.Size = new Size(138, 22);
+            sarAddAbove.Text = "Add Above";
+            sarAddAbove.Click += SarAddAbove_Click;
             // 
             // sarAddBelow
             // 
-            this.sarAddBelow.Image = global::NitroStudio2.Properties.Resources.Open;
-            this.sarAddBelow.Name = "sarAddBelow";
-            this.sarAddBelow.Size = new System.Drawing.Size(138, 22);
-            this.sarAddBelow.Text = "Add Below";
-            this.sarAddBelow.Click += new System.EventHandler(this.SarAddBelow_Click);
+            sarAddBelow.Image = Properties.Resources.Open;
+            sarAddBelow.Name = "sarAddBelow";
+            sarAddBelow.Size = new Size(138, 22);
+            sarAddBelow.Text = "Add Below";
+            sarAddBelow.Click += SarAddBelow_Click;
             // 
             // sarMoveUp
             // 
-            this.sarMoveUp.Image = global::NitroStudio2.Properties.Resources.Save;
-            this.sarMoveUp.Name = "sarMoveUp";
-            this.sarMoveUp.Size = new System.Drawing.Size(138, 22);
-            this.sarMoveUp.Text = "Move Up";
-            this.sarMoveUp.Click += new System.EventHandler(this.SarMoveUp_Click);
+            sarMoveUp.Image = Properties.Resources.Save;
+            sarMoveUp.Name = "sarMoveUp";
+            sarMoveUp.Size = new Size(138, 22);
+            sarMoveUp.Text = "Move Up";
+            sarMoveUp.Click += SarMoveUp_Click;
             // 
             // sarMoveDown
             // 
-            this.sarMoveDown.Image = global::NitroStudio2.Properties.Resources.Save_As;
-            this.sarMoveDown.Name = "sarMoveDown";
-            this.sarMoveDown.Size = new System.Drawing.Size(138, 22);
-            this.sarMoveDown.Text = "Move Down";
-            this.sarMoveDown.Click += new System.EventHandler(this.SarMoveDown_Click);
+            sarMoveDown.Image = Properties.Resources.Save_As;
+            sarMoveDown.Name = "sarMoveDown";
+            sarMoveDown.Size = new Size(138, 22);
+            sarMoveDown.Text = "Move Down";
+            sarMoveDown.Click += SarMoveDown_Click;
             // 
             // sarReplace
             // 
-            this.sarReplace.Image = global::NitroStudio2.Properties.Resources.Import;
-            this.sarReplace.Name = "sarReplace";
-            this.sarReplace.Size = new System.Drawing.Size(138, 22);
-            this.sarReplace.Text = "Replace";
-            this.sarReplace.Click += new System.EventHandler(this.SarReplace_Click);
+            sarReplace.Image = Properties.Resources.Import;
+            sarReplace.Name = "sarReplace";
+            sarReplace.Size = new Size(138, 22);
+            sarReplace.Text = "Replace";
+            sarReplace.Click += SarReplace_Click;
             // 
             // sarExport
             // 
-            this.sarExport.Image = global::NitroStudio2.Properties.Resources.Export;
-            this.sarExport.Name = "sarExport";
-            this.sarExport.Size = new System.Drawing.Size(138, 22);
-            this.sarExport.Text = "Export";
-            this.sarExport.Click += new System.EventHandler(this.SarExport_Click);
+            sarExport.Image = Properties.Resources.Export;
+            sarExport.Name = "sarExport";
+            sarExport.Size = new Size(138, 22);
+            sarExport.Text = "Export";
+            sarExport.Click += SarExport_Click;
             // 
             // sarRename
             // 
-            this.sarRename.Image = global::NitroStudio2.Properties.Resources.Rename;
-            this.sarRename.Name = "sarRename";
-            this.sarRename.Size = new System.Drawing.Size(138, 22);
-            this.sarRename.Text = "Rename";
-            this.sarRename.Click += new System.EventHandler(this.SarRename_Click);
+            sarRename.Image = Properties.Resources.Rename;
+            sarRename.Name = "sarRename";
+            sarRename.Size = new Size(138, 22);
+            sarRename.Text = "Rename";
+            sarRename.Click += SarRename_Click;
             // 
             // sarDelete
             // 
-            this.sarDelete.Image = global::NitroStudio2.Properties.Resources.Close;
-            this.sarDelete.Name = "sarDelete";
-            this.sarDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.sarDelete.Size = new System.Drawing.Size(138, 22);
-            this.sarDelete.Text = "Delete";
-            this.sarDelete.Click += new System.EventHandler(this.SarDelete_Click);
+            sarDelete.Image = Properties.Resources.Close;
+            sarDelete.Name = "sarDelete";
+            sarDelete.ShortcutKeys = Keys.Delete;
+            sarDelete.Size = new Size(138, 22);
+            sarDelete.Text = "Delete";
+            sarDelete.Click += SarDelete_Click;
             // 
             // EditorBase
             // 
-            this.ClientSize = new System.Drawing.Size(984, 587);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.statusStrip);
-            this.MainMenuStrip = this.menuStrip;
-            this.Name = "EditorBase";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_Close);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.seqBankPanel.ResumeLayout(false);
-            this.tableLayoutPanel36.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel35.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track15Picture)).EndInit();
-            this.tableLayoutPanel34.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track13Picture)).EndInit();
-            this.tableLayoutPanel33.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track11Picture)).EndInit();
-            this.tableLayoutPanel32.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track9Picture)).EndInit();
-            this.tableLayoutPanel31.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track7Picture)).EndInit();
-            this.tableLayoutPanel30.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track5Picture)).EndInit();
-            this.tableLayoutPanel29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track3Picture)).EndInit();
-            this.tableLayoutPanel28.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track14Picture)).EndInit();
-            this.tableLayoutPanel27.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track12Picture)).EndInit();
-            this.tableLayoutPanel26.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track10Picture)).EndInit();
-            this.tableLayoutPanel25.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track8Picture)).EndInit();
-            this.tableLayoutPanel24.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track6Picture)).EndInit();
-            this.tableLayoutPanel23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track4Picture)).EndInit();
-            this.tableLayoutPanel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track2Picture)).EndInit();
-            this.tableLayoutPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track1Picture)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.track0Picture)).EndInit();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seqEditorBankBox)).EndInit();
-            this.bankEditorPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bankRegions)).EndInit();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.drumSetStartRangeBox)).EndInit();
-            this.tableLayoutPanel14.ResumeLayout(false);
-            this.seqArcSeqPanel.ResumeLayout(false);
-            this.tableLayoutPanel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seqArcSeqBox)).EndInit();
-            this.seqArcPanel.ResumeLayout(false);
-            this.seqPanel.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seqPlayerBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqPlayerPriorityBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqChannelPriorityBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seqVolumeBox)).EndInit();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.seqBankBox)).EndInit();
-            this.playerPanel.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playerHeapSizeBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerMaxSequencesBox)).EndInit();
-            this.stmPanel.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPriorityBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmVolumeBox)).EndInit();
-            this.streamPlayerPanel.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerLeftChannelBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stmPlayerRightChannelBox)).EndInit();
-            this.grpPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grpEntries)).EndInit();
-            this.bankPanel.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar3Box)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar2Box)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar1Box)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bnkWar0Box)).EndInit();
-            this.warPanel.ResumeLayout(false);
-            this.forceUniqueFilePanel.ResumeLayout(false);
-            this.indexPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.itemIndexBox)).EndInit();
-            this.settingsPanel.ResumeLayout(false);
-            this.noInfoPanel.ResumeLayout(false);
-            this.kermalisSoundPlayerPanel.ResumeLayout(false);
-            this.kermalisSoundPlayerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kermalisPosition)).EndInit();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kermalisVolumeSlider)).EndInit();
-            this.pnlPianoKeys.ResumeLayout(false);
-            this.bankEditorWars.ResumeLayout(false);
-            this.tableLayoutPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.war3Box)).EndInit();
-            this.tableLayoutPanel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.war2Box)).EndInit();
-            this.tableLayoutPanel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.war1Box)).EndInit();
-            this.tableLayoutPanel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.war0Box)).EndInit();
-            this.sequenceEditorPanel.ResumeLayout(false);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.rootMenu.ResumeLayout(false);
-            this.nodeMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.sarEntryMenu.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(984, 631);
+            Controls.Add(splitContainer1);
+            Controls.Add(menuStrip);
+            Controls.Add(statusStrip);
+            MainMenuStrip = menuStrip;
+            Name = "EditorBase";
+            StartPosition = FormStartPosition.CenterParent;
+            FormClosing += form_Close;
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            fileSizePanel.ResumeLayout(false);
+            seqPanel.ResumeLayout(false);
+            tableLayoutPanel11.ResumeLayout(false);
+            ((ISupportInitialize)seqPlayerBox).EndInit();
+            ((ISupportInitialize)seqPlayerPriorityBox).EndInit();
+            ((ISupportInitialize)seqChannelPriorityBox).EndInit();
+            ((ISupportInitialize)seqVolumeBox).EndInit();
+            tableLayoutPanel10.ResumeLayout(false);
+            ((ISupportInitialize)seqBankBox).EndInit();
+            playerPanel.ResumeLayout(false);
+            tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel8.PerformLayout();
+            ((ISupportInitialize)playerHeapSizeBox).EndInit();
+            ((ISupportInitialize)playerMaxSequencesBox).EndInit();
+            seqBankPanel.ResumeLayout(false);
+            tableLayoutPanel36.ResumeLayout(false);
+            tableLayoutPanel20.ResumeLayout(false);
+            tableLayoutPanel35.ResumeLayout(false);
+            ((ISupportInitialize)track15Picture).EndInit();
+            tableLayoutPanel34.ResumeLayout(false);
+            ((ISupportInitialize)track13Picture).EndInit();
+            tableLayoutPanel33.ResumeLayout(false);
+            ((ISupportInitialize)track11Picture).EndInit();
+            tableLayoutPanel32.ResumeLayout(false);
+            ((ISupportInitialize)track9Picture).EndInit();
+            tableLayoutPanel31.ResumeLayout(false);
+            ((ISupportInitialize)track7Picture).EndInit();
+            tableLayoutPanel30.ResumeLayout(false);
+            ((ISupportInitialize)track5Picture).EndInit();
+            tableLayoutPanel29.ResumeLayout(false);
+            ((ISupportInitialize)track3Picture).EndInit();
+            tableLayoutPanel28.ResumeLayout(false);
+            ((ISupportInitialize)track14Picture).EndInit();
+            tableLayoutPanel27.ResumeLayout(false);
+            ((ISupportInitialize)track12Picture).EndInit();
+            tableLayoutPanel26.ResumeLayout(false);
+            ((ISupportInitialize)track10Picture).EndInit();
+            tableLayoutPanel25.ResumeLayout(false);
+            ((ISupportInitialize)track8Picture).EndInit();
+            tableLayoutPanel24.ResumeLayout(false);
+            ((ISupportInitialize)track6Picture).EndInit();
+            tableLayoutPanel23.ResumeLayout(false);
+            ((ISupportInitialize)track4Picture).EndInit();
+            tableLayoutPanel22.ResumeLayout(false);
+            ((ISupportInitialize)track2Picture).EndInit();
+            tableLayoutPanel21.ResumeLayout(false);
+            ((ISupportInitialize)track1Picture).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            ((ISupportInitialize)track0Picture).EndInit();
+            tableLayoutPanel12.ResumeLayout(false);
+            ((ISupportInitialize)seqEditorBankBox).EndInit();
+            bankEditorPanel.ResumeLayout(false);
+            ((ISupportInitialize)bankRegions).EndInit();
+            tableLayoutPanel15.ResumeLayout(false);
+            ((ISupportInitialize)drumSetStartRangeBox).EndInit();
+            tableLayoutPanel14.ResumeLayout(false);
+            seqArcSeqPanel.ResumeLayout(false);
+            tableLayoutPanel13.ResumeLayout(false);
+            ((ISupportInitialize)seqArcSeqBox).EndInit();
+            seqArcPanel.ResumeLayout(false);
+            stmPanel.ResumeLayout(false);
+            tableLayoutPanel7.ResumeLayout(false);
+            ((ISupportInitialize)stmPlayerBox).EndInit();
+            ((ISupportInitialize)stmPriorityBox).EndInit();
+            ((ISupportInitialize)stmVolumeBox).EndInit();
+            streamPlayerPanel.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
+            ((ISupportInitialize)stmPlayerLeftChannelBox).EndInit();
+            ((ISupportInitialize)stmPlayerRightChannelBox).EndInit();
+            grpPanel.ResumeLayout(false);
+            ((ISupportInitialize)grpEntries).EndInit();
+            bankPanel.ResumeLayout(false);
+            tableLayoutPanel5.ResumeLayout(false);
+            ((ISupportInitialize)bnkWar3Box).EndInit();
+            tableLayoutPanel4.ResumeLayout(false);
+            ((ISupportInitialize)bnkWar2Box).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
+            ((ISupportInitialize)bnkWar1Box).EndInit();
+            tableLayoutPanel2.ResumeLayout(false);
+            ((ISupportInitialize)bnkWar0Box).EndInit();
+            warPanel.ResumeLayout(false);
+            forceUniqueFilePanel.ResumeLayout(false);
+            indexPanel.ResumeLayout(false);
+            ((ISupportInitialize)itemIndexBox).EndInit();
+            settingsPanel.ResumeLayout(false);
+            noInfoPanel.ResumeLayout(false);
+            kermalisSoundPlayerPanel.ResumeLayout(false);
+            kermalisSoundPlayerPanel.PerformLayout();
+            ((ISupportInitialize)kermalisPosition).EndInit();
+            tableLayoutPanel9.ResumeLayout(false);
+            tableLayoutPanel9.PerformLayout();
+            ((ISupportInitialize)kermalisVolumeSlider).EndInit();
+            pnlPianoKeys.ResumeLayout(false);
+            bankEditorWars.ResumeLayout(false);
+            tableLayoutPanel16.ResumeLayout(false);
+            ((ISupportInitialize)war3Box).EndInit();
+            tableLayoutPanel17.ResumeLayout(false);
+            ((ISupportInitialize)war2Box).EndInit();
+            tableLayoutPanel18.ResumeLayout(false);
+            ((ISupportInitialize)war1Box).EndInit();
+            tableLayoutPanel19.ResumeLayout(false);
+            ((ISupportInitialize)war0Box).EndInit();
+            sequenceEditorPanel.ResumeLayout(false);
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
+            rootMenu.ResumeLayout(false);
+            nodeMenu.ResumeLayout(false);
+            ((ISupportInitialize)bindingSource1).EndInit();
+            sarEntryMenu.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

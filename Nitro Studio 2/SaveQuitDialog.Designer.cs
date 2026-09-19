@@ -28,71 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.YesButton = new System.Windows.Forms.Button();
-            this.NoButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
+            YesButton = new System.Windows.Forms.Button();
+            NoButton = new System.Windows.Forms.Button();
+            CancelButton = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Do you want to save before you exit?\r\n";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(85, 10);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(183, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Do you want to save before you exit?\r\n";
             // 
             // YesButton
             // 
-            this.YesButton.Location = new System.Drawing.Point(12, 47);
-            this.YesButton.Name = "YesButton";
-            this.YesButton.Size = new System.Drawing.Size(95, 30);
-            this.YesButton.TabIndex = 1;
-            this.YesButton.Text = "Save and Quit";
-            this.YesButton.UseVisualStyleBackColor = true;
-            this.YesButton.Click += new System.EventHandler(this.YesButton_Click);
+            YesButton.Location = new System.Drawing.Point(14, 54);
+            YesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            YesButton.Name = "YesButton";
+            YesButton.Size = new System.Drawing.Size(111, 35);
+            YesButton.TabIndex = 1;
+            YesButton.Text = "Save and Quit";
+            YesButton.UseVisualStyleBackColor = true;
+            YesButton.Click += YesButton_Click;
             // 
             // NoButton
             // 
-            this.NoButton.Location = new System.Drawing.Point(113, 47);
-            this.NoButton.Name = "NoButton";
-            this.NoButton.Size = new System.Drawing.Size(95, 30);
-            this.NoButton.TabIndex = 2;
-            this.NoButton.Text = "Quit";
-            this.NoButton.UseVisualStyleBackColor = true;
-            this.NoButton.Click += new System.EventHandler(this.NoButton_Click);
+            NoButton.Location = new System.Drawing.Point(132, 54);
+            NoButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            NoButton.Name = "NoButton";
+            NoButton.Size = new System.Drawing.Size(111, 35);
+            NoButton.TabIndex = 2;
+            NoButton.Text = "Quit";
+            NoButton.UseVisualStyleBackColor = true;
+            NoButton.Click += NoButton_Click;
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(214, 47);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(95, 30);
-            this.CancelButton.TabIndex = 3;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            CancelButton.Location = new System.Drawing.Point(250, 54);
+            CancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new System.Drawing.Size(111, 35);
+            CancelButton.TabIndex = 3;
+            CancelButton.Text = "Cancel";
+            CancelButton.UseVisualStyleBackColor = true;
+            CancelButton.Click += CancelButton_Click;
             // 
             // SaveQuitDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(320, 87);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.NoButton);
-            this.Controls.Add(this.YesButton);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SaveQuitDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Warning";
-            this.Load += new System.EventHandler(this.SaveQuitDialog_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            BackColor = System.Drawing.SystemColors.ActiveCaption;
+            ClientSize = new System.Drawing.Size(373, 101);
+            Controls.Add(CancelButton);
+            Controls.Add(NoButton);
+            Controls.Add(YesButton);
+            Controls.Add(label1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SaveQuitDialog";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Warning";
+            Load += SaveQuitDialog_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

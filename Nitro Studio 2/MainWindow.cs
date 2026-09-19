@@ -216,6 +216,7 @@ namespace NitroStudio2
 
         private void ReloadConfig()
         {
+            status.Text = "Reloading Configuration...";
             Config = new Configuration();
             if (Player.State == PlayerState.Playing)
             {
@@ -635,7 +636,7 @@ namespace NitroStudio2
             //The base.
             base.DoInfoStuff();
             WritingInfo = true;
-
+            status.Text = "Handling File Information...";
             //Hide stuff.
             void HideStuff()
             {
@@ -645,6 +646,7 @@ namespace NitroStudio2
                 kermalisSoundPlayerPanel.SendToBack();
                 indexPanel.SendToBack();
                 forceUniqueFilePanel.SendToBack();
+                fileSizePanel.Hide();
             }
 
             //If file open.
@@ -689,6 +691,7 @@ namespace NitroStudio2
                     //Sequence.
                     if (tree.SelectedNode.Parent.Name == "sequences")
                     {
+                        status.Text = "Loading information about Sequence...";
                         seqPanel.BringToFront();
                         indexPanel.Show();
                         forceUniqueFilePanel.Show();
@@ -706,12 +709,14 @@ namespace NitroStudio2
                         PopulatePlayerBox(SA, seqPlayerComboBox);
                         SetPlayerIndex(SA, seqPlayerComboBox, e.Player == null ? e.ReadingPlayerId : (byte)e.Player.Index);
                         seqPlayerBox.Value = e.Player == null ? e.ReadingPlayerId : (byte)e.Player.Index;
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected. File Is " + GetBytesSize(e.File) + ".";
+                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizePanel.Show();
                     }
 
                     //Sequence archive.
                     else if (tree.SelectedNode.Parent.Name == "sequenceArchives")
                     {
+                        status.Text = "Loading information about Sequence Archive...";
                         kermalisSoundPlayerPanel.Hide();
                         seqArcPanel.BringToFront();
                         indexPanel.Show();
@@ -720,12 +725,14 @@ namespace NitroStudio2
                         var e = SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
                         itemIndexBox.Value = e.Index;
                         forceUniqueFileBox.Checked = e.ForceIndividualFile;
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected. File Is " + GetBytesSize(e.File) + ".";
+                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizePanel.Show();
                     }
 
                     //Bank.
                     else if (tree.SelectedNode.Parent.Name == "banks")
                     {
+                        status.Text = "Loading information about Bank...";
                         kermalisSoundPlayerPanel.Hide();
                         bankPanel.BringToFront();
                         indexPanel.Show();
@@ -746,12 +753,14 @@ namespace NitroStudio2
                         SetWaveArchiveIndex(SA, bnkWar1Box, e.WaveArchives[1] == null ? e.ReadingWave1Id : (ushort)e.WaveArchives[1].Index);
                         SetWaveArchiveIndex(SA, bnkWar2Box, e.WaveArchives[2] == null ? e.ReadingWave2Id : (ushort)e.WaveArchives[2].Index);
                         SetWaveArchiveIndex(SA, bnkWar3Box, e.WaveArchives[3] == null ? e.ReadingWave3Id : (ushort)e.WaveArchives[3].Index);
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected. File Is " + GetBytesSize(e.File) + ".";
+                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizePanel.Show();
                     }
 
                     //Wave archive.
                     else if (tree.SelectedNode.Parent.Name == "waveArchives")
                     {
+                        status.Text = "Loading information about Wave Archive...";
                         kermalisSoundPlayerPanel.Hide();
                         warPanel.BringToFront();
                         indexPanel.Show();
@@ -761,12 +770,14 @@ namespace NitroStudio2
                         itemIndexBox.Value = e.Index;
                         forceUniqueFileBox.Checked = e.ForceIndividualFile;
                         loadIndividuallyBox.Checked = e.LoadIndividually;
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected. File Is " + GetBytesSize(e.File) + ".";
+                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizePanel.Show();
                     }
 
                     //Player.
                     else if (tree.SelectedNode.Parent.Name == "players")
                     {
+                        status.Text = "Loading information about Sequence Player...";
                         kermalisSoundPlayerPanel.Hide();
                         playerPanel.BringToFront();
                         indexPanel.Show();
@@ -791,12 +802,13 @@ namespace NitroStudio2
                         playerFlag13Box.Checked = e.ChannelFlags[13];
                         playerFlag14Box.Checked = e.ChannelFlags[14];
                         playerFlag15Box.Checked = e.ChannelFlags[15];
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected.";
+                        
                     }
 
                     //Group.
                     else if (tree.SelectedNode.Parent.Name == "groups")
                     {
+                        status.Text = "Loading information about Group...";
                         kermalisSoundPlayerPanel.Hide();
                         grpPanel.BringToFront();
                         indexPanel.Show();
@@ -804,12 +816,13 @@ namespace NitroStudio2
                         var e = SA.Groups.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
                         itemIndexBox.Value = e.Index;
                         PopulateGroupGrid(grpEntries, e);
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected.";
+                        
                     }
 
                     //Stream player.
                     else if (tree.SelectedNode.Parent.Name == "streamPlayers")
                     {
+                        status.Text = "Loading information about Stream Player...";
                         kermalisSoundPlayerPanel.Hide();
                         streamPlayerPanel.BringToFront();
                         indexPanel.Show();
@@ -834,12 +847,13 @@ namespace NitroStudio2
                             rightChannelLabel.Enabled = false;
                             stmPlayerRightChannelBox.Enabled = false;
                         }
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected.";
+                        
                     }
 
                     //Stream.
                     else if (tree.SelectedNode.Parent.Name == "streams")
                     {
+                        status.Text = "Loading information about Sound Streams...";
                         kermalisSoundPlayerPanel.Hide();
                         stmPanel.BringToFront();
                         indexPanel.Show();
@@ -854,7 +868,8 @@ namespace NitroStudio2
                         PopulateStreamPlayerBox(SA, stmPlayerComboBox);
                         SetStreamPlayerIndex(SA, stmPlayerComboBox, e.Player == null ? e.ReadingPlayerId : (byte)e.Player.Index);
                         stmPlayerBox.Value = e.Player == null ? e.ReadingPlayerId : e.Player.Index;
-                        status.Text = "[" + e.Index + "] " + e.Name + " Selected. File Is " + GetBytesSize(e.File) + ".";
+                        fileSizeLabel.Text = "File Is " + GetBytesSize(e.File);
+                        fileSizePanel.Show();
                     }
 
                 }
@@ -870,7 +885,7 @@ namespace NitroStudio2
                     kermalisSoundPlayerPanel.Show();
                     blankPanel.Show();
                     var e = SA.SequenceArchives.Where(x => x.Index == GetIdFromNode(tree.SelectedNode.Parent)).FirstOrDefault().File.Sequences.Where(x => x.Index == GetIdFromNode(tree.SelectedNode)).FirstOrDefault();
-                    status.Text = "[" + e.Index + "] " + e.Name + " Selected.";
+                    
                 }
 
             }
@@ -881,12 +896,12 @@ namespace NitroStudio2
                 HideStuff();
                 noInfoPanel.BringToFront();
                 noInfoPanel.Show();
-                status.Text = "No Valid Info Selected!";
+                
             }
 
             //Done.
             WritingInfo = false;
-
+            status.Text = "Ready";
         }
 
         /// <summary>
@@ -2845,6 +2860,7 @@ namespace NitroStudio2
             s.FileName = tree.SelectedNode.Text.Substring(tree.SelectedNode.Text.IndexOf(' ') + 1);
             int ind = GetIdFromNode(tree.SelectedNode);
 
+            status.Text = "Exporting file " + tree.SelectedNode.Name + "...";
             //Switch the type.
             switch (tree.SelectedNode.Parent.Name)
             {
@@ -3061,6 +3077,7 @@ namespace NitroStudio2
                 }
 
             }
+            status.Text = "Ready";
 
         }
 

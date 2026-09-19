@@ -76,15 +76,7 @@ namespace NitroStudio2 {
         public void Init() {
             var mm = new MMDeviceEnumerator();
             int id = 0;
-            foreach (var m in mm.EnumerateAudioEndPoints(DataFlow.Render,DeviceState.All))
-            {
-                if(m.ID == (Config.Settings["outputWaveDevice"]))
-                {
-                    break;
-                }
-                id++;
-            }
-            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(id);
+            Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Config.Settings["outputWaveDevice"]);
             Icon = Properties.Resources.War;
             tree.Nodes.RemoveAt(0);
             tree.Nodes.Add("root", "Wave Archive", 5, 5);
