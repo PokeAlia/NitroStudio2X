@@ -2,6 +2,8 @@
 using GotaSoundBank.SF2;
 using GotaSoundIO.Sound;
 using NitroFileLoader;
+using NitroStudio2.Dialogs;
+using NitroStudio2.Dialogs.Editors;
 using System;
 using System.Collections.Generic;
 using System.IO;
