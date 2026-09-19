@@ -18,7 +18,7 @@ namespace NitroStudio2 {
     public partial class StreamPlayer : Form
     {
         public MainWindow MainWindow;
-        byte[] File;
+        string File;
         static Configuration Config = new Configuration();
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
         GotaSoundIO.Sound.Playback.StreamPlayer Player = new GotaSoundIO.Sound.Playback.StreamPlayer(Config.Settings["outputWaveDevice"]);
@@ -41,6 +41,7 @@ namespace NitroStudio2 {
             t.Tick += T_Tick;
             t.Interval = 1000 / 30;
             t.Start();
+            File = stream;
         }
 
         private void T_Tick(object sender, EventArgs e)
@@ -52,6 +53,8 @@ namespace NitroStudio2 {
         {
             Player.Stop();
             Player.Dispose();
+            System.IO.File.Delete(File);
+            try { MainWindow.StreamTempCount--; } catch { };
         }
 
         private void StreamPlayer_Load(object sender, EventArgs e)
