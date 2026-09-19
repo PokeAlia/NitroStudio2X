@@ -13,7 +13,7 @@
     <StartupObject>NitroStudio2.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="PianoKey.cs">
+    <Compile Update="Controls\PianoKey.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Properties\Settings.Designer.cs">

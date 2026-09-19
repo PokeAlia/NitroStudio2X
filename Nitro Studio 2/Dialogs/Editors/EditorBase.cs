@@ -24,6 +24,7 @@ using System.Drawing;
 using NitroFileLoader;
 using GotaSoundBank.SF2;
 using GotaSoundBank.DLS;
+using NitroStudio2.Controls;
 
 namespace NitroStudio2.Dialogs.Editors
 {
