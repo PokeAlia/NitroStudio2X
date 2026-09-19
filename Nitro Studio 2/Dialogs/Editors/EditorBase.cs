@@ -16,14 +16,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ScintillaNET;
-using System.Diagnostics;
-using GotaSequenceLib;
-using GotaSoundIO.IO;
-using System.Drawing;
-using NitroFileLoader;
-using GotaSoundBank.SF2;
-using GotaSoundBank.DLS;
 using NitroStudio2.Controls;
 
 namespace NitroStudio2.Dialogs.Editors
@@ -873,6 +865,91 @@ namespace NitroStudio2.Dialogs.Editors
             kermalisPlayButton = new Button();
             soundPlayerLabel = new Label();
             pnlPianoKeys = new Panel();
+            pkeyC7 = new PianoKey();
+            pkeyE7 = new PianoKey();
+            pkeyCSharp7 = new PianoKey();
+            pkeyD7 = new PianoKey();
+            pkeyDSharp7 = new PianoKey();
+            pkeyF7 = new PianoKey();
+            pkeyFSharp7 = new PianoKey();
+            pkeyG7 = new PianoKey();
+            pkeyGSharp7 = new PianoKey();
+            pkeyA7 = new PianoKey();
+            pkeyASharp7 = new PianoKey();
+            pkeyB7 = new PianoKey();
+            pkeyC6 = new PianoKey();
+            pkeyE6 = new PianoKey();
+            pkeyCSharp6 = new PianoKey();
+            pkeyD6 = new PianoKey();
+            pkeyDSharp6 = new PianoKey();
+            pkeyF6 = new PianoKey();
+            pkeyFSharp6 = new PianoKey();
+            pkeyG6 = new PianoKey();
+            pkeyGSharp6 = new PianoKey();
+            pkeyA6 = new PianoKey();
+            pkeyASharp6 = new PianoKey();
+            pkeyB6 = new PianoKey();
+            pkeyC1 = new PianoKey();
+            pkeyCSharp1 = new PianoKey();
+            pkeyD1 = new PianoKey();
+            pkeyDSharp1 = new PianoKey();
+            pkeyE1 = new PianoKey();
+            pkeyF1 = new PianoKey();
+            pkeyFSharp1 = new PianoKey();
+            pkeyG1 = new PianoKey();
+            pkeyGSharp1 = new PianoKey();
+            pkeyA1 = new PianoKey();
+            pkeyASharp1 = new PianoKey();
+            pkeyB1 = new PianoKey();
+            pkeyC2 = new PianoKey();
+            pkeyCSharp2 = new PianoKey();
+            pkeyD2 = new PianoKey();
+            pkeyDSharp2 = new PianoKey();
+            pkeyE2 = new PianoKey();
+            pkeyF2 = new PianoKey();
+            pkeyFSharp2 = new PianoKey();
+            pkeyG2 = new PianoKey();
+            pkeyGSharp2 = new PianoKey();
+            pkeyA2 = new PianoKey();
+            pkeyASharp2 = new PianoKey();
+            pkeyB2 = new PianoKey();
+            pkeyC3 = new PianoKey();
+            pkeyCSharp3 = new PianoKey();
+            pkeyD3 = new PianoKey();
+            pkeyDSharp3 = new PianoKey();
+            pkeyE3 = new PianoKey();
+            pkeyF3 = new PianoKey();
+            pkeyFSharp3 = new PianoKey();
+            pkeyG3 = new PianoKey();
+            pkeyGSharp3 = new PianoKey();
+            pkeyA3 = new PianoKey();
+            pkeyASharp3 = new PianoKey();
+            pkeyB3 = new PianoKey();
+            pkeyC4 = new PianoKey();
+            pkeyCSharp4 = new PianoKey();
+            pkeyD4 = new PianoKey();
+            pkeyDSharp4 = new PianoKey();
+            pkeyE4 = new PianoKey();
+            pkeyF4 = new PianoKey();
+            pkeyFSharp4 = new PianoKey();
+            pkeyG4 = new PianoKey();
+            pkeyGSharp4 = new PianoKey();
+            pkeyA4 = new PianoKey();
+            pkeyASharp4 = new PianoKey();
+            pkeyB4 = new PianoKey();
+            pkeyC5 = new PianoKey();
+            pkeyCSharp5 = new PianoKey();
+            pkeyD5 = new PianoKey();
+            pkeyDSharp5 = new PianoKey();
+            pkeyE5 = new PianoKey();
+            pkeyF5 = new PianoKey();
+            pkeyFSharp5 = new PianoKey();
+            pkeyG5 = new PianoKey();
+            pkeyGSharp5 = new PianoKey();
+            pkeyA5 = new PianoKey();
+            pkeyASharp5 = new PianoKey();
+            pkeyB5 = new PianoKey();
+            pkeyC8 = new PianoKey();
             bankEditorWars = new Panel();
             tableLayoutPanel16 = new TableLayoutPanel();
             war3ComboBox = new ComboBox();
@@ -1016,6 +1093,7 @@ namespace NitroStudio2.Dialogs.Editors
             ((ISupportInitialize)kermalisPosition).BeginInit();
             tableLayoutPanel9.SuspendLayout();
             ((ISupportInitialize)kermalisVolumeSlider).BeginInit();
+            pnlPianoKeys.SuspendLayout();
             bankEditorWars.SuspendLayout();
             tableLayoutPanel16.SuspendLayout();
             ((ISupportInitialize)war3Box).BeginInit();
@@ -1317,9 +1395,9 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(tree);
             splitContainer1.Panel2.Controls.Add(pnlPianoKeys);
             splitContainer1.Panel2.Controls.Add(bankEditorWars);
-            splitContainer1.Panel2.Controls.Add(tree);
             splitContainer1.Panel2.Controls.Add(sequenceEditorPanel);
             splitContainer1.Size = new Size(984, 585);
             splitContainer1.SplitterDistance = 330;
@@ -3905,13 +3983,821 @@ namespace NitroStudio2.Dialogs.Editors
             // 
             // pnlPianoKeys
             // 
-            pnlPianoKeys.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pnlPianoKeys.BackColor = SystemColors.ControlLightLight;
-            pnlPianoKeys.Location = new Point(41, 186);
+            pnlPianoKeys.Controls.Add(pkeyC7);
+            pnlPianoKeys.Controls.Add(pkeyE7);
+            pnlPianoKeys.Controls.Add(pkeyCSharp7);
+            pnlPianoKeys.Controls.Add(pkeyD7);
+            pnlPianoKeys.Controls.Add(pkeyDSharp7);
+            pnlPianoKeys.Controls.Add(pkeyF7);
+            pnlPianoKeys.Controls.Add(pkeyFSharp7);
+            pnlPianoKeys.Controls.Add(pkeyG7);
+            pnlPianoKeys.Controls.Add(pkeyGSharp7);
+            pnlPianoKeys.Controls.Add(pkeyA7);
+            pnlPianoKeys.Controls.Add(pkeyASharp7);
+            pnlPianoKeys.Controls.Add(pkeyB7);
+            pnlPianoKeys.Controls.Add(pkeyC6);
+            pnlPianoKeys.Controls.Add(pkeyE6);
+            pnlPianoKeys.Controls.Add(pkeyCSharp6);
+            pnlPianoKeys.Controls.Add(pkeyD6);
+            pnlPianoKeys.Controls.Add(pkeyDSharp6);
+            pnlPianoKeys.Controls.Add(pkeyF6);
+            pnlPianoKeys.Controls.Add(pkeyFSharp6);
+            pnlPianoKeys.Controls.Add(pkeyG6);
+            pnlPianoKeys.Controls.Add(pkeyGSharp6);
+            pnlPianoKeys.Controls.Add(pkeyA6);
+            pnlPianoKeys.Controls.Add(pkeyASharp6);
+            pnlPianoKeys.Controls.Add(pkeyB6);
+            pnlPianoKeys.Controls.Add(pkeyC1);
+            pnlPianoKeys.Controls.Add(pkeyCSharp1);
+            pnlPianoKeys.Controls.Add(pkeyD1);
+            pnlPianoKeys.Controls.Add(pkeyDSharp1);
+            pnlPianoKeys.Controls.Add(pkeyE1);
+            pnlPianoKeys.Controls.Add(pkeyF1);
+            pnlPianoKeys.Controls.Add(pkeyFSharp1);
+            pnlPianoKeys.Controls.Add(pkeyG1);
+            pnlPianoKeys.Controls.Add(pkeyGSharp1);
+            pnlPianoKeys.Controls.Add(pkeyA1);
+            pnlPianoKeys.Controls.Add(pkeyASharp1);
+            pnlPianoKeys.Controls.Add(pkeyB1);
+            pnlPianoKeys.Controls.Add(pkeyC2);
+            pnlPianoKeys.Controls.Add(pkeyCSharp2);
+            pnlPianoKeys.Controls.Add(pkeyD2);
+            pnlPianoKeys.Controls.Add(pkeyDSharp2);
+            pnlPianoKeys.Controls.Add(pkeyE2);
+            pnlPianoKeys.Controls.Add(pkeyF2);
+            pnlPianoKeys.Controls.Add(pkeyFSharp2);
+            pnlPianoKeys.Controls.Add(pkeyG2);
+            pnlPianoKeys.Controls.Add(pkeyGSharp2);
+            pnlPianoKeys.Controls.Add(pkeyA2);
+            pnlPianoKeys.Controls.Add(pkeyASharp2);
+            pnlPianoKeys.Controls.Add(pkeyB2);
+            pnlPianoKeys.Controls.Add(pkeyC3);
+            pnlPianoKeys.Controls.Add(pkeyCSharp3);
+            pnlPianoKeys.Controls.Add(pkeyD3);
+            pnlPianoKeys.Controls.Add(pkeyDSharp3);
+            pnlPianoKeys.Controls.Add(pkeyE3);
+            pnlPianoKeys.Controls.Add(pkeyF3);
+            pnlPianoKeys.Controls.Add(pkeyFSharp3);
+            pnlPianoKeys.Controls.Add(pkeyG3);
+            pnlPianoKeys.Controls.Add(pkeyGSharp3);
+            pnlPianoKeys.Controls.Add(pkeyA3);
+            pnlPianoKeys.Controls.Add(pkeyASharp3);
+            pnlPianoKeys.Controls.Add(pkeyB3);
+            pnlPianoKeys.Controls.Add(pkeyC4);
+            pnlPianoKeys.Controls.Add(pkeyCSharp4);
+            pnlPianoKeys.Controls.Add(pkeyD4);
+            pnlPianoKeys.Controls.Add(pkeyDSharp4);
+            pnlPianoKeys.Controls.Add(pkeyE4);
+            pnlPianoKeys.Controls.Add(pkeyF4);
+            pnlPianoKeys.Controls.Add(pkeyFSharp4);
+            pnlPianoKeys.Controls.Add(pkeyG4);
+            pnlPianoKeys.Controls.Add(pkeyGSharp4);
+            pnlPianoKeys.Controls.Add(pkeyA4);
+            pnlPianoKeys.Controls.Add(pkeyASharp4);
+            pnlPianoKeys.Controls.Add(pkeyB4);
+            pnlPianoKeys.Controls.Add(pkeyC5);
+            pnlPianoKeys.Controls.Add(pkeyCSharp5);
+            pnlPianoKeys.Controls.Add(pkeyD5);
+            pnlPianoKeys.Controls.Add(pkeyDSharp5);
+            pnlPianoKeys.Controls.Add(pkeyE5);
+            pnlPianoKeys.Controls.Add(pkeyF5);
+            pnlPianoKeys.Controls.Add(pkeyFSharp5);
+            pnlPianoKeys.Controls.Add(pkeyG5);
+            pnlPianoKeys.Controls.Add(pkeyGSharp5);
+            pnlPianoKeys.Controls.Add(pkeyA5);
+            pnlPianoKeys.Controls.Add(pkeyASharp5);
+            pnlPianoKeys.Controls.Add(pkeyB5);
+            pnlPianoKeys.Controls.Add(pkeyC8);
+            pnlPianoKeys.Dock = DockStyle.Bottom;
+            pnlPianoKeys.Location = new Point(0, 537);
             pnlPianoKeys.Name = "pnlPianoKeys";
-            pnlPianoKeys.Size = new Size(565, 46);
+            pnlPianoKeys.Size = new Size(648, 46);
             pnlPianoKeys.TabIndex = 6;
             pnlPianoKeys.Visible = false;
+            // 
+            // pkeyC7
+            // 
+            pkeyC7.Location = new Point(466, 2);
+            pkeyC7.Name = "pkeyC7";
+            pkeyC7.Size = new Size(12, 42);
+            pkeyC7.TabIndex = 83;
+            pkeyC7.StateChanged += PianoChanged;
+            // 
+            // pkeyE7
+            // 
+            pkeyE7.Location = new Point(488, 2);
+            pkeyE7.Name = "pkeyE7";
+            pkeyE7.Size = new Size(12, 42);
+            pkeyE7.TabIndex = 84;
+            pkeyE7.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp7
+            // 
+            pkeyCSharp7.BackColor = Color.Black;
+            pkeyCSharp7.Location = new Point(474, 2);
+            pkeyCSharp7.Name = "pkeyCSharp7";
+            pkeyCSharp7.Size = new Size(8, 28);
+            pkeyCSharp7.TabIndex = 74;
+            pkeyCSharp7.StateChanged += PianoChanged;
+            // 
+            // pkeyD7
+            // 
+            pkeyD7.Location = new Point(477, 2);
+            pkeyD7.Name = "pkeyD7";
+            pkeyD7.Size = new Size(12, 42);
+            pkeyD7.TabIndex = 73;
+            pkeyD7.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp7
+            // 
+            pkeyDSharp7.BackColor = Color.Black;
+            pkeyDSharp7.Location = new Point(485, 2);
+            pkeyDSharp7.Name = "pkeyDSharp7";
+            pkeyDSharp7.Size = new Size(8, 29);
+            pkeyDSharp7.TabIndex = 75;
+            pkeyDSharp7.StateChanged += PianoChanged;
+            // 
+            // pkeyF7
+            // 
+            pkeyF7.Location = new Point(499, 2);
+            pkeyF7.Name = "pkeyF7";
+            pkeyF7.Size = new Size(12, 42);
+            pkeyF7.TabIndex = 76;
+            pkeyF7.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp7
+            // 
+            pkeyFSharp7.BackColor = Color.Black;
+            pkeyFSharp7.Location = new Point(507, 2);
+            pkeyFSharp7.Name = "pkeyFSharp7";
+            pkeyFSharp7.Size = new Size(8, 28);
+            pkeyFSharp7.TabIndex = 78;
+            pkeyFSharp7.StateChanged += PianoChanged;
+            // 
+            // pkeyG7
+            // 
+            pkeyG7.Location = new Point(510, 2);
+            pkeyG7.Name = "pkeyG7";
+            pkeyG7.Size = new Size(12, 42);
+            pkeyG7.TabIndex = 77;
+            pkeyG7.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp7
+            // 
+            pkeyGSharp7.BackColor = Color.Black;
+            pkeyGSharp7.Location = new Point(518, 2);
+            pkeyGSharp7.Name = "pkeyGSharp7";
+            pkeyGSharp7.Size = new Size(8, 29);
+            pkeyGSharp7.TabIndex = 79;
+            pkeyGSharp7.StateChanged += PianoChanged;
+            // 
+            // pkeyA7
+            // 
+            pkeyA7.Location = new Point(521, 2);
+            pkeyA7.Name = "pkeyA7";
+            pkeyA7.Size = new Size(12, 42);
+            pkeyA7.TabIndex = 80;
+            pkeyA7.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp7
+            // 
+            pkeyASharp7.BackColor = Color.Black;
+            pkeyASharp7.Location = new Point(529, 2);
+            pkeyASharp7.Name = "pkeyASharp7";
+            pkeyASharp7.Size = new Size(8, 29);
+            pkeyASharp7.TabIndex = 81;
+            pkeyASharp7.Text = "pianoKey13";
+            pkeyASharp7.StateChanged += PianoChanged;
+            // 
+            // pkeyB7
+            // 
+            pkeyB7.Location = new Point(532, 2);
+            pkeyB7.Name = "pkeyB7";
+            pkeyB7.Size = new Size(12, 42);
+            pkeyB7.TabIndex = 82;
+            pkeyB7.StateChanged += PianoChanged;
+            // 
+            // pkeyC6
+            // 
+            pkeyC6.Location = new Point(389, 2);
+            pkeyC6.Name = "pkeyC6";
+            pkeyC6.Size = new Size(12, 42);
+            pkeyC6.TabIndex = 71;
+            pkeyC6.StateChanged += PianoChanged;
+            // 
+            // pkeyE6
+            // 
+            pkeyE6.Location = new Point(411, 2);
+            pkeyE6.Name = "pkeyE6";
+            pkeyE6.Size = new Size(12, 42);
+            pkeyE6.TabIndex = 72;
+            pkeyE6.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp6
+            // 
+            pkeyCSharp6.BackColor = Color.Black;
+            pkeyCSharp6.Location = new Point(397, 2);
+            pkeyCSharp6.Name = "pkeyCSharp6";
+            pkeyCSharp6.Size = new Size(8, 28);
+            pkeyCSharp6.TabIndex = 62;
+            pkeyCSharp6.StateChanged += PianoChanged;
+            // 
+            // pkeyD6
+            // 
+            pkeyD6.Location = new Point(400, 2);
+            pkeyD6.Name = "pkeyD6";
+            pkeyD6.Size = new Size(12, 42);
+            pkeyD6.TabIndex = 61;
+            pkeyD6.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp6
+            // 
+            pkeyDSharp6.BackColor = Color.Black;
+            pkeyDSharp6.Location = new Point(408, 2);
+            pkeyDSharp6.Name = "pkeyDSharp6";
+            pkeyDSharp6.Size = new Size(8, 29);
+            pkeyDSharp6.TabIndex = 63;
+            pkeyDSharp6.StateChanged += PianoChanged;
+            // 
+            // pkeyF6
+            // 
+            pkeyF6.Location = new Point(422, 2);
+            pkeyF6.Name = "pkeyF6";
+            pkeyF6.Size = new Size(12, 42);
+            pkeyF6.TabIndex = 64;
+            pkeyF6.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp6
+            // 
+            pkeyFSharp6.BackColor = Color.Black;
+            pkeyFSharp6.Location = new Point(430, 2);
+            pkeyFSharp6.Name = "pkeyFSharp6";
+            pkeyFSharp6.Size = new Size(8, 28);
+            pkeyFSharp6.TabIndex = 66;
+            pkeyFSharp6.StateChanged += PianoChanged;
+            // 
+            // pkeyG6
+            // 
+            pkeyG6.Location = new Point(433, 2);
+            pkeyG6.Name = "pkeyG6";
+            pkeyG6.Size = new Size(12, 42);
+            pkeyG6.TabIndex = 65;
+            pkeyG6.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp6
+            // 
+            pkeyGSharp6.BackColor = Color.Black;
+            pkeyGSharp6.Location = new Point(441, 2);
+            pkeyGSharp6.Name = "pkeyGSharp6";
+            pkeyGSharp6.Size = new Size(8, 29);
+            pkeyGSharp6.TabIndex = 67;
+            pkeyGSharp6.StateChanged += PianoChanged;
+            // 
+            // pkeyA6
+            // 
+            pkeyA6.Location = new Point(444, 2);
+            pkeyA6.Name = "pkeyA6";
+            pkeyA6.Size = new Size(12, 42);
+            pkeyA6.TabIndex = 68;
+            pkeyA6.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp6
+            // 
+            pkeyASharp6.BackColor = Color.Black;
+            pkeyASharp6.Location = new Point(452, 2);
+            pkeyASharp6.Name = "pkeyASharp6";
+            pkeyASharp6.Size = new Size(8, 29);
+            pkeyASharp6.TabIndex = 69;
+            pkeyASharp6.Text = "pianoKey13";
+            pkeyASharp6.StateChanged += PianoChanged;
+            // 
+            // pkeyB6
+            // 
+            pkeyB6.Location = new Point(455, 2);
+            pkeyB6.Name = "pkeyB6";
+            pkeyB6.Size = new Size(12, 42);
+            pkeyB6.TabIndex = 70;
+            pkeyB6.StateChanged += PianoChanged;
+            // 
+            // pkeyC1
+            // 
+            pkeyC1.Location = new Point(4, 2);
+            pkeyC1.Name = "pkeyC1";
+            pkeyC1.Size = new Size(12, 42);
+            pkeyC1.TabIndex = 0;
+            pkeyC1.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp1
+            // 
+            pkeyCSharp1.BackColor = Color.Black;
+            pkeyCSharp1.Location = new Point(12, 2);
+            pkeyCSharp1.Name = "pkeyCSharp1";
+            pkeyCSharp1.Size = new Size(8, 28);
+            pkeyCSharp1.TabIndex = 3;
+            pkeyCSharp1.StateChanged += PianoChanged;
+            // 
+            // pkeyD1
+            // 
+            pkeyD1.Location = new Point(15, 2);
+            pkeyD1.Name = "pkeyD1";
+            pkeyD1.Size = new Size(12, 42);
+            pkeyD1.TabIndex = 1;
+            pkeyD1.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp1
+            // 
+            pkeyDSharp1.BackColor = Color.Black;
+            pkeyDSharp1.Location = new Point(23, 2);
+            pkeyDSharp1.Name = "pkeyDSharp1";
+            pkeyDSharp1.Size = new Size(8, 29);
+            pkeyDSharp1.TabIndex = 4;
+            pkeyDSharp1.StateChanged += PianoChanged;
+            // 
+            // pkeyE1
+            // 
+            pkeyE1.Location = new Point(26, 2);
+            pkeyE1.Name = "pkeyE1";
+            pkeyE1.Size = new Size(12, 42);
+            pkeyE1.TabIndex = 2;
+            pkeyE1.StateChanged += PianoChanged;
+            // 
+            // pkeyF1
+            // 
+            pkeyF1.Location = new Point(37, 2);
+            pkeyF1.Name = "pkeyF1";
+            pkeyF1.Size = new Size(12, 42);
+            pkeyF1.TabIndex = 5;
+            pkeyF1.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp1
+            // 
+            pkeyFSharp1.BackColor = Color.Black;
+            pkeyFSharp1.Location = new Point(45, 2);
+            pkeyFSharp1.Name = "pkeyFSharp1";
+            pkeyFSharp1.Size = new Size(8, 28);
+            pkeyFSharp1.TabIndex = 7;
+            pkeyFSharp1.StateChanged += PianoChanged;
+            // 
+            // pkeyG1
+            // 
+            pkeyG1.Location = new Point(48, 2);
+            pkeyG1.Name = "pkeyG1";
+            pkeyG1.Size = new Size(12, 42);
+            pkeyG1.TabIndex = 6;
+            pkeyG1.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp1
+            // 
+            pkeyGSharp1.BackColor = Color.Black;
+            pkeyGSharp1.Location = new Point(56, 2);
+            pkeyGSharp1.Name = "pkeyGSharp1";
+            pkeyGSharp1.Size = new Size(8, 29);
+            pkeyGSharp1.TabIndex = 8;
+            pkeyGSharp1.StateChanged += PianoChanged;
+            // 
+            // pkeyA1
+            // 
+            pkeyA1.Location = new Point(59, 2);
+            pkeyA1.Name = "pkeyA1";
+            pkeyA1.Size = new Size(12, 42);
+            pkeyA1.TabIndex = 9;
+            pkeyA1.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp1
+            // 
+            pkeyASharp1.BackColor = Color.Black;
+            pkeyASharp1.Location = new Point(67, 2);
+            pkeyASharp1.Name = "pkeyASharp1";
+            pkeyASharp1.Size = new Size(8, 29);
+            pkeyASharp1.TabIndex = 10;
+            pkeyASharp1.Text = "pianoKey13";
+            pkeyASharp1.StateChanged += PianoChanged;
+            // 
+            // pkeyB1
+            // 
+            pkeyB1.Location = new Point(70, 2);
+            pkeyB1.Name = "pkeyB1";
+            pkeyB1.Size = new Size(12, 42);
+            pkeyB1.TabIndex = 11;
+            pkeyB1.StateChanged += PianoChanged;
+            // 
+            // pkeyC2
+            // 
+            pkeyC2.Location = new Point(81, 2);
+            pkeyC2.Name = "pkeyC2";
+            pkeyC2.Size = new Size(12, 42);
+            pkeyC2.TabIndex = 12;
+            pkeyC2.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp2
+            // 
+            pkeyCSharp2.BackColor = Color.Black;
+            pkeyCSharp2.Location = new Point(89, 2);
+            pkeyCSharp2.Name = "pkeyCSharp2";
+            pkeyCSharp2.Size = new Size(8, 28);
+            pkeyCSharp2.TabIndex = 15;
+            pkeyCSharp2.StateChanged += PianoChanged;
+            // 
+            // pkeyD2
+            // 
+            pkeyD2.Location = new Point(92, 2);
+            pkeyD2.Name = "pkeyD2";
+            pkeyD2.Size = new Size(12, 42);
+            pkeyD2.TabIndex = 13;
+            pkeyD2.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp2
+            // 
+            pkeyDSharp2.BackColor = Color.Black;
+            pkeyDSharp2.Location = new Point(100, 2);
+            pkeyDSharp2.Name = "pkeyDSharp2";
+            pkeyDSharp2.Size = new Size(8, 29);
+            pkeyDSharp2.TabIndex = 16;
+            pkeyDSharp2.StateChanged += PianoChanged;
+            // 
+            // pkeyE2
+            // 
+            pkeyE2.Location = new Point(103, 2);
+            pkeyE2.Name = "pkeyE2";
+            pkeyE2.Size = new Size(12, 42);
+            pkeyE2.TabIndex = 14;
+            pkeyE2.StateChanged += PianoChanged;
+            // 
+            // pkeyF2
+            // 
+            pkeyF2.Location = new Point(114, 2);
+            pkeyF2.Name = "pkeyF2";
+            pkeyF2.Size = new Size(12, 42);
+            pkeyF2.TabIndex = 17;
+            pkeyF2.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp2
+            // 
+            pkeyFSharp2.BackColor = Color.Black;
+            pkeyFSharp2.Location = new Point(122, 2);
+            pkeyFSharp2.Name = "pkeyFSharp2";
+            pkeyFSharp2.Size = new Size(8, 28);
+            pkeyFSharp2.TabIndex = 19;
+            pkeyFSharp2.StateChanged += PianoChanged;
+            // 
+            // pkeyG2
+            // 
+            pkeyG2.Location = new Point(125, 2);
+            pkeyG2.Name = "pkeyG2";
+            pkeyG2.Size = new Size(12, 42);
+            pkeyG2.TabIndex = 18;
+            pkeyG2.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp2
+            // 
+            pkeyGSharp2.BackColor = Color.Black;
+            pkeyGSharp2.Location = new Point(133, 2);
+            pkeyGSharp2.Name = "pkeyGSharp2";
+            pkeyGSharp2.Size = new Size(8, 29);
+            pkeyGSharp2.TabIndex = 20;
+            pkeyGSharp2.StateChanged += PianoChanged;
+            // 
+            // pkeyA2
+            // 
+            pkeyA2.Location = new Point(136, 2);
+            pkeyA2.Name = "pkeyA2";
+            pkeyA2.Size = new Size(12, 42);
+            pkeyA2.TabIndex = 21;
+            pkeyA2.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp2
+            // 
+            pkeyASharp2.BackColor = Color.Black;
+            pkeyASharp2.Location = new Point(144, 2);
+            pkeyASharp2.Name = "pkeyASharp2";
+            pkeyASharp2.Size = new Size(8, 29);
+            pkeyASharp2.TabIndex = 22;
+            pkeyASharp2.Text = "pianoKey13";
+            pkeyASharp2.StateChanged += PianoChanged;
+            // 
+            // pkeyB2
+            // 
+            pkeyB2.Location = new Point(147, 2);
+            pkeyB2.Name = "pkeyB2";
+            pkeyB2.Size = new Size(12, 42);
+            pkeyB2.TabIndex = 23;
+            pkeyB2.StateChanged += PianoChanged;
+            // 
+            // pkeyC3
+            // 
+            pkeyC3.Location = new Point(158, 2);
+            pkeyC3.Name = "pkeyC3";
+            pkeyC3.Size = new Size(12, 42);
+            pkeyC3.TabIndex = 24;
+            pkeyC3.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp3
+            // 
+            pkeyCSharp3.BackColor = Color.Black;
+            pkeyCSharp3.Location = new Point(166, 2);
+            pkeyCSharp3.Name = "pkeyCSharp3";
+            pkeyCSharp3.Size = new Size(8, 28);
+            pkeyCSharp3.TabIndex = 27;
+            pkeyCSharp3.StateChanged += PianoChanged;
+            // 
+            // pkeyD3
+            // 
+            pkeyD3.Location = new Point(169, 2);
+            pkeyD3.Name = "pkeyD3";
+            pkeyD3.Size = new Size(12, 42);
+            pkeyD3.TabIndex = 25;
+            pkeyD3.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp3
+            // 
+            pkeyDSharp3.BackColor = Color.Black;
+            pkeyDSharp3.Location = new Point(177, 2);
+            pkeyDSharp3.Name = "pkeyDSharp3";
+            pkeyDSharp3.Size = new Size(8, 29);
+            pkeyDSharp3.TabIndex = 28;
+            pkeyDSharp3.StateChanged += PianoChanged;
+            // 
+            // pkeyE3
+            // 
+            pkeyE3.Location = new Point(180, 2);
+            pkeyE3.Name = "pkeyE3";
+            pkeyE3.Size = new Size(12, 42);
+            pkeyE3.TabIndex = 26;
+            pkeyE3.StateChanged += PianoChanged;
+            // 
+            // pkeyF3
+            // 
+            pkeyF3.Location = new Point(191, 2);
+            pkeyF3.Name = "pkeyF3";
+            pkeyF3.Size = new Size(12, 42);
+            pkeyF3.TabIndex = 29;
+            pkeyF3.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp3
+            // 
+            pkeyFSharp3.BackColor = Color.Black;
+            pkeyFSharp3.Location = new Point(199, 2);
+            pkeyFSharp3.Name = "pkeyFSharp3";
+            pkeyFSharp3.Size = new Size(8, 28);
+            pkeyFSharp3.TabIndex = 31;
+            pkeyFSharp3.StateChanged += PianoChanged;
+            // 
+            // pkeyG3
+            // 
+            pkeyG3.Location = new Point(202, 2);
+            pkeyG3.Name = "pkeyG3";
+            pkeyG3.Size = new Size(12, 42);
+            pkeyG3.TabIndex = 30;
+            pkeyG3.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp3
+            // 
+            pkeyGSharp3.BackColor = Color.Black;
+            pkeyGSharp3.Location = new Point(210, 2);
+            pkeyGSharp3.Name = "pkeyGSharp3";
+            pkeyGSharp3.Size = new Size(8, 29);
+            pkeyGSharp3.TabIndex = 32;
+            pkeyGSharp3.StateChanged += PianoChanged;
+            // 
+            // pkeyA3
+            // 
+            pkeyA3.Location = new Point(213, 2);
+            pkeyA3.Name = "pkeyA3";
+            pkeyA3.Size = new Size(12, 42);
+            pkeyA3.TabIndex = 33;
+            pkeyA3.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp3
+            // 
+            pkeyASharp3.BackColor = Color.Black;
+            pkeyASharp3.Location = new Point(221, 2);
+            pkeyASharp3.Name = "pkeyASharp3";
+            pkeyASharp3.Size = new Size(8, 29);
+            pkeyASharp3.TabIndex = 34;
+            pkeyASharp3.Text = "pianoKey13";
+            pkeyASharp3.StateChanged += PianoChanged;
+            // 
+            // pkeyB3
+            // 
+            pkeyB3.Location = new Point(224, 2);
+            pkeyB3.Name = "pkeyB3";
+            pkeyB3.Size = new Size(12, 42);
+            pkeyB3.TabIndex = 35;
+            pkeyB3.StateChanged += PianoChanged;
+            // 
+            // pkeyC4
+            // 
+            pkeyC4.Location = new Point(235, 2);
+            pkeyC4.Name = "pkeyC4";
+            pkeyC4.Size = new Size(12, 42);
+            pkeyC4.TabIndex = 36;
+            pkeyC4.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp4
+            // 
+            pkeyCSharp4.BackColor = Color.Black;
+            pkeyCSharp4.Location = new Point(243, 2);
+            pkeyCSharp4.Name = "pkeyCSharp4";
+            pkeyCSharp4.Size = new Size(8, 28);
+            pkeyCSharp4.TabIndex = 39;
+            pkeyCSharp4.StateChanged += PianoChanged;
+            // 
+            // pkeyD4
+            // 
+            pkeyD4.Location = new Point(246, 2);
+            pkeyD4.Name = "pkeyD4";
+            pkeyD4.Size = new Size(12, 42);
+            pkeyD4.TabIndex = 37;
+            pkeyD4.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp4
+            // 
+            pkeyDSharp4.BackColor = Color.Black;
+            pkeyDSharp4.Location = new Point(254, 2);
+            pkeyDSharp4.Name = "pkeyDSharp4";
+            pkeyDSharp4.Size = new Size(8, 29);
+            pkeyDSharp4.TabIndex = 40;
+            pkeyDSharp4.StateChanged += PianoChanged;
+            // 
+            // pkeyE4
+            // 
+            pkeyE4.Location = new Point(257, 2);
+            pkeyE4.Name = "pkeyE4";
+            pkeyE4.Size = new Size(12, 42);
+            pkeyE4.TabIndex = 38;
+            pkeyE4.StateChanged += PianoChanged;
+            // 
+            // pkeyF4
+            // 
+            pkeyF4.Location = new Point(268, 2);
+            pkeyF4.Name = "pkeyF4";
+            pkeyF4.Size = new Size(12, 42);
+            pkeyF4.TabIndex = 41;
+            pkeyF4.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp4
+            // 
+            pkeyFSharp4.BackColor = Color.Black;
+            pkeyFSharp4.Location = new Point(276, 2);
+            pkeyFSharp4.Name = "pkeyFSharp4";
+            pkeyFSharp4.Size = new Size(8, 28);
+            pkeyFSharp4.TabIndex = 43;
+            pkeyFSharp4.StateChanged += PianoChanged;
+            // 
+            // pkeyG4
+            // 
+            pkeyG4.Location = new Point(279, 2);
+            pkeyG4.Name = "pkeyG4";
+            pkeyG4.Size = new Size(12, 42);
+            pkeyG4.TabIndex = 42;
+            pkeyG4.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp4
+            // 
+            pkeyGSharp4.BackColor = Color.Black;
+            pkeyGSharp4.Location = new Point(287, 2);
+            pkeyGSharp4.Name = "pkeyGSharp4";
+            pkeyGSharp4.Size = new Size(8, 29);
+            pkeyGSharp4.TabIndex = 44;
+            pkeyGSharp4.StateChanged += PianoChanged;
+            // 
+            // pkeyA4
+            // 
+            pkeyA4.Location = new Point(290, 2);
+            pkeyA4.Name = "pkeyA4";
+            pkeyA4.Size = new Size(12, 42);
+            pkeyA4.TabIndex = 45;
+            pkeyA4.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp4
+            // 
+            pkeyASharp4.BackColor = Color.Black;
+            pkeyASharp4.Location = new Point(298, 2);
+            pkeyASharp4.Name = "pkeyASharp4";
+            pkeyASharp4.Size = new Size(8, 29);
+            pkeyASharp4.TabIndex = 46;
+            pkeyASharp4.Text = "pianoKey13";
+            pkeyASharp4.StateChanged += PianoChanged;
+            // 
+            // pkeyB4
+            // 
+            pkeyB4.Location = new Point(301, 2);
+            pkeyB4.Name = "pkeyB4";
+            pkeyB4.Size = new Size(12, 42);
+            pkeyB4.TabIndex = 47;
+            pkeyB4.StateChanged += PianoChanged;
+            // 
+            // pkeyC5
+            // 
+            pkeyC5.Location = new Point(312, 2);
+            pkeyC5.Name = "pkeyC5";
+            pkeyC5.Size = new Size(12, 42);
+            pkeyC5.TabIndex = 48;
+            pkeyC5.StateChanged += PianoChanged;
+            // 
+            // pkeyCSharp5
+            // 
+            pkeyCSharp5.BackColor = Color.Black;
+            pkeyCSharp5.Location = new Point(320, 2);
+            pkeyCSharp5.Name = "pkeyCSharp5";
+            pkeyCSharp5.Size = new Size(8, 28);
+            pkeyCSharp5.TabIndex = 51;
+            pkeyCSharp5.StateChanged += PianoChanged;
+            // 
+            // pkeyD5
+            // 
+            pkeyD5.BackColor = SystemColors.ControlLightLight;
+            pkeyD5.Location = new Point(323, 2);
+            pkeyD5.Name = "pkeyD5";
+            pkeyD5.Size = new Size(12, 42);
+            pkeyD5.TabIndex = 49;
+            pkeyD5.StateChanged += PianoChanged;
+            // 
+            // pkeyDSharp5
+            // 
+            pkeyDSharp5.BackColor = Color.Black;
+            pkeyDSharp5.Location = new Point(331, 2);
+            pkeyDSharp5.Name = "pkeyDSharp5";
+            pkeyDSharp5.Size = new Size(8, 29);
+            pkeyDSharp5.TabIndex = 52;
+            pkeyDSharp5.StateChanged += PianoChanged;
+            // 
+            // pkeyE5
+            // 
+            pkeyE5.Location = new Point(334, 2);
+            pkeyE5.Name = "pkeyE5";
+            pkeyE5.Size = new Size(12, 42);
+            pkeyE5.TabIndex = 50;
+            pkeyE5.StateChanged += PianoChanged;
+            // 
+            // pkeyF5
+            // 
+            pkeyF5.Location = new Point(345, 2);
+            pkeyF5.Name = "pkeyF5";
+            pkeyF5.Size = new Size(12, 42);
+            pkeyF5.TabIndex = 53;
+            pkeyF5.StateChanged += PianoChanged;
+            // 
+            // pkeyFSharp5
+            // 
+            pkeyFSharp5.BackColor = Color.Black;
+            pkeyFSharp5.Location = new Point(353, 2);
+            pkeyFSharp5.Name = "pkeyFSharp5";
+            pkeyFSharp5.Size = new Size(8, 28);
+            pkeyFSharp5.TabIndex = 55;
+            pkeyFSharp5.StateChanged += PianoChanged;
+            // 
+            // pkeyG5
+            // 
+            pkeyG5.Location = new Point(356, 2);
+            pkeyG5.Name = "pkeyG5";
+            pkeyG5.Size = new Size(12, 42);
+            pkeyG5.TabIndex = 54;
+            pkeyG5.StateChanged += PianoChanged;
+            // 
+            // pkeyGSharp5
+            // 
+            pkeyGSharp5.BackColor = Color.Black;
+            pkeyGSharp5.Location = new Point(364, 2);
+            pkeyGSharp5.Name = "pkeyGSharp5";
+            pkeyGSharp5.Size = new Size(8, 29);
+            pkeyGSharp5.TabIndex = 56;
+            pkeyGSharp5.StateChanged += PianoChanged;
+            // 
+            // pkeyA5
+            // 
+            pkeyA5.Location = new Point(367, 2);
+            pkeyA5.Name = "pkeyA5";
+            pkeyA5.Size = new Size(12, 42);
+            pkeyA5.TabIndex = 57;
+            pkeyA5.StateChanged += PianoChanged;
+            // 
+            // pkeyASharp5
+            // 
+            pkeyASharp5.BackColor = Color.Black;
+            pkeyASharp5.Location = new Point(375, 2);
+            pkeyASharp5.Name = "pkeyASharp5";
+            pkeyASharp5.Size = new Size(8, 29);
+            pkeyASharp5.TabIndex = 58;
+            pkeyASharp5.Text = "pianoKey13";
+            pkeyASharp5.StateChanged += PianoChanged;
+            // 
+            // pkeyB5
+            // 
+            pkeyB5.Location = new Point(378, 2);
+            pkeyB5.Name = "pkeyB5";
+            pkeyB5.Size = new Size(12, 42);
+            pkeyB5.TabIndex = 59;
+            pkeyB5.StateChanged += PianoChanged;
+            // 
+            // pkeyC8
+            // 
+            pkeyC8.Location = new Point(543, 2);
+            pkeyC8.Name = "pkeyC8";
+            pkeyC8.Size = new Size(12, 42);
+            pkeyC8.TabIndex = 60;
+            pkeyC8.StateChanged += PianoChanged;
             // 
             // bankEditorWars
             // 
@@ -4134,7 +5020,7 @@ namespace NitroStudio2.Dialogs.Editors
             tree.Nodes.AddRange(new TreeNode[] { treeNode1 });
             tree.SelectedImageIndex = 0;
             tree.ShowLines = false;
-            tree.Size = new Size(648, 583);
+            tree.Size = new Size(648, 537);
             tree.TabIndex = 0;
             tree.NodeMouseClick += tree_NodeMouseClick;
             tree.NodeMouseDoubleClick += tree_NodeMouseDoubleClick;
@@ -4484,6 +5370,7 @@ namespace NitroStudio2.Dialogs.Editors
             tableLayoutPanel9.ResumeLayout(false);
             tableLayoutPanel9.PerformLayout();
             ((ISupportInitialize)kermalisVolumeSlider).EndInit();
+            pnlPianoKeys.ResumeLayout(false);
             bankEditorWars.ResumeLayout(false);
             tableLayoutPanel16.ResumeLayout(false);
             ((ISupportInitialize)war3Box).EndInit();
@@ -6329,9 +7216,7 @@ namespace NitroStudio2.Dialogs.Editors
         }
 
         private void GetHelpToolStripMenuItem_Click(object sender, EventArgs e) {
-            try {
-                System.Diagnostics.Process.Start("https://gota7.github.io/NitroStudio2/#guide");
-            } catch { }
+            new Help().Show();
         }
 
         /// <summary>
